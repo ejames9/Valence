@@ -1,0 +1,42 @@
+{
+  "name": "Valence",
+  "version": "0.1.0",
+  "description": "A JavaScript library for building UI's that utilizes a fast virtual DOM, with an API resembling that of React, but uses Vanilla JS Web components under the hood...",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^1.1.0",
+    "elementsJS": "^0.9.30",
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "@webcomponents/custom-elements": "^1.0.8",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "connect": "^3.6.5",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-watch": "^5.0.0",
+    "gulp-webpack": "^1.5.0",
+    "install": "^0.10.4",
+    "serve-static": "^1.13.1",
+    "webpack": "^3.10.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ejames9/Valence/blob/master/js/src/Valence.js"
+  }
+}
