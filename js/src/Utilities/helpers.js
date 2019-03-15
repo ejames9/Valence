@@ -131,11 +131,7 @@ export const processData =(arr)=> ({
   })
 
 // A function for converting a unicode string into a kebabCase string...
-<<<<<<< HEAD
 export const _shishKebab =(string)=>
-=======
-const _shishKebab =(string)=>
->>>>>>> master
   words(string).reduce((result, word, ix)=>
     result + (ix ? '-' : '') + word.toLowerCase()
   , '')
@@ -265,8 +261,22 @@ Since the interpolation functions (refs) array will always be 1 shorter in lengt
 the strings array, The last index will be undefined if we are iterating based on 'string's'
 indeces. So, we make sure that  we don't try to execute an undefined function by skipping
 the last index.....
-*/    if (i < arrStrings.length - 1) {
-      val = arrFuncs[i](props)
+*/  if (i < arrStrings.length - 1) {
+// If we have a function...
+      if (typeof arrFuncs[i] === 'function') {
+// Execute it with props passed in...
+        val = arrFuncs[i](props)
+// Or, if we have a string...
+      } else if (typeof arrFuncs[i] === 'string') {
+// We can just insert it into the template....
+        val = arrFuncs[i]
+// Otherwise, I don't know what the hell we're dealing with..... Better off
+// throwing an error!
+      } else {
+        throw TypeError(
+          `Expecting a 'string' or a 'function' here. A value of type: ${typeof arrFuncs[i]}, was given.`
+        )
+      }
     } else {
       val = ' '
     }
@@ -283,11 +293,21 @@ A combination of two of the above functions, this function serves to activate pr
 function interpolations in css styling... The function simply takes a tagged template
 literal as an argument, and spits out completed styles, ready for appending to a style tag...
 */
-export const activateFunctionInterpolations =(taggedTempLit, props)=> {
+export const applyInterpolations =(taggedTempLit, props)=> {
 // Declare var for splitting strings and functions into respective arrays...
   let arrays = splitFilter(taggedTempLit, (index)=> {
-    return typeof index === 'function'
+    return is.array(index)
   })
 // Reassemble the css literals...
-  return reAssembleTemplates(arrays.false[0], arrays.true, props)
+  return reAssembleTemplates(arrays.true[0], arrays.false, props)
 }
+
+
+/*
+A helper function that takes a string containing css rules and splits them up
+into individual rule/strings and appends them to an array. An array of rules
+is returned...
+*/
+export const separateStyleRules =(css)=>
+// Below we are using a regular expression, returning an array of all of it's matches....
+  css.match(/[^\s\{][^\{]*\{[^\}]*\}/g)
