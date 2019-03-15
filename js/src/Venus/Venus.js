@@ -15,12 +15,20 @@
 *********************************/
 //TODO:[X] Ability to extend all element types.. 1
 //TODO:[X] Ability to extend a component.. 2
-//TODO:[ ] Sass/SCSS integration.. 4
-//TODO:[ ] Ability to Inject global styles.. 5
+//TODO:[X] Stylis integration.. 4
+//TODO:[X] Ability to Inject global styles.. 5
 //TODO:[ ] Media Queries.. 6
 //TODO:[ ] Keyframe Animations.. 7
 //TODO:[ ] SVG.. 8
 //TODO:[X] Variables, functions (tagged template literals).. 3
+
+/*
+** Venus Work to complete
+*********************************/
+//TODO:[ ] Ability to extend all element types..
+//TODO:[ ] Ability to extend a component..
+//TODO:[ ] Stylis integration..
+//TODO:[ ] Ability to Inject global styles..
 
 import * as _ from '../Utilities/helpers'
 import { Is } from '../Utilities/Is'
@@ -394,6 +402,13 @@ the list and move on... Return both the altered array and the shifted out type..
   }
 
 
+//A static public method for inserting global rules into the styleSheet...
+  static global(...tempLit) {
+// Send the ttLiteral over to CSS for inserting into the stylesheet...
+    CSS.insertGlobal([...tempLit])
+  }
+
+
 // An internal method used for retrieving a css template literal..
   static _getTemplateLiteral(...tempLit) {
     let tmpl,
@@ -428,6 +443,7 @@ the css can be completed...*/
       el: Venus._elementTag
     }
   }
+
 
 // Component extend Static API Method
 // A public method for extending user-defined venus components...

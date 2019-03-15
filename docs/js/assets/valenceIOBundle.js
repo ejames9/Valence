@@ -349,8 +349,18 @@ function (module, __webpack_exports__, __webpack_require__) {
     return _setPrototypeOf(o, p);
   }
 
+  function _templateObject7() {
+    var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  opacity: ", ";\n  color: white;\n  border: 2px solid ", "\n"]);
+
+    _templateObject7 = function _templateObject7() {
+      return data;
+    };
+
+    return data;
+  }
+
   function _templateObject6() {
-    var data = _taggedTemplateLiteral(["\n  background-color: red;\n  opacity: ", ";\n  color: white;\n  border: 2px solid ", "\n"]);
+    var data = _taggedTemplateLiteral(["\n  height: ", ";\n  width: 75px;\n  border: none;\n  border-radius: 7px;\n  background-color: pink;\n"]);
 
     _templateObject6 = function _templateObject6() {
       return data;
@@ -360,7 +370,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject5() {
-    var data = _taggedTemplateLiteral(["\n  height: ", ";\n  width: 75px;\n  border: none;\n  border-radius: 7px;\n  background-color: pink;\n"]);
+    var data = _taggedTemplateLiteral(["\nposition: absolute;\nheight: 100%;\nwidth: 100%;\npadding: 0;\n\n"]);
 
     _templateObject5 = function _templateObject5() {
       return data;
@@ -370,7 +380,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject4() {
-    var data = _taggedTemplateLiteral(["\nposition: absolute;\nheight: 100%;\nwidth: 100%;\npadding: 0;\n\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: sf mono;\n  font-size: 38px;\n  width: 200px;\n  height: 38px;\n  margin: 0 auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background-color: orange;\n  border: none;\n  border-radius: 5px;\n  color: blue;\n"]);
 
     _templateObject4 = function _templateObject4() {
       return data;
@@ -380,7 +390,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject3() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: sf mono;\n  font-size: 38px;\n  width: 200px;\n  height: 38px;\n  margin: 0 auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background-color: orange;\n  border: none;\n  border-radius: 5px;\n  color: blue;\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: 50%;\n  top: 25%;\n  height: ", ";\n  width: 200px;\n  background-color: ", ";\n  z-index: 99;\n  p {\n    color: brown;\n  }\n"]);
 
     _templateObject3 = function _templateObject3() {
       return data;
@@ -390,7 +400,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject2() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: 50%;\n  top: 25%;\n  height: ", ";\n  width: 200px;\n  background-color: green;\n  z-index: 99;\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute\n  top: 50%\n  height: 200px\n  width: 100%\n  margin-top: -130px\n  padding: 30px\n  background-color: ", "\n\n  h1 {\n    color: yellow;\n    position: absolute;\n    top: -150px;\n    left: 100px;\n    text-align: center;\n    vertical-align: middle;\n    font-size: 84px;\n    font-family: sf mono;\n  }\n"]);
 
     _templateObject2 = function _templateObject2() {
       return data;
@@ -400,7 +410,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  height: 200px;\n  width: 100%;\n  margin-top: -130px;\n  padding: 30px;\n  background-color: blue;\n\n"]);
+    var data = _taggedTemplateLiteral(["\nbody  {\n    background-color: ", "\n  }\n"]);
 
     _templateObject = function _templateObject() {
       return data;
@@ -429,38 +439,45 @@ function (module, __webpack_exports__, __webpack_require__) {
   ** Eric J Foster, MIT License.
   **
   **/
-  // import venus from '../../../js/src/Form/Venus'
 
+
+  var __ = window.global;
 
   _Valence__WEBPACK_IMPORTED_MODULE_0__["Valence"].config({
     shadowByDefault: false
-  }); //
+  });
 
+  var blue = '#0057ff';
+  var yellow = '#ffc700';
+  var tomato = '#ff4500';
+  var green = '#17a637'; //global styles..
+
+  __(_templateObject(), tomato);
 
   var Box = div({
     className: 'boxy'
-  })(_templateObject());
-  var MyDiv = div(_templateObject2(), function (_ref) {
+  })(_templateObject2(), blue);
+  var MyDiv = div(_templateObject3(), function (_ref) {
     var shadow = _ref.shadow;
     return shadow ? '100px' : '700px';
-  });
+  }, green);
   var MyInput = input({
     placeholder: 'onsearch',
     type: 'text',
     className: 'myput',
     shadow: true
-  })(_templateObject3());
+  })(_templateObject4());
   var Fluid = div({
     className: 'container-fluid',
     shadow: false,
     id: 'hwhatthe'
-  })(_templateObject4()); // attribute for inner button text.....
+  })(_templateObject5()); // attribute for inner button text.....
 
   var Thing = button({
     id: 'buttonThing',
     type: 'submit',
     label: 'press'
-  })(_templateObject5(), function (_ref2) {
+  })(_templateObject6(), function (_ref2) {
     var myAtty = _ref2.myAtty;
     return myAtty;
   }); //
@@ -468,7 +485,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   var Thing2 = extend(Thing, {
     id: 'thing2',
     label: 'press me!'
-  })(_templateObject6(), function (_ref3) {
+  })(_templateObject7(), tomato, function (_ref3) {
     var attrib = _ref3.attrib;
     return attrib;
   }, function (_ref4) {
@@ -479,7 +496,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   var MyName = function MyName() {
     return x("div", null, x(Box, null, x(MyDiv, {
       shadow: false
-    }), x(Thing, {
+    }, x("h1", null, "Yesserri!"), x("p", null, "I'm inside a custom element!")), x(Thing, {
       myAtty: "75px",
       shadow: false
     }), x("p", null, "What is happening"), x(MyInput, null), x("h1", {
@@ -557,43 +574,31 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__);
+  var _js_src_Form_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(32);
   /* harmony import */
 
 
-  var _js_src_Form_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+  var _js_src_Component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38);
   /* harmony import */
 
 
-  var _js_src_Component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13);
+  var _js_src_Events__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _js_src_Events__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
+  var _js_src_Errors_Errors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(52);
   /* harmony import */
 
 
-  var _js_src_Errors_Errors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(26);
+  var _js_src_Props_Props__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(36);
   /* harmony import */
 
 
-  var _js_src_Props_Props__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
+  var _js_src_Props_PropTypes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(37);
   /* harmony import */
 
 
-  var _js_src_Props_PropTypes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
-  /* harmony import */
-
-
-  var _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(14);
-  /* harmony reexport (safe) */
-
-
-  __webpack_require__.d(__webpack_exports__, "Venus", function () {
-    return _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"];
-  });
+  var _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(39);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -708,15 +713,15 @@ function (module, __webpack_exports__, __webpack_require__) {
   window.dir = console.dir;
   window.log = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["log"]; //Globalize venus functions for convenience...
 
+  window.global = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].global;
   window.extend = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].extend; // Globalize style elements for convenience...
 
   window.div = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].div;
-  window.div_ = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].div_;
   window.input = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].input;
   window.button = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].button;
   window.p = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].p;
   window.h1 = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].h1;
-  window.h6 = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].h6; // The framework's entry class...
+  window.h6 = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].h6; // The framework's API class...
 
   var Valence =
   /*#__PURE__*/
@@ -933,11 +938,5171 @@ function (module, exports) {
 /* 4 */
 
 /***/
-function (module, exports) {
-  throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/ericfoster/Documents/Developer/Javascript/Valence/js/src/Utilities/helpers.js: Unexpected token (134:3)\n\n\x1B[0m \x1B[90m 132 | \x1B[39m\x1B[0m\n\x1B[0m \x1B[90m 133 | \x1B[39m\x1B[90m// A function for converting a unicode string into a kebabCase string...\x1B[39m\x1B[0m\n\x1B[0m\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 134 | \x1B[39m\x1B[33m<<\x1B[39m\x1B[33m<<\x1B[39m\x1B[33m<<\x1B[39m\x1B[33m<\x1B[39m \x1B[33mHEAD\x1B[39m\x1B[0m\n\x1B[0m \x1B[90m     | \x1B[39m   \x1B[31m\x1B[1m^\x1B[22m\x1B[39m\x1B[0m\n\x1B[0m \x1B[90m 135 | \x1B[39m\x1B[36mexport\x1B[39m \x1B[36mconst\x1B[39m _shishKebab \x1B[33m=\x1B[39m(string)\x1B[33m=>\x1B[39m\x1B[0m\n\x1B[0m \x1B[90m 136 | \x1B[39m\x1B[33m===\x1B[39m\x1B[33m===\x1B[39m\x1B[33m=\x1B[39m\x1B[0m\n\x1B[0m \x1B[90m 137 | \x1B[39m\x1B[36mconst\x1B[39m _shishKebab \x1B[33m=\x1B[39m(string)\x1B[33m=>\x1B[39m\x1B[0m\n    at Object.raise (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3831:17)\n    at Object.unexpected (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:5143:16)\n    at Object.jsxParseIdentifier (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3332:12)\n    at Object.jsxParseNamespacedName (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3342:23)\n    at Object.jsxParseElementName (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3353:21)\n    at Object.jsxParseOpeningElementAt (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3438:22)\n    at Object.jsxParseElementAt (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3471:33)\n    at Object.jsxParseElement (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3540:17)\n    at Object.parseExprAtom (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:3547:19)\n    at Object.parseExprSubscripts (/Users/ericfoster/Documents/Developer/Javascript/Valence/docs/node_modules/@babel/parser/lib/index.js:5862:23)");
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "venusComponentNamesRE", function () {
+    return venusComponentNamesRE;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "piper", function () {
+    return piper;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "propNames", function () {
+    return propNames;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "propsArray", function () {
+    return propsArray;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "lowerCaseListeners3", function () {
+    return lowerCaseListeners3;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "lowerCaseListeners2", function () {
+    return lowerCaseListeners2;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "lowerCaseListeners1", function () {
+    return lowerCaseListeners1;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "isolateEventListeners", function () {
+    return isolateEventListeners;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "sansON", function () {
+    return sansON;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "removePrefixFromListeners", function () {
+    return removePrefixFromListeners;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "removeEventListeners", function () {
+    return removeEventListeners;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "removeExistingAttributes", function () {
+    return removeExistingAttributes;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "processEventListeners", function () {
+    return processEventListeners;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "extractCustomProps", function () {
+    return extractCustomProps;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "extractCustomPropNames", function () {
+    return extractCustomPropNames;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "processProps", function () {
+    return processProps;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "processData", function () {
+    return processData;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "_shishKebab", function () {
+    return _shishKebab;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "convertFuncNameToTagName", function () {
+    return convertFuncNameToTagName;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "extractFunctionName", function () {
+    return extractFunctionName;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "combineObjects", function () {
+    return combineObjects;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "capitalizeAndRemoveHyphen", function () {
+    return capitalizeAndRemoveHyphen;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "uniqueCustomEventString", function () {
+    return uniqueCustomEventString;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "included", function () {
+    return included;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "template", function () {
+    return template;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "replicator", function () {
+    return replicator;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "splitFilter", function () {
+    return splitFilter;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "reAssembleTemplates", function () {
+    return reAssembleTemplates;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "applyInterpolations", function () {
+    return applyInterpolations;
+  });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "separateStyleRules", function () {
+    return separateStyleRules;
+  });
+  /* harmony import */
+
+
+  var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+  /* harmony import */
+
+
+  var lodash_words__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+  /* harmony import */
+
+
+  var lodash_words__WEBPACK_IMPORTED_MODULE_2___default =
+  /*#__PURE__*/
+  __webpack_require__.n(lodash_words__WEBPACK_IMPORTED_MODULE_2__);
+  /* harmony import */
+
+
+  var elementsJS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(24);
+  /* harmony import */
+
+
+  var elementsJS__WEBPACK_IMPORTED_MODULE_3___default =
+  /*#__PURE__*/
+  __webpack_require__.n(elementsJS__WEBPACK_IMPORTED_MODULE_3__);
+  /* harmony reexport (safe) */
+
+
+  __webpack_require__.d(__webpack_exports__, "el", function () {
+    return elementsJS__WEBPACK_IMPORTED_MODULE_3__["el"];
+  });
+  /* harmony reexport (safe) */
+
+
+  __webpack_require__.d(__webpack_exports__, "dom", function () {
+    return elementsJS__WEBPACK_IMPORTED_MODULE_3__["dom"];
+  });
+  /* harmony reexport (safe) */
+
+
+  __webpack_require__.d(__webpack_exports__, "log", function () {
+    return elementsJS__WEBPACK_IMPORTED_MODULE_3__["log"];
+  });
+  /* harmony reexport (safe) */
+
+
+  __webpack_require__.d(__webpack_exports__, "inspect", function () {
+    return elementsJS__WEBPACK_IMPORTED_MODULE_3__["inspect"];
+  });
+
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof(obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function _typeof(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      var ownKeys = Object.keys(source);
+
+      if (typeof Object.getOwnPropertySymbols === 'function') {
+        ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+        }));
+      }
+
+      ownKeys.forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    }
+
+    return target;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  Utilities.js
+  
+  A file containing utility functions to aid in the functional
+  nature of Valence...
+  
+  Eric James Foster, MIT License.
+  */
+  // Get data...
+  // Get Is...
+  // Get words from lodash...
+  // Get and send some utils from elementsJS...
+  // a Regular expression for extracting component names from a function's
+  // source code...
+
+
+  var venusComponentNamesRE = function venusComponentNamesRE() {
+    return /(\([A-Z]\w*-?)+/g;
+  };
+
+  var piper = function piper() {
+    for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
+      fns[_key] = arguments[_key];
+    }
+
+    return function (arg) {
+      return fns.reduce(function (value, fn) {
+        return fn(value);
+      }, arg);
+    };
+  }; // Returns an array of prop names...
+
+
+  var propNames = function propNames(props) {
+    return Object.keys(props);
+  }; // Get an array of key value pairs from the attributes object...
+
+
+  var propsArray = function propsArray(attribs) {
+    return Object.entries(attribs);
+  }; // Create a new array with all event listeners lower-cased...
+
+
+  var lowerCaseListeners3 = function lowerCaseListeners3(arr) {
+    return arr.map(function (entry) {
+      return [entry[0].toLowerCase(), entry[0], entry[1]];
+    });
+  }; // Create a new array with all event listeners lower-cased...
+
+
+  var lowerCaseListeners2 = function lowerCaseListeners2(arr) {
+    return arr.map(function (entry) {
+      return [entry[0].toLowerCase(), entry[1]];
+    });
+  }; // Create a new array with all event listeners lower-cased...
+
+
+  var lowerCaseListeners1 = function lowerCaseListeners1(arr) {
+    return arr.map(function (entry) {
+      return entry.toLowerCase();
+    });
+  }; // Create a new array with event listeners and their callback functions...
+
+
+  var isolateEventListeners = function isolateEventListeners(arr) {
+    return arr.filter(function (entry) {
+      return _data__WEBPACK_IMPORTED_MODULE_0__["DATA"].DOMElementEvents.indexOf(entry[0]) != -1;
+    });
+  }; // A function for removing the `on` from event listeners...
+
+
+  var sansON = function sansON(name) {
+    return name.slice(2).toLowerCase();
+  }; // Create a new array with the `on` removed from the event listener names...
+
+
+  var removePrefixFromListeners = function removePrefixFromListeners(arr) {
+    return arr.map(function (entry) {
+      return [sansON(entry[0]), entry[1], entry[2]];
+    });
+  }; // Create a new array without the  event listeners and their callback functions...
+
+
+  var removeEventListeners = function removeEventListeners(arr) {
+    return arr.filter(function (entry) {
+      return _data__WEBPACK_IMPORTED_MODULE_0__["DATA"].DOMElementEvents.indexOf(_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(entry) ? entry[0] : entry) == -1;
+    });
+  }; // Remove non-custom attributes...
+
+
+  var removeExistingAttributes = function removeExistingAttributes(arr) {
+    return arr.filter(function (entry) {
+      return _data__WEBPACK_IMPORTED_MODULE_0__["DATA"].HTMLAttributes.indexOf(_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(entry) ? entry[0] : entry) == -1;
+    });
+  }; // Process event listener attributes...
+
+
+  var processEventListeners = function processEventListeners(arr) {
+    return piper(lowerCaseListeners3, isolateEventListeners, removePrefixFromListeners)(arr);
+  }; // Process attribute data...
+
+
+  var extractCustomProps = function extractCustomProps(arr) {
+    return piper(lowerCaseListeners2, removeEventListeners, removeExistingAttributes)(arr);
+  }; // Process attribute data...
+
+
+  var extractCustomPropNames = function extractCustomPropNames(arr) {
+    return piper(lowerCaseListeners1, removeEventListeners, removeExistingAttributes)(arr);
+  }; // NOT CURRENTLY IN USE...
+  // Process attribute data...
+
+
+  var processProps = function processProps(arr) {
+    return piper(lowerCaseListeners2, removeEventListeners)(arr);
+  }; // Create an object from the isolated event listener array, and the array width
+  // the listeners removed...
+
+
+  var processData = function processData(arr) {
+    return {
+      // The following object contains 2 arrays, 1 of the event listener attributes, appendChild
+      // one of the remaining attributes...
+      'eventListeners': processEventListeners(arr),
+      'props': extractCustomProps(arr)
+    };
+  }; // A function for converting a unicode string into a kebabCase string...
+
+
+  var _shishKebab = function _shishKebab(string) {
+    return lodash_words__WEBPACK_IMPORTED_MODULE_2___default()(string).reduce(function (result, word, ix) {
+      return result + (ix ? '-' : '') + word.toLowerCase();
+    }, '');
+  }; // A function for converting the func name to a custom tag name...
+
+
+  var convertFuncNameToTagName = function convertFuncNameToTagName(func) {
+    return _shishKebab(func).indexOf('-') !== -1 ? _shishKebab(func) : "".concat(func.toLowerCase(), "-");
+  }; // NO LONGER USED: Use Function.name instead... duh..
+  // Function for extracting the func name from the function statement of the
+  // function that called createElement...
+
+
+  var extractFunctionName = function extractFunctionName(element) {
+    return functionRegExp.exec(element.toString()).toString().replace(functArgRegExp, '');
+  }; // A function for combining to Props objects into 1 new object...
+
+
+  var combineObjects = function combineObjects(obj1, obj2) {
+    return _objectSpread({}, obj1, obj2);
+  }; // Removes the hyphen at the end of the component tag name...
+
+
+  var capitalizeAndRemoveHyphen = function capitalizeAndRemoveHyphen(name) {
+    return name[0].toUpperCase() + name.slice(1, name.length - 1);
+  }; // Creates a unique custom event string for individual venus element instantiation
+  // notification...
+
+
+  var uniqueCustomEventString = function uniqueCustomEventString(tagName) {
+    return "venus".concat(capitalizeAndRemoveHyphen(tagName), "ElementInstantiated");
+  }; // A small helper function for determining if a given string is in a given array..
+
+
+  var included = function included(string, array) {
+    if (array.indexOf(string) > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }; // A node.js code templating function. The function takes a string of code, and
+  // an object containing replacement values.
+
+
+  var template = function template(obj, code) {
+    // Replacement regexp...
+    var replaceRE = /\|\|\w+\|\|/,
+        variableRE = /\w+/,
+        variable,
+        tuple,
+        match,
+        temp; // If we find a replacement match,
+
+    if (replaceRE.test(code)) {
+      // store it...
+      match = replaceRE.exec(code)[1]; // extract the variable from the match...
+
+      variable = variableRE.exec(match)[1]; // Replace it in the original code with...
+
+      temp = code.replace(match, variable); // Call function again to be sure we don't have anymore matches...
+
+      template(temp, obj);
+    } else {
+      // load tuple with UppercaseName and code...
+      tuple.push(obj.UppercaseName);
+      tuple.push(code);
+      return tuple;
+    }
+  }; // A node.js function for filling out and returning in an array, templates, given an array
+  // of replacement objects and a template....
+
+
+  var replicator = function replicator(objArray, template) {
+    var loaded, loadedArray; // Load each template using the above template function...
+
+    objArray.forEach(function (obj) {
+      loaded = loader(obj, template);
+      loadedArray.push(loaded);
+    }); // Return the array...
+
+    return loadedArray;
+  }; // An array filter function, which splits the array into 2 new arrays.. Those that
+  // agree with the given boolean, and those that do not...
+
+
+  var splitFilter = function splitFilter(array, bool) {
+    var t = [],
+        f = []; // Iterate over the array...
+
+    array.forEach(function (i) {
+      if (bool(i)) {
+        t.push(i);
+      } else {
+        f.push(i);
+      }
+    }); // Return a tuple of both arrays...
+
+    return {
+      true: t,
+      false: f
+    };
+  };
+  /* A helper function for processing tagged template literal interpolation functions,
+  and inserting their values back into the template.... The function takes an array
+  of strings and an array of functions as arguments, and returns the completed
+  template string....*/
+
+
+  var reAssembleTemplates = function reAssembleTemplates(arrStrings, arrFuncs, props) {
+    return (// We need to execute them with the props object, and add the value into the template...
+      arrStrings.map(function (string, i) {
+        var val;
+        /*
+        Since the interpolation functions (refs) array will always be 1 shorter in length than
+        the strings array, The last index will be undefined if we are iterating based on 'string's'
+        indeces. So, we make sure that  we don't try to execute an undefined function by skipping
+        the last index.....
+        */
+
+        if (i < arrStrings.length - 1) {
+          // If we have a function...
+          if (typeof arrFuncs[i] === 'function') {
+            // Execute it with props passed in...
+            val = arrFuncs[i](props); // Or, if we have a string...
+          } else if (typeof arrFuncs[i] === 'string') {
+            // We can just insert it into the template....
+            val = arrFuncs[i]; // Otherwise, I don't know what the hell we're dealing with..... Better off
+            // throwing an error!
+          } else {
+            throw TypeError("Expecting a 'string' or a 'function' here. A value of type: ".concat(_typeof(arrFuncs[i]), ", was given."));
+          }
+        } else {
+          val = ' ';
+        } // Add ref function values to array strings, join them...
+
+
+        return string.concat('', val);
+      }).join('')
+    );
+  };
+  /*
+  A combination of two of the above functions, this function serves to activate prop
+  function interpolations in css styling... The function simply takes a tagged template
+  literal as an argument, and spits out completed styles, ready for appending to a style tag...
+  */
+
+
+  var applyInterpolations = function applyInterpolations(taggedTempLit, props) {
+    // Declare var for splitting strings and functions into respective arrays...
+    var arrays = splitFilter(taggedTempLit, function (index) {
+      return _Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(index);
+    }); // Reassemble the css literals...
+
+    return reAssembleTemplates(arrays.true[0], arrays.false, props);
+  };
+  /*
+  A helper function that takes a string containing css rules and splits them up
+  into individual rule/strings and appends them to an array. An array of rules
+  is returned...
+  */
+
+
+  var separateStyleRules = function separateStyleRules(css) {
+    return (// Below we are using a regular expression, returning an array of all of it's matches....
+      css.match(/[^\s\{][^\{]*\{[^\}]*\}/g)
+    );
+  };
   /***/
+
 },
 /* 5 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "DATA", function () {
+    return DATA;
+  });
+  /*
+  data.js
+  
+  A file to hold information about HTML
+  Elements...
+  
+  Eric James Foster, MIT License.
+  */
+
+
+  var DATA = {
+    DOMElementEvents: ['onabort', 'onauxclick', 'onbeforecopy', 'onbeforecut', 'onbeforepaste', 'onblur', 'oncancel', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'ongotpointercapture', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onlostpointercapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpointercancel', 'onpointerdown', 'onpointerenter', 'onpointerleave', 'onpointermove', 'onpointerout', 'onpointerover', 'onpointerup', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onsearch', 'onseeked', 'onseeking', 'onselect', 'onselectstart', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'onvolumechange', 'onwaiting', 'onwebkitfullscreenchange', 'onwebkitfullscreenerror', 'onwheel'],
+    HTMLAttributes: ['accept', 'accept-charset', 'accesskey', 'action', 'align', 'alt', 'async', 'autocomplete', 'autofocus', 'autoplay', 'bgcolor', 'border', 'charset', 'checked', 'cite', 'class', 'classname', 'color', 'cols', 'colspan', 'content', 'contenteditable', 'contextmenu', 'controls', 'coords', 'data', 'datetime', 'default', 'defer', 'dir', 'dirname', 'disabled', 'download', 'draggable', 'dropzone', 'enctype', 'for', 'form', 'formaction', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'http-equiv', 'id', 'ismap', 'kind', 'label', 'lang', 'list', 'loop', 'low', 'max', 'maxlength', 'media', 'method', 'min', 'multiple', 'muted', 'name', 'novalidate', 'onabort', 'onafterprint', 'onbeforeprint', 'onbeforeunload', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onhashchange', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmousedown', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onoffline', 'ononline', 'onpagehide', 'onpageshow', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpopstate', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onsearch', 'onseeked', 'onseeking', 'onselect', 'onshow', 'onst', 'onstorage', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'onunload', 'onvolumechange', 'onwaiting', 'onwheel', 'open', 'optimum', 'pattern', 'placeholder', 'poster', 'preload', 'readonly', 'rel', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'selected', 'shape', 'size', 'sizes', 'span', 'spellcheck', 'src', 'srcdoc', 'srclang', 'srcset', 'start', 'step', 'style', 'tabindex', 'target', 'title', 'translate', 'type', 'usemap', 'value', 'width', 'wrap'],
+    ComponentLifecycleEvents: ['componentWillMount', 'componentWillUnmount', 'componentDidMount', 'componentDidUnmount', 'componentWillUpdate', 'componentDidUpdate', 'componentWillReceiveProps'],
+    venusComponentElements: [{
+      UppercaseName: 'Area',
+      name: 'area'
+    }, {
+      UppercaseName: 'Col',
+      name: 'col'
+    }, {
+      UppercaseName: 'Aside',
+      name: 'aside'
+    }, {
+      UppercaseName: 'Colgroup',
+      name: 'colgroup'
+    }, {
+      UppercaseName: 'Footer',
+      name: 'footer'
+    }, {
+      UppercaseName: 'Header',
+      name: 'header'
+    }, {
+      UppercaseName: 'H2',
+      name: 'h2'
+    }, {
+      UppercaseName: 'H3',
+      name: 'h3'
+    }, {
+      UppercaseName: 'H4',
+      name: 'h4'
+    }, {
+      UppercaseName: 'H5',
+      name: 'h5'
+    }, {
+      UppercaseName: 'H6',
+      name: 'h6'
+    }, {
+      UppercaseName: 'Section',
+      name: 'section'
+    }, {
+      UppercaseName: 'Span',
+      name: 'span'
+    }, {
+      UppercaseName: 'Table',
+      name: 'table'
+    }, {
+      UppercaseName: 'Textarea',
+      name: 'textarea'
+    }]
+  };
+  /***/
+},
+/* 6 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Is", function () {
+    return Is;
+  });
+  /* harmony import */
+
+
+  var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof(obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function _typeof(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+  /*
+  Is.js
+  
+  A file containing a small type checking utility library...
+  
+  Eric James Foster, MIT License.
+  */
+  // Get data...
+
+
+  var Is =
+  /*#__PURE__*/
+  function () {
+    function Is() {
+      _classCallCheck(this, Is);
+    }
+
+    _createClass(Is, null, [{
+      key: "eventListener",
+      // Determines whether or not a prop is an event listener...
+      value: function eventListener(name) {
+        return /on[A-Z]\w*/g.test(name) || _data__WEBPACK_IMPORTED_MODULE_0__["DATA"].DOMElementEvents.indexOf(name.toLowerCase()) !== -1;
+      } // Determines whether or not an attribute name is custom or not...
+
+    }, {
+      key: "newPropName",
+      value: function newPropName() {
+        return _data__WEBPACK_IMPORTED_MODULE_0__["DATA"].HTMLAttributes.indexOf(name.toLowerCase()) === -1;
+      } // NOT CURRENTLY IN USE...
+      // A boolean function for determining if a func has called for the first time...
+
+    }, {
+      key: "newFunction",
+      value: function newFunction(funcs, func) {
+        return funcs.indexOf(func) == -1;
+      } // Simple convenience function for determining if a value is
+      // undefined or not...
+
+    }, {
+      key: "undefined",
+      value: function undefined(val) {
+        return typeof val === 'undefined';
+      } // Simple convenience function for determining if a value is
+      // an object or not...
+
+    }, {
+      key: "object",
+      value: function object(val) {
+        return _typeof(val) === 'object';
+      } // Simple convenience function for determining if a value is
+      // a number or not...
+
+    }, {
+      key: "number",
+      value: function number(val) {
+        return typeof val === 'number';
+      } // Simple convenience function for determining if a value is
+      // a string or not...
+
+    }, {
+      key: "string",
+      value: function string(val) {
+        return typeof val === 'string';
+      } // Simple convenience function for determining if a value is
+      // a function or not...
+
+    }, {
+      key: "function",
+      value: function _function(val) {
+        return typeof val === 'function';
+      } // Simple convenience function for determining if a value is
+      // a symbol or not...
+
+    }, {
+      key: "symbol",
+      value: function symbol(val) {
+        return _typeof(val) === 'symbol';
+      } // Simple convenience function for determining if a value is
+      // a boolean or not...
+
+    }, {
+      key: "boolean",
+      value: function boolean(val) {
+        return typeof val === 'boolean';
+      } // A simple convenience function for determining if a value is
+      // a class or not...
+
+    }, {
+      key: "class",
+      value: function _class(val) {
+        return /_classCallCheck/.test(String(val));
+      } // A simple convenience function for determining if a value is
+      // a component or not...
+
+    }, {
+      key: "component",
+      value: function component(tagName) {
+        return !tagName.indexOf('-') === -1 && true;
+      } // A simple convenience function for determining if a value is
+      // a function or not...
+
+    }, {
+      key: "array",
+      value: function array(val) {
+        return Array.isArray(val);
+      } // A function for confirming same type...
+
+    }, {
+      key: "kin",
+      value: function kin(val1, val2) {
+        return _typeof(val1) === _typeof(val2);
+      } // A function for determining whether or not a propType is Required...
+
+    }, {
+      key: "requiredProp",
+      value: function requiredProp(types) {
+        return types.length === 1;
+      } // A function for determining if a tagged template literal has interpolations...
+
+    }, {
+      key: "interpolated",
+      value: function interpolated(tagTempLit) {
+        return tagTempLit.length > 1;
+      }
+    }]);
+
+    return Is;
+  }();
+  /***/
+
+},
+/* 7 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var asciiWords = __webpack_require__(8),
+      hasUnicodeWord = __webpack_require__(9),
+      toString = __webpack_require__(10),
+      unicodeWords = __webpack_require__(23);
+  /**
+   * Splits `string` into an array of its words.
+   *
+   * @static
+   * @memberOf _
+   * @since 3.0.0
+   * @category String
+   * @param {string} [string=''] The string to inspect.
+   * @param {RegExp|string} [pattern] The pattern to match words.
+   * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+   * @returns {Array} Returns the words of `string`.
+   * @example
+   *
+   * _.words('fred, barney, & pebbles');
+   * // => ['fred', 'barney', 'pebbles']
+   *
+   * _.words('fred, barney, & pebbles', /[^, ]+/g);
+   * // => ['fred', 'barney', '&', 'pebbles']
+   */
+
+
+  function words(string, pattern, guard) {
+    string = toString(string);
+    pattern = guard ? undefined : pattern;
+
+    if (pattern === undefined) {
+      return hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
+    }
+
+    return string.match(pattern) || [];
+  }
+
+  module.exports = words;
+  /***/
+},
+/* 8 */
+
+/***/
+function (module, exports) {
+  /** Used to match words composed of alphanumeric characters. */
+  var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
+  /**
+   * Splits an ASCII `string` into an array of its words.
+   *
+   * @private
+   * @param {string} The string to inspect.
+   * @returns {Array} Returns the words of `string`.
+   */
+
+  function asciiWords(string) {
+    return string.match(reAsciiWord) || [];
+  }
+
+  module.exports = asciiWords;
+  /***/
+},
+/* 9 */
+
+/***/
+function (module, exports) {
+  /** Used to detect strings that need a more robust regexp to match words. */
+  var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
+  /**
+   * Checks if `string` contains a word composed of Unicode symbols.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {boolean} Returns `true` if a word is found, else `false`.
+   */
+
+  function hasUnicodeWord(string) {
+    return reHasUnicodeWord.test(string);
+  }
+
+  module.exports = hasUnicodeWord;
+  /***/
+},
+/* 10 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var baseToString = __webpack_require__(11);
+  /**
+   * Converts `value` to a string. An empty string is returned for `null`
+   * and `undefined` values. The sign of `-0` is preserved.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to convert.
+   * @returns {string} Returns the converted string.
+   * @example
+   *
+   * _.toString(null);
+   * // => ''
+   *
+   * _.toString(-0);
+   * // => '-0'
+   *
+   * _.toString([1, 2, 3]);
+   * // => '1,2,3'
+   */
+
+
+  function toString(value) {
+    return value == null ? '' : baseToString(value);
+  }
+
+  module.exports = toString;
+  /***/
+},
+/* 11 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var Symbol = __webpack_require__(12),
+      arrayMap = __webpack_require__(16),
+      isArray = __webpack_require__(17),
+      isSymbol = __webpack_require__(18);
+  /** Used as references for various `Number` constants. */
+
+
+  var INFINITY = 1 / 0;
+  /** Used to convert symbols to primitives and strings. */
+
+  var symbolProto = Symbol ? Symbol.prototype : undefined,
+      symbolToString = symbolProto ? symbolProto.toString : undefined;
+  /**
+   * The base implementation of `_.toString` which doesn't convert nullish
+   * values to empty strings.
+   *
+   * @private
+   * @param {*} value The value to process.
+   * @returns {string} Returns the string.
+   */
+
+  function baseToString(value) {
+    // Exit early for strings to avoid a performance hit in some environments.
+    if (typeof value == 'string') {
+      return value;
+    }
+
+    if (isArray(value)) {
+      // Recursively convert values (susceptible to call stack limits).
+      return arrayMap(value, baseToString) + '';
+    }
+
+    if (isSymbol(value)) {
+      return symbolToString ? symbolToString.call(value) : '';
+    }
+
+    var result = value + '';
+    return result == '0' && 1 / value == -INFINITY ? '-0' : result;
+  }
+
+  module.exports = baseToString;
+  /***/
+},
+/* 12 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var root = __webpack_require__(13);
+  /** Built-in value references. */
+
+
+  var Symbol = root.Symbol;
+  module.exports = Symbol;
+  /***/
+},
+/* 13 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var freeGlobal = __webpack_require__(14);
+  /** Detect free variable `self`. */
+
+
+  var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+  /** Used as a reference to the global object. */
+
+  var root = freeGlobal || freeSelf || Function('return this')();
+  module.exports = root;
+  /***/
+},
+/* 14 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  /* WEBPACK VAR INJECTION */
+  (function (global) {
+    /** Detect free variable `global` from Node.js. */
+    var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+    module.exports = freeGlobal;
+    /* WEBPACK VAR INJECTION */
+  }).call(this, __webpack_require__(15));
+  /***/
+},
+/* 15 */
+
+/***/
+function (module, exports) {
+  var g; // This works in non-strict mode
+
+  g = function () {
+    return this;
+  }();
+
+  try {
+    // This works if eval is allowed (see CSP)
+    g = g || new Function("return this")();
+  } catch (e) {
+    // This works if the window reference is available
+    if (typeof window === "object") g = window;
+  } // g can still be undefined, but nothing to do about it...
+  // We return undefined, instead of nothing here, so it's
+  // easier to handle this case. if(!global) { ...}
+
+
+  module.exports = g;
+  /***/
+},
+/* 16 */
+
+/***/
+function (module, exports) {
+  /**
+   * A specialized version of `_.map` for arrays without support for iteratee
+   * shorthands.
+   *
+   * @private
+   * @param {Array} [array] The array to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @returns {Array} Returns the new mapped array.
+   */
+  function arrayMap(array, iteratee) {
+    var index = -1,
+        length = array == null ? 0 : array.length,
+        result = Array(length);
+
+    while (++index < length) {
+      result[index] = iteratee(array[index], index, array);
+    }
+
+    return result;
+  }
+
+  module.exports = arrayMap;
+  /***/
+},
+/* 17 */
+
+/***/
+function (module, exports) {
+  /**
+   * Checks if `value` is classified as an `Array` object.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+   * @example
+   *
+   * _.isArray([1, 2, 3]);
+   * // => true
+   *
+   * _.isArray(document.body.children);
+   * // => false
+   *
+   * _.isArray('abc');
+   * // => false
+   *
+   * _.isArray(_.noop);
+   * // => false
+   */
+  var isArray = Array.isArray;
+  module.exports = isArray;
+  /***/
+},
+/* 18 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var baseGetTag = __webpack_require__(19),
+      isObjectLike = __webpack_require__(22);
+  /** `Object#toString` result references. */
+
+
+  var symbolTag = '[object Symbol]';
+  /**
+   * Checks if `value` is classified as a `Symbol` primitive or object.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+   * @example
+   *
+   * _.isSymbol(Symbol.iterator);
+   * // => true
+   *
+   * _.isSymbol('abc');
+   * // => false
+   */
+
+  function isSymbol(value) {
+    return typeof value == 'symbol' || isObjectLike(value) && baseGetTag(value) == symbolTag;
+  }
+
+  module.exports = isSymbol;
+  /***/
+},
+/* 19 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var Symbol = __webpack_require__(12),
+      getRawTag = __webpack_require__(20),
+      objectToString = __webpack_require__(21);
+  /** `Object#toString` result references. */
+
+
+  var nullTag = '[object Null]',
+      undefinedTag = '[object Undefined]';
+  /** Built-in value references. */
+
+  var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+  /**
+   * The base implementation of `getTag` without fallbacks for buggy environments.
+   *
+   * @private
+   * @param {*} value The value to query.
+   * @returns {string} Returns the `toStringTag`.
+   */
+
+  function baseGetTag(value) {
+    if (value == null) {
+      return value === undefined ? undefinedTag : nullTag;
+    }
+
+    return symToStringTag && symToStringTag in Object(value) ? getRawTag(value) : objectToString(value);
+  }
+
+  module.exports = baseGetTag;
+  /***/
+},
+/* 20 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  var Symbol = __webpack_require__(12);
+  /** Used for built-in method references. */
+
+
+  var objectProto = Object.prototype;
+  /** Used to check objects for own properties. */
+
+  var hasOwnProperty = objectProto.hasOwnProperty;
+  /**
+   * Used to resolve the
+   * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+   * of values.
+   */
+
+  var nativeObjectToString = objectProto.toString;
+  /** Built-in value references. */
+
+  var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+  /**
+   * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+   *
+   * @private
+   * @param {*} value The value to query.
+   * @returns {string} Returns the raw `toStringTag`.
+   */
+
+  function getRawTag(value) {
+    var isOwn = hasOwnProperty.call(value, symToStringTag),
+        tag = value[symToStringTag];
+
+    try {
+      value[symToStringTag] = undefined;
+      var unmasked = true;
+    } catch (e) {}
+
+    var result = nativeObjectToString.call(value);
+
+    if (unmasked) {
+      if (isOwn) {
+        value[symToStringTag] = tag;
+      } else {
+        delete value[symToStringTag];
+      }
+    }
+
+    return result;
+  }
+
+  module.exports = getRawTag;
+  /***/
+},
+/* 21 */
+
+/***/
+function (module, exports) {
+  /** Used for built-in method references. */
+  var objectProto = Object.prototype;
+  /**
+   * Used to resolve the
+   * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+   * of values.
+   */
+
+  var nativeObjectToString = objectProto.toString;
+  /**
+   * Converts `value` to a string using `Object.prototype.toString`.
+   *
+   * @private
+   * @param {*} value The value to convert.
+   * @returns {string} Returns the converted string.
+   */
+
+  function objectToString(value) {
+    return nativeObjectToString.call(value);
+  }
+
+  module.exports = objectToString;
+  /***/
+},
+/* 22 */
+
+/***/
+function (module, exports) {
+  /**
+   * Checks if `value` is object-like. A value is object-like if it's not `null`
+   * and has a `typeof` result of "object".
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+   * @example
+   *
+   * _.isObjectLike({});
+   * // => true
+   *
+   * _.isObjectLike([1, 2, 3]);
+   * // => true
+   *
+   * _.isObjectLike(_.noop);
+   * // => false
+   *
+   * _.isObjectLike(null);
+   * // => false
+   */
+  function isObjectLike(value) {
+    return value != null && typeof value == 'object';
+  }
+
+  module.exports = isObjectLike;
+  /***/
+},
+/* 23 */
+
+/***/
+function (module, exports) {
+  /** Used to compose unicode character classes. */
+  var rsAstralRange = "\\ud800-\\udfff",
+      rsComboMarksRange = "\\u0300-\\u036f",
+      reComboHalfMarksRange = "\\ufe20-\\ufe2f",
+      rsComboSymbolsRange = "\\u20d0-\\u20ff",
+      rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
+      rsDingbatRange = "\\u2700-\\u27bf",
+      rsLowerRange = 'a-z\\xdf-\\xf6\\xf8-\\xff',
+      rsMathOpRange = '\\xac\\xb1\\xd7\\xf7',
+      rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
+      rsPunctuationRange = "\\u2000-\\u206f",
+      rsSpaceRange = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
+      rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
+      rsVarRange = "\\ufe0e\\ufe0f",
+      rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
+  /** Used to compose unicode capture groups. */
+
+  var rsApos = "['\u2019]",
+      rsBreak = '[' + rsBreakRange + ']',
+      rsCombo = '[' + rsComboRange + ']',
+      rsDigits = '\\d+',
+      rsDingbat = '[' + rsDingbatRange + ']',
+      rsLower = '[' + rsLowerRange + ']',
+      rsMisc = '[^' + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + ']',
+      rsFitz = "\\ud83c[\\udffb-\\udfff]",
+      rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
+      rsNonAstral = '[^' + rsAstralRange + ']',
+      rsRegional = "(?:\\ud83c[\\udde6-\\uddff]){2}",
+      rsSurrPair = "[\\ud800-\\udbff][\\udc00-\\udfff]",
+      rsUpper = '[' + rsUpperRange + ']',
+      rsZWJ = "\\u200d";
+  /** Used to compose unicode regexes. */
+
+  var rsMiscLower = '(?:' + rsLower + '|' + rsMisc + ')',
+      rsMiscUpper = '(?:' + rsUpper + '|' + rsMisc + ')',
+      rsOptContrLower = '(?:' + rsApos + '(?:d|ll|m|re|s|t|ve))?',
+      rsOptContrUpper = '(?:' + rsApos + '(?:D|LL|M|RE|S|T|VE))?',
+      reOptMod = rsModifier + '?',
+      rsOptVar = '[' + rsVarRange + ']?',
+      rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
+      rsOrdLower = '\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])',
+      rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])',
+      rsSeq = rsOptVar + reOptMod + rsOptJoin,
+      rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq;
+  /** Used to match complex or compound words. */
+
+  var reUnicodeWord = RegExp([rsUpper + '?' + rsLower + '+' + rsOptContrLower + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')', rsMiscUpper + '+' + rsOptContrUpper + '(?=' + [rsBreak, rsUpper + rsMiscLower, '$'].join('|') + ')', rsUpper + '?' + rsMiscLower + '+' + rsOptContrLower, rsUpper + '+' + rsOptContrUpper, rsOrdUpper, rsOrdLower, rsDigits, rsEmoji].join('|'), 'g');
+  /**
+   * Splits a Unicode `string` into an array of its words.
+   *
+   * @private
+   * @param {string} The string to inspect.
+   * @returns {Array} Returns the words of `string`.
+   */
+
+  function unicodeWords(string) {
+    return string.match(reUnicodeWord) || [];
+  }
+
+  module.exports = unicodeWords;
+  /***/
+},
+/* 24 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+
+  var _module$exports;
+
+  var _element = __webpack_require__(25);
+
+  var _element2 = _interopRequireDefault(_element);
+
+  var _httpRequests = __webpack_require__(31);
+
+  var requests = _interopRequireWildcard(_httpRequests);
+
+  var _events = __webpack_require__(29);
+
+  var events = _interopRequireWildcard(_events);
+
+  var _logger = __webpack_require__(26);
+
+  var consol = _interopRequireWildcard(_logger);
+
+  var _utilities = __webpack_require__(28);
+
+  var utils = _interopRequireWildcard(_utilities);
+
+  var _DOM = __webpack_require__(30);
+
+  var DOM = _interopRequireWildcard(_DOM);
+
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    } else {
+      var newObj = {};
+
+      if (obj != null) {
+        for (var key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+        }
+      }
+
+      newObj.default = obj;
+      return newObj;
+    }
+  }
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  Elements.js
+  
+  A JavaScript DOM manipulation/Alias function Library.
+  This is the index file for the library. It contains alias functions for
+  all of the librarys' public functions. This makes it easy to import the
+  functions without a module prefix es6 style.
+  
+  Author: Eric James Foster
+  EMail: maniphestival@gmail.com
+  License: MIT
+  Version: 1.0.0
+  URL: ""
+  */
+  //DONE: elements syntax not working in parenthesis.
+  //FIXME: reg exp did not find element with CSS Selector, <'[class=active]'/>.
+  //FIXME: eJS Interpreter hangs when eJS element is within brackets, and directly adjacent to one of them.
+  //FIXME: cannot create element from variable representing a string.
+  //FIXME: Find out why module imports are printing twice..
+  //FIXME: Figure out why elements in square brackets slow things up...
+  //DONE: Can't put elements in comments.
+  //DONE: HTML interfering with regExp's.
+  //DONE: can't use file blobs with import() func.
+  //DONE: Should be able to use variables inside of elementJS elements.
+  //TODO: make some functions complete operations for arrays automagically, instead of needing .every().
+  //TODO: Make all event functions like once(), .once().
+  //TODO: Complete <elem> syntax docs.
+  //TODO: change apropo methods to properties.
+  //DONE: .sib() does not return element.......
+  //DONE: addClass() method.
+  //DONE: new log.dir() function.
+  //DONE: .src, .href() etc.
+  //DONE: add a class method, remove a class method.
+  //TODO: more .transform() methods.
+  //DONE: += html method.
+  //DONE: transform methods. i.e. this.turnX(), this.turnY.
+  //TODO: .do(), do() animation functionality. (with tween.js?)
+  //DONE: be able to create element object from e.target.....
+  //TODO: getCookie, setCookie, checkCookie functions....
+  //TODO: move functions........
+  //TODO: Needed polyfills.
+  //TODO: element.classList()....
+  //TODO: hover(mouseOverFunc, mouseOutFunc) func.....
+  //TODO: element.name() function.....
+  //TODO: add functionality to make() function to allow creating nameless, id less divs.
+  //TODO: write scroll-snapper plugin,
+  //TODO: list of plug-ins
+  //TODO: touch('start', ()=> {});  touch event function, method..
+  //DONE:0 Complete X-Browser 'style' functions, and implement X-Browser compatibility in EventListener functions.
+  //Index of polyfill for IE...........
+
+
+  if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function (item) {
+      var i = this.length;
+
+      while (i--) {
+        if (this[i] === item) return i;
+      }
+
+      return -1;
+    };
+  }
+
+  var element = function element(el) {
+    if (isDOMElement(el)) {
+      return new _element2.default(el);
+    } else if (utils.isArray(el)) {
+      if (isElement(el[0])) {
+        return new _element2.default(el);
+      } else if (isDOMElement(el[0])) {
+        var arr = [];
+
+        for (var i = 0; i < el.length; i++) {
+          arr.push(new _element2.default(el[i]));
+        }
+
+        return new _element2.default(arr);
+      } else {
+        throw new Error('Invalid Array.');
+      }
+    } else {
+      throw new Error('Invalid Argument.');
+    }
+  };
+
+  var isElement = function isElement(el) {
+    return utils.isElement(el);
+  };
+
+  var isDOMElement = function isDOMElement(el) {
+    return utils.isDOMElement(el);
+  };
+  /*This function copies the prototype object of a superConstructor to the prototype object
+  of a constructor. It functions just like nodes' util.inherits function, it copies methods only,
+  not internal properties.*/
+
+
+  var proto = function proto(construct, superConstruct) {
+    return utils.proto(construct, superConstruct);
+  }; //This function will simply return true if the given element exists in the DOM, and false otherwise. not a public function.
+
+
+  var _$ = function _$(el) {
+    return null !== utils.queryDOM(el);
+  };
+
+  var isArray = function isArray(arr) {
+    return utils.isArray(arr);
+  }; //This function queries the dom, getting one element for each query (i.e. class/tags), creates
+  //an Element object with it and returns it, so that it may be easily styled.
+
+
+  var dom = function dom(el) {
+    var rv = void 0;
+    el = utils.queryDOM(el);
+
+    if (el.length !== undefined) {
+      rv = [];
+
+      for (var i = 0; i < el.length; i++) {
+        rv.push(new _element2.default(el[i]));
+      }
+
+      rv = new _element2.default(rv);
+    } else {
+      rv = new _element2.default(el);
+    }
+
+    return rv;
+  };
+  /*function for inserting template literals into the DOM.
+  
+  bones(`
+  
+  <html>
+    <head></head>
+    <body></body>
+  </html>
+  
+  `);
+  
+  */
+
+
+  var __ = function __(tempLit) {
+    var el = arguments.length <= 1 || arguments[1] === undefined ? 'body' : arguments[1];
+    return DOM.bones(tempLit, el);
+  }; //Create element alias function.
+
+
+  var make = function make(el, tag) {
+    return DOM.make(el, tag);
+  }; //DOM querying alias function. Will automatically narrow class or tag queries down to one result. It will not return an array.
+
+
+  var el = function el(l) {
+    return utils.queryDOM(l);
+  }; //Function for appending elements to other elements.
+
+
+  var put = function put(el, mom) {
+    return DOM.put(el, mom);
+  }; //Function for deleting elements from the DOM tree.
+
+
+  var x = function x(el) {
+    return DOM.kill(el);
+  };
+
+  var fore = function fore(ref, elem) {
+    return DOM.fore(ref, elem);
+  };
+
+  var aft = function aft(ref, elem) {
+    return DOM.aft(ref, elem);
+  };
+
+  var show = function show(elem, disp) {
+    return DOM.show(elem);
+  };
+
+  var hide = function hide(elem) {
+    return DOM.hide(elem);
+  };
+
+  var size = function size(elem, h, w) {
+    return DOM.size(elem, h, w);
+  };
+
+  var clone = function clone(elem, deep) {
+    return DOM.clone(elem, deep);
+  }; //console.log alias function.
+
+
+  var log = function log(text, style, tyme) {
+    return consol.log(text, style, tyme);
+  }; //console.error alias function.
+
+
+  var err = function err(text, tyme) {
+    return consol.err(text, tyme);
+  }; //console.info alias function.
+
+
+  var info = function info(text, tyme) {
+    return consol.info(text, tyme);
+  }; //console.warn alias function.
+
+
+  var warn = function warn(text, tyme) {
+    return consol.warn(text, tyme);
+  };
+
+  var inspect = function inspect(obj) {
+    return consol.inspect(obj);
+  };
+
+  var shifter = function shifter(onFunc, offFunc) {
+    return utils.shifter(onFunc, offFunc);
+  };
+
+  var hasAncestor = function hasAncestor(l, ance) {
+    return utils.hasAncestor(l, ance);
+  };
+
+  var lookBehind = function lookBehind(leftContextRE, matchRE, subject) {
+    return utils.lookBehind(leftContextRE, matchRE, subject);
+  };
+
+  var isMobile = function isMobile() {
+    return utils.isMobile();
+  }; //This practically useless function will lock up the browser for a preset amount of time.
+
+
+  var sleep = function sleep(milliseconds) {
+    return utils.sleep(milliseconds);
+  }; //A function for combining strings for urls
+
+
+  var url = function url(bit1, bit2) {
+    var bit3 = arguments.length <= 2 || arguments[2] === undefined ? '' : arguments[2];
+    var bit4 = arguments.length <= 3 || arguments[3] === undefined ? '' : arguments[3];
+    return bit1 + bit2 + bit3 + bit4;
+  }; //This is a synchronous alias function for XMLHttpRequests.
+
+
+  var xhr = function xhr(url, fd, method) {
+    return requests.xhr(url, fd, method);
+  }; //This is an asynchronous alias function for XMLHttpRequests.
+
+
+  var ajax = function ajax(url, fd, callback, method) {
+    return requests.ajax(url, fd, callback, method);
+  };
+  /*---------Event Functions-----------*/
+
+
+  var go = function go(cb) {
+    if (document.addEventListener) {
+      return events.go(cb);
+    } else {
+      return events.goIE(cb);
+    }
+  }; //Function for setting event listeners.
+
+
+  var on = function on(event, el, callback) {
+    if (document.addEventListener) {
+      return events.on(event, el, callback);
+    } else {
+      return events.onIE(event, el, callback);
+    }
+  }; //Function for removing event listeners.
+
+
+  var off = function off(event, el, callback) {
+    if (document.addEventListener) {
+      return events.off(event, el, callback);
+    } else {
+      return events.offIE(event, el, callback);
+    }
+  };
+
+  var once = function once(event, el, callback) {
+    //DONE:50 Finish once function.
+    if (document.addEventListener) {
+      return events.once(event, el, callback);
+    } else {
+      return events.onceIE(event, el, callback);
+    } //TEST:70 Test once function.
+
+  };
+
+  var spark = function spark(evt, el) {
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.spark(evt, el);
+    } else {
+      return events.sparkIE(evt, el);
+    }
+  };
+
+  var blur = function blur(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.blur(el, cb);
+    } else {
+      return events.blurIE(el, cb);
+    }
+  };
+
+  var click = function click(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.click(el, cb);
+    } else {
+      return events.clickIE(el, cb);
+    }
+  };
+
+  var dblClick = function dblClick(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.dblClick(el, cb);
+    } else {
+      return events.dblClickIE(el, cb);
+    }
+  };
+
+  var error = function error(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.error(el, cb);
+    } else {
+      return events.errorIE(el, cb);
+    }
+  };
+
+  var focus = function focus(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.focus(el, cb);
+    } else {
+      return events.focusIE(el, cb);
+    }
+  };
+
+  var focusIn = function focusIn(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.focusIn(el, cb);
+    } else {
+      return events.focusInIE(el, cb);
+    }
+  };
+
+  var focusOut = function focusOut(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.focusOut(el, cb);
+    } else {
+      return events.focusOut(el, cb);
+    }
+  };
+
+  var keyUp = function keyUp(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.keyUp(el, cb);
+    } else {
+      return events.keyUpIE(el, cb);
+    }
+  };
+
+  var keyDown = function keyDown(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.keyDown(el, cb);
+    } else {
+      return events.keyDownIE(el, cb);
+    }
+  };
+
+  var load = function load(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.load(el, cb);
+    } else {
+      return events.loadIE(el, cb);
+    }
+  };
+
+  var unLoad = function unLoad(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.unLoad(el, cb);
+    } else {
+      return events.unLoadIE(el, cb);
+    }
+  };
+
+  var mouse = function mouse(sfx, el) {
+    var cb = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.mouse(sfx, el, cb);
+    } else {
+      return events.mouseIE(sfx, el, cb);
+    }
+  };
+
+  var resize = function resize(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.resize(el, cb);
+    } else {
+      return events.resizeIE(el, cb);
+    }
+  };
+
+  var scroll = function scroll(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.scroll(el, cb);
+    } else {
+      return events.scrollIE(el, cb);
+    }
+  };
+
+  var select = function select(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+    el = utils.queryDOM(el);
+
+    if (document.addEventListener) {
+      return events.select(el, cb);
+    } else {
+      return events.selectIE(el, cb);
+    }
+  }; //<<=================May have found a better solution.======================================>>//
+
+  /*This convenience function sets imported module function names as global variables, so that
+  the module variable doesn't need to preface every function.*/
+  // var functions = function(funcs, mod) {
+  //   var context = mod || this;
+  //
+  //   if (Array.isArray(funcs)) {
+  //     log(mod, 'red');
+  //
+  //     funcs.forEach(function(func) {
+  //       var evil = new Function('window.' + func + ' = ' + 'this.' + func + ';');
+  //           evil.call(context);
+  //     }, context);
+  //   } else {
+  //     (function() {
+  //       var evil = new Function('window.' + funcs + ' = ' + 'this.' + funcs + ';');
+  //           evil.call(context);
+  //     }).apply(context);
+  //   }
+  // };
+
+
+  module.exports = (_module$exports = {
+    element: element,
+    _$: _$,
+    x: x,
+    go: go,
+    shifter: shifter,
+    make: make,
+    __: __,
+    dom: dom,
+    proto: proto,
+    clone: clone,
+    isArray: isArray,
+    isElement: isElement,
+    isDOMElement: isDOMElement,
+    // functions: functions,
+    hasAncestor: hasAncestor,
+    lookBehind: lookBehind,
+    isMobile: isMobile,
+    put: put,
+    on: on,
+    off: off,
+    once: once,
+    el: el,
+    log: log,
+    url: url,
+    xhr: xhr,
+    err: err,
+    info: info,
+    warn: warn,
+    inspect: inspect,
+    ajax: ajax,
+    fore: fore,
+    aft: aft,
+    show: show,
+    hide: hide,
+    size: size
+  }, _defineProperty(_module$exports, 'clone', clone), _defineProperty(_module$exports, 'spark', spark), _defineProperty(_module$exports, 'blur', blur), _defineProperty(_module$exports, 'click', click), _defineProperty(_module$exports, 'dblClick', dblClick), _defineProperty(_module$exports, 'error', error), _defineProperty(_module$exports, 'focus', focus), _defineProperty(_module$exports, 'focusIn', focusIn), _defineProperty(_module$exports, 'focusOut', focusOut), _defineProperty(_module$exports, 'keyUp', keyUp), _defineProperty(_module$exports, 'keyDown', keyDown), _defineProperty(_module$exports, 'load', load), _defineProperty(_module$exports, 'unLoad', unLoad), _defineProperty(_module$exports, 'mouse', mouse), _defineProperty(_module$exports, 'resize', resize), _defineProperty(_module$exports, 'scroll', scroll), _defineProperty(_module$exports, 'select', select), _module$exports); //DONE:30 functions: err(), info(), warn().
+  //DONE:130 Complete all standalone style functions.
+
+  /***/
+},
+/* 25 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
+  };
+  /*
+  Element.js
+  
+  This is a helper file for the elements.js index, which houses
+  the code for the Element Class.
+  
+  Author: Eric James Foster
+  License: ISC
+  */
+
+
+  exports.default = Element;
+
+  var _logger = __webpack_require__(26);
+
+  var _utilities = __webpack_require__(28);
+
+  var _events = __webpack_require__(29);
+
+  var events = _interopRequireWildcard(_events);
+
+  var _DOM = __webpack_require__(30);
+
+  var DOM = _interopRequireWildcard(_DOM);
+
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    } else {
+      var newObj = {};
+
+      if (obj != null) {
+        for (var key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+        }
+      }
+
+      newObj.default = obj;
+      return newObj;
+    }
+  } //DOING:10 List all functions that need to be added (.textContent, innerHTML etc.)
+  //DOING:20 Complete all functions for this object.
+
+
+  function Element(el) {
+    if ((0, _utilities.isArray)(el)) {
+      this.els = el;
+    } else {
+      this.el = el;
+      this.element = true;
+    }
+
+    var self = this;
+
+    if (!(this instanceof Element)) {
+      return new Element();
+    } // Style methods //
+
+
+    this.border = function (val) {
+      if (val !== undefined) {
+        el.style.border = val;
+        return this;
+      } else {
+        val = el.style.border;
+        return val;
+      }
+    };
+
+    this.bg = function (val) {
+      if (val !== undefined) {
+        el.style.background = val;
+        return this;
+      } else {
+        val = el.style.background;
+        return val;
+      }
+    };
+
+    this.bgColor = function (val) {
+      if (val !== undefined) {
+        el.style.backgroundColor = val;
+        return this;
+      } else {
+        val = el.style.backgroundColor;
+        return val;
+      }
+    };
+
+    this.bgImage = function (val) {
+      if (val !== undefined) {
+        el.style.backgroundImage = val;
+        return this;
+      } else {
+        val = el.style.backgroundImage;
+        return val;
+      }
+    };
+
+    this.bgSize = function (val) {
+      if (val !== undefined) {
+        el.style.backgroundSize = val;
+        return this;
+      } else {
+        val = el.style.backgroundSize;
+        return val;
+      }
+    };
+
+    this.bgPosition = function (val) {
+      if (val !== undefined) {
+        el.style.backgroundPosition = val;
+        return this;
+      } else {
+        val = el.style.backgroundPosition;
+        return val;
+      }
+    };
+
+    this.borderColor = function (val) {
+      if (val !== undefined) {
+        el.style.borderColor = val;
+        return this;
+      } else {
+        val = el.style.borderColor;
+        return val;
+      }
+    };
+
+    this.borderRadius = function (val) {
+      if (val !== undefined) {
+        el.style.borderRadius = val;
+        return this;
+      } else {
+        val = el.style.borderRadius;
+        return val;
+      }
+    };
+
+    this.borderWidth = function (val) {
+      if (val !== undefined) {
+        el.style.borderWidth = val;
+        return this;
+      } else {
+        val = el.style.borderWidth;
+        return val;
+      }
+    };
+
+    this.borderTop = function (val) {
+      if (val !== undefined) {
+        el.style.borderTop = val;
+        return this;
+      } else {
+        val = el.style.borderTop;
+        return val;
+      }
+    };
+
+    this.borderBottom = function (val) {
+      if (val !== undefined) {
+        el.style.borderBottom = val;
+        return this;
+      } else {
+        val = el.style.borderBottom;
+        return val;
+      }
+    };
+
+    this.borderRight = function (val) {
+      if (val !== undefined) {
+        el.style.borderRight = val;
+        return this;
+      } else {
+        val = el.style.borderRight;
+        return val;
+      }
+    };
+
+    this.borderLeft = function (val) {
+      if (val !== undefined) {
+        el.style.borderLeft = val;
+        return this;
+      } else {
+        val = el.style.borderLeft;
+        return val;
+      }
+    };
+
+    this.bottom = function (val) {
+      if (val !== undefined) {
+        el.style.bottom = val;
+        return this;
+      } else {
+        val = el.style.bottom;
+        return val;
+      }
+    };
+
+    this.boxShadow = function (val) {
+      if (val !== undefined) {
+        el.style.boxShadow = val;
+        return this;
+      } else {
+        val = el.style.boxShadow;
+        return val;
+      }
+    };
+
+    this.boxSizing = function (val) {
+      if (val !== undefined) {
+        el.style.boxSizing = val;
+        return this;
+      } else {
+        val = el.style.boxSizing;
+        return val;
+      }
+    };
+
+    this.clear = function (val) {
+      if (val !== undefined) {
+        el.style.clear = val;
+        return this;
+      } else {
+        val = el.style.clear;
+        return val;
+      }
+    };
+
+    this.color = function (val) {
+      if (val !== undefined) {
+        el.style.color = val;
+        return this;
+      } else {
+        val = el.style.color;
+        return val;
+      }
+    };
+
+    this.columns = function (val) {
+      if (val !== undefined) {
+        el.style.columns = val;
+        return this;
+      } else {
+        val = el.style.columns;
+        return val;
+      }
+    };
+
+    this.content = function (val) {
+      if (val !== undefined) {
+        el.style.content = val;
+        return this;
+      } else {
+        val = el.style.content;
+        return val;
+      }
+    };
+
+    this.cursor = function (val) {
+      if (val !== undefined) {
+        el.style.cursor = val;
+        return this;
+      } else {
+        val = el.style.cursor;
+        return val;
+      }
+    };
+
+    this.direction = function (val) {
+      if (val !== undefined) {
+        el.style.direction = val;
+        return this;
+      } else {
+        val = el.style.direction;
+        return val;
+      }
+    };
+
+    this.display = function (val) {
+      if (val !== undefined) {
+        el.style.display = val;
+        return this;
+      } else {
+        val = el.style.display;
+        return val;
+      }
+    };
+
+    this.cssFloat = function (val) {
+      if (val !== undefined) {
+        el.style.cssFloat = val;
+        return this;
+      } else {
+        val = el.style.cssFloat;
+        return val;
+      }
+    };
+
+    this.font = function (val) {
+      if (val !== undefined) {
+        el.style.font = val;
+        return this;
+      } else {
+        val = el.style.font;
+        return val;
+      }
+    };
+
+    this.fontFamily = function (val) {
+      if (val !== undefined) {
+        el.style.fontFamily = val;
+        return this;
+      } else {
+        val = el.style.fontFamily;
+        return val;
+      }
+    };
+
+    this.fontStyle = function (val) {
+      if (val !== undefined) {
+        el.style.fontStyle = val;
+        return this;
+      } else {
+        val = el.style.fontStyle;
+        return val;
+      }
+    };
+
+    this.fontSize = function (val) {
+      if (val !== undefined) {
+        el.style.fontSize = val;
+        return this;
+      } else {
+        val = el.style.fontSize;
+        return val;
+      }
+    };
+
+    this.fontWeight = function (val) {
+      if (val !== undefined) {
+        el.style.fontWeight = val;
+        return this;
+      } else {
+        val = el.style.fontWeight;
+        return val;
+      }
+    };
+
+    this.height = function (val) {
+      if (val !== undefined) {
+        el.style.height = val;
+        return this;
+      } else {
+        val = el.style.height;
+        return val;
+      }
+    };
+
+    this.lineHeight = function (val) {
+      if (val !== undefined) {
+        el.style.lineHeight = val;
+        return this;
+      } else {
+        val = el.style.lineHeight;
+        return val;
+      }
+    };
+
+    this.icon = function (val) {
+      if (val !== undefined) {
+        el.style.icon = val;
+        return this;
+      } else {
+        val = el.style.icon;
+        return val;
+      }
+    };
+
+    this.left = function (val) {
+      if (val !== undefined) {
+        el.style.left = val;
+        return this;
+      } else {
+        val = el.style.left;
+        return val;
+      }
+    };
+
+    this.listStyle = function (val) {
+      if (val !== undefined) {
+        el.style.listStyle = val;
+        return this;
+      } else {
+        val = el.style.listStyle;
+        return val;
+      }
+    };
+
+    this.margin = function (val) {
+      if (val !== undefined) {
+        el.style.margin = val;
+        return this;
+      } else {
+        val = el.style.margin;
+        return val;
+      }
+    };
+
+    this.marginRight = function (val) {
+      if (val !== undefined) {
+        el.style.marginRight = val;
+        return this;
+      } else {
+        val = el.style.marginRight;
+        return val;
+      }
+    };
+
+    this.marginLeft = function (val) {
+      if (val !== undefined) {
+        el.style.marginLeft = val;
+        return this;
+      } else {
+        val = el.style.marginLeft;
+        return val;
+      }
+    };
+
+    this.marginTop = function (val) {
+      if (val !== undefined) {
+        el.style.marginTop = val;
+        return this;
+      } else {
+        val = el.style.marginTop;
+        return val;
+      }
+    };
+
+    this.marginBottom = function (val) {
+      if (val !== undefined) {
+        el.style.marginBottom = val;
+        return this;
+      } else {
+        val = el.style.marginBottom;
+        return val;
+      }
+    };
+
+    this.maxHeight = function (val) {
+      if (val !== undefined) {
+        el.style.maxHeight = val;
+        return this;
+      } else {
+        val = el.style.maxHeight;
+        return val;
+      }
+    };
+
+    this.maxWidth = function (val) {
+      if (val !== undefined) {
+        el.style.maxWidth = val;
+        return this;
+      } else {
+        val = el.style.maxWidth;
+        return val;
+      }
+    };
+
+    this.minWidth = function (val) {
+      if (val !== undefined) {
+        el.style.minWidth = val;
+        return this;
+      } else {
+        val = el.style.minWidth;
+        return val;
+      }
+    };
+
+    this.minHeight = function (val) {
+      if (val !== undefined) {
+        el.style.minHeight = val;
+        return this;
+      } else {
+        val = el.style.minHeight;
+        return val;
+      }
+    };
+
+    this.opacity = function (val) {
+      if (val !== undefined) {
+        el.style.opacity = val;
+        return this;
+      } else {
+        val = el.style.opacity;
+        return val;
+      }
+    };
+
+    this.outline = function (val) {
+      if (val !== undefined) {
+        el.style.outline = val;
+        return this;
+      } else {
+        val = el.style.outline;
+        return val;
+      }
+    };
+
+    this.overflow = function (val) {
+      if (val !== undefined) {
+        el.style.overflow = val;
+        return this;
+      } else {
+        val = el.style.overflow;
+        return val;
+      }
+    };
+
+    this.overflowX = function (val) {
+      if (val !== undefined) {
+        el.style.overflowX = val;
+        return this;
+      } else {
+        val = el.style.overflowX;
+        return val;
+      }
+    };
+
+    this.overflowY = function (val) {
+      if (val !== undefined) {
+        el.style.overflowY = val;
+        return this;
+      } else {
+        val = el.style.overflowY;
+        return val;
+      }
+    };
+
+    this.padding = function (val) {
+      if (val !== undefined) {
+        el.style.padding = val;
+        return this;
+      } else {
+        val = el.style.padding;
+        return val;
+      }
+    };
+
+    this.paddingRight = function (val) {
+      if (val !== undefined) {
+        el.style.paddingRight = val;
+        return this;
+      } else {
+        val = el.style.paddingRight;
+        return val;
+      }
+    };
+
+    this.paddingLeft = function (val) {
+      if (val !== undefined) {
+        el.style.paddingLeft = val;
+        return this;
+      } else {
+        val = el.style.paddingLeft;
+        return val;
+      }
+    };
+
+    this.paddingTop = function (val) {
+      if (val !== undefined) {
+        el.style.paddingTop = val;
+        return this;
+      } else {
+        val = el.style.paddingTop;
+        return val;
+      }
+    };
+
+    this.paddingBottom = function (val) {
+      if (val !== undefined) {
+        el.style.paddingBottom = val;
+        return this;
+      } else {
+        val = el.style.paddingBottom;
+        return val;
+      }
+    };
+
+    this.position = function (val) {
+      if (val !== undefined) {
+        el.style.position = val;
+        return this;
+      } else {
+        val = el.style.position;
+        return val;
+      }
+    };
+
+    this.right = function (val) {
+      if (val !== undefined) {
+        el.style.right = val;
+        return this;
+      } else {
+        val = el.style.right;
+        return val;
+      }
+    };
+
+    this.top = function (val) {
+      if (val !== undefined) {
+        el.style.top = val;
+        return this;
+      } else {
+        val = el.style.top;
+        return val;
+      }
+    };
+
+    this.transform = function (val) {
+      this.el.style.transform = val;
+      return this;
+    }; //<<========= Transform Methods ======================>>
+
+
+    this.turn = function (val) {
+      this.el.style.transform = 'rotate(' + String(val) + 'deg)';
+      return this;
+    };
+
+    this.turnX = function (val) {
+      this.el.style.transform = 'rotateX(' + String(val) + 'deg)';
+      return this;
+    };
+
+    this.turnY = function (val) {
+      this.el.style.transform = 'rotateY(' + String(val) + 'deg)';
+      return this;
+    };
+
+    this.turnZ = function (val) {
+      this.el.style.transform = 'rotateZ(' + String(val) + 'deg)';
+      return this;
+    };
+
+    this.textAlign = function (val) {
+      if (val !== undefined) {
+        el.style.textAlign = val;
+        return this;
+      } else {
+        val = el.style.textAlign;
+        return val;
+      }
+    };
+
+    this.textDecoration = function (val) {
+      if (val !== undefined) {
+        el.style.textDecoration = val;
+        return this;
+      } else {
+        val = el.style.textDecoration;
+        return val;
+      }
+    };
+
+    this.textShadow = function (val) {
+      if (val !== undefined) {
+        el.style.textShadow = val;
+        return this;
+      } else {
+        val = el.style.textShadow;
+        return val;
+      }
+    };
+
+    this.verticalAlign = function (val) {
+      if (val !== undefined) {
+        el.style.verticalAlign = val;
+        return this;
+      } else {
+        val = el.style.verticalAlign;
+        return val;
+      }
+    };
+
+    this.visibility = function (val) {
+      if (val !== undefined) {
+        el.style.visibility = val;
+        return this;
+      } else {
+        val = el.style.visibility;
+        return val;
+      }
+    };
+
+    this.whiteSpace = function (val) {
+      if (val !== undefined) {
+        el.style.whiteSpace = val;
+        return this;
+      } else {
+        val = el.style.whiteSpace;
+        return val;
+      }
+    };
+
+    this.width = function (val) {
+      if (val !== undefined) {
+        el.style.width = val;
+        return this;
+      } else {
+        val = el.style.width;
+        return val;
+      }
+    };
+
+    this.wordSpacing = function (val) {
+      if (val !== undefined) {
+        el.style.wordSpacing = val;
+        return this;
+      } else {
+        val = el.style.wordSpacing;
+        return val;
+      }
+    };
+
+    this.zIndex = function (val) {
+      if (val !== undefined) {
+        el.style.zIndex = val;
+        return this;
+      } else {
+        val = el.style.zIndex;
+        return val;
+      }
+    };
+
+    this.alignContent = function (val) {
+      if (browser.safari && browser.version >= 7) {
+        if (val !== undefined) {
+          el.style.WebkitAlignContent = val;
+          return this;
+        } else {
+          val = el.style.WebkitAlignContent;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.alignContent = val;
+          return this;
+        } else {
+          val = el.style.alignContent;
+          return val;
+        }
+      }
+    };
+
+    this.transformOrigin = function (val) {
+      if (browser.webkit) {
+        if (val !== undefined) {
+          el.style.WebkitTransformOrigin = val;
+          return this;
+        } else {
+          val = el.style.WebkitTransformOrigin;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.transformOrigin = val;
+          return this;
+        } else {
+          val = el.style.transformOrigin;
+          return val;
+        }
+      }
+    };
+
+    this.transition = function (val) {
+      if (browser.safari) {
+        if (val !== undefined) {
+          el.style.WebkitTransition = val;
+          return this;
+        } else {
+          val = el.style.WebkitTransition;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.transition = val;
+          return this;
+        } else {
+          val = el.style.transition;
+          return val;
+        }
+      }
+    };
+
+    this.transitionDuration = function (val) {
+      if (browser.safari) {
+        if (val !== undefined) {
+          el.style.WebkitTransitionDuration = val;
+          return this;
+        } else {
+          val = el.style.WebkitTransitionDuration;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.transitionDuration = val;
+          return this;
+        } else {
+          val = el.style.transitionDuration;
+          return val;
+        }
+      }
+    };
+
+    this.animation = function (val) {
+      if (browser.webkit) {
+        if (val !== undefined) {
+          el.style.WebkitAnimation = val;
+          return this;
+        } else {
+          val = el.style.WebkitAnimation;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.animation = val;
+          return this;
+        } else {
+          val = el.style.animation;
+          return val;
+        }
+      }
+    };
+
+    this.filter = function (val) {
+      if (browser.webkit) {
+        if (val !== undefined) {
+          el.style.WebkitFilter = val;
+          return this;
+        } else {
+          val = el.style.WebkitFilter;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.filter = val;
+          return this;
+        } else {
+          val = el.style.filter;
+          return val;
+        }
+      }
+    };
+
+    this.flex = function (val) {
+      if (browser.safari) {
+        if (val !== undefined) {
+          el.style.WebkitFlex = val;
+          return this;
+        } else {
+          val = el.style.WebkitFlex;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.flex = val;
+          return this;
+        } else {
+          val = el.style.flex;
+          return val;
+        }
+      }
+    };
+
+    this.perspective = function (val) {
+      if (browser.webkit) {
+        if (val !== undefined) {
+          el.style.WebkitPerspective = val;
+          return this;
+        } else {
+          val = el.style.WebkitPerspective;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.perspective = val;
+          return this;
+        } else {
+          val = el.style.perspective;
+          return val;
+        }
+      }
+    };
+
+    this.perspectiveOrigin = function (val) {
+      if (browser.webkit) {
+        if (val !== undefined) {
+          el.style.WebkitPerspectiveOrigin = val;
+          return this;
+        } else {
+          val = el.style.WebkitPerspectiveOrigin;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.perspectiveOrigin = val;
+          return this;
+        } else {
+          val = el.style.perspectiveOrigin;
+          return val;
+        }
+      }
+    };
+
+    this.transitionDelay = function (val) {
+      if (browser.safari) {
+        if (val !== undefined) {
+          el.style.WebkitTransitionDelay = val;
+          return this;
+        } else {
+          val = el.style.WebkitTransitionDelay;
+          return val;
+        }
+      } else {
+        if (val !== undefined) {
+          el.style.transitionDelay = val;
+          return this;
+        } else {
+          val = el.style.transitionDelay;
+          return val;
+        }
+      }
+    }; // Element object methods //
+
+    /*This function is a wrapper that allows the developer to create an anonymous function that has
+    access to the core element object and its' methods... Meaning, that methods not incuded in this library
+    can still be used in a chain-like fashion.  # example:
+    <'#header'/>
+          .height('200px')
+          .width('800px')
+          .backgroundColor('red')
+          .text('elements.js')
+          .core(el=>
+           {    el.lang = 'spanish';
+                el.jackAss();
+                el.nodeValue = this;
+                el.normalize();   }
+               )
+          .put('body')
+    */
+
+
+    this.core = function (func) {
+      var obj = arguments.length <= 1 || arguments[1] === undefined ? 'el' : arguments[1];
+      if (obj === 'style') func(this.el.style);else if (obj === 'el') func(this.el);else (0, _logger.err)('Invalid Argument.');
+      return this;
+    };
+
+    this.add = function (child) {
+      child = DOM.el(child);
+      this.el.appendChild(child);
+      return this;
+    };
+
+    this.children = function (s) {
+      var count = void 0,
+          arr = [];
+
+      if (s === 'all') {
+        count = this.el.childNodes;
+      } else {
+        count = this.el.children;
+      }
+
+      for (var i = 0; i < count.length; i++) {
+        arr.push(new Element(count[i]));
+      }
+
+      return new Element(arr);
+    };
+
+    this.child = function () {
+      var count = void 0;
+
+      if ((0, _utilities.isArray)(this.el.children)) {
+        var _count = this.el.children;
+        _count = _count[0];
+      } else {
+        var _count2 = this.el.children;
+      }
+
+      return new Element(count);
+    };
+
+    this.first = function (s) {
+      //TEST:30 Make sure this works.
+      var sib = s === 'node' ? this.el.firstChild : this.el.firstElementChild;
+      return new Element(sib);
+    };
+
+    this.second = function (s) {
+      //TEST:30 Make sure this works.
+      var sib = s === 'node' ? this.el.firstChild.nextSibling : this.el.firstElementChild.nextElementSibling;
+      return new Element(sib);
+    };
+
+    this.third = function (s) {
+      var varb = el.firstElementChild.nextElementSibling,
+          varb2 = el.firstChild.nextSibling,
+          //TEST:30 Make sure this works.
+      sib = s === 'node' ? varb2.nextSibling : varb.nextElementSibling;
+      return new Element(sib);
+    };
+
+    this.last = function (s) {
+      //TEST:30 Make sure this works.
+      var sib = s === 'node' ? this.el.lastChild : this.el.lastElementChild;
+      return new Element(sib);
+    };
+
+    this.id = function (val) {
+      if (val !== undefined) {
+        this.el.id = val;
+        return this;
+      } else {
+        val = this.el.id;
+        return val;
+      }
+    };
+
+    this.class = function (val) {
+      var mod = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+      if (val !== undefined) {
+        if (null !== mod) {
+          if (mod === '+') {
+            this.el.classList.add(val);
+            return this;
+          } else if (mod == '-') {
+            this.el.classList.remove(val);
+            return this;
+          } else {
+            (0, _logger.err)('Invalid Argument');
+          }
+        } else {
+          this.el.className = val;
+          return this;
+        }
+      } else {
+        val = this.el.className;
+        return val;
+      }
+    };
+
+    this.x = function (elem) {
+      var child = DOM.el(elem);
+      this.el.removeChild(child);
+      return this;
+    };
+
+    this.xClass = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (cb !== null) {
+        cb();
+      }
+
+      this.el.className = '';
+      return this;
+    };
+
+    this.html = function (val) {
+      var mod = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+      if (val !== undefined) {
+        if (null !== mod) {
+          if (mod === '+') {
+            this.el.innerHTML += val;
+            return this;
+          } else {
+            (0, _logger.err)('Invalid Argument');
+          }
+        } else {
+          this.el.innerHTML = val;
+          return this;
+        }
+      } else {
+        val = this.el.innerHTML;
+        return val;
+      }
+    };
+
+    this.text = function (val) {
+      var mod = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+      if (val !== undefined) {
+        if (null !== mod) {
+          if (mod === '+') {
+            this.el.textContent += val;
+            return this;
+          } else {
+            (0, _logger.err)('Invalid Argument');
+          }
+        } else {
+          this.el.textContent = val;
+          return this;
+        }
+      } else {
+        val = this.el.textContent;
+        return val;
+      }
+    };
+
+    this.lang = function (val) {
+      if (val !== undefined) {
+        this.el.lang = val;
+        return this;
+      } else {
+        val = this.el.lang;
+        return val;
+      }
+    };
+
+    this.clone = function (deep) {
+      var node = this.el.cloneNode(deep);
+      return node;
+    };
+
+    this.sib = function (ord) {
+      var r = void 0;
+
+      if (ord === 'next') {
+        r = this.el.nextElementSibling;
+      } else if (ord === 'prev') {
+        r = this.el.previousElementSibling;
+      } else {
+        (0, _logger.err)('Invalid argument.');
+      }
+
+      return new Element(r);
+    };
+
+    this.node = function (ord) {
+      var r = void 0;
+
+      if (ord === 'next') {
+        r = this.el.nextSibling;
+      } else if (ord === 'prev') {
+        r = this.el.previousSibling;
+      } else {
+        (0, _logger.err)('Invalid argument.');
+      }
+
+      return new Element(r);
+    };
+
+    this.value = function (val) {
+      if (val !== undefined) {
+        this.el.nodeValue = val;
+        return this;
+      } else {
+        val = this.el.nodeValue;
+        return val;
+      }
+    };
+
+    this.normalize = function () {
+      this.el.normalize();
+      return this;
+    };
+
+    this.toString = function () {
+      var r = this.el.toString();
+      return r;
+    };
+
+    this.tag = function () {
+      var r = this.el.tagName;
+      return r;
+    };
+
+    this.fromTop = function () {
+      //TODO
+      var r = this.el.offsetTop;
+      return r;
+    };
+
+    this.fromLeft = function () {
+      var r = this.el.offsetLeft;
+      return r;
+    };
+
+    this.offset = function () {
+      var off = {};
+      off.top = this.el.offsetTop;
+      off.left = this.el.offsetLeft;
+      off.height = this.el.offsetHeight;
+      off.width = this.el.offsetWidth;
+      off.parent = this.el.offsetParent;
+      return off;
+    };
+
+    this.scrolled = function (val) {
+      if (val !== undefined) {
+        el.scrollTop = val;
+        return this;
+      } else if (val === 0) {
+        el.scrollTop = 0;
+        return this;
+      } else {
+        val = el.scrollTop;
+        return val;
+      }
+    };
+
+    this.scrollLeft = function (val) {
+      if (val !== undefined) {
+        el.scrollLeft = val;
+        return this;
+      } else {
+        val = el.scrollLeft;
+        return val;
+      }
+    };
+
+    this.scrollHeight = function (val) {
+      if (val !== undefined) {
+        el.scrollHeight = val;
+        return this;
+      } else {
+        val = el.scrollHeight;
+        return val;
+      }
+    };
+
+    this.scrollWidth = function (val) {
+      if (val !== undefined) {
+        el.scrollWidth = val;
+        return this;
+      } else {
+        val = el.scrollWidth;
+        return val;
+      }
+    };
+
+    this.title = function (val) {
+      if (val !== undefined) {
+        this.el.title = val;
+        return this;
+      } else {
+        val = this.el.title;
+        return val;
+      }
+    };
+
+    this.put = function (mom) {
+      DOM.put(this.el, mom);
+      return this;
+    };
+
+    this.ma = function () {
+      return new Element(this.el.parentNode);
+    };
+
+    this.fore = function (elem) {
+      var ref = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+      elem = (0, _utilities.queryDOM)(elem); //TEST:20 Make sure this works.
+
+      ref === null ? elem.parentNode.insertBefore(this.el, elem) : this.el.parentNode.insertBefore(elem, this.el);
+      return this;
+    };
+
+    this.aft = function (elem) {
+      var ref = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+      elem = (0, _utilities.queryDOM)(elem); //TEST:10 Make sure this works.
+
+      ref === null ? elem.parentNode.insertBefore(this.el, elem.nextElementSibling) : this.el.parentNode.insertBefore(elem, this.el.nextElementSibling);
+      return this;
+    };
+
+    this.on = function (ev, callback) {
+      if (document.addEventListener) {
+        events.on(ev, this.el, function (e) {
+          return callback(e, new Element(el));
+        });
+      } else {
+        events.on(ev, this.el, function (e) {
+          return callback(e, new Element(el));
+        });
+      }
+
+      return this;
+    };
+
+    this.off = function (ev, callback) {
+      if (document.addEventListener) {
+        events.off(ev, this.el, callback);
+      } else {
+        events.offIE(ev, this.el, callback);
+      }
+
+      return this;
+    };
+
+    this.once = function (ev, callback) {
+      if (document.addEventListener) {
+        events.once(ev, this.el, function (e) {
+          return callback(e, new Element(el));
+        });
+      } else {
+        events.onceIE(ev, this.el, function (e) {
+          return callback(e, new Element(el));
+        });
+      }
+
+      return this;
+    }; // this.toggle = function(onFunc, offFunc) {                                 //NOTE: May be unnecessary.
+    //   window.toggleFlag = true;
+    //
+    //   if (toggleFlag) {
+    //     onFunc();
+    //     toggleFlag = false;
+    //   } else {
+    //     offFunc();
+    //     toggleFlag = true;
+    //   }
+    //   return this;
+    // };
+
+
+    this.size = function (height, width) {
+      this.el.style.height = height;
+      this.el.style.width = width;
+      return this;
+    };
+
+    this.show = function () {
+      var disp = arguments.length <= 0 || arguments[0] === undefined ? 'block' : arguments[0];
+      this.el.style.display = disp;
+      return this;
+    };
+
+    this.hide = function () {
+      this.el.style.display = 'none';
+      return this;
+    };
+
+    this.viz = function (val) {
+      this.el.style.visibility = val;
+      return this;
+    }; //---------Event Methods-----------------//
+
+
+    this.blur = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.blur(this.el, cb);
+      } else {
+        events.blurIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.click = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.click(this.el, cb);
+      } else {
+        events.clickIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.dblClick = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.dblClick(this.el, cb);
+      } else {
+        events.dblClickIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.error = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.error(this.el, cb);
+      } else {
+        events.errorIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.focus = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.focus(this.el, cb);
+      } else {
+        events.focusIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.focusIn = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.focusIn(this.el, cb);
+      } else {
+        events.focusInIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.focusOut = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.focusOut(this.el, cb);
+      } else {
+        events.focusOut(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.keyUp = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.keyUp(this.el, cb);
+      } else {
+        events.keyUpIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.keyDown = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.keyDown(this.el, cb);
+      } else {
+        events.keyDownIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.load = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.load(this.el, cb);
+      } else {
+        events.loadIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.unLoad = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.unLoad(this.el, cb);
+      } else {
+        events.unLoadIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.mouse = function (sfx) {
+      var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+      if (this.el.addEventListener) {
+        events.mouse(sfx, this.el, cb);
+      } else {
+        events.mouseIE(sfx, this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.resize = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.resize(this.el, cb);
+      } else {
+        events.resizeIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.scroll = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.scroll(this.el, cb);
+      } else {
+        events.scrollIE(this.el, cb);
+      }
+
+      return this;
+    };
+
+    this.select = function () {
+      var cb = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (this.el.addEventListener) {
+        events.select(this.el, cb);
+      } else {
+        events.selectIE(this.el, cb);
+      }
+
+      return this;
+    }; /////// Experimental Methods ////////
+
+
+    this.every = function (eachFunc) {
+      this.els.forEach(function (elem, i, a) {
+        eachFunc(elem, a, i);
+      });
+      return this;
+    };
+
+    this.only = function (num, func) {
+      var arr = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+      (0, _logger.log)(typeof onlyArr === 'undefined' ? 'undefined' : _typeof(onlyArr), 'yellow');
+
+      if (null !== arr) {
+        if (typeof onlyArr === 'undefined') {
+          window.onlyArr = arr;
+          window.eachCount = 1;
+        } else {
+          if (onlyArr !== arr) {
+            window.eachCount = 1;
+            window.onlyArr = arr;
+          } else {
+            eachCount++;
+          }
+        }
+      }
+
+      if (num === eachCount) {
+        func();
+        (0, _logger.log)(eachCount, ['red', 'bold']);
+      } else {
+        (0, _logger.log)(eachCount, ['blue', 'bold']);
+      } // if (eachCount === onlyArr.length) {
+      //   eachCount = '';
+      // }
+
+
+      (0, _logger.log)(eachCount, 'white');
+      return this;
+    };
+
+    this.func = function (func) {
+      var mod = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+      if (null === mod) {
+        func(this.el);
+      } else if (mod === 'style') {
+        func(this.el.style);
+      }
+
+      return this;
+    }; //<<================Attribute Methods==================>>//
+
+
+    this.attrib = function (attrib, val) {
+      //TEST:0 Make sure this works
+      var r = val !== undefined && val !== 'remove' ? (this.el.setAttribute(attrib, val), undefined) : attrib !== undefined && val !== 'remove' ? this.el.getAttribute(attrib) : (this.el.removeAttribute(attrib), undefined); // (r !== undefined) ?                                                     //TODO:10 See if you can make this work.
+      //   return r
+      // :
+      //   return this;
+
+      if (r !== undefined) {
+        return r;
+      } else {
+        return this;
+      }
+    };
+
+    this.src = function (val) {
+      if (val !== undefined) {
+        this.el.src = val;
+        return this;
+      } else {
+        val = this.el.src;
+        return val;
+      }
+    };
+
+    this.alt = function (val) {
+      if (val !== undefined) {
+        this.el.alt = val;
+        return this;
+      } else {
+        val = this.el.alt;
+        return val;
+      }
+    };
+
+    this.href = function (val) {
+      if (val !== undefined) {
+        this.el.href = val;
+        return this;
+      } else {
+        val = this.el.href;
+        return val;
+      }
+    };
+
+    this.hash = function () {
+      var _re = /\#.*/;
+
+      var hash = _re.exec(el.href);
+
+      return hash;
+    };
+
+    this.type = function (val) {
+      if (val !== undefined) {
+        this.el.type = val;
+        return this;
+      } else {
+        val = this.el.type;
+        return val;
+      }
+    };
+  }
+
+  ;
+  /***/
+},
+/* 26 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+  /*
+  logger.js
+  
+  This file contains the code for the various logging functions
+  of the library.
+  
+  Author: Eric James Foster
+  License: ISC
+  */
+
+  var colors = __webpack_require__(27); //DONE:90 Add second argument for log ID purposes, figure best way to approach this.
+  //Console.log alias function.                                                  //DONE:140 Make sure date is logging properly.
+
+
+  var log = function log(text, style, tyme) {
+    var colr = Array.isArray(style) ? style[0] : style,
+        styl = Array.isArray(style) ? style[1] : null,
+        tym = tyme || false;
+    var time = new Date(),
+        hours = time.getHours(),
+        mins = time.getMinutes(),
+        secs = time.getSeconds();
+
+    if (secs <= 9) {
+      secs = '0' + String(secs);
+    }
+
+    if (mins <= 9) {
+      mins = '0' + String(mins);
+    }
+
+    var abbr = hours >= 12 ? 'pm' : 'am';
+    var stan = hours >= 13 ? hours - 12 : hours; //DONE:40 Either fix singular hours, or choose alternate.
+
+    if (stan === 0) {
+      hours = stan + 12;
+    } else {
+      hours = stan;
+    }
+
+    time = hours + ':' + mins + ':' + secs + abbr;
+    var t = tym ? time : '';
+
+    if (typeof document === 'undefined') {
+      return console.log(colors(text, {
+        fg: colr,
+        style: styl
+      }) + '   '.repeat(10) + t);
+    } else {
+      var color = colr,
+          bgColor = styl,
+          css = 'background: ' + bgColor + '; color: ' + color;
+      return console.log('%c' + text + '%s', css, '   '.repeat(10) + t);
+    }
+  }; //Console.error alias function.
+
+
+  var err = function err(text, tyme) {
+    var colr = 'red',
+        styl = 'bold',
+        tym = tyme || false;
+    var time = new Date(),
+        hours = time.getHours(),
+        mins = time.getMinutes(),
+        secs = time.getSeconds();
+
+    if (secs <= 9) {
+      secs = '0' + String(secs);
+    }
+
+    if (mins <= 9) {
+      mins = '0' + String(mins);
+    }
+
+    var abbr = hours >= 12 ? 'pm' : 'am';
+    var stan = hours >= 13 ? hours - 12 : hours;
+
+    if (stan === 0) {
+      hours = stan + 12;
+    } else {
+      hours = stan;
+    }
+
+    time = hours + ':' + mins + ':' + secs + abbr;
+    var t = tym ? time : '';
+
+    if (typeof document === 'undefined') {
+      return console.log(colors(text, {
+        fg: colr,
+        style: styl
+      }) + '   '.repeat(10) + t);
+    } else {
+      var color = colr,
+          bgColor = '',
+          css = 'background: ' + bgColor + '; color: ' + color;
+      return console.error('%c' + text + '%s', css, '   '.repeat(10) + t);
+    }
+  }; //Console.error alias function.
+
+
+  var error = function error(text) {
+    return console.error(text);
+  }; //Console.info alias function.
+
+
+  var info = function info(text, tyme) {
+    var colr = '#008cff',
+        styl = 'bold',
+        tym = tyme || false;
+    var time = new Date(),
+        hours = time.getHours(),
+        mins = time.getMinutes(),
+        secs = time.getSeconds();
+
+    if (secs <= 9) {
+      secs = '0' + String(secs);
+    }
+
+    if (mins <= 9) {
+      mins = '0' + String(mins);
+    }
+
+    var abbr = hours >= 12 ? 'pm' : 'am';
+    var stan = hours >= 13 ? hours - 12 : hours;
+
+    if (stan === 0) {
+      hours = stan + 12;
+    } else {
+      hours = stan;
+    }
+
+    time = hours + ':' + mins + ':' + secs + abbr;
+    var t = tym ? time : '';
+
+    if (typeof document === 'undefined') {
+      colr = 'blueBright';
+      return console.log(colors(text, {
+        fg: colr,
+        style: styl
+      }) + '   '.repeat(10) + t);
+    } else {
+      var color = colr,
+          bgColor = '',
+          css = 'background: ' + bgColor + '; color: ' + color;
+      return console.info('%c' + text + '%s', css, '   '.repeat(10) + t);
+    }
+  }; //Console.warn alias function.
+
+
+  var warn = function warn(text, tyme) {
+    var colr = 'orange',
+        styl = 'bold',
+        tym = tyme || false;
+    var time = new Date(),
+        hours = time.getHours(),
+        mins = time.getMinutes(),
+        secs = time.getSeconds();
+
+    if (secs <= 9) {
+      secs = '0' + String(secs);
+    }
+
+    if (mins <= 9) {
+      mins = '0' + String(mins);
+    }
+
+    var abbr = hours >= 12 ? 'pm' : 'am';
+    var stan = hours >= 13 ? hours - 12 : hours;
+
+    if (stan === 0) {
+      hours = stan + 12;
+    } else {
+      hours = stan;
+    }
+
+    time = hours + ':' + mins + ':' + secs + abbr;
+    var t = tym ? time : '';
+
+    if (typeof document === 'undefined') {
+      colr = 'yellow';
+      colr = 'blueBright';
+      return console.log(colors(text, {
+        fg: colr,
+        style: styl
+      }) + '   '.repeat(10) + t);
+    } else {
+      var color = colr,
+          bgColor = '',
+          css = 'background: ' + bgColor + '; color: ' + color;
+      return console.warn('%c' + text + '%s', css, '   '.repeat(10) + t);
+    }
+  };
+
+  var inspect = function inspect(obj) {
+    return console.log(obj);
+  };
+
+  module.exports = {
+    log: log,
+    err: err,
+    info: info,
+    warn: warn,
+    inspect: inspect
+  };
+  /***/
+},
+/* 27 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+
+  var names = ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white'];
+  var namesBright = names.map(function (name) {
+    return name + 'Bright';
+  });
+  var namesStyle = ['bold', 'dim', 'underline', 'blink', null, 'invert', 'hidden'];
+  var RESET = '\x1b[0m';
+  var Colors = {
+    fg: {},
+    bg: {},
+    style: {}
+  }; // generate foreground normal colors
+
+  for (var i in names) {
+    Colors.fg[names[i]] = +i + 30;
+  } // generate foreground bright colors
+
+
+  for (var i in namesBright) {
+    Colors.fg[namesBright[i]] = +i + 90;
+  } // generate background normal colors
+
+
+  for (var i in names) {
+    Colors.bg[names[i]] = +i + 40;
+  } // generate background bright colors
+
+
+  for (var i in namesBright) {
+    Colors.bg[namesBright[i]] = +i + 100;
+  } // generate style attributes
+
+
+  for (var i in namesStyle) {
+    if (!namesStyle[i]) continue;
+    Colors.style[namesStyle[i]] = +i + 1;
+  }
+
+  function formatColor(color) {
+    color = color || {};
+    var fg = Colors.fg[color.fg] || 39;
+    var bg = Colors.bg[color.bg] || 49;
+    var style = Colors.style[color.style] || 0; //	var code = '\x1b';
+
+    return '\x1b[' + style + ';' + fg + ';' + bg + 'm';
+  }
+
+  function colorize(str, colors) {
+    if (!str || typeof colors !== 'object') return str;
+    return formatColor(colors) + str + RESET;
+  }
+
+  module.exports = colorize;
+  module.exports.colors = Colors;
+  module.exports.names = names.concat(namesBright);
+  module.exports.styles = namesStyle.filter(function (name) {
+    return !!name;
+  });
+  /***/
+},
+/* 28 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+
+  var _logger = __webpack_require__(26); //TODO:20 browser detection functionality, noop(), merge(), toggle().
+
+
+  var isArray = function isArray(arr) {
+    return Array.isArray(arr);
+  };
+  /*
+  utilities.js
+  
+  This file contains various functions for the library, either public or not,
+  that don't fit into any other module.
+  
+  Author: Eric James Foster
+  License: ISC
+  */
+
+
+  var isElement = function isElement(el) {
+    if (el.element) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  var isDOMElement = function isDOMElement(el) {
+    return el.tagName ? true : false;
+  };
+  /*This function combines querySelector and querySelectorAll, and becomes a noop if 'el' is a variable. There is an optional 2nd argument 'mod', that
+  accepts the string 'all' to modify behaviour of the function. By default, 'mod' is null. If the string 'all' is passed as the 2nd argument, the function
+  will use querySelectorAll() instead of querySelector(), meaning an array will be returned if possible. */
+
+
+  var queryDOM = function queryDOM(el) {
+    var lm = void 0,
+        lms = [];
+
+    if (typeof el === 'string') {
+      if (el.charAt(0) === '.') {
+        el = el.substring(1, el.length);
+        lm = document.getElementsByClassName(el);
+
+        if (lm.length !== 0) {
+          if (lm.length === 1) {
+            lms = lm[0];
+          } else {
+            for (var i = 0; i < lm.length; i++) {
+              lms.push(lm[i]);
+            }
+          }
+        } else {
+          return null;
+        }
+      } else if (el.charAt(0) !== '#' && el.indexOf('[') === -1 && el.indexOf(':') === -1 && el.indexOf(' ') === -1) {
+        lm = document.getElementsByTagName(el);
+
+        if (lm.length !== 0) {
+          if (lm.length === 1) {
+            lms = lm[0];
+          } else {
+            for (var j = 0; j < lm.length; j++) {
+              lms.push(lm.item(j));
+            }
+          }
+        } else {
+          return null;
+        }
+      } else {
+        lm = document.querySelectorAll(el);
+
+        if (lm.length <= 1) {
+          lm = undefined;
+          lm = document.querySelector(el);
+          return lm;
+        } else {
+          return lm;
+        }
+      }
+
+      return lms;
+    } else {
+      return el;
+    }
+  };
+  /*This function copies the prototype object of a superConstructor to the prototype object
+  of a constructor. It functions just like nodes' util.inherits function, it copies methods only,
+  not internal properties.*/
+
+
+  var proto = function proto(constructer, superConstructer) {
+    construct.prototype = Object.create(superConstructer.prototype);
+    constructer.prototype.constructor = constructer;
+    return constructer;
+  };
+  /*This convenience function sets imported module function names as global variables, so that
+  the module variable doesn't need to preface every function.*/
+
+
+  var functions = function functions(funcs, module) {
+    //TEST:110 Test this with other node_modules.
+    var context = module || this;
+
+    if (Array.isArray(funcs)) {
+      funcs.forEach(function (func) {
+        var evil = new Function('window.' + func + ' = ' + 'this.' + func + ';');
+        evil.call(context);
+      }, context);
+    } else {
+      (function () {
+        var evil = new Function('window.' + funcs + ' = ' + 'this.' + funcs + ';');
+        evil.call(context);
+      }).apply(context);
+    }
+  }; //This practically useless function will lock up the browser for a preset amount of time.
+
+
+  var sleep = function sleep(milliseconds) {
+    var start = new Date().getTime();
+
+    while (true) {
+      if (new Date().getTime() - start > milliseconds) {
+        break;
+      }
+    }
+  }; //This function will alternate function calls depending on the value of a global flag.
+
+
+  function shifter(onFunc, offFunc) {
+    window.toggleFlag = true;
+    return function () {
+      if (toggleFlag) {
+        onFunc();
+        toggleFlag = false;
+      } else {
+        offFunc();
+        toggleFlag = true;
+      }
+    };
+  }
+
+  ; //Boolean function returns true if given function has given ancestor, and false otherwise. Checks 6 parents deep.
+
+  function hasAncestor(l, ance) {
+    var tick,
+        ancestor,
+        ancestors = [1, 2, 3, 4, 5];
+
+    if (typeof ance === 'string') {
+      ancestor = queryDOM(ance);
+    } else {
+      ancestor = ance;
+    }
+
+    ancestors[0] = l.parentNode;
+    ancestors[1] = ancestors[0].parentNode;
+
+    if (!!ancestors[1].parentNode) {
+      ancestors[2] = ancestors[1].parentNode;
+    }
+
+    if (!!ancestors[2].parentNode) {
+      ancestors[3] = ancestors[2].parentNode;
+    }
+
+    if (!!ancestors[3].parentNode) {
+      ancestors[4] = ancestors[3].parentNode;
+    } //For inspection....
+    // var dir           = {};
+    //     dir.ance      = ance;
+    //     dir.l         = l;
+    //     dir.ancestor  = ancestor;
+    //     dir.ancestors = ancestors;
+    //
+    // console.log(dir);
+
+
+    tick = 0;
+
+    for (var i = 0; i < ancestors.length; i++) {
+      if (ancestors[i] === ancestor) tick++;
+    }
+
+    if (tick > 0) return true;else return false;
+  }
+
+  ;
+
+  function lookBehind(leftContextRE, matchRE, subject) {
+    var returnMatch, match, leftContext;
+    match = matchRE.exec(subject)[0];
+    leftContext = subject.substring(0, subject.indexOf(match));
+
+    if (leftContextRE.test(leftContext)) {
+      returnMatch = match;
+    } else {
+      returnMatch = false;
+    }
+
+    return returnMatch;
+  }
+
+  ;
+
+  function isMobile() {
+    this.android = function () {
+      return navigator.userAgent.match(/Android/i);
+    };
+
+    this.blackBerry = function () {
+      return navigator.userAgent.match(/BlackBerry/i);
+    }, this.iOS = function () {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    }, this.operaMini = function () {
+      return navigator.userAgent.match(/Opera Mini/i);
+    }, this.windowsMobile = function () {
+      return navigator.userAgent.match(/IEMobile/i);
+    }, this.any = function () {
+      return this.android() || this.blackBerry() || this.iOS() || this.operaMini() || this.windowsMobile();
+    };
+    return this.any();
+  }
+
+  module.exports = {
+    queryDOM: queryDOM,
+    functions: functions,
+    isArray: isArray,
+    isElement: isElement,
+    isDOMElement: isDOMElement,
+    shifter: shifter,
+    sleep: sleep,
+    proto: proto,
+    hasAncestor: hasAncestor,
+    lookBehind: lookBehind,
+    isMobile: isMobile
+  };
+  /***/
+},
+/* 29 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+
+  var _logger = __webpack_require__(26);
+
+  var _utilities = __webpack_require__(28);
+
+  var utils = _interopRequireWildcard(_utilities);
+
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    } else {
+      var newObj = {};
+
+      if (obj != null) {
+        for (var key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+        }
+      }
+
+      newObj.default = obj;
+      return newObj;
+    }
+  } //DONE:10 Complete X-Browser support for these 3 functions.
+
+  /*
+  events.js
+  
+  This file contains code for the librarys' convenience EventListener
+  alias functions.
+  
+  Author: Eric James Foster
+  License: ISC
+  */
+
+
+  var go = function go(cb) {
+    return document.addEventListener('DOMContentLoaded', cb());
+  };
+
+  var goIE = function goIE(cb) {
+    return document.attachEvent('onDOMContentLoaded', cb());
+  }; //Function for setting event listeners.
+
+
+  var on = function on(event, el, callback) {
+    //TODO: allow arg 'el' to be an array.
+    if (typeof el === 'string') {
+      if (el[0] === '#') {
+        el = el.slice(1);
+        return document.getElementById(el).addEventListener(event, callback);
+      } else if (el[0] === '.') {
+        el = el.slice(1);
+        return document.getElementsByClassName(el)[0].addEventListener(event, callback);
+      } else {
+        return document.getElementsByTagName(el).addEventListener(event, callback);
+      }
+    } else {
+      return el.addEventListener(event, callback);
+    }
+  };
+
+  var onIE = function onIE(event, el, callback) {
+    if (typeof el === 'string') {
+      if (el[0] === '#') {
+        el = el.slice(1);
+        return document.getElementById(el).attachEvent('on' + event, callback);
+      } else if (el[0] === '.') {
+        el = el.slice(1);
+        return document.getElementsByClassName(el)[0].attachEvent('on' + event, callback);
+      } else {
+        return document.getElementsByTagName(el).attachEvent('on' + event, callback);
+      }
+    } else {
+      return el.attachEvent('on' + event, callback);
+    }
+  }; //Function for removing event listeners.
+
+
+  var off = function off(event, el, callback) {
+    if (typeof el === 'string') {
+      if (el[0] === '#') {
+        el = el.slice(1);
+        return document.getElementById(el).removeEventListener(event, callback);
+      } else if (el[0] === '.') {
+        el = el.slice(1);
+        return document.getElementsByClassName(el)[0].removeEventListener(event, callback);
+      } else {
+        return document.getElementsByTagName(el).removeEventListener(event, callback);
+      }
+    } else {
+      el.removeEventListener(event, callback);
+    }
+  }; //Function for removing event listeners.
+
+
+  var offIE = function offIE(event, el, callback) {
+    if (typeof el === 'string') {
+      if (el[0] === '#') {
+        el = el.slice(1);
+        return document.getElementById(el).detachEvent('on' + event, callback);
+      } else if (el[0] === '.') {
+        el = el.slice(1);
+        return document.getElementsByClassName(el)[0].detachEvent('on' + event, callback);
+      } else {
+        return document.getElementsByTagName(el).detachEvent('on' + event, callback);
+      }
+    } else {
+      el.detachEvent('on' + event, callback);
+    }
+  };
+
+  var once = function once(event, el, callback) {
+    //DONE:60 Finish once function.
+    var cb = callback; //DONE:80 Test once function.
+
+    var callBack = function callBack(e) {
+      cb(e);
+      el.removeEventListener(event, callBack);
+    };
+
+    el = utils.queryDOM(el);
+    return el.addEventListener(event, callBack);
+  };
+
+  var onceIE = function onceIE(event, el, callback) {
+    var cb = callback; //DONE:90 Test onceIE function.
+
+    var callBack = function callBack(e) {
+      cb(e);
+      el.detachEvent('on' + event, callBack);
+    };
+
+    el = utils.queryDOM(el);
+    return el.attachEvent('on' + event, callBack);
+  };
+
+  function spark(evt, el) {
+    var ev = new MouseEvent(evt, {
+      bubbles: true,
+      cancelable: true,
+      view: window
+    });
+    el.dispatchEvent(ev);
+  }
+
+  function sparkIE(evt, el) {
+    var ev = document.createEventObject();
+    l = document.querySelector(el);
+    evt.eventType = 'on' + evt;
+    el.fireEvent('on' + evt, ev);
+  }
+
+  function blur(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('blur', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('blur', cb);
+    }
+  }
+
+  function blurIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onblur';
+      el.fireEvent('on' + 'blur', evt);
+    } else {
+      el.attachEvent('on' + 'blur', cb);
+    }
+  }
+
+  function click(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('click', cb);
+    }
+  }
+
+  function clickIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'on' + 'click';
+      el.fireEvent('on' + 'click', evt);
+    } else {
+      el.attachEvent('on' + 'click', cb);
+    }
+  }
+
+  function dblClick(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('dblclick', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('dblclick', cb);
+    }
+  }
+
+  function dblClickIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'ondblclick';
+      el.fireEvent('on' + 'dblclick', evt);
+    } else {
+      el.attachEvent('on' + 'dblclick', cb);
+    }
+  }
+
+  function error(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('error', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('error', cb);
+    }
+  }
+
+  function errorIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onerror';
+      el.fireEvent('on' + 'error', evt);
+    } else {
+      el.attachEvent('on' + 'error', cb);
+    }
+  }
+
+  function focus(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('focus', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('focus', cb);
+    }
+  }
+
+  function focusIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onfocus';
+      el.fireEvent('on' + 'focus', evt);
+    } else {
+      el.attachEvent('on' + 'focus', cb);
+    }
+  }
+
+  function focusIn(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('focusin', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('focusin', cb);
+    }
+  }
+
+  function focusInIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onfocusin';
+      el.fireEvent('on' + 'focusin', evt);
+    } else {
+      el.attachEvent('on' + 'focusin', cb);
+    }
+  }
+
+  function focusOut(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('focusout', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('focusout', cb);
+    }
+  }
+
+  function focusOutIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onfocusout';
+      el.fireEvent('on' + 'focusout', evt);
+    } else {
+      el.attachEvent('on' + 'focusout', cb);
+    }
+  }
+
+  function keyUp(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('keyup', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('keyup', cb);
+    }
+  }
+
+  function keyUpIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onkeyup';
+      el.fireEvent('on' + 'keyup', evt);
+    } else {
+      el.attachEvent('on' + 'keyup', cb);
+    }
+  }
+
+  function keyDown(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('keydown', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('keydown', cb);
+    }
+  }
+
+  function keyDownIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onkeydown';
+      el.fireEvent('on' + 'keydown', evt);
+    } else {
+      el.attachEvent('on' + 'keydown', cb);
+    }
+  }
+
+  function load(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('load', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('load', cb);
+    }
+  }
+
+  function loadIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onload';
+      el.fireEvent('on' + 'load', evt);
+    } else {
+      el.attachEvent('on' + 'load', cb);
+    }
+  }
+
+  function unLoad(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('unload', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('unload', cb);
+    }
+  }
+
+  function unLoadIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onunload';
+      el.fireEvent('on' + 'unload', evt);
+    } else {
+      el.attachEvent('on' + 'unload', cb);
+    }
+  }
+
+  function mouse(sufx, el) {
+    var cb = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2]; //sufx is string, options are 'up', 'down', 'enter', 'leave', 'over', 'out' and 'move'.
+
+    if (cb === null) {
+      var evt = new MouseEvent('mouse' + sufx, {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('mouse' + sufx, cb);
+    }
+  }
+
+  function mouseIE(sufx, el) {
+    var cb = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onmouse' + sufx;
+      el.fireEvent('on' + 'mouse' + sufx, evt);
+    } else {
+      el.attachEvent('on' + 'mouse' + sufx, cb);
+    }
+  }
+
+  function reSize(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('resize', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('resize', cb);
+    }
+  }
+
+  function reSizeIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onresize';
+      el.fireEvent('on' + 'resize', evt);
+    } else {
+      el.attachEvent('on' + 'resize', cb);
+    }
+  }
+
+  function scroll(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('scroll', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('scroll', cb);
+    }
+  }
+
+  function scrollIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onscroll';
+      el.fireEvent('on' + 'scroll', evt);
+    } else {
+      el.attachEvent('on' + 'scroll', cb);
+    }
+  }
+
+  function select(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = new MouseEvent('select', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      el.dispatchEvent(evt);
+    } else {
+      el.addEventListener('select', cb);
+    }
+  }
+
+  function selectIE(el) {
+    var cb = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
+
+    if (cb === null) {
+      var evt = document.createEventObject();
+      evt.eventType = 'onselect';
+      el.fireEvent('on' + 'select', evt);
+    } else {
+      el.attachEvent('on' + 'select', cb);
+    }
+  }
+
+  module.exports = {
+    blur: blur,
+    blurIE: blurIE,
+    click: click,
+    clickIE: clickIE,
+    dblClick: dblClick,
+    dblClickIE: dblClickIE,
+    error: error,
+    errorIE: errorIE,
+    focus: focus,
+    focusIE: focusIE,
+    focusIn: focusIn,
+    focusInIE: focusInIE,
+    focusOut: focusOut,
+    focusOutIE: focusOutIE,
+    keyUp: keyUp,
+    keyUpIE: keyUpIE,
+    keyDown: keyDown,
+    keyDownIE: keyDownIE,
+    load: load,
+    loadIE: loadIE,
+    unLoad: unLoad,
+    unLoadIE: unLoadIE,
+    mouse: mouse,
+    mouseIE: mouseIE,
+    reSize: reSize,
+    reSizeIE: reSizeIE,
+    scroll: scroll,
+    scrollIE: scrollIE,
+    select: select,
+    selectIE: selectIE,
+    spark: spark,
+    sparkIE: sparkIE,
+    go: go,
+    goIE: goIE,
+    on: on,
+    onIE: onIE,
+    off: off,
+    offIE: offIE,
+    once: once,
+    onceIE: onceIE
+  };
+  /***/
+},
+/* 30 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+
+  var _element = __webpack_require__(25);
+
+  var _element2 = _interopRequireDefault(_element);
+
+  var _logger = __webpack_require__(26);
+
+  var _utilities = __webpack_require__(28);
+
+  var utils = _interopRequireWildcard(_utilities);
+
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    } else {
+      var newObj = {};
+
+      if (obj != null) {
+        for (var key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+        }
+      }
+
+      newObj.default = obj;
+      return newObj;
+    }
+  }
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  } //TODO:0 Check out querySelector() method, see if it helps out.
+  //DOING:0 go() DOMREady function, Class toggling method, aft(), fore(), size(), show(), hide().
+  // ------------------- This function is now run straight from index.js---------------------------//
+  //This function queries the dom, getting one element for each query (i.e. class/tags), creates
+  //an Element object with it and returns it, so that it may be easily styled.
+  // var dom = function(el) {
+  //   el = utils.queryDOM(el);
+  //
+  //   return new Element(el);
+  // };
+
+  /*function for insterting template literals into the DOM.
+  
+  bones(`
+  
+  <html>
+    <head></head>
+    <body></body>
+  </html>
+  
+  `);
+  
+  */
+
+
+  var bones = function bones(tempLit) {
+    var elem = arguments.length <= 1 || arguments[1] === undefined ? 'body' : arguments[1];
+    elem = utils.queryDOM(elem);
+    elem.innerHTML += tempLit;
+    return elem;
+  }; //Create element alias function.
+
+  /*
+  DOM.js
+  
+  This file contains the code for the elements.js librarys' DOM manipulation
+  convenience functions.
+  
+  Author: Eric James Foster
+  License: ISC
+  */
+
+
+  var make = function make(l, tag) {
+    var t = tag || 'div',
+        el = document.createElement(t);
+
+    if (l[0] === '#') {
+      l = l.slice(1);
+      el.id = l;
+      return new _element2.default(el);
+    } else if (l[0] === '.') {
+      l = l.slice(1);
+      el.className = l;
+      return new _element2.default(el);
+    }
+  };
+  /*DOM querying alias function. Will return an array if there is more than one result. If there is
+   only 1 it will NOT, even if the CSS Selector is a className or tagName.*/
+  //NOTE: Now referencing queryDOM() function from index.js.
+
+
+  var el = function el(_el) {
+    return utils.queryDOM(_el);
+  }; //------------------------------This function is not being used in the current build ---------------------------//
+  //DOM querying function, same as above, but it will return an array if a tag or class name are given as argument.
+  // var all = function(l) {
+  //   return utils.queryDOM(el, 'all');
+  // };
+  //Function for appending elements to other elements.
+
+
+  var put = function put(el, mom) {
+    //DONE:120 Make sure this works.
+    if (typeof el === 'string') {
+      //IDEA:0 If el doesn't exist, create it and give it id/class.
+      if (el[0] === '#') {
+        el = el.slice(1);
+
+        if (typeof mom === 'string') {
+          if (mom[0] === '#') {
+            //TEST:40 Test this function thoroughly.
+            mom = mom.slice(1);
+            return document.getElementById(mom).appendChild(document.getElementById(el));
+          } else if (mom[0] === '.') {
+            mom = mom.slice(1);
+            return document.getElementsByClassName(mom)[0].appendChild(document.getElementById(el));
+          } else {
+            return document.getElementsByTagName(mom)[0].appendChild(document.getElementById(el));
+          }
+        } else {
+          return mom.appendChild(document.getElementById(el));
+        }
+      } else if (el[0] === '.') {
+        el = el.slice(1);
+
+        if (typeof mom === 'string') {
+          if (mom[0] === '#') {
+            mom = mom.slice(1);
+            return document.getElementById(mom).appendChild(document.getElementsByClassName(el)[0]);
+          } else if (mom[0] === '.') {
+            mom = mom.slice(1);
+            return document.getElementsByClassName(mom)[0].appendChild(document.getElementsByClassName(el)[0]);
+          } else {
+            return document.getElementsByTagName(mom)[0].appendChild(document.getElementsByClassName(el)[0]);
+          }
+        } else {
+          return mom.appendChild(document.getElementsByClassName(el)[0]);
+        }
+      } else {
+        if (typeof mom === 'string') {
+          if (mom[0] === '#') {
+            mom = mom.slice(1);
+            return document.getElementById(mom).appendChild(document.getElementsByTagName(el)[0]);
+          } else if (mom[0] === '.') {
+            mom = mom.slice(1);
+            return document.getElementsByClassName(mom)[0].appendChild(document.getElementsByTagName(el)[0]);
+          } else {
+            return document.getElementsByTagName(mom)[0].appendChild(document.getElementsByTagName(el)[0]);
+          }
+        } else {
+          return mom.appendChild(document.getElementsByTagName(el)[0]);
+        }
+      }
+    } else {
+      if (typeof mom === 'string') {
+        if (mom[0] === '#') {
+          mom = mom.slice(1);
+          return document.getElementById(mom).appendChild(el);
+        } else if (mom[0] === '.') {
+          mom = mom.slice(1);
+          return document.getElementsByClassName(mom)[0].appendChild(el);
+        } else {
+          return document.getElementsByTagName(mom)[0].appendChild(el);
+        }
+      } else {
+        return mom.appendChild(el);
+      }
+    }
+  }; //Function for deleting elements from the DOM tree.
+
+
+  var kill = function kill(el) {
+    if (typeof el === 'string') {
+      if (el[0] === '#') {
+        el = el.slice(1);
+        return document.getElementById(el).parentNode.removeChild(document.getElementById(el));
+      } else if (el[0] === '.') {
+        el = el.slice(1);
+        return document.getElementsByClassName(el)[0].parentNode.removeChild(document.getElementsByClassName(el)[0]);
+      } else {
+        return document.getElementsByTagName(el)[0].parentNode.removeChild(getElementsByTagName(el)[0]);
+      }
+    } else {
+      return el.parentNode.removeChild(el);
+    }
+  }; //DOM function for inserting an element before a specified node.
+
+
+  var fore = function fore(ref, elem) {
+    return utils.queryDOM(ref).parentNode.insertBefore(utils.queryDOM(elem), utils.queryDOM(ref));
+  }; //DOM function for inserting an element after a specified node.
+
+
+  var aft = function aft(ref, elem) {
+    ref = utils.queryDOM(ref);
+    ref = ref.nextElementSibling;
+    return ref.parentNode.insertBefore(utils.queryDOM(elem), ref);
+  }; //DOM function for showing an element, or a list of elements.
+
+
+  var show = function show(elem) {
+    var disp = arguments.length <= 1 || arguments[1] === undefined ? 'block' : arguments[1];
+    elem = utils.queryDOM(elem);
+
+    if (Array.isArray(elem)) {
+      elem.forEach(function (l) {
+        l.style.display = disp;
+      });
+    } else {
+      elem.style.display = disp;
+    }
+  }; //DOM function for hiding an element, or a list of elements.
+
+
+  var hide = function hide(elem) {
+    elem = utils.queryDOM(elem);
+
+    if (Array.isArray(elem)) {
+      elem.forEach(function (l) {
+        l.style.display = 'none';
+      });
+    } else {
+      elem.style.display = 'none';
+    }
+  }; //DOM function for setting height and width of an element. 's' is an object, with height and width as keys.
+
+
+  var size = function size(elem, h, w) {
+    elem = utils.queryDOM(elem);
+    elem.style.height = h;
+    elem.style.width = w;
+    return elem;
+  }; //function clones given node.ddeep is a boolean, if true, clone will include all descendants as well as node and its' attributes.
+
+
+  var clone = function clone(elem, deep) {
+    var node = elem.cloneNode(deep);
+    return node;
+  }; //Function for setting css style properties of elements.
+  // var style = function(el) {
+  //   if (el[0] === '#') {                                                      //DONE:110 Give this chaining functionality.
+  //     el = el.slice(1);
+  //     return document.getElementById(el).style;
+  //   } else if (el[0] === '.') {
+  //     el = el.slice(1);
+  //     return document.getElementsByClassName(el)[0].style;
+  //   } else {
+  //     return document.getElementsByTagName(el)[0].style;
+  //   }
+  // };
+
+
+  module.exports = {
+    make: make,
+    bones: bones,
+    clone: clone,
+    // all: all,
+    put: put,
+    kill: kill,
+    fore: fore,
+    aft: aft,
+    show: show,
+    hide: hide,
+    size: size
+  };
+  /***/
+},
+/* 31 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  ;
+
+  var _logger = __webpack_require__(26); //DONE:20 Complete X-Browser support for both functions.
+  //This is an alias function for XMLHttpRequests.
+
+
+  var xhr = function xhr(url, fd, method) {
+    //DONE:80 Perfect this function.
+    var formData; //DONE:100 Build FormData in function from object that user passes as an argument.
+
+    if (fd) {
+      //DONE:70 Need async ajax function
+      if (Object.getOwnPropertyNames(fd).length === 0) {
+        formData = fd; //log(Object.getOwnPropertyNames(fd).length);
+      } else {
+        formData = new FormData();
+
+        for (var key in fd) {
+          //TEST:50 Test this function.
+          formData.append(key, fd[key]);
+        }
+      }
+    } else {
+      formData = null;
+    } //log('fd'); log(formData);
+
+
+    var m = method || 'get'; // var data = fd || null;
+
+    var val;
+
+    var ajax = function ajax() {
+      var ajax = new XMLHttpRequest();
+
+      ajax.onloadend = function () {
+        if (ajax.status === 200) {
+          val = this.response;
+        }
+      };
+
+      ajax.open(m, url, false);
+      ajax.send(formData);
+    };
+
+    ajax();
+    return val;
+  };
+  /*
+  httpRequests.js
+  
+  This file contains code for 2 HTTP request convenience functions, 1 synchronous,
+  and the other asynchronous.
+  
+  Author: Eric James Foster
+  License: ISC
+  */
+  //TODO:30 reWrite 'await' version of xhr().
+
+
+  var ajax = function ajax(url, fd, callback, method) {
+    //TEST:60 Test this function.
+    var formData;
+
+    if (fd) {
+      if (Object.getOwnPropertyNames(fd).length === 0) {
+        formData = fd; //log(Object.getOwnPropertyNames(fd).length);
+      } else {
+        formData = new FormData();
+
+        for (var key in fd) {
+          formData.append(key, fd[key]);
+        }
+      }
+    } else {
+      formData = null;
+    } //log('fd'); log(formData);
+
+
+    var m = method || 'get';
+
+    if (formData !== null) {
+      m = 'post';
+    } // var data = fd;
+
+
+    var val;
+    var req = new XMLHttpRequest();
+
+    req.onloadend = function () {
+      if (req.status === 200) {
+        var response = this.response;
+        callback(response);
+      }
+    };
+
+    req.open(m, url);
+    req.send(formData);
+  };
+
+  module.exports = {
+    ajax: ajax,
+    xhr: xhr
+  };
+  /***/
+},
+/* 32 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -957,29 +6122,23 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
-  /* harmony import */
-
-
   var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
   /* harmony import */
 
 
-  var _Node__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+  var _Node__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
   /* harmony import */
 
 
-  var _Props_Props__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
+  var _Props_Props__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(36);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
+  var _Events__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Venus_Venus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
+  var _Venus_Venus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(39);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -1196,267 +6355,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 6 */
-
-/***/
-function (module, __webpack_exports__, __webpack_require__) {
-  ;
-
-  __webpack_require__.r(__webpack_exports__);
-  /* harmony export (binding) */
-
-
-  __webpack_require__.d(__webpack_exports__, "Is", function () {
-    return Is;
-  });
-  /* harmony import */
-
-
-  var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-
-  function _typeof(obj) {
-    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-      _typeof = function _typeof(obj) {
-        return typeof obj;
-      };
-    } else {
-      _typeof = function _typeof(obj) {
-        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-      };
-    }
-
-    return _typeof(obj);
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-  /*
-  Is.js
-  
-  A file containing a small type checking utility library...
-  
-  Eric James Foster, MIT License.
-  */
-  // Get data...
-
-
-  var Is =
-  /*#__PURE__*/
-  function () {
-    function Is() {
-      _classCallCheck(this, Is);
-    }
-
-    _createClass(Is, null, [{
-      key: "eventListener",
-      // Determines whether or not a prop is an event listener...
-      value: function eventListener(name) {
-        return /on[A-Z]\w*/g.test(name) || _data__WEBPACK_IMPORTED_MODULE_0__["DATA"].DOMElementEvents.indexOf(name.toLowerCase()) !== -1;
-      } // Determines whether or not an attribute name is custom or not...
-
-    }, {
-      key: "newPropName",
-      value: function newPropName() {
-        return _data__WEBPACK_IMPORTED_MODULE_0__["DATA"].HTMLAttributes.indexOf(name.toLowerCase()) === -1;
-      } // NOT CURRENTLY IN USE...
-      // A boolean function for determining if a func has called for the first time...
-
-    }, {
-      key: "newFunction",
-      value: function newFunction(funcs, func) {
-        return funcs.indexOf(func) == -1;
-      } // Simple convenience function for determining if a value is
-      // undefined or not...
-
-    }, {
-      key: "undefined",
-      value: function undefined(val) {
-        return typeof val === 'undefined';
-      } // Simple convenience function for determining if a value is
-      // an object or not...
-
-    }, {
-      key: "object",
-      value: function object(val) {
-        return _typeof(val) === 'object';
-      } // Simple convenience function for determining if a value is
-      // a number or not...
-
-    }, {
-      key: "number",
-      value: function number(val) {
-        return typeof val === 'number';
-      } // Simple convenience function for determining if a value is
-      // a string or not...
-
-    }, {
-      key: "string",
-      value: function string(val) {
-        return typeof val === 'string';
-      } // Simple convenience function for determining if a value is
-      // a function or not...
-
-    }, {
-      key: "function",
-      value: function _function(val) {
-        return typeof val === 'function';
-      } // Simple convenience function for determining if a value is
-      // a symbol or not...
-
-    }, {
-      key: "symbol",
-      value: function symbol(val) {
-        return _typeof(val) === 'symbol';
-      } // Simple convenience function for determining if a value is
-      // a boolean or not...
-
-    }, {
-      key: "boolean",
-      value: function boolean(val) {
-        return typeof val === 'boolean';
-      } // A simple convenience function for determining if a value is
-      // a class or not...
-
-    }, {
-      key: "class",
-      value: function _class(val) {
-        return /_classCallCheck/.test(String(val));
-      } // A simple convenience function for determining if a value is
-      // a component or not...
-
-    }, {
-      key: "component",
-      value: function component(tagName) {
-        return !tagName.indexOf('-') === -1 && true;
-      } // A simple convenience function for determining if a value is
-      // a function or not...
-
-    }, {
-      key: "array",
-      value: function array(val) {
-        return Array.isArray(val);
-      } // A function for confirming same type...
-
-    }, {
-      key: "kin",
-      value: function kin(val1, val2) {
-        return _typeof(val1) === _typeof(val2);
-      } // A function for determining whether or not a propType is Required...
-
-    }, {
-      key: "requiredProp",
-      value: function requiredProp(types) {
-        return types.length === 1;
-      } // A function for determining if a tagged template literal has interpolations...
-
-    }, {
-      key: "interpolated",
-      value: function interpolated(tagTempLit) {
-        return tagTempLit.length > 1;
-      }
-    }]);
-
-    return Is;
-  }();
-  /***/
-
-},
-/* 7 */
-
-/***/
-function (module, __webpack_exports__, __webpack_require__) {
-  ;
-
-  __webpack_require__.r(__webpack_exports__);
-  /* harmony export (binding) */
-
-
-  __webpack_require__.d(__webpack_exports__, "DATA", function () {
-    return DATA;
-  });
-  /*
-  data.js
-  
-  A file to hold information about HTML
-  Elements...
-  
-  Eric James Foster, MIT License.
-  */
-
-
-  var DATA = {
-    DOMElementEvents: ['onabort', 'onauxclick', 'onbeforecopy', 'onbeforecut', 'onbeforepaste', 'onblur', 'oncancel', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'ongotpointercapture', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onlostpointercapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpointercancel', 'onpointerdown', 'onpointerenter', 'onpointerleave', 'onpointermove', 'onpointerout', 'onpointerover', 'onpointerup', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onsearch', 'onseeked', 'onseeking', 'onselect', 'onselectstart', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'onvolumechange', 'onwaiting', 'onwebkitfullscreenchange', 'onwebkitfullscreenerror', 'onwheel'],
-    HTMLAttributes: ['accept', 'accept-charset', 'accesskey', 'action', 'align', 'alt', 'async', 'autocomplete', 'autofocus', 'autoplay', 'bgcolor', 'border', 'charset', 'checked', 'cite', 'class', 'classname', 'color', 'cols', 'colspan', 'content', 'contenteditable', 'contextmenu', 'controls', 'coords', 'data', 'datetime', 'default', 'defer', 'dir', 'dirname', 'disabled', 'download', 'draggable', 'dropzone', 'enctype', 'for', 'form', 'formaction', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'http-equiv', 'id', 'ismap', 'kind', 'label', 'lang', 'list', 'loop', 'low', 'max', 'maxlength', 'media', 'method', 'min', 'multiple', 'muted', 'name', 'novalidate', 'onabort', 'onafterprint', 'onbeforeprint', 'onbeforeunload', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onhashchange', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmousedown', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onoffline', 'ononline', 'onpagehide', 'onpageshow', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpopstate', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onsearch', 'onseeked', 'onseeking', 'onselect', 'onshow', 'onst', 'onstorage', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'onunload', 'onvolumechange', 'onwaiting', 'onwheel', 'open', 'optimum', 'pattern', 'placeholder', 'poster', 'preload', 'readonly', 'rel', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'selected', 'shape', 'size', 'sizes', 'span', 'spellcheck', 'src', 'srcdoc', 'srclang', 'srcset', 'start', 'step', 'style', 'tabindex', 'target', 'title', 'translate', 'type', 'usemap', 'value', 'width', 'wrap'],
-    ComponentLifecycleEvents: ['componentWillMount', 'componentWillUnmount', 'componentDidMount', 'componentDidUnmount', 'componentWillUpdate', 'componentDidUpdate', 'componentWillReceiveProps'],
-    venusComponentElements: [{
-      UppercaseName: 'Area',
-      name: 'area'
-    }, {
-      UppercaseName: 'Col',
-      name: 'col'
-    }, {
-      UppercaseName: 'Aside',
-      name: 'aside'
-    }, {
-      UppercaseName: 'Colgroup',
-      name: 'colgroup'
-    }, {
-      UppercaseName: 'Footer',
-      name: 'footer'
-    }, {
-      UppercaseName: 'Header',
-      name: 'header'
-    }, {
-      UppercaseName: 'H2',
-      name: 'h2'
-    }, {
-      UppercaseName: 'H3',
-      name: 'h3'
-    }, {
-      UppercaseName: 'H4',
-      name: 'h4'
-    }, {
-      UppercaseName: 'H5',
-      name: 'h5'
-    }, {
-      UppercaseName: 'H6',
-      name: 'h6'
-    }, {
-      UppercaseName: 'Section',
-      name: 'section'
-    }, {
-      UppercaseName: 'Span',
-      name: 'span'
-    }, {
-      UppercaseName: 'Table',
-      name: 'table'
-    }, {
-      UppercaseName: 'Textarea',
-      name: 'textarea'
-    }]
-  };
-  /***/
-},
-/* 8 */
+/* 33 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -1476,33 +6375,27 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
-  /* harmony import */
-
-
   var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
   /* harmony import */
 
 
-  var _Element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+  var _Element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(34);
   /* harmony import */
 
 
-  var _Component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
+  var _Component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(38);
   /* harmony import */
 
 
-  var _Props_Props__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
+  var _Props_Props__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(36);
   /* harmony import */
 
 
-  var _Props_PropTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
+  var _Props_PropTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(37);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+  var _Events__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(35);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -1665,7 +6558,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 9 */
+/* 34 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -1681,7 +6574,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
   /* harmony import */
 
 
@@ -1689,25 +6582,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_1___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_1__);
-  /* harmony import */
-
-
   var _Utilities_Is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+  var _Events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Props_Props__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
+  var _Props_Props__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(36);
   /* harmony import */
 
 
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -1861,7 +6748,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 10 */
+/* 35 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -1878,12 +6765,6 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
   var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-  /* harmony import */
-
-
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -2004,7 +6885,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 11 */
+/* 36 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -2024,17 +6905,11 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
-  /* harmony import */
-
-
   var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
   /* harmony import */
 
 
-  var _PropTypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+  var _PropTypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
 
   function _objectSpread(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -2357,7 +7232,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 12 */
+/* 37 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -2451,7 +7326,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 13 */
+/* 38 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -2471,21 +7346,15 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
   /* harmony import */
 
 
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
-  /* harmony import */
-
-
-  var _Events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+  var _Events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(35);
 
   function _typeof(obj) {
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -3066,7 +7935,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 14 */
+/* 39 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -3086,73 +7955,67 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
-  /* harmony import */
-
-
   var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
   /* harmony import */
 
 
-  var _Component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
+  var _Component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
   /* harmony import */
 
 
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
   /* harmony import */
 
 
-  var _Props_Props__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
+  var _Props_Props__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(36);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
+  var _Events__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Elements_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(15);
+  var _Elements_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40);
   /* harmony import */
 
 
-  var _Elements_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(17);
+  var _Elements_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(43);
   /* harmony import */
 
 
-  var _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(18);
+  var _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(44);
   /* harmony import */
 
 
-  var _Elements_H1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(19);
+  var _Elements_H1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(45);
   /* harmony import */
 
 
-  var _Elements_H2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(20);
+  var _Elements_H2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(46);
   /* harmony import */
 
 
-  var _Elements_H3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(21);
+  var _Elements_H3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(47);
   /* harmony import */
 
 
-  var _Elements_H4__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(22);
+  var _Elements_H4__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(48);
   /* harmony import */
 
 
-  var _Elements_H5__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(23);
+  var _Elements_H5__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(49);
   /* harmony import */
 
 
-  var _Elements_H6__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(24);
+  var _Elements_H6__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(50);
   /* harmony import */
 
 
-  var _Elements_Header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(25);
+  var _Elements_Header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(51);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(16);
+  var _CSS__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(41);
 
   function _objectSpread(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -3226,12 +8089,20 @@ function (module, __webpack_exports__, __webpack_require__) {
   *********************************/
   //TODO:[X] Ability to extend all element types.. 1
   //TODO:[X] Ability to extend a component.. 2
-  //TODO:[ ] Sass/SCSS integration.. 4
-  //TODO:[ ] Ability to Inject global styles.. 5
+  //TODO:[X] Stylis integration.. 4
+  //TODO:[X] Ability to Inject global styles.. 5
   //TODO:[ ] Media Queries.. 6
   //TODO:[ ] Keyframe Animations.. 7
   //TODO:[ ] SVG.. 8
   //TODO:[X] Variables, functions (tagged template literals).. 3
+
+  /*
+  ** Venus Work to complete
+  *********************************/
+  //TODO:[ ] Ability to extend all element types..
+  //TODO:[ ] Ability to extend a component..
+  //TODO:[ ] Stylis integration..
+  //TODO:[ ] Ability to Inject global styles..
 
   /* Venus Styling related libraries......*/
   // import our extensible element constructors...
@@ -3528,13 +8399,24 @@ function (module, __webpack_exports__, __webpack_require__) {
             create();
           });
         }
+      } //A static public method for inserting global rules into the styleSheet...
+
+    }, {
+      key: "global",
+      value: function global() {
+        for (var _len = arguments.length, tempLit = new Array(_len), _key = 0; _key < _len; _key++) {
+          tempLit[_key] = arguments[_key];
+        } // Send the ttLiteral over to CSS for inserting into the stylesheet...
+
+
+        _CSS__WEBPACK_IMPORTED_MODULE_16__["CSS"].insertGlobal([].concat(tempLit));
       } // An internal method used for retrieving a css template literal..
 
     }, {
       key: "_getTemplateLiteral",
       value: function _getTemplateLiteral() {
-        for (var _len = arguments.length, tempLit = new Array(_len), _key = 0; _key < _len; _key++) {
-          tempLit[_key] = arguments[_key];
+        for (var _len2 = arguments.length, tempLit = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          tempLit[_key2] = arguments[_key2];
         }
 
         var tmpl,
@@ -3611,8 +8493,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "div",
       value: function div() {
-        for (var _len2 = arguments.length, arg = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          arg[_key2] = arguments[_key2];
+        for (var _len3 = arguments.length, arg = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+          arg[_key3] = arguments[_key3];
         } // If the argument is not an array, it's probably our props object...
 
 
@@ -3651,8 +8533,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "input",
       value: function input() {
-        for (var _len3 = arguments.length, arg = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-          arg[_key3] = arguments[_key3];
+        for (var _len4 = arguments.length, arg = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+          arg[_key4] = arguments[_key4];
         } // If the argument is not an array, it's probably our props object...
 
 
@@ -3692,8 +8574,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "button",
       value: function button() {
-        for (var _len4 = arguments.length, arg = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-          arg[_key4] = arguments[_key4];
+        for (var _len5 = arguments.length, arg = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+          arg[_key5] = arguments[_key5];
         } // If the argument is not an array, it's probably our props object...
 
 
@@ -3733,8 +8615,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "p",
       value: function p() {
-        for (var _len5 = arguments.length, arg = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
-          arg[_key5] = arguments[_key5];
+        for (var _len6 = arguments.length, arg = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+          arg[_key6] = arguments[_key6];
         } // If the argument is not an array, it's probably our props object...
 
 
@@ -3774,8 +8656,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "h1",
       value: function h1() {
-        for (var _len6 = arguments.length, arg = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
-          arg[_key6] = arguments[_key6];
+        for (var _len7 = arguments.length, arg = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+          arg[_key7] = arguments[_key7];
         } // If the argument is not an array, it's probably our props object...
 
 
@@ -3815,8 +8697,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "h6",
       value: function h6() {
-        for (var _len7 = arguments.length, arg = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
-          arg[_key7] = arguments[_key7];
+        for (var _len8 = arguments.length, arg = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+          arg[_key8] = arguments[_key8];
         } // If the argument is not an array, it's probably our props object...
 
 
@@ -3942,7 +8824,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 15 */
+/* 40 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -3962,25 +8844,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -4162,7 +9038,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 16 */
+/* 41 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -4182,13 +9058,17 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
   /* harmony import */
 
 
-  var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+  var stylis__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
+  /* harmony import */
+
+
+  var stylis__WEBPACK_IMPORTED_MODULE_2___default =
+  /*#__PURE__*/
+  __webpack_require__.n(stylis__WEBPACK_IMPORTED_MODULE_2__);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -4235,6 +9115,12 @@ function (module, __webpack_exports__, __webpack_require__) {
   ***/
 
 
+  window.log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  window.dir = console.dir;
+  stylis__WEBPACK_IMPORTED_MODULE_2___default.a.set({
+    compress: true
+  });
+
   var CSS =
   /*#__PURE__*/
   function () {
@@ -4244,7 +9130,6 @@ function (module, __webpack_exports__, __webpack_require__) {
 
     _createClass(CSS, null, [{
       key: "_createNewStyleSheet",
-      // A static class property for holding an extended element's parent props....
       // Class method for creating, appending and returning a new style sheet...
       value: function _createNewStyleSheet() {
         // Create style tag..
@@ -4255,7 +9140,8 @@ function (module, __webpack_exports__, __webpack_require__) {
         document.head.appendChild(style); //
 
         return style.sheet;
-      } // Internal Class method for dynamically inserting css rules into a given sheet
+      } //DEPRECATED: Not needed for now....
+      // Internal Class method for dynamically inserting css rules into a given sheet
 
     }, {
       key: "_insertCSS",
@@ -4272,6 +9158,29 @@ function (module, __webpack_exports__, __webpack_require__) {
         } else if ('addRule' in sheet) {
           sheet.addRule(selector, rules, 1);
         }
+      } // A private method for appending an array of CSS rules to the default stylesheet,
+      // one by one.
+
+    }, {
+      key: "_insertRules",
+      value: function _insertRules(array) {
+        array.forEach(function (rule) {
+          /* The _styleSheet setter will create a new sheet and append to a new style tag
+          if necessary, then insert the given css..*/
+          CSS._styleSheet = rule;
+        });
+      } // A Public method for inserting global styles into the stylesheet...
+
+    }, {
+      key: "insertGlobal",
+      value: function insertGlobal(ttlArray) {
+        var css = _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttlArray) ? stylis__WEBPACK_IMPORTED_MODULE_2___default()('', _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttlArray)) : stylis__WEBPACK_IMPORTED_MODULE_2___default()('', ttlArray[0].join(''));
+
+        CSS._insertRules(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["separateStyleRules"](css));
+
+        log('CSS._styleSheet', ['purple', 'bold']);
+        log(CSS._styleSheet);
+        log(ttlArray[0].join(''));
       } //DEPRECATED: NOT NEEDED FOR NOW...
       // Public class for creating an HTML style tag loaded with styles...
 
@@ -4285,6 +9194,42 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         tmpl.innerHTML = html;
         return tmpl;
+      } // A private method for processing the given CSS literals (Activation of
+      // interpolation functions and preprocessing with stylis) and returning a
+      // final product, ready for the stylesheet...
+
+    }, {
+      key: "_process",
+      value: function _process(ttl, props, cTag) {
+        var css;
+        /* If we are working on an extended component, execute interpolation functions,
+        bring in the parent's styles, and finally, process the resulting css with 'stylis'...
+        Having some fun with tertiary expressions here..*/
+        // Is this an extended component? ....
+        // log('Is.interpolated(ttl.super[0][0]', ['tomato', 'bold'])
+        // log(Is.interpolated(ttl.super[0][0])
+
+        ttl.extended ? // If so, first let's check if we have interpolations in the parent to deal with...
+        css = _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.super) ?
+        /* If so, go ahead and execute the interpolation functions with superProps, ...
+        Also check if we have interpolations in the child component, and if so, execute them and
+        combine the resulting css blocks, and process with Stylis. If not, combine the resulting
+        parent code block and with the untouched child block, and process with Stylis...
+         */
+        stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, "".concat(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.super, CSS._superProps[ttl.superId][1]), "\n         ").concat(_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.array) ? _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.array, props) : ttl.array))
+        /* If not.......*/
+        :
+        /* Check first if we have interpolations in the child, either way, combine the result
+        with the untouched parent code block, and process with Stylis.
+        */
+        stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, "".concat(ttl.super[0][0], "\n         ").concat(_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.array) ? _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.array, props) : ttl.array))
+        /* Not extended.....*/
+        : // Check for interpolations....*/
+        css = _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.array) ? stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, // Execute interpolations, with props, process with Stylis ....*/
+        _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.array, props)) : // Otherwise, run the untouched styles through Stylis...*/
+        stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, ttl.array[0][0]); // return completed CSS ...
+
+        return css;
       }
       /* Class method dealing with adding styles to the component. If a tag
        is present in the arguments, the style is appended to the head of the doc,
@@ -4293,37 +9238,42 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "addStyles",
       value: function addStyles(appendStyle, cTag, eTag, props, tagTempLit) {
-        // Declare var...
-        // Styles template...
+        // Declare vars...
         var sheet,
-            styles,
             styleTag = eTag === 'div' ? cTag : "".concat(cTag, " ").concat(eTag),
-            tempLit; // if we have some interpolation functions in the true array
-
-        if (_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(tagTempLit.array)) {
-          tempLit = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["activateFunctionInterpolations"](tagTempLit.array, props);
-        } else {
-          tempLit = tagTempLit.array[0];
-        } // If we are working on an extended component, bring in the parent's styles...
-
-
-        if (tagTempLit.extended) {
-          tempLit = _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(tagTempLit.super) ? "".concat(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["activateFunctionInterpolations"](tagTempLit.super, CSS._superProps[tagTempLit.superId][1]), "\n                   ").concat(tempLit) : "".concat(tagTempLit.super[0], "\n                   ").concat(tempLit);
-        } // If we are not appending style to a shadow root...
-
+            css; // If we are not appending style to a shadow root...
 
         if (appendStyle) {
-          // Get new stylesheet and attach to dom...
-          sheet = CSS._createNewStyleSheet(); // Insert the Component css into new style sheet...
+          // Process the css...
+          css = CSS._process(tagTempLit, props, styleTag); // Split rules into an array. Insert into style sheet...
 
-          CSS._insertCSS(sheet, styleTag, tempLit);
+          CSS._insertRules(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["separateStyleRules"](css));
         } else {
-          styles = eTag === 'div' ? ":host {\n         ".concat(tempLit, "\n       }") : ":host ".concat(eTag, " {\n         ").concat(tempLit, "\n       }"); // Return function that returns style related html...
+          css = eTag === 'div' ? CSS._process(tagTempLit, props, ':host') : CSS._process(tagTempLit, props, ":host ".concat(eTag)); // Return function that returns style related html...
 
           return function () {
-            return x("style", null, styles);
+            return x("style", null, css);
           };
         }
+      }
+    }, {
+      key: "_styleSheet",
+      // A static class property for holding an extended element's parent props....
+      // A property to hold the default stylesheet of the app...
+      // A getter for _sheet...
+      get: function get() {
+        // return the sheet!
+        return CSS._sheet;
+      } // A setter for _sheet... Setting sheet appends a CSS rule to it....
+      ,
+      set: function set(rule) {
+        // If there is no sheet, create one...
+        if (!CSS._sheet) {
+          CSS._sheet = CSS._createNewStyleSheet();
+        } // Insert given rule into stylesheet...
+
+
+        CSS._sheet.insertRule(rule);
       }
     }]);
 
@@ -4331,10 +9281,2166 @@ function (module, __webpack_exports__, __webpack_require__) {
   }();
 
   _defineProperty(CSS, "_superProps", {});
+
+  _defineProperty(CSS, "_sheet", null);
   /***/
 
 },
-/* 17 */
+/* 42 */
+
+/***/
+function (module, exports, __webpack_require__) {
+  /*
+   *          __        ___
+   *    _____/ /___  __/ (_)____
+   *   / ___/ __/ / / / / / ___/
+   *  (__  ) /_/ /_/ / / (__  )
+   * /____/\__/\__, /_/_/____/
+   *          /____/
+   *
+   * light - weight css preprocessor @licence MIT
+   */
+  (function (factory) {
+    /* eslint-disable */
+    true ? module['exports'] = factory(null) : undefined;
+  })(
+  /** @param {*=} options */
+  function factory(options) {
+    /* eslint-disable */
+    'use strict';
+    /**
+     * Notes
+     *
+     * The ['<method name>'] pattern is used to support closure compiler
+     * the jsdoc signatures are also used to the same effect
+     *
+     * ----
+     *
+     * int + int + int === n4 [faster]
+     *
+     * vs
+     *
+     * int === n1 && int === n2 && int === n3
+     *
+     * ----
+     *
+     * switch (int) { case ints...} [faster]
+     *
+     * vs
+     *
+     * if (int == 1 && int === 2 ...)
+     *
+     * ----
+     *
+     * The (first*n1 + second*n2 + third*n3) format used in the property parser
+     * is a simple way to hash the sequence of characters
+     * taking into account the index they occur in
+     * since any number of 3 character sequences could produce duplicates.
+     *
+     * On the other hand sequences that are directly tied to the index of the character
+     * resolve a far more accurate measure, it's also faster
+     * to evaluate one condition in a switch statement
+     * than three in an if statement regardless of the added math.
+     *
+     * This allows the vendor prefixer to be both small and fast.
+     */
+
+    var nullptn = /^\0+/g;
+    /* matches leading null characters */
+
+    var formatptn = /[\0\r\f]/g;
+    /* matches new line, null and formfeed characters */
+
+    var colonptn = /: */g;
+    /* splits animation rules */
+
+    var cursorptn = /zoo|gra/;
+    /* assert cursor varient */
+
+    var transformptn = /([,: ])(transform)/g;
+    /* vendor prefix transform, older webkit */
+
+    var animationptn = /,+\s*(?![^(]*[)])/g;
+    /* splits multiple shorthand notation animations */
+
+    var propertiesptn = / +\s*(?![^(]*[)])/g;
+    /* animation properties */
+
+    var elementptn = / *[\0] */g;
+    /* selector elements */
+
+    var selectorptn = /,\r+?/g;
+    /* splits selectors */
+
+    var andptn = /([\t\r\n ])*\f?&/g;
+    /* match & */
+
+    var escapeptn = /:global\(((?:[^\(\)\[\]]*|\[.*\]|\([^\(\)]*\))*)\)/g;
+    /* matches :global(.*) */
+
+    var invalidptn = /\W+/g;
+    /* removes invalid characters from keyframes */
+
+    var keyframeptn = /@(k\w+)\s*(\S*)\s*/;
+    /* matches @keyframes $1 */
+
+    var plcholdrptn = /::(place)/g;
+    /* match ::placeholder varient */
+
+    var readonlyptn = /:(read-only)/g;
+    /* match :read-only varient */
+
+    var beforeptn = /\s+(?=[{\];=:>])/g;
+    /* matches \s before ] ; = : */
+
+    var afterptn = /([[}=:>])\s+/g;
+    /* matches \s after characters [ } = : */
+
+    var tailptn = /(\{[^{]+?);(?=\})/g;
+    /* matches tail semi-colons ;} */
+
+    var whiteptn = /\s{2,}/g;
+    /* matches repeating whitespace */
+
+    var pseudoptn = /([^\(])(:+) */g;
+    /* pseudo element */
+
+    var writingptn = /[svh]\w+-[tblr]{2}/;
+    /* match writing mode property values */
+
+    var gradientptn = /([\w-]+t\()/g;
+    /* match *gradient property */
+
+    var supportsptn = /\(\s*(.*)\s*\)/g;
+    /* match supports (groups) */
+
+    var propertyptn = /([\s\S]*?);/g;
+    /* match properties leading semicolon */
+
+    var selfptn = /-self|flex-/g;
+    /* match flex- and -self in align-self: flex-*; */
+
+    var pseudofmt = /[^]*?(:[rp][el]a[\w-]+)[^]*/;
+    /* extrats :readonly or :placholder from selector */
+
+    var trimptn = /[ \t]+$/;
+    /* match tail whitspace */
+
+    var dimensionptn = /stretch|:\s*\w+\-(?:conte|avail)/;
+    /* match max/min/fit-content, fill-available */
+
+    var imgsrcptn = /([^-])(image-set\()/;
+    /* vendors */
+
+    var webkit = '-webkit-';
+    var moz = '-moz-';
+    var ms = '-ms-';
+    /* character codes */
+
+    var SEMICOLON = 59;
+    /* ; */
+
+    var CLOSEBRACES = 125;
+    /* } */
+
+    var OPENBRACES = 123;
+    /* { */
+
+    var OPENPARENTHESES = 40;
+    /* ( */
+
+    var CLOSEPARENTHESES = 41;
+    /* ) */
+
+    var OPENBRACKET = 91;
+    /* [ */
+
+    var CLOSEBRACKET = 93;
+    /* ] */
+
+    var NEWLINE = 10;
+    /* \n */
+
+    var CARRIAGE = 13;
+    /* \r */
+
+    var TAB = 9;
+    /* \t */
+
+    var AT = 64;
+    /* @ */
+
+    var SPACE = 32;
+    /*   */
+
+    var AND = 38;
+    /* & */
+
+    var DASH = 45;
+    /* - */
+
+    var UNDERSCORE = 95;
+    /* _ */
+
+    var STAR = 42;
+    /* * */
+
+    var COMMA = 44;
+    /* , */
+
+    var COLON = 58;
+    /* : */
+
+    var SINGLEQUOTE = 39;
+    /* ' */
+
+    var DOUBLEQUOTE = 34;
+    /* " */
+
+    var FOWARDSLASH = 47;
+    /* / */
+
+    var GREATERTHAN = 62;
+    /* > */
+
+    var PLUS = 43;
+    /* + */
+
+    var TILDE = 126;
+    /* ~ */
+
+    var NULL = 0;
+    /* \0 */
+
+    var FORMFEED = 12;
+    /* \f */
+
+    var VERTICALTAB = 11;
+    /* \v */
+
+    /* special identifiers */
+
+    var KEYFRAME = 107;
+    /* k */
+
+    var MEDIA = 109;
+    /* m */
+
+    var SUPPORTS = 115;
+    /* s */
+
+    var PLACEHOLDER = 112;
+    /* p */
+
+    var READONLY = 111;
+    /* o */
+
+    var IMPORT = 105;
+    /* <at>i */
+
+    var CHARSET = 99;
+    /* <at>c */
+
+    var DOCUMENT = 100;
+    /* <at>d */
+
+    var PAGE = 112;
+    /* <at>p */
+
+    var column = 1;
+    /* current column */
+
+    var line = 1;
+    /* current line numebr */
+
+    var pattern = 0;
+    /* :pattern */
+
+    var cascade = 1;
+    /* #id h1 h2 vs h1#id h2#id  */
+
+    var prefix = 1;
+    /* vendor prefix */
+
+    var escape = 1;
+    /* escape :global() pattern */
+
+    var compress = 0;
+    /* compress output */
+
+    var semicolon = 0;
+    /* no/semicolon option */
+
+    var preserve = 0;
+    /* preserve empty selectors */
+
+    /* empty reference */
+
+    var array = [];
+    /* plugins */
+
+    var plugins = [];
+    var plugged = 0;
+    var should = null;
+    /* plugin context */
+
+    var POSTS = -2;
+    var PREPS = -1;
+    var UNKWN = 0;
+    var PROPS = 1;
+    var BLCKS = 2;
+    var ATRUL = 3;
+    /* plugin newline context */
+
+    var unkwn = 0;
+    /* keyframe animation */
+
+    var keyed = 1;
+    var key = '';
+    /* selector namespace */
+
+    var nscopealt = '';
+    var nscope = '';
+    /**
+     * Compile
+     *
+     * @param {Array<string>} parent
+     * @param {Array<string>} current
+     * @param {string} body
+     * @param {number} id
+     * @param {number} depth
+     * @return {string}
+     */
+
+    function compile(parent, current, body, id, depth) {
+      var bracket = 0;
+      /* brackets [] */
+
+      var comment = 0;
+      /* comments /* // or /* */
+
+      var parentheses = 0;
+      /* functions () */
+
+      var quote = 0;
+      /* quotes '', "" */
+
+      var first = 0;
+      /* first character code */
+
+      var second = 0;
+      /* second character code */
+
+      var code = 0;
+      /* current character code */
+
+      var tail = 0;
+      /* previous character code */
+
+      var trail = 0;
+      /* character before previous code */
+
+      var peak = 0;
+      /* previous non-whitespace code */
+
+      var counter = 0;
+      /* count sequence termination */
+
+      var context = 0;
+      /* track current context */
+
+      var atrule = 0;
+      /* track @at-rule context */
+
+      var pseudo = 0;
+      /* track pseudo token index */
+
+      var caret = 0;
+      /* current character index */
+
+      var format = 0;
+      /* control character formating context */
+
+      var insert = 0;
+      /* auto semicolon insertion */
+
+      var invert = 0;
+      /* inverted selector pattern */
+
+      var length = 0;
+      /* generic length address */
+
+      var eof = body.length;
+      /* end of file(length) */
+
+      var eol = eof - 1;
+      /* end of file(characters) */
+
+      var char = '';
+      /* current character */
+
+      var chars = '';
+      /* current buffer of characters */
+
+      var child = '';
+      /* next buffer of characters */
+
+      var out = '';
+      /* compiled body */
+
+      var children = '';
+      /* compiled children */
+
+      var flat = '';
+      /* compiled leafs */
+
+      var selector;
+      /* generic selector address */
+
+      var result;
+      /* generic address */
+      // ...build body
+
+      while (caret < eof) {
+        code = body.charCodeAt(caret); // eof varient
+
+        if (caret === eol) {
+          // last character + noop context, add synthetic padding for noop context to terminate
+          if (comment + quote + parentheses + bracket !== 0) {
+            if (comment !== 0) {
+              code = comment === FOWARDSLASH ? NEWLINE : FOWARDSLASH;
+            }
+
+            quote = parentheses = bracket = 0;
+            eof++;
+            eol++;
+          }
+        }
+
+        if (comment + quote + parentheses + bracket === 0) {
+          // eof varient
+          if (caret === eol) {
+            if (format > 0) {
+              chars = chars.replace(formatptn, '');
+            }
+
+            if (chars.trim().length > 0) {
+              switch (code) {
+                case SPACE:
+                case TAB:
+                case SEMICOLON:
+                case CARRIAGE:
+                case NEWLINE:
+                  {
+                    break;
+                  }
+
+                default:
+                  {
+                    chars += body.charAt(caret);
+                  }
+              }
+
+              code = SEMICOLON;
+            }
+          } // auto semicolon insertion
+
+
+          if (insert === 1) {
+            switch (code) {
+              // false flags
+              case OPENBRACES:
+              case CLOSEBRACES:
+              case SEMICOLON:
+              case DOUBLEQUOTE:
+              case SINGLEQUOTE:
+              case OPENPARENTHESES:
+              case CLOSEPARENTHESES:
+              case COMMA:
+                {
+                  insert = 0;
+                }
+              // ignore
+
+              case TAB:
+              case CARRIAGE:
+              case NEWLINE:
+              case SPACE:
+                {
+                  break;
+                }
+              // valid
+
+              default:
+                {
+                  insert = 0;
+                  length = caret;
+                  first = code;
+                  caret--;
+                  code = SEMICOLON;
+
+                  while (length < eof) {
+                    switch (body.charCodeAt(length++)) {
+                      case NEWLINE:
+                      case CARRIAGE:
+                      case SEMICOLON:
+                        {
+                          ++caret;
+                          code = first;
+                          length = eof;
+                          break;
+                        }
+
+                      case COLON:
+                        {
+                          if (format > 0) {
+                            ++caret;
+                            code = first;
+                          }
+                        }
+
+                      case OPENBRACES:
+                        {
+                          length = eof;
+                        }
+                    }
+                  }
+                }
+            }
+          } // token varient
+
+
+          switch (code) {
+            case OPENBRACES:
+              {
+                chars = chars.trim();
+                first = chars.charCodeAt(0);
+                counter = 1;
+                length = ++caret;
+
+                while (caret < eof) {
+                  switch (code = body.charCodeAt(caret)) {
+                    case OPENBRACES:
+                      {
+                        counter++;
+                        break;
+                      }
+
+                    case CLOSEBRACES:
+                      {
+                        counter--;
+                        break;
+                      }
+
+                    case FOWARDSLASH:
+                      {
+                        switch (second = body.charCodeAt(caret + 1)) {
+                          // /*, //
+                          case STAR:
+                          case FOWARDSLASH:
+                            {
+                              caret = delimited(second, caret, eol, body);
+                            }
+                        }
+
+                        break;
+                      }
+                    // given "[" === 91 & "]" === 93 hence forth 91 + 1 + 1 === 93
+
+                    case OPENBRACKET:
+                      {
+                        code++;
+                      }
+                    // given "(" === 40 & ")" === 41 hence forth 40 + 1 === 41
+
+                    case OPENPARENTHESES:
+                      {
+                        code++;
+                      }
+                    // quote tail delimiter is identical to the head delimiter hence noop,
+                    // fallthrough clauses have been shifted to the correct tail delimiter
+
+                    case DOUBLEQUOTE:
+                    case SINGLEQUOTE:
+                      {
+                        while (caret++ < eol) {
+                          if (body.charCodeAt(caret) === code) {
+                            break;
+                          }
+                        }
+                      }
+                  }
+
+                  if (counter === 0) {
+                    break;
+                  }
+
+                  caret++;
+                }
+
+                child = body.substring(length, caret);
+
+                if (first === NULL) {
+                  first = (chars = chars.replace(nullptn, '').trim()).charCodeAt(0);
+                }
+
+                switch (first) {
+                  // @at-rule
+                  case AT:
+                    {
+                      if (format > 0) {
+                        chars = chars.replace(formatptn, '');
+                      }
+
+                      second = chars.charCodeAt(1);
+
+                      switch (second) {
+                        case DOCUMENT:
+                        case MEDIA:
+                        case SUPPORTS:
+                        case DASH:
+                          {
+                            selector = current;
+                            break;
+                          }
+
+                        default:
+                          {
+                            selector = array;
+                          }
+                      }
+
+                      child = compile(current, selector, child, second, depth + 1);
+                      length = child.length; // preserve empty @at-rule
+
+                      if (preserve > 0 && length === 0) {
+                        length = chars.length;
+                      } // execute plugins, @at-rule context
+
+
+                      if (plugged > 0) {
+                        selector = select(array, chars, invert);
+                        result = proxy(ATRUL, child, selector, current, line, column, length, second, depth, id);
+                        chars = selector.join('');
+
+                        if (result !== void 0) {
+                          if ((length = (child = result.trim()).length) === 0) {
+                            second = 0;
+                            child = '';
+                          }
+                        }
+                      }
+
+                      if (length > 0) {
+                        switch (second) {
+                          case SUPPORTS:
+                            {
+                              chars = chars.replace(supportsptn, supports);
+                            }
+
+                          case DOCUMENT:
+                          case MEDIA:
+                          case DASH:
+                            {
+                              child = chars + '{' + child + '}';
+                              break;
+                            }
+
+                          case KEYFRAME:
+                            {
+                              chars = chars.replace(keyframeptn, '$1 $2' + (keyed > 0 ? key : ''));
+                              child = chars + '{' + child + '}';
+
+                              if (prefix === 1 || prefix === 2 && vendor('@' + child, 3)) {
+                                child = '@' + webkit + child + '@' + child;
+                              } else {
+                                child = '@' + child;
+                              }
+
+                              break;
+                            }
+
+                          default:
+                            {
+                              child = chars + child;
+
+                              if (id === PAGE) {
+                                child = (out += child, '');
+                              }
+                            }
+                        }
+                      } else {
+                        child = '';
+                      }
+
+                      break;
+                    }
+                  // selector
+
+                  default:
+                    {
+                      child = compile(current, select(current, chars, invert), child, id, depth + 1);
+                    }
+                }
+
+                children += child; // reset
+
+                context = 0;
+                insert = 0;
+                pseudo = 0;
+                format = 0;
+                invert = 0;
+                atrule = 0;
+                chars = '';
+                child = '';
+                code = body.charCodeAt(++caret);
+                break;
+              }
+
+            case CLOSEBRACES:
+            case SEMICOLON:
+              {
+                chars = (format > 0 ? chars.replace(formatptn, '') : chars).trim();
+
+                if ((length = chars.length) > 1) {
+                  // monkey-patch missing colon
+                  if (pseudo === 0) {
+                    first = chars.charCodeAt(0); // first character is a letter or dash, buffer has a space character
+
+                    if (first === DASH || first > 96 && first < 123) {
+                      length = (chars = chars.replace(' ', ':')).length;
+                    }
+                  } // execute plugins, property context
+
+
+                  if (plugged > 0) {
+                    if ((result = proxy(PROPS, chars, current, parent, line, column, out.length, id, depth, id)) !== void 0) {
+                      if ((length = (chars = result.trim()).length) === 0) {
+                        chars = '\0\0';
+                      }
+                    }
+                  }
+
+                  first = chars.charCodeAt(0);
+                  second = chars.charCodeAt(1);
+
+                  switch (first) {
+                    case NULL:
+                      {
+                        break;
+                      }
+
+                    case AT:
+                      {
+                        if (second === IMPORT || second === CHARSET) {
+                          flat += chars + body.charAt(caret);
+                          break;
+                        }
+                      }
+
+                    default:
+                      {
+                        if (chars.charCodeAt(length - 1) === COLON) {
+                          break;
+                        }
+
+                        out += property(chars, first, second, chars.charCodeAt(2));
+                      }
+                  }
+                } // reset
+
+
+                context = 0;
+                insert = 0;
+                pseudo = 0;
+                format = 0;
+                invert = 0;
+                chars = '';
+                code = body.charCodeAt(++caret);
+                break;
+              }
+          }
+        } // parse characters
+
+
+        switch (code) {
+          case CARRIAGE:
+          case NEWLINE:
+            {
+              // auto insert semicolon
+              if (comment + quote + parentheses + bracket + semicolon === 0) {
+                // valid non-whitespace characters that
+                // may precede a newline
+                switch (peak) {
+                  case CLOSEPARENTHESES:
+                  case SINGLEQUOTE:
+                  case DOUBLEQUOTE:
+                  case AT:
+                  case TILDE:
+                  case GREATERTHAN:
+                  case STAR:
+                  case PLUS:
+                  case FOWARDSLASH:
+                  case DASH:
+                  case COLON:
+                  case COMMA:
+                  case SEMICOLON:
+                  case OPENBRACES:
+                  case CLOSEBRACES:
+                    {
+                      break;
+                    }
+
+                  default:
+                    {
+                      // current buffer has a colon
+                      if (pseudo > 0) {
+                        insert = 1;
+                      }
+                    }
+                }
+              } // terminate line comment
+
+
+              if (comment === FOWARDSLASH) {
+                comment = 0;
+              } else if (cascade + context === 0 && id !== KEYFRAME && chars.length > 0) {
+                format = 1;
+                chars += '\0';
+              } // execute plugins, newline context
+
+
+              if (plugged * unkwn > 0) {
+                proxy(UNKWN, chars, current, parent, line, column, out.length, id, depth, id);
+              } // next line, reset column position
+
+
+              column = 1;
+              line++;
+              break;
+            }
+
+          case SEMICOLON:
+          case CLOSEBRACES:
+            {
+              if (comment + quote + parentheses + bracket === 0) {
+                column++;
+                break;
+              }
+            }
+
+          default:
+            {
+              // increment column position
+              column++; // current character
+
+              char = body.charAt(caret); // remove comments, escape functions, strings, attributes and prepare selectors
+
+              switch (code) {
+                case TAB:
+                case SPACE:
+                  {
+                    if (quote + bracket + comment === 0) {
+                      switch (tail) {
+                        case COMMA:
+                        case COLON:
+                        case TAB:
+                        case SPACE:
+                          {
+                            char = '';
+                            break;
+                          }
+
+                        default:
+                          {
+                            if (code !== SPACE) {
+                              char = ' ';
+                            }
+                          }
+                      }
+                    }
+
+                    break;
+                  }
+                // escape breaking control characters
+
+                case NULL:
+                  {
+                    char = '\\0';
+                    break;
+                  }
+
+                case FORMFEED:
+                  {
+                    char = '\\f';
+                    break;
+                  }
+
+                case VERTICALTAB:
+                  {
+                    char = '\\v';
+                    break;
+                  }
+                // &
+
+                case AND:
+                  {
+                    // inverted selector pattern i.e html &
+                    if (quote + comment + bracket === 0 && cascade > 0) {
+                      invert = 1;
+                      format = 1;
+                      char = '\f' + char;
+                    }
+
+                    break;
+                  }
+                // ::p<l>aceholder, l
+                // :read-on<l>y, l
+
+                case 108:
+                  {
+                    if (quote + comment + bracket + pattern === 0 && pseudo > 0) {
+                      switch (caret - pseudo) {
+                        // ::placeholder
+                        case 2:
+                          {
+                            if (tail === PLACEHOLDER && body.charCodeAt(caret - 3) === COLON) {
+                              pattern = tail;
+                            }
+                          }
+                        // :read-only
+
+                        case 8:
+                          {
+                            if (trail === READONLY) {
+                              pattern = trail;
+                            }
+                          }
+                      }
+                    }
+
+                    break;
+                  }
+                // :<pattern>
+
+                case COLON:
+                  {
+                    if (quote + comment + bracket === 0) {
+                      pseudo = caret;
+                    }
+
+                    break;
+                  }
+                // selectors
+
+                case COMMA:
+                  {
+                    if (comment + parentheses + quote + bracket === 0) {
+                      format = 1;
+                      char += '\r';
+                    }
+
+                    break;
+                  }
+                // quotes
+
+                case DOUBLEQUOTE:
+                case SINGLEQUOTE:
+                  {
+                    if (comment === 0) {
+                      quote = quote === code ? 0 : quote === 0 ? code : quote;
+                    }
+
+                    break;
+                  }
+                // attributes
+
+                case OPENBRACKET:
+                  {
+                    if (quote + comment + parentheses === 0) {
+                      bracket++;
+                    }
+
+                    break;
+                  }
+
+                case CLOSEBRACKET:
+                  {
+                    if (quote + comment + parentheses === 0) {
+                      bracket--;
+                    }
+
+                    break;
+                  }
+                // functions
+
+                case CLOSEPARENTHESES:
+                  {
+                    if (quote + comment + bracket === 0) {
+                      parentheses--;
+                    }
+
+                    break;
+                  }
+
+                case OPENPARENTHESES:
+                  {
+                    if (quote + comment + bracket === 0) {
+                      if (context === 0) {
+                        switch (tail * 2 + trail * 3) {
+                          // :matches
+                          case 533:
+                            {
+                              break;
+                            }
+                          // :global, :not, :nth-child etc...
+
+                          default:
+                            {
+                              counter = 0;
+                              context = 1;
+                            }
+                        }
+                      }
+
+                      parentheses++;
+                    }
+
+                    break;
+                  }
+
+                case AT:
+                  {
+                    if (comment + parentheses + quote + bracket + pseudo + atrule === 0) {
+                      atrule = 1;
+                    }
+
+                    break;
+                  }
+                // block/line comments
+
+                case STAR:
+                case FOWARDSLASH:
+                  {
+                    if (quote + bracket + parentheses > 0) {
+                      break;
+                    }
+
+                    switch (comment) {
+                      // initialize line/block comment context
+                      case 0:
+                        {
+                          switch (code * 2 + body.charCodeAt(caret + 1) * 3) {
+                            // //
+                            case 235:
+                              {
+                                comment = FOWARDSLASH;
+                                break;
+                              }
+                            // /*
+
+                            case 220:
+                              {
+                                length = caret;
+                                comment = STAR;
+                                break;
+                              }
+                          }
+
+                          break;
+                        }
+                      // end block comment context
+
+                      case STAR:
+                        {
+                          if (code === FOWARDSLASH && tail === STAR && length + 2 !== caret) {
+                            // /*<!> ... */, !
+                            if (body.charCodeAt(length + 2) === 33) {
+                              out += body.substring(length, caret + 1);
+                            }
+
+                            char = '';
+                            comment = 0;
+                          }
+                        }
+                    }
+                  }
+              } // ignore comment blocks
+
+
+              if (comment === 0) {
+                // aggressive isolation mode, divide each individual selector
+                // including selectors in :not function but excluding selectors in :global function
+                if (cascade + quote + bracket + atrule === 0 && id !== KEYFRAME && code !== SEMICOLON) {
+                  switch (code) {
+                    case COMMA:
+                    case TILDE:
+                    case GREATERTHAN:
+                    case PLUS:
+                    case CLOSEPARENTHESES:
+                    case OPENPARENTHESES:
+                      {
+                        if (context === 0) {
+                          // outside of an isolated context i.e nth-child(<...>)
+                          switch (tail) {
+                            case TAB:
+                            case SPACE:
+                            case NEWLINE:
+                            case CARRIAGE:
+                              {
+                                char = char + '\0';
+                                break;
+                              }
+
+                            default:
+                              {
+                                char = '\0' + char + (code === COMMA ? '' : '\0');
+                              }
+                          }
+
+                          format = 1;
+                        } else {
+                          // within an isolated context, sleep untill it's terminated
+                          switch (code) {
+                            case OPENPARENTHESES:
+                              {
+                                // :globa<l>(
+                                if (pseudo + 7 === caret && tail === 108) {
+                                  pseudo = 0;
+                                }
+
+                                context = ++counter;
+                                break;
+                              }
+
+                            case CLOSEPARENTHESES:
+                              {
+                                if ((context = --counter) === 0) {
+                                  format = 1;
+                                  char += '\0';
+                                }
+
+                                break;
+                              }
+                          }
+                        }
+
+                        break;
+                      }
+
+                    case TAB:
+                    case SPACE:
+                      {
+                        switch (tail) {
+                          case NULL:
+                          case OPENBRACES:
+                          case CLOSEBRACES:
+                          case SEMICOLON:
+                          case COMMA:
+                          case FORMFEED:
+                          case TAB:
+                          case SPACE:
+                          case NEWLINE:
+                          case CARRIAGE:
+                            {
+                              break;
+                            }
+
+                          default:
+                            {
+                              // ignore in isolated contexts
+                              if (context === 0) {
+                                format = 1;
+                                char += '\0';
+                              }
+                            }
+                        }
+                      }
+                  }
+                } // concat buffer of characters
+
+
+                chars += char; // previous non-whitespace character code
+
+                if (code !== SPACE && code !== TAB) {
+                  peak = code;
+                }
+              }
+            }
+        } // tail character codes
+
+
+        trail = tail;
+        tail = code; // visit every character
+
+        caret++;
+      }
+
+      length = out.length; // preserve empty selector
+
+      if (preserve > 0) {
+        if (length === 0 && children.length === 0 && current[0].length === 0 === false) {
+          if (id !== MEDIA || current.length === 1 && (cascade > 0 ? nscopealt : nscope) === current[0]) {
+            length = current.join(',').length + 2;
+          }
+        }
+      }
+
+      if (length > 0) {
+        // cascade isolation mode?
+        selector = cascade === 0 && id !== KEYFRAME ? isolate(current) : current; // execute plugins, block context
+
+        if (plugged > 0) {
+          result = proxy(BLCKS, out, selector, parent, line, column, length, id, depth, id);
+
+          if (result !== void 0 && (out = result).length === 0) {
+            return flat + out + children;
+          }
+        }
+
+        out = selector.join(',') + '{' + out + '}';
+
+        if (prefix * pattern !== 0) {
+          if (prefix === 2 && !vendor(out, 2)) pattern = 0;
+
+          switch (pattern) {
+            // ::read-only
+            case READONLY:
+              {
+                out = out.replace(readonlyptn, ':' + moz + '$1') + out;
+                break;
+              }
+            // ::placeholder
+
+            case PLACEHOLDER:
+              {
+                out = out.replace(plcholdrptn, '::' + webkit + 'input-$1') + out.replace(plcholdrptn, '::' + moz + '$1') + out.replace(plcholdrptn, ':' + ms + 'input-$1') + out;
+                break;
+              }
+          }
+
+          pattern = 0;
+        }
+      }
+
+      return flat + out + children;
+    }
+    /**
+     * Select
+     *
+     * @param {Array<string>} parent
+     * @param {string} current
+     * @param {number} invert
+     * @return {Array<string>}
+     */
+
+
+    function select(parent, current, invert) {
+      var selectors = current.trim().split(selectorptn);
+      var out = selectors;
+      var length = selectors.length;
+      var l = parent.length;
+
+      switch (l) {
+        // 0-1 parent selectors
+        case 0:
+        case 1:
+          {
+            for (var i = 0, selector = l === 0 ? '' : parent[0] + ' '; i < length; ++i) {
+              out[i] = scope(selector, out[i], invert, l).trim();
+            }
+
+            break;
+          }
+        // >2 parent selectors, nested
+
+        default:
+          {
+            for (var i = 0, j = 0, out = []; i < length; ++i) {
+              for (var k = 0; k < l; ++k) {
+                out[j++] = scope(parent[k] + ' ', selectors[i], invert, l).trim();
+              }
+            }
+          }
+      }
+
+      return out;
+    }
+    /**
+     * Scope
+     *
+     * @param {string} parent
+     * @param {string} current
+     * @param {number} invert
+     * @param {number} level
+     * @return {string}
+     */
+
+
+    function scope(parent, current, invert, level) {
+      var selector = current;
+      var code = selector.charCodeAt(0); // trim leading whitespace
+
+      if (code < 33) {
+        code = (selector = selector.trim()).charCodeAt(0);
+      }
+
+      switch (code) {
+        // &
+        case AND:
+          {
+            switch (cascade + level) {
+              case 0:
+              case 1:
+                {
+                  if (parent.trim().length === 0) {
+                    break;
+                  }
+                }
+
+              default:
+                {
+                  return selector.replace(andptn, '$1' + parent.trim());
+                }
+            }
+
+            break;
+          }
+        // :
+
+        case COLON:
+          {
+            switch (selector.charCodeAt(1)) {
+              // g in :global
+              case 103:
+                {
+                  if (escape > 0 && cascade > 0) {
+                    return selector.replace(escapeptn, '$1').replace(andptn, '$1' + nscope);
+                  }
+
+                  break;
+                }
+
+              default:
+                {
+                  // :hover
+                  return parent.trim() + selector.replace(andptn, '$1' + parent.trim());
+                }
+            }
+          }
+
+        default:
+          {
+            // html &
+            if (invert * cascade > 0 && selector.indexOf('\f') > 0) {
+              return selector.replace(andptn, (parent.charCodeAt(0) === COLON ? '' : '$1') + parent.trim());
+            }
+          }
+      }
+
+      return parent + selector;
+    }
+    /**
+     * Property
+     *
+     * @param {string} input
+     * @param {number} first
+     * @param {number} second
+     * @param {number} third
+     * @return {string}
+     */
+
+
+    function property(input, first, second, third) {
+      var index = 0;
+      var out = input + ';';
+      var hash = first * 2 + second * 3 + third * 4;
+      var cache; // animation: a, n, i characters
+
+      if (hash === 944) {
+        return animation(out);
+      } else if (prefix === 0 || prefix === 2 && !vendor(out, 1)) {
+        return out;
+      } // vendor prefix
+
+
+      switch (hash) {
+        // text-decoration/text-size-adjust/text-shadow/text-align/text-transform: t, e, x
+        case 1015:
+          {
+            // text-shadow/text-align/text-transform, a
+            return out.charCodeAt(10) === 97 ? webkit + out + out : out;
+          }
+        // filter/fill f, i, l
+
+        case 951:
+          {
+            // filter, t
+            return out.charCodeAt(3) === 116 ? webkit + out + out : out;
+          }
+        // color/column, c, o, l
+
+        case 963:
+          {
+            // column, n
+            return out.charCodeAt(5) === 110 ? webkit + out + out : out;
+          }
+        // box-decoration-break, b, o, x
+
+        case 1009:
+          {
+            if (out.charCodeAt(4) !== 100) {
+              break;
+            }
+          }
+        // mask, m, a, s
+        // clip-path, c, l, i
+
+        case 969:
+        case 942:
+          {
+            return webkit + out + out;
+          }
+        // appearance: a, p, p
+
+        case 978:
+          {
+            return webkit + out + moz + out + out;
+          }
+        // hyphens: h, y, p
+        // user-select: u, s, e
+
+        case 1019:
+        case 983:
+          {
+            return webkit + out + moz + out + ms + out + out;
+          }
+        // background/backface-visibility, b, a, c
+
+        case 883:
+          {
+            // backface-visibility, -
+            if (out.charCodeAt(8) === DASH) {
+              return webkit + out + out;
+            } // image-set(...)
+
+
+            if (out.indexOf('image-set(', 11) > 0) {
+              return out.replace(imgsrcptn, '$1' + webkit + '$2') + out;
+            }
+
+            return out;
+          }
+        // flex: f, l, e
+
+        case 932:
+          {
+            if (out.charCodeAt(4) === DASH) {
+              switch (out.charCodeAt(5)) {
+                // flex-grow, g
+                case 103:
+                  {
+                    return webkit + 'box-' + out.replace('-grow', '') + webkit + out + ms + out.replace('grow', 'positive') + out;
+                  }
+                // flex-shrink, s
+
+                case 115:
+                  {
+                    return webkit + out + ms + out.replace('shrink', 'negative') + out;
+                  }
+                // flex-basis, b
+
+                case 98:
+                  {
+                    return webkit + out + ms + out.replace('basis', 'preferred-size') + out;
+                  }
+              }
+            }
+
+            return webkit + out + ms + out + out;
+          }
+        // order: o, r, d
+
+        case 964:
+          {
+            return webkit + out + ms + 'flex' + '-' + out + out;
+          }
+        // justify-items/justify-content, j, u, s
+
+        case 1023:
+          {
+            // justify-content, c
+            if (out.charCodeAt(8) !== 99) {
+              break;
+            }
+
+            cache = out.substring(out.indexOf(':', 15)).replace('flex-', '').replace('space-between', 'justify');
+            return webkit + 'box-pack' + cache + webkit + out + ms + 'flex-pack' + cache + out;
+          }
+        // cursor, c, u, r
+
+        case 1005:
+          {
+            return cursorptn.test(out) ? out.replace(colonptn, ':' + webkit) + out.replace(colonptn, ':' + moz) + out : out;
+          }
+        // writing-mode, w, r, i
+
+        case 1000:
+          {
+            cache = out.substring(13).trim();
+            index = cache.indexOf('-') + 1;
+
+            switch (cache.charCodeAt(0) + cache.charCodeAt(index)) {
+              // vertical-lr
+              case 226:
+                {
+                  cache = out.replace(writingptn, 'tb');
+                  break;
+                }
+              // vertical-rl
+
+              case 232:
+                {
+                  cache = out.replace(writingptn, 'tb-rl');
+                  break;
+                }
+              // horizontal-tb
+
+              case 220:
+                {
+                  cache = out.replace(writingptn, 'lr');
+                  break;
+                }
+
+              default:
+                {
+                  return out;
+                }
+            }
+
+            return webkit + out + ms + cache + out;
+          }
+        // position: sticky
+
+        case 1017:
+          {
+            if (out.indexOf('sticky', 9) === -1) {
+              return out;
+            }
+          }
+        // display(flex/inline-flex/inline-box): d, i, s
+
+        case 975:
+          {
+            index = (out = input).length - 10;
+            cache = (out.charCodeAt(index) === 33 ? out.substring(0, index) : out).substring(input.indexOf(':', 7) + 1).trim();
+
+            switch (hash = cache.charCodeAt(0) + (cache.charCodeAt(7) | 0)) {
+              // inline-
+              case 203:
+                {
+                  // inline-box
+                  if (cache.charCodeAt(8) < 111) {
+                    break;
+                  }
+                }
+              // inline-box/sticky
+
+              case 115:
+                {
+                  out = out.replace(cache, webkit + cache) + ';' + out;
+                  break;
+                }
+              // inline-flex
+              // flex
+
+              case 207:
+              case 102:
+                {
+                  out = out.replace(cache, webkit + (hash > 102 ? 'inline-' : '') + 'box') + ';' + out.replace(cache, webkit + cache) + ';' + out.replace(cache, ms + cache + 'box') + ';' + out;
+                }
+            }
+
+            return out + ';';
+          }
+        // align-items, align-center, align-self: a, l, i, -
+
+        case 938:
+          {
+            if (out.charCodeAt(5) === DASH) {
+              switch (out.charCodeAt(6)) {
+                // align-items, i
+                case 105:
+                  {
+                    cache = out.replace('-items', '');
+                    return webkit + out + webkit + 'box-' + cache + ms + 'flex-' + cache + out;
+                  }
+                // align-self, s
+
+                case 115:
+                  {
+                    return webkit + out + ms + 'flex-item-' + out.replace(selfptn, '') + out;
+                  }
+                // align-content
+
+                default:
+                  {
+                    return webkit + out + ms + 'flex-line-pack' + out.replace('align-content', '').replace(selfptn, '') + out;
+                  }
+              }
+            }
+
+            break;
+          }
+        // min/max
+
+        case 973:
+        case 989:
+          {
+            // min-/max- height/width/block-size/inline-size
+            if (out.charCodeAt(3) !== DASH || out.charCodeAt(4) === 122) {
+              break;
+            }
+          }
+        // height/width: min-content / width: max-content
+
+        case 931:
+        case 953:
+          {
+            if (dimensionptn.test(input) === true) {
+              // stretch
+              if ((cache = input.substring(input.indexOf(':') + 1)).charCodeAt(0) === 115) return property(input.replace('stretch', 'fill-available'), first, second, third).replace(':fill-available', ':stretch');else return out.replace(cache, webkit + cache) + out.replace(cache, moz + cache.replace('fill-', '')) + out;
+            }
+
+            break;
+          }
+        // transform, transition: t, r, a
+
+        case 962:
+          {
+            out = webkit + out + (out.charCodeAt(5) === 102 ? ms + out : '') + out; // transitions
+
+            if (second + third === 211 && out.charCodeAt(13) === 105 && out.indexOf('transform', 10) > 0) {
+              return out.substring(0, out.indexOf(';', 27) + 1).replace(transformptn, '$1' + webkit + '$2') + out;
+            }
+
+            break;
+          }
+      }
+
+      return out;
+    }
+    /**
+     * Vendor
+     *
+     * @param {string} content
+     * @param {number} context
+     * @return {boolean}
+     */
+
+
+    function vendor(content, context) {
+      var index = content.indexOf(context === 1 ? ':' : '{');
+      var key = content.substring(0, context !== 3 ? index : 10);
+      var value = content.substring(index + 1, content.length - 1);
+      return should(context !== 2 ? key : key.replace(pseudofmt, '$1'), value, context);
+    }
+    /**
+     * Supports
+     *
+     * @param {string} match
+     * @param {string} group
+     * @return {string}
+     */
+
+
+    function supports(match, group) {
+      var out = property(group, group.charCodeAt(0), group.charCodeAt(1), group.charCodeAt(2));
+      return out !== group + ';' ? out.replace(propertyptn, ' or ($1)').substring(4) : '(' + group + ')';
+    }
+    /**
+     * Animation
+     *
+     * @param {string} input
+     * @return {string}
+     */
+
+
+    function animation(input) {
+      var length = input.length;
+      var index = input.indexOf(':', 9) + 1;
+      var declare = input.substring(0, index).trim();
+      var out = input.substring(index, length - 1).trim();
+
+      switch (input.charCodeAt(9) * keyed) {
+        case 0:
+          {
+            break;
+          }
+        // animation-*, -
+
+        case DASH:
+          {
+            // animation-name, n
+            if (input.charCodeAt(10) !== 110) {
+              break;
+            }
+          }
+        // animation/animation-name
+
+        default:
+          {
+            // split in case of multiple animations
+            var list = out.split((out = '', animationptn));
+
+            for (var i = 0, index = 0, length = list.length; i < length; index = 0, ++i) {
+              var value = list[i];
+              var items = value.split(propertiesptn);
+
+              while (value = items[index]) {
+                var peak = value.charCodeAt(0);
+
+                if (keyed === 1 && ( // letters
+                peak > AT && peak < 90 || peak > 96 && peak < 123 || peak === UNDERSCORE || // dash but not in sequence i.e --
+                peak === DASH && value.charCodeAt(1) !== DASH)) {
+                  // not a number/function
+                  switch (isNaN(parseFloat(value)) + (value.indexOf('(') !== -1)) {
+                    case 1:
+                      {
+                        switch (value) {
+                          // not a valid reserved keyword
+                          case 'infinite':
+                          case 'alternate':
+                          case 'backwards':
+                          case 'running':
+                          case 'normal':
+                          case 'forwards':
+                          case 'both':
+                          case 'none':
+                          case 'linear':
+                          case 'ease':
+                          case 'ease-in':
+                          case 'ease-out':
+                          case 'ease-in-out':
+                          case 'paused':
+                          case 'reverse':
+                          case 'alternate-reverse':
+                          case 'inherit':
+                          case 'initial':
+                          case 'unset':
+                          case 'step-start':
+                          case 'step-end':
+                            {
+                              break;
+                            }
+
+                          default:
+                            {
+                              value += key;
+                            }
+                        }
+                      }
+                  }
+                }
+
+                items[index++] = value;
+              }
+
+              out += (i === 0 ? '' : ',') + items.join(' ');
+            }
+          }
+      }
+
+      out = declare + out + ';';
+      if (prefix === 1 || prefix === 2 && vendor(out, 1)) return webkit + out + out;
+      return out;
+    }
+    /**
+     * Isolate
+     *
+     * @param {Array<string>} current
+     */
+
+
+    function isolate(current) {
+      for (var i = 0, length = current.length, selector = Array(length), padding, element; i < length; ++i) {
+        // split individual elements in a selector i.e h1 h2 === [h1, h2]
+        var elements = current[i].split(elementptn);
+        var out = '';
+
+        for (var j = 0, size = 0, tail = 0, code = 0, l = elements.length; j < l; ++j) {
+          // empty element
+          if ((size = (element = elements[j]).length) === 0 && l > 1) {
+            continue;
+          }
+
+          tail = out.charCodeAt(out.length - 1);
+          code = element.charCodeAt(0);
+          padding = '';
+
+          if (j !== 0) {
+            // determine if we need padding
+            switch (tail) {
+              case STAR:
+              case TILDE:
+              case GREATERTHAN:
+              case PLUS:
+              case SPACE:
+              case OPENPARENTHESES:
+                {
+                  break;
+                }
+
+              default:
+                {
+                  padding = ' ';
+                }
+            }
+          }
+
+          switch (code) {
+            case AND:
+              {
+                element = padding + nscopealt;
+              }
+
+            case TILDE:
+            case GREATERTHAN:
+            case PLUS:
+            case SPACE:
+            case CLOSEPARENTHESES:
+            case OPENPARENTHESES:
+              {
+                break;
+              }
+
+            case OPENBRACKET:
+              {
+                element = padding + element + nscopealt;
+                break;
+              }
+
+            case COLON:
+              {
+                switch (element.charCodeAt(1) * 2 + element.charCodeAt(2) * 3) {
+                  // :global
+                  case 530:
+                    {
+                      if (escape > 0) {
+                        element = padding + element.substring(8, size - 1);
+                        break;
+                      }
+                    }
+                  // :hover, :nth-child(), ...
+
+                  default:
+                    {
+                      if (j < 1 || elements[j - 1].length < 1) {
+                        element = padding + nscopealt + element;
+                      }
+                    }
+                }
+
+                break;
+              }
+
+            case COMMA:
+              {
+                padding = '';
+              }
+
+            default:
+              {
+                if (size > 1 && element.indexOf(':') > 0) {
+                  element = padding + element.replace(pseudoptn, '$1' + nscopealt + '$2');
+                } else {
+                  element = padding + element + nscopealt;
+                }
+              }
+          }
+
+          out += element;
+        }
+
+        selector[i] = out.replace(formatptn, '').trim();
+      }
+
+      return selector;
+    }
+    /**
+     * Proxy
+     *
+     * @param {number} context
+     * @param {string} content
+     * @param {Array<string>} selectors
+     * @param {Array<string>} parents
+     * @param {number} line
+     * @param {number} column
+     * @param {number} length
+     * @param {number} id
+     * @param {number} depth
+     * @param {number} at
+     * @return {(string|void|*)}
+     */
+
+
+    function proxy(context, content, selectors, parents, line, column, length, id, depth, at) {
+      for (var i = 0, out = content, next; i < plugged; ++i) {
+        switch (next = plugins[i].call(stylis, context, out, selectors, parents, line, column, length, id, depth, at)) {
+          case void 0:
+          case false:
+          case true:
+          case null:
+            {
+              break;
+            }
+
+          default:
+            {
+              out = next;
+            }
+        }
+      }
+
+      if (out !== content) {
+        return out;
+      }
+    }
+    /**
+     * @param {number} code
+     * @param {number} index
+     * @param {number} length
+     * @param {string} body
+     * @return {number}
+     */
+
+
+    function delimited(code, index, length, body) {
+      for (var i = index + 1; i < length; ++i) {
+        switch (body.charCodeAt(i)) {
+          // /*
+          case FOWARDSLASH:
+            {
+              if (code === STAR) {
+                if (body.charCodeAt(i - 1) === STAR && index + 2 !== i) {
+                  return i + 1;
+                }
+              }
+
+              break;
+            }
+          // //
+
+          case NEWLINE:
+            {
+              if (code === FOWARDSLASH) {
+                return i + 1;
+              }
+            }
+        }
+      }
+
+      return i;
+    }
+    /**
+     * @param {number} type
+     * @param {number} index
+     * @param {number} length
+     * @param {number} find
+     * @param {string} body
+     * @return {number}
+     */
+
+
+    function match(type, index, length, body) {
+      for (var i = index + 1; i < length; ++i) {
+        switch (body.charCodeAt(i)) {
+          case type:
+            {
+              return i;
+            }
+        }
+      }
+
+      return i;
+    }
+    /**
+     * Minify
+     *
+     * @param {(string|*)} output
+     * @return {string}
+     */
+
+
+    function minify(output) {
+      return output.replace(formatptn, '').replace(beforeptn, '').replace(afterptn, '$1').replace(tailptn, '$1').replace(whiteptn, ' ');
+    }
+    /**
+     * Use
+     *
+     * @param {(Array<function(...?)>|function(...?)|number|void)?} plugin
+     */
+
+
+    function use(plugin) {
+      switch (plugin) {
+        case void 0:
+        case null:
+          {
+            plugged = plugins.length = 0;
+            break;
+          }
+
+        default:
+          {
+            if (typeof plugin === 'function') {
+              plugins[plugged++] = plugin;
+            } else if (typeof plugin === 'object') {
+              for (var i = 0, length = plugin.length; i < length; ++i) {
+                use(plugin[i]);
+              }
+            } else {
+              unkwn = !!plugin | 0;
+            }
+          }
+      }
+
+      return use;
+    }
+    /**
+     * Set
+     *
+     * @param {*} options
+     */
+
+
+    function set(options) {
+      for (var name in options) {
+        var value = options[name];
+
+        switch (name) {
+          case 'keyframe':
+            keyed = value | 0;
+            break;
+
+          case 'global':
+            escape = value | 0;
+            break;
+
+          case 'cascade':
+            cascade = value | 0;
+            break;
+
+          case 'compress':
+            compress = value | 0;
+            break;
+
+          case 'semicolon':
+            semicolon = value | 0;
+            break;
+
+          case 'preserve':
+            preserve = value | 0;
+            break;
+
+          case 'prefix':
+            should = null;
+
+            if (!value) {
+              prefix = 0;
+            } else if (typeof value !== 'function') {
+              prefix = 1;
+            } else {
+              prefix = 2;
+              should = value;
+            }
+
+        }
+      }
+
+      return set;
+    }
+    /**
+     * Stylis
+     *
+     * @param {string} selector
+     * @param {string} input
+     * @return {*}
+     */
+
+
+    function stylis(selector, input) {
+      if (this !== void 0 && this.constructor === stylis) {
+        return factory(selector);
+      } // setup
+
+
+      var ns = selector;
+      var code = ns.charCodeAt(0); // trim leading whitespace
+
+      if (code < 33) {
+        code = (ns = ns.trim()).charCodeAt(0);
+      } // keyframe/animation namespace
+
+
+      if (keyed > 0) {
+        key = ns.replace(invalidptn, code === OPENBRACKET ? '' : '-');
+      } // reset, used to assert if a plugin is moneky-patching the return value
+
+
+      code = 1; // cascade/isolate
+
+      if (cascade === 1) {
+        nscope = ns;
+      } else {
+        nscopealt = ns;
+      }
+
+      var selectors = [nscope];
+      var result; // execute plugins, pre-process context
+
+      if (plugged > 0) {
+        result = proxy(PREPS, input, selectors, selectors, line, column, 0, 0, 0, 0);
+
+        if (result !== void 0 && typeof result === 'string') {
+          input = result;
+        }
+      } // build
+
+
+      var output = compile(array, selectors, input, 0, 0); // execute plugins, post-process context
+
+      if (plugged > 0) {
+        result = proxy(POSTS, output, selectors, selectors, line, column, output.length, 0, 0, 0); // bypass minification
+
+        if (result !== void 0 && typeof (output = result) !== 'string') {
+          code = 0;
+        }
+      } // reset
+
+
+      key = '';
+      nscope = '';
+      nscopealt = '';
+      pattern = 0;
+      line = 1;
+      column = 1;
+      return compress * code === 0 ? output : minify(output);
+    }
+
+    stylis['use'] = use;
+    stylis['set'] = set;
+
+    if (options !== void 0) {
+      set(options);
+    }
+
+    return stylis;
+  });
+  /***/
+
+},
+/* 43 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -4354,25 +11460,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -4560,7 +11660,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 18 */
+/* 44 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -4580,25 +11680,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -4782,7 +11876,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 19 */
+/* 45 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -4802,25 +11896,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -5007,7 +12095,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 20 */
+/* 46 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -5027,25 +12115,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -5229,7 +12311,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 21 */
+/* 47 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -5249,25 +12331,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -5451,7 +12527,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 22 */
+/* 48 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -5471,25 +12547,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -5673,7 +12743,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 23 */
+/* 49 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -5693,25 +12763,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -5895,7 +12959,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 24 */
+/* 50 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -5915,25 +12979,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -6117,7 +13175,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 25 */
+/* 51 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -6137,25 +13195,19 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0___default =
-  /*#__PURE__*/
-  __webpack_require__.n(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__);
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
   /* harmony import */
 
 
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
   /* harmony import */
 
 
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -6339,7 +13391,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 26 */
+/* 52 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -6355,15 +13407,15 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _MountingError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27);
+  var _MountingError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53);
   /* harmony import */
 
 
-  var _UnmountError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
+  var _UnmountError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54);
   /* harmony import */
 
 
-  var _UpdateError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
+  var _UpdateError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(55);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -6416,7 +13468,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 27 */
+/* 53 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -6491,7 +13543,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 28 */
+/* 54 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -6566,7 +13618,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 29 */
+/* 55 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {

@@ -91,10 +91,10 @@ window.dir                 = console.dir
 window.log                 = _.log
 
 //Globalize venus functions for convenience...
+window.global              = Venus.global
 window.extend              = Venus.extend
 // Globalize style elements for convenience...
 window.div                 = Venus.div
-window.div_                 = Venus.div_
 window.input               = Venus.input
 window.button              = Venus.button
 window.p                   = Venus.p
@@ -102,7 +102,7 @@ window.h1                  = Venus.h1
 window.h6                  = Venus.h6
 
 
-// The framework's entry class...
+// The framework's API class...
 class Valence {
 /*
  * Class Properties....
@@ -212,4 +212,4 @@ class Valence {
 }
 
 
-export { Valence, Venus }
+export { Valence }

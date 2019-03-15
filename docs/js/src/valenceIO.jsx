@@ -9,26 +9,46 @@
 **/
 
 import { Valence } from '../../../Valence'
-// import venus from '../../../js/src/Form/Venus'
 
-
+const __ = window.global
 
 Valence.config({
   shadowByDefault: false
 })
 
-//
+const blue = '#0057ff'
+const yellow = '#ffc700'
+const tomato = '#ff4500'
+const green = '#17a637'
+
+
+//global styles..
+__`
+body  {
+    background-color: ${tomato}
+  }
+`
 const Box = div({
   className: 'boxy'
 })`
-  position: absolute;
-  top: 50%;
-  height: 200px;
-  width: 100%;
-  margin-top: -130px;
-  padding: 30px;
-  background-color: blue;
+  position: absolute
+  top: 50%
+  height: 200px
+  width: 100%
+  margin-top: -130px
+  padding: 30px
+  background-color: ${blue}
 
+  h1 {
+    color: yellow;
+    position: absolute;
+    top: -150px;
+    left: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 84px;
+    font-family: sf mono;
+  }
 `
 const MyDiv = div`
   position: absolute;
@@ -36,8 +56,11 @@ const MyDiv = div`
   top: 25%;
   height: ${({shadow})=> shadow? '100px' : '700px'};
   width: 200px;
-  background-color: green;
+  background-color: ${green};
   z-index: 99;
+  p {
+    color: brown;
+  }
 `
 
 
@@ -91,7 +114,7 @@ const Thing2 = extend(Thing, {
   id: 'thing2',
   label: 'press me!'
 })`
-  background-color: red;
+  background-color: ${tomato};
   opacity: ${({attrib})=> attrib};
   color: white;
   border: 2px solid ${({shadow})=> shadow? 'black' : 'orange'}
@@ -101,7 +124,10 @@ const Thing2 = extend(Thing, {
 const MyName =()=>
   <div>
     <Box>
-      <MyDiv shadow={false}/>
+      <MyDiv shadow={false}>
+        <h1>Yesserri!</h1>
+        <p>I'm inside a custom element!</p>
+      </MyDiv>
       <Thing myAtty='75px' shadow={false}/>
        <p>What is happening</p>
        <MyInput/>
