@@ -1,8 +1,8 @@
 /*
-** H1.js
+** H2.js
 **
-** H1.js is an extensible HTML5 Web Component wrapper, built around the H1
-** element. It's aim is in providing an h1 element that is able to be
+** H2.js is an extensible HTML5 Web Component wrapper, built around the H2
+** element. It's aim is in providing an h2 element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,11 +27,10 @@ const el  = _.el
 const dom = _.dom
 
 
-class H1 {
-// A CSS template literal, holding default styles for an h1...
+class H2 {
+// A CSS template literal, holding default styles for an h2...
   static _tempLiteral = `:host {
-                          background-color: black;
-                          border-radius: 5%;
+
                         }`
 
 // Static method for appending child nodes to parent elements...
@@ -39,18 +38,18 @@ class H1 {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus h1 element...
+// Static method for defining a flare h2 element...
   static createComponent(props={}, template=false) {
-    log('props', ['orange', 'bold'])
-    dir(props)
+    // log('props', ['orange', 'bold'])
+    // dir(props)
 
 // Declarations..
-    let HTMLH1Component,
+    let HTMLH2Component,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    h1,
+    h2,
     self,
     obj
 
@@ -80,74 +79,73 @@ class H1 {
         true
     }
 
-// Create an HTMLH1Element...
-    h1 = document.createElement('h1')
-// Some default settings for h1 elements...
-// Set venus identifier flag..
-    h1.venus = true
-    // if (props.type == 'text') {
-    //
-    // }
+// Create an HTMLH2Element...
+    h2 = document.createElement('h2')
+// Some default settings for h2 elements...
+// Set flare identifier flag..
+    h2.flare = true
 
-// Pass props from venus component declaration on to the inner h1 el...
+// Pass props from flare component declaration on to the inner h2 el...
     for (let key of Object.keys(props)) {
-// Check all keys in h1 el object...
-      if (key in h1) {
+// Check all keys in h2 el object...
+      if (key in h2) {
 // Pass on the ones that match...
-        log(`${key} in h1`, ['yellow', 'bold'])
-        h1[`${key}`] = props[`${key}`]
+        // log(`${key} in h2`, ['yellow', 'bold'])
+        h2[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in h1.style) {
-        log(`${key} in h1`, ['pink', 'bold'])
+      } else if (key in h2.style) {
+        // log(`${key} in h2`, ['pink', 'bold'])
 // Put them here...
-        h1.style[`${key}`] = props[`${key}`]
+        h2.style[`${key}`] = props[`${key}`]
       }
     }
 
 // Check for 'content' attribute,
     if ('content' in props) {
-      h6.textContent = props.content
-      // h6.style.margin = '5'
+      h2.textContent = props.content
+      // h2.style.margin = '5'
     }
 
-// The h1 component element's constructor definition...
-    HTMLH1Component =()=> {
+
+// The h2 component element's constructor definition...
+    HTMLH2Component =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLH1Component)
+      self = Reflect.construct(HTMLElement, [], HTMLH2Component)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(h1)
+        shadowRoot.appendChild(h2)
 // Create a node from the template function, and append to shadowRoot....
-        H1._appendStyleNode(shadowRoot, template)
+        H2._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLH1Component.prototype = Object.create(HTMLHeaderElement.prototype)
+    HTMLH2Component.prototype = Object.create(HTMLH2Element.prototype)
 // Add constructor...
-    HTMLH1Component.prototype.constructor = HTMLH1Component
+    HTMLH2Component.prototype.constructor = HTMLH2Component
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLH1Component, eListeners)
+    Events.registerCallbacks(HTMLH2Component, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLH1Component.prototype.connectedCallback =()=> {
-        self.appendChild(h1)
+      HTMLH2Component.prototype.connectedCallback =()=> {
+        self.appendChild(h2)
       }
     }
 
 // Return component to the caller...
-    return HTMLH1Component
+    return HTMLH2Component
   }
 }
 
-export { H1 }
+
+export { H2 }

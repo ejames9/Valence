@@ -1,8 +1,8 @@
 /*
-** Textarea.js
+** H6.js
 **
-** Textarea.js is an extensible HTML5 Web Component wrapper, built around the Textarea
-** element. It's aim is in providing an textarea element that is able to be
+** H6.js is an extensible HTML5 Web Component wrapper, built around the H6
+** element. It's aim is in providing an h6 element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class Textarea {
-// A CSS template literal, holding default styles for an textarea...
+class H6 {
+// A CSS template literal, holding default styles for an h6...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class Textarea {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus textarea element...
+// Static method for defining a flare h6 element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLTextareaComponent,
+    let HTMLH6Component,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    textarea,
+    h6,
     self,
     obj
 
@@ -79,73 +79,73 @@ class Textarea {
         true
     }
 
-// Create an HTMLTextareaElement...
-    textarea = document.createElement('textarea')
-// Some default settings for textarea elements...
-// Set venus identifier flag..
-    textarea.venus = true
+// Create an HTMLH6Element...
+    h6 = document.createElement('h6')
+// Some default settings for h6 elements...
+// Set flare identifier flag..
+    h6.flare = true
 
-// Pass props from venus component declaration on to the inner textarea el...
+// Pass props from flare component declaration on to the inner h6 el...
     for (let key of Object.keys(props)) {
-// Check all keys in textarea el object...
-      if (key in textarea) {
+// Check all keys in h6 el object...
+      if (key in h6) {
 // Pass on the ones that match...
-        // log(`${key} in textarea`, ['yellow', 'bold'])
-        textarea[`${key}`] = props[`${key}`]
+        // log(`${key} in h6`, ['yellow', 'bold'])
+        h6[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in textarea.style) {
-        // log(`${key} in textarea`, ['pink', 'bold'])
+      } else if (key in h6.style) {
+        // log(`${key} in h6`, ['pink', 'bold'])
 // Put them here...
-        textarea.style[`${key}`] = props[`${key}`]
+        h6.style[`${key}`] = props[`${key}`]
       }
     }
 
 // Check for 'content' attribute,
     if ('content' in props) {
-      textarea.textContent = props.content
-      // textarea.style.margin = '5'
+      h6.textContent = props.content
+      // h6.style.margin = '5'
     }
 
 
-// The textarea component element's constructor definition...
-    HTMLTextareaComponent =()=> {
+// The h6 component element's constructor definition...
+    HTMLH6Component =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLTextareaComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLH6Component)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(textarea)
+        shadowRoot.appendChild(h6)
 // Create a node from the template function, and append to shadowRoot....
-        Textarea._appendStyleNode(shadowRoot, template)
+        H6._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLTextareaComponent.prototype = Object.create(HTMLTextareaElement.prototype)
+    HTMLH6Component.prototype = Object.create(HTMLElement.prototype)
 // Add constructor...
-    HTMLTextareaComponent.prototype.constructor = HTMLTextareaComponent
+    HTMLH6Component.prototype.constructor = HTMLH6Component
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLTextareaComponent, eListeners)
+    Events.registerCallbacks(HTMLH6Component, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLTextareaComponent.prototype.connectedCallback =()=> {
-        self.appendChild(textarea)
+      HTMLH6Component.prototype.connectedCallback =()=> {
+        self.appendChild(h6)
       }
     }
 
 // Return component to the caller...
-    return HTMLTextareaComponent
+    return HTMLH6Component
   }
 }
 
 
-export { Textarea }
+export { H6 }

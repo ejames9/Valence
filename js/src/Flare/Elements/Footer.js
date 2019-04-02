@@ -1,8 +1,8 @@
 /*
-** Col.js
+** Footer.js
 **
-** Col.js is an extensible HTML5 Web Component wrapper, built around the Col
-** element. It's aim is in providing an col element that is able to be
+** Footer.js is an extensible HTML5 Web Component wrapper, built around the Footer
+** element. It's aim is in providing an footer element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class Col {
-// A CSS template literal, holding default styles for an col...
+class Footer {
+// A CSS template literal, holding default styles for an footer...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class Col {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus col element...
+// Static method for defining a flare footer element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLColComponent,
+    let HTMLFooterComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    col,
+    footer,
     self,
     obj
 
@@ -79,73 +79,73 @@ class Col {
         true
     }
 
-// Create an HTMLColElement...
-    col = document.createElement('col')
-// Some default settings for col elements...
-// Set venus identifier flag..
-    col.venus = true
+// Create an HTMLFooterElement...
+    footer = document.createElement('footer')
+// Some default settings for footer elements...
+// Set flare identifier flag..
+    footer.flare = true
 
-// Pass props from venus component declaration on to the inner col el...
+// Pass props from flare component declaration on to the inner footer el...
     for (let key of Object.keys(props)) {
-// Check all keys in col el object...
-      if (key in col) {
+// Check all keys in footer el object...
+      if (key in footer) {
 // Pass on the ones that match...
-        // log(`${key} in col`, ['yellow', 'bold'])
-        col[`${key}`] = props[`${key}`]
+        // log(`${key} in footer`, ['yellow', 'bold'])
+        footer[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in col.style) {
-        // log(`${key} in col`, ['pink', 'bold'])
+      } else if (key in footer.style) {
+        // log(`${key} in footer`, ['pink', 'bold'])
 // Put them here...
-        col.style[`${key}`] = props[`${key}`]
+        footer.style[`${key}`] = props[`${key}`]
       }
     }
 
 // // Check for '-----' attribute,
 //     if ('-----' in props) {
-//       col.textContent = props.-----
-//       // col.style.margin = '5'
+//       footer.textContent = props.-----
+//       // footer.style.margin = '5'
 //     }
 
 
-// The col component element's constructor definition...
-    HTMLColComponent =()=> {
+// The footer component element's constructor definition...
+    HTMLFooterComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLColComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLFooterComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(col)
+        shadowRoot.appendChild(footer)
 // Create a node from the template function, and append to shadowRoot....
-        Col._appendStyleNode(shadowRoot, template)
+        Footer._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLColComponent.prototype = Object.create(HTMLColElement.prototype)
+    HTMLFooterComponent.prototype = Object.create(HTMLFooterElement.prototype)
 // Add constructor...
-    HTMLColComponent.prototype.constructor = HTMLColComponent
+    HTMLFooterComponent.prototype.constructor = HTMLFooterComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLColComponent, eListeners)
+    Events.registerCallbacks(HTMLFooterComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLColComponent.prototype.connectedCallback =()=> {
-        self.appendChild(col)
+      HTMLFooterComponent.prototype.connectedCallback =()=> {
+        self.appendChild(footer)
       }
     }
 
 // Return component to the caller...
-    return HTMLColComponent
+    return HTMLFooterComponent
   }
 }
 
 
-export { Col }
+export { Footer }

@@ -17,8 +17,8 @@ import { Node } from './Node'
 import { Props } from '../Props/Props'
 // Get Events...
 import { Events } from '../Events'
-// Get Venus...
-import { Venus } from '../Venus/Venus'
+// Get Flare...
+import { Flare } from '../Flare/Flare'
 
 // Globalize common utilities...
 const log     = _.log
@@ -44,8 +44,8 @@ class Form {
     this.rootNode = root
   }
 
-// Variable holds an array of venusComponent names..
-  static _venusComponentNames = []
+// Variable holds an array of flareComponent names..
+  static _flareComponentNames = []
 
 // Computed property that determines whether or not 2 nodes
 // have changed...
@@ -161,13 +161,13 @@ class Form {
 
 // A helper method representing the API of the virtual DOM...
   static x(type, props, ...children) {
-// If type = false, the node is a venus component, and needs to be defined.
-    if (type.venus) {
+// If type = false, the node is a flare component, and needs to be defined.
+    if (type.flare) {
 // Get a variable... load with x's caller function's code
       let xCaller = x.caller.toString(),
       xCallerName = x.caller.name
-// Use the above to define Venus Component.. and also 'type' for the node...
-      type = Venus.interfaceFormX(
+// Use the above to define Flare Component.. and also 'type' for the node...
+      type = Flare.interfaceValenceX(
         xCallerName,
         xCaller,
         type.el,
@@ -184,8 +184,7 @@ class Form {
     })
   }
 
-// Method for rendering the virtual dom to real dom... The method takes
-// Valence.createElement as it's second argument...
+// Method for rendering the virtual dom to real dom...
   draw() {
     return Node.createNode(this.DOM)
   }

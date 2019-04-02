@@ -1,8 +1,8 @@
 /*
-** Footer.js
+** Paragraph.js
 **
-** Footer.js is an extensible HTML5 Web Component wrapper, built around the Footer
-** element. It's aim is in providing an footer element that is able to be
+** Paragraph.js is an extensible HTML5 Web Component wrapper, built around the P
+** element. It's aim is in providing a p element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,9 +27,9 @@ const el  = _.el
 const dom = _.dom
 
 
-class Footer {
-// A CSS template literal, holding default styles for an footer...
-  static _tempLiteral = `:host {
+class Paragraph {
+// A CSS template literal, holding default styles for a p...
+  static _textLiteral = `:host {
 
                         }`
 
@@ -38,18 +38,16 @@ class Footer {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus footer element...
+// Static method for defining a flare p element...
   static createComponent(props={}, template=false) {
-    // log('props', ['orange', 'bold'])
-    // dir(props)
 
 // Declarations..
-    let HTMLFooterComponent,
+    let HTMLPGraphComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    footer,
+    p,
     self,
     obj
 
@@ -79,73 +77,74 @@ class Footer {
         true
     }
 
-// Create an HTMLFooterElement...
-    footer = document.createElement('footer')
-// Some default settings for footer elements...
-// Set venus identifier flag..
-    footer.venus = true
+// Create an HTMLPElement...
+    p = document.createElement('p')
+// Some default settings for p elements...
+// Set flare identifier flag..
+    // p.flare = true
+    // if (props.type == 'text') {
+    //
+    // }
 
-// Pass props from venus component declaration on to the inner footer el...
+// Pass props from flare component declaration on to the inner p el...
     for (let key of Object.keys(props)) {
-// Check all keys in footer el object...
-      if (key in footer) {
+// Check all keys in p el object...
+      if (key in p) {
 // Pass on the ones that match...
-        // log(`${key} in footer`, ['yellow', 'bold'])
-        footer[`${key}`] = props[`${key}`]
+        log(`${key} in p`, ['yellow', 'bold'])
+        p[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in footer.style) {
-        // log(`${key} in footer`, ['pink', 'bold'])
+      } else if (key in p.style) {
+        log(`${key} in p`, ['pink', 'bold'])
 // Put them here...
-        footer.style[`${key}`] = props[`${key}`]
+        p.style[`${key}`] = props[`${key}`]
       }
     }
 
-// // Check for '-----' attribute,
-//     if ('-----' in props) {
-//       footer.textContent = props.-----
-//       // footer.style.margin = '5'
+// // Check for 'content' attribute,
+//     if ('content' in props) {
+//       p.textContent = props.content
 //     }
 
 
-// The footer component element's constructor definition...
-    HTMLFooterComponent =()=> {
+// The p component element's constructor definition...
+    HTMLPGraphComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLFooterComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLPGraphComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(footer)
+        shadowRoot.appendChild(p)
 // Create a node from the template function, and append to shadowRoot....
-        Footer._appendStyleNode(shadowRoot, template)
+        Paragraph._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLFooterComponent.prototype = Object.create(HTMLFooterElement.prototype)
+    HTMLPGraphComponent.prototype = Object.create(HTMLParagraphElement.prototype)
 // Add constructor...
-    HTMLFooterComponent.prototype.constructor = HTMLFooterComponent
+    HTMLPGraphComponent.prototype.constructor = HTMLPGraphComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLFooterComponent, eListeners)
+    Events.registerCallbacks(HTMLPGraphComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLFooterComponent.prototype.connectedCallback =()=> {
-        self.appendChild(footer)
+      HTMLPGraphComponent.prototype.connectedCallback =()=> {
+        self.appendChild(p)
       }
     }
 
 // Return component to the caller...
-    return HTMLFooterComponent
+    return HTMLPGraphComponent
   }
 }
 
-
-export { Footer }
+export { Paragraph }

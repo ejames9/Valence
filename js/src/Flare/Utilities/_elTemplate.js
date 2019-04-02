@@ -1,8 +1,8 @@
 /*
-** H5.js
+** ||UppercaseName||.js
 **
-** H5.js is an extensible HTML5 Web Component wrapper, built around the H5
-** element. It's aim is in providing an h5 element that is able to be
+** ||UppercaseName||.js is an extensible HTML5 Web Component wrapper, built around the ||UppercaseName||
+** element. It's aim is in providing an ||name|| element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class H5 {
-// A CSS template literal, holding default styles for an h5...
+class ||UppercaseName|| {
+// A CSS template literal, holding default styles for an ||name||...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class H5 {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus h5 element...
+// Static method for defining a flare ||name|| element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLH5Component,
+    let HTML||UppercaseName||Component,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    h5,
+    ||name||,
     self,
     obj
 
@@ -79,73 +79,73 @@ class H5 {
         true
     }
 
-// Create an HTMLH5Element...
-    h5 = document.createElement('h5')
-// Some default settings for h5 elements...
-// Set venus identifier flag..
-    h5.venus = true
+// Create an HTML||UppercaseName||Element...
+    ||name|| = document.createElement('||name||')
+// Some default settings for ||name|| elements...
+// Set flare identifier flag..
+    // ||name||.flare = true
 
-// Pass props from venus component declaration on to the inner h5 el...
+// Pass props from flare component declaration on to the inner ||name|| el...
     for (let key of Object.keys(props)) {
-// Check all keys in h5 el object...
-      if (key in h5) {
+// Check all keys in ||name|| el object...
+      if (key in ||name||) {
 // Pass on the ones that match...
-        // log(`${key} in h5`, ['yellow', 'bold'])
-        h5[`${key}`] = props[`${key}`]
+        // log(`${key} in ||name||`, ['yellow', 'bold'])
+        ||name||[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in h5.style) {
-        // log(`${key} in h5`, ['pink', 'bold'])
+      } else if (key in ||name||.style) {
+        // log(`${key} in ||name||`, ['pink', 'bold'])
 // Put them here...
-        h5.style[`${key}`] = props[`${key}`]
+        ||name||.style[`${key}`] = props[`${key}`]
       }
     }
 
-// Check for 'content' attribute,
-    if ('content' in props) {
-      h5.textContent = props.content
-      // h5.style.margin = '5'
+// Check for '||attr0||' attribute,
+    if ('||attr0||' in props) {
+      ||name||.textContent = props.||attr0||
+      // ||name||.style.margin = '5'
     }
 
 
-// The h5 component element's constructor definition...
-    HTMLH5Component =()=> {
+// The ||name|| component element's constructor definition...
+    HTML||UppercaseName||Component =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLH5Component)
+      self = Reflect.construct(HTMLElement, [], HTML||Constructor||Component)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(h5)
+        shadowRoot.appendChild(||name||)
 // Create a node from the template function, and append to shadowRoot....
-        H5._appendStyleNode(shadowRoot, template)
+        ||UppercaseName||._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLH5Component.prototype = Object.create(HTMLH5Element.prototype)
+    HTML||UppercaseName||Component.prototype = Object.create(HTML||UppercaseName||Element.prototype)
 // Add constructor...
-    HTMLH5Component.prototype.constructor = HTMLH5Component
+    HTML||UppercaseName||Component.prototype.constructor = HTML||UppercaseName||Component
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLH5Component, eListeners)
+    Events.registerCallbacks(HTML||UppercaseName||Component, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLH5Component.prototype.connectedCallback =()=> {
-        self.appendChild(h5)
+      HTML||UppercaseName||Component.prototype.connectedCallback =()=> {
+        self.appendChild(||name||)
       }
     }
 
 // Return component to the caller...
-    return HTMLH5Component
+    return HTML||UppercaseName||Component
   }
 }
 
 
-export { H5 }
+export { ||UppercaseName|| }

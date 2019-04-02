@@ -1,8 +1,8 @@
 /*
-** Span.js
+** Aside.js
 **
-** Span.js is an extensible HTML5 Web Component wrapper, built around the Span
-** element. It's aim is in providing an span element that is able to be
+** Aside.js is an extensible HTML5 Web Component wrapper, built around the Aside
+** element. It's aim is in providing an aside element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class Span {
-// A CSS template literal, holding default styles for an span...
+class Aside {
+// A CSS template literal, holding default styles for an aside...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class Span {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus span element...
+// Static method for defining a flare aside element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLSpanComponent,
+    let HTMLAsideComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    span,
+    aside,
     self,
     obj
 
@@ -79,73 +79,73 @@ class Span {
         true
     }
 
-// Create an HTMLSpanElement...
-    span = document.createElement('span')
-// Some default settings for span elements...
-// Set venus identifier flag..
-    span.venus = true
+// Create an HTMLAsideElement...
+    aside = document.createElement('aside')
+// Some default settings for aside elements...
+// Set flare identifier flag..
+    aside.flare = true
 
-// Pass props from venus component declaration on to the inner span el...
+// Pass props from flare component declaration on to the inner aside el...
     for (let key of Object.keys(props)) {
-// Check all keys in span el object...
-      if (key in span) {
+// Check all keys in aside el object...
+      if (key in aside) {
 // Pass on the ones that match...
-        // log(`${key} in span`, ['yellow', 'bold'])
-        span[`${key}`] = props[`${key}`]
+        // log(`${key} in aside`, ['yellow', 'bold'])
+        aside[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in span.style) {
-        // log(`${key} in span`, ['pink', 'bold'])
+      } else if (key in aside.style) {
+        // log(`${key} in aside`, ['pink', 'bold'])
 // Put them here...
-        span.style[`${key}`] = props[`${key}`]
+        aside.style[`${key}`] = props[`${key}`]
       }
     }
 
-// Check for 'content' attribute,
-    if ('content' in props) {
-      span.textContent = props.content
-      // span.style.margin = '5'
-    }
+// // Check for '-----' attribute,
+//     if ('-----' in props) {
+//       aside.textContent = props.-----
+//       // aside.style.margin = '5'
+//     }
 
 
-// The span component element's constructor definition...
-    HTMLSpanComponent =()=> {
+// The aside component element's constructor definition...
+    HTMLAsideComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLSpanComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLAsideComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(span)
+        shadowRoot.appendChild(aside)
 // Create a node from the template function, and append to shadowRoot....
-        Span._appendStyleNode(shadowRoot, template)
+        Aside._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLSpanComponent.prototype = Object.create(HTMLSpanElement.prototype)
+    HTMLAsideComponent.prototype = Object.create(HTMLAsideElement.prototype)
 // Add constructor...
-    HTMLSpanComponent.prototype.constructor = HTMLSpanComponent
+    HTMLAsideComponent.prototype.constructor = HTMLAsideComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLSpanComponent, eListeners)
+    Events.registerCallbacks(HTMLAsideComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLSpanComponent.prototype.connectedCallback =()=> {
-        self.appendChild(span)
+      HTMLAsideComponent.prototype.connectedCallback =()=> {
+        self.appendChild(aside)
       }
     }
 
 // Return component to the caller...
-    return HTMLSpanComponent
+    return HTMLAsideComponent
   }
 }
 
 
-export { Span }
+export { Aside }

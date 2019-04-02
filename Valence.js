@@ -66,11 +66,11 @@ import { Errors as _Errors } from './js/src/Errors/Errors'
 import { Props } from './js/src/Props/Props'
 import { PropTypes } from './js/src/Props/PropTypes'
 // Get styles...
-import { Venus } from './js/src/Venus/Venus'
+import { Flare } from './js/src/Flare/Flare'
 
 
-// Initializing an array for venus component tag names...
-window.venusComponents = []
+// Initializing an array for flare component tag names...
+window.flareComponents = []
 // Initializing an array for all stateless instantiated component tag names...
 window.statelessComponents = []
 
@@ -90,16 +90,17 @@ window.dom                 = _.dom
 window.dir                 = console.dir
 window.log                 = _.log
 
-//Globalize venus functions for convenience...
-window.global              = Venus.global
-window.extend              = Venus.extend
+//Globalize flare functions for convenience...
+window.global              = Flare.global
+window.extend              = Flare.extend
+window.keyframes           = Flare.keyframes
 // Globalize style elements for convenience...
-window.div                 = Venus.div
-window.input               = Venus.input
-window.button              = Venus.button
-window.p                   = Venus.p
-window.h1                  = Venus.h1
-window.h6                  = Venus.h6
+window.div                 = Flare.div
+window.input               = Flare.input
+window.button              = Flare.button
+window.p                   = Flare.p
+window.h1                  = Flare.h1
+window.h6                  = Flare.h6
 
 
 // The framework's API class...
@@ -129,8 +130,8 @@ class Valence {
 // The form virtual DOM instance...
   static form = null
 
-// Add config method from the venus class...
-  static config = Venus.config
+// Add config method from the flare class...
+  static config = Flare.config
 
 /*
  * Class Methods...

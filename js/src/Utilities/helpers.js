@@ -20,7 +20,7 @@ export { el, dom, log, inspect } from 'elementsJS'
 
 // a Regular expression for extracting component names from a function's
 // source code...
-export const venusComponentNamesRE =()=> /(\([A-Z]\w*-?)+/g
+export const flareComponentNamesRE =()=> /(\([A-Z]\w*-?)+/g
 
 
 export const piper =(...fns)=>
@@ -165,10 +165,10 @@ export const capitalizeAndRemoveHyphen =(name)=>
   name[0].toUpperCase() +
   name.slice(1, name.length - 1)
 
-// Creates a unique custom event string for individual venus element instantiation
+// Creates a unique custom event string for individual flare element instantiation
 // notification...
 export const uniqueCustomEventString =(tagName)=>
-  `venus${capitalizeAndRemoveHyphen(tagName)}ElementInstantiated`
+  `flare${capitalizeAndRemoveHyphen(tagName)}ElementInstantiated`
 
 // A small helper function for determining if a given string is in a given array..
 export const included =(string, array)=> {
@@ -178,6 +178,7 @@ export const included =(string, array)=> {
     return false
   }
 }
+
 
 // A node.js code templating function. The function takes a string of code, and
 // an object containing replacement values.
@@ -227,8 +228,8 @@ export const replicator =(objArray, template)=> {
   return loadedArray
 }
 
-// An array filter function, which splits the array into 2 new arrays.. Those that
-// agree with the given boolean, and those that do not...
+/* An array filter function, which splits the array into 2 new arrays.. Those that
+agree with the given boolean, and those that do not...*/
 export const splitFilter =(array, bool)=> {
   let t = [],
   f = []
@@ -240,7 +241,7 @@ export const splitFilter =(array, bool)=> {
       f.push(i)
     }
   })
-// Return a tuple of both arrays...
+// Return an object containing both arrays...
   return {
     true: t,
     false: f
@@ -306,8 +307,45 @@ export const applyInterpolations =(taggedTempLit, props)=> {
 /*
 A helper function that takes a string containing css rules and splits them up
 into individual rule/strings and appends them to an array. An array of rules
-is returned...
-*/
+is returned...*/
 export const separateStyleRules =(css)=>
 // Below we are using a regular expression, returning an array of all of it's matches....
   css.match(/[^\s\{][^\{]*\{[^\}]*\}/g)
+
+
+// A simple trick to deep copy an object....
+//NOTE: This will now work on an object with methods....
+export const deeplicateObject =(obj)=> {
+// Get a shallow copy of given obj. 2nd level, and beyond, objects will be copied later..
+  let newObj = JSON.parse(JSON.stringify(obj))
+// Recursive deeper level object copier...
+  let reCopier =(newie, oldie)=> {
+// Iterate over the object to be copied...
+    for (key in oldie) {
+// Manually copy in all functions, regexp's...
+      if (
+          typeof oldie[key] === 'function' ||
+          oldie[key] instanceof RegExp
+        ) {
+        newie[key] = oldie[key]
+      }
+// Deal with arrays...
+      if (Array.isArray(oldie[key])) {
+        newie[key] = Array.from(oldie[key])
+      }
+// Recursively copy in all objects, save nulls, regexp's and arrays...
+      if (
+        typeof oldie[key] === 'object' &&
+         !(oldie[key] instanceof RegExp) &&
+          oldie[key] !== null &&
+         !is.array(oldie[key])
+      ) {
+// Copy away...
+        newie[key] = Object.assign({}, oldie[key])
+        reCopier(newie[key], oldie[key])
+      }
+    }
+    return newie
+  }
+  return reCopier(newObj, obj)
+}

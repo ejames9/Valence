@@ -1,8 +1,8 @@
 /*
-** Table.js
+** Colgroup.js
 **
-** Table.js is an extensible HTML5 Web Component wrapper, built around the Table
-** element. It's aim is in providing an table element that is able to be
+** Colgroup.js is an extensible HTML5 Web Component wrapper, built around the Colgroup
+** element. It's aim is in providing an colgroup element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class Table {
-// A CSS template literal, holding default styles for an table...
+class Colgroup {
+// A CSS template literal, holding default styles for an colgroup...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class Table {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus table element...
+// Static method for defining a flare colgroup element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLTableComponent,
+    let HTMLColgroupComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    table,
+    colgroup,
     self,
     obj
 
@@ -79,73 +79,73 @@ class Table {
         true
     }
 
-// Create an HTMLTableElement...
-    table = document.createElement('table')
-// Some default settings for table elements...
-// Set venus identifier flag..
-    table.venus = true
+// Create an HTMLColgroupElement...
+    colgroup = document.createElement('colgroup')
+// Some default settings for colgroup elements...
+// Set flare identifier flag..
+    colgroup.flare = true
 
-// Pass props from venus component declaration on to the inner table el...
+// Pass props from flare component declaration on to the inner colgroup el...
     for (let key of Object.keys(props)) {
-// Check all keys in table el object...
-      if (key in table) {
+// Check all keys in colgroup el object...
+      if (key in colgroup) {
 // Pass on the ones that match...
-        // log(`${key} in table`, ['yellow', 'bold'])
-        table[`${key}`] = props[`${key}`]
+        // log(`${key} in colgroup`, ['yellow', 'bold'])
+        colgroup[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in table.style) {
-        // log(`${key} in table`, ['pink', 'bold'])
+      } else if (key in colgroup.style) {
+        // log(`${key} in colgroup`, ['pink', 'bold'])
 // Put them here...
-        table.style[`${key}`] = props[`${key}`]
+        colgroup.style[`${key}`] = props[`${key}`]
       }
     }
 
 // // Check for '-----' attribute,
 //     if ('-----' in props) {
-//       table.textContent = props.-----
-//       // table.style.margin = '5'
+//       colgroup.textContent = props.-----
+//       // colgroup.style.margin = '5'
 //     }
 
 
-// The table component element's constructor definition...
-    HTMLTableComponent =()=> {
+// The colgroup component element's constructor definition...
+    HTMLColgroupComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLTableComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLColgroupComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(table)
+        shadowRoot.appendChild(colgroup)
 // Create a node from the template function, and append to shadowRoot....
-        Table._appendStyleNode(shadowRoot, template)
+        Colgroup._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLTableComponent.prototype = Object.create(HTMLTableElement.prototype)
+    HTMLColgroupComponent.prototype = Object.create(HTMLColgroupElement.prototype)
 // Add constructor...
-    HTMLTableComponent.prototype.constructor = HTMLTableComponent
+    HTMLColgroupComponent.prototype.constructor = HTMLColgroupComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLTableComponent, eListeners)
+    Events.registerCallbacks(HTMLColgroupComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLTableComponent.prototype.connectedCallback =()=> {
-        self.appendChild(table)
+      HTMLColgroupComponent.prototype.connectedCallback =()=> {
+        self.appendChild(colgroup)
       }
     }
 
 // Return component to the caller...
-    return HTMLTableComponent
+    return HTMLColgroupComponent
   }
 }
 
 
-export { Table }
+export { Colgroup }

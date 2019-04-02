@@ -1,4 +1,4 @@
- /*
+/*
 Dispatch.js
 
 Dispatch is the custom event creation and dispatch class behind
@@ -25,7 +25,7 @@ class Events {
   static emit(eventOrTag, detail={}) {
 // Determine whether first arg is an event string or a tagname...
     if (_.included('-', eventOrTag)) {
-// If tagname, create a listener for a custom venus event.
+// If tagname, create a listener for a custom flare event.
       let customEventString = _.uniqueCustomEventString(eventOrTag)
 // Instantiate custom event...
       const ev = new CustomEvent(customEventString, {'detail': detail})
@@ -43,7 +43,7 @@ class Events {
   static listen(eventOrTag, cb) {
 // Determine whether first arg is an event string or a tagname...
     if (_.included('-', eventOrTag)) {
-// If tagname, create a listener for a custom venus event.
+// If tagname, create a listener for a custom flare event.
       let customEventString = _.uniqueCustomEventString(eventOrTag)
 // Add listener...
       document.addEventListener(customEventString, (e)=> {

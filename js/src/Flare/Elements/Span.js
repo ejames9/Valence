@@ -1,8 +1,8 @@
 /*
-** Paragraph.js
+** Span.js
 **
-** Paragraph.js is an extensible HTML5 Web Component wrapper, built around the P
-** element. It's aim is in providing a p element that is able to be
+** Span.js is an extensible HTML5 Web Component wrapper, built around the Span
+** element. It's aim is in providing an span element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,9 +27,9 @@ const el  = _.el
 const dom = _.dom
 
 
-class Paragraph {
-// A CSS template literal, holding default styles for a p...
-  static _textLiteral = `:host {
+class Span {
+// A CSS template literal, holding default styles for an span...
+  static _tempLiteral = `:host {
 
                         }`
 
@@ -38,16 +38,18 @@ class Paragraph {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus p element...
+// Static method for defining a flare span element...
   static createComponent(props={}, template=false) {
+    // log('props', ['orange', 'bold'])
+    // dir(props)
 
 // Declarations..
-    let HTMLPGraphComponent,
+    let HTMLSpanComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    p,
+    span,
     self,
     obj
 
@@ -77,74 +79,73 @@ class Paragraph {
         true
     }
 
-// Create an HTMLPElement...
-    p = document.createElement('p')
-// Some default settings for p elements...
-// Set venus identifier flag..
-    // p.venus = true
-    // if (props.type == 'text') {
-    //
-    // }
+// Create an HTMLSpanElement...
+    span = document.createElement('span')
+// Some default settings for span elements...
+// Set flare identifier flag..
+    span.flare = true
 
-// Pass props from venus component declaration on to the inner p el...
+// Pass props from flare component declaration on to the inner span el...
     for (let key of Object.keys(props)) {
-// Check all keys in p el object...
-      if (key in p) {
+// Check all keys in span el object...
+      if (key in span) {
 // Pass on the ones that match...
-        log(`${key} in p`, ['yellow', 'bold'])
-        p[`${key}`] = props[`${key}`]
+        // log(`${key} in span`, ['yellow', 'bold'])
+        span[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in p.style) {
-        log(`${key} in p`, ['pink', 'bold'])
+      } else if (key in span.style) {
+        // log(`${key} in span`, ['pink', 'bold'])
 // Put them here...
-        p.style[`${key}`] = props[`${key}`]
+        span.style[`${key}`] = props[`${key}`]
       }
     }
 
-// // Check for 'content' attribute,
-//     if ('content' in props) {
-//       p.textContent = props.content
-//     }
+// Check for 'content' attribute,
+    if ('content' in props) {
+      span.textContent = props.content
+      // span.style.margin = '5'
+    }
 
 
-// The p component element's constructor definition...
-    HTMLPGraphComponent =()=> {
+// The span component element's constructor definition...
+    HTMLSpanComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLPGraphComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLSpanComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(p)
+        shadowRoot.appendChild(span)
 // Create a node from the template function, and append to shadowRoot....
-        Paragraph._appendStyleNode(shadowRoot, template)
+        Span._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLPGraphComponent.prototype = Object.create(HTMLParagraphElement.prototype)
+    HTMLSpanComponent.prototype = Object.create(HTMLSpanElement.prototype)
 // Add constructor...
-    HTMLPGraphComponent.prototype.constructor = HTMLPGraphComponent
+    HTMLSpanComponent.prototype.constructor = HTMLSpanComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLPGraphComponent, eListeners)
+    Events.registerCallbacks(HTMLSpanComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLPGraphComponent.prototype.connectedCallback =()=> {
-        self.appendChild(p)
+      HTMLSpanComponent.prototype.connectedCallback =()=> {
+        self.appendChild(span)
       }
     }
 
 // Return component to the caller...
-    return HTMLPGraphComponent
+    return HTMLSpanComponent
   }
 }
 
-export { Paragraph }
+
+export { Span }

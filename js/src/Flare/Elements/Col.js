@@ -1,8 +1,8 @@
 /*
-** ||UppercaseName||.js
+** Col.js
 **
-** ||UppercaseName||.js is an extensible HTML5 Web Component wrapper, built around the ||UppercaseName||
-** element. It's aim is in providing an ||name|| element that is able to be
+** Col.js is an extensible HTML5 Web Component wrapper, built around the Col
+** element. It's aim is in providing an col element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class ||UppercaseName|| {
-// A CSS template literal, holding default styles for an ||name||...
+class Col {
+// A CSS template literal, holding default styles for an col...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class ||UppercaseName|| {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus ||name|| element...
+// Static method for defining a flare col element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTML||UppercaseName||Component,
+    let HTMLColComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    ||name||,
+    col,
     self,
     obj
 
@@ -79,73 +79,73 @@ class ||UppercaseName|| {
         true
     }
 
-// Create an HTML||UppercaseName||Element...
-    ||name|| = document.createElement('||name||')
-// Some default settings for ||name|| elements...
-// Set venus identifier flag..
-    // ||name||.venus = true
+// Create an HTMLColElement...
+    col = document.createElement('col')
+// Some default settings for col elements...
+// Set flare identifier flag..
+    col.flare = true
 
-// Pass props from venus component declaration on to the inner ||name|| el...
+// Pass props from flare component declaration on to the inner col el...
     for (let key of Object.keys(props)) {
-// Check all keys in ||name|| el object...
-      if (key in ||name||) {
+// Check all keys in col el object...
+      if (key in col) {
 // Pass on the ones that match...
-        // log(`${key} in ||name||`, ['yellow', 'bold'])
-        ||name||[`${key}`] = props[`${key}`]
+        // log(`${key} in col`, ['yellow', 'bold'])
+        col[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in ||name||.style) {
-        // log(`${key} in ||name||`, ['pink', 'bold'])
+      } else if (key in col.style) {
+        // log(`${key} in col`, ['pink', 'bold'])
 // Put them here...
-        ||name||.style[`${key}`] = props[`${key}`]
+        col.style[`${key}`] = props[`${key}`]
       }
     }
 
-// Check for '||attr0||' attribute,
-    if ('||attr0||' in props) {
-      ||name||.textContent = props.||attr0||
-      // ||name||.style.margin = '5'
-    }
+// // Check for '-----' attribute,
+//     if ('-----' in props) {
+//       col.textContent = props.-----
+//       // col.style.margin = '5'
+//     }
 
 
-// The ||name|| component element's constructor definition...
-    HTML||UppercaseName||Component =()=> {
+// The col component element's constructor definition...
+    HTMLColComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTML||Constructor||Component)
+      self = Reflect.construct(HTMLElement, [], HTMLColComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(||name||)
+        shadowRoot.appendChild(col)
 // Create a node from the template function, and append to shadowRoot....
-        ||UppercaseName||._appendStyleNode(shadowRoot, template)
+        Col._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTML||UppercaseName||Component.prototype = Object.create(HTML||UppercaseName||Element.prototype)
+    HTMLColComponent.prototype = Object.create(HTMLColElement.prototype)
 // Add constructor...
-    HTML||UppercaseName||Component.prototype.constructor = HTML||UppercaseName||Component
+    HTMLColComponent.prototype.constructor = HTMLColComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTML||UppercaseName||Component, eListeners)
+    Events.registerCallbacks(HTMLColComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTML||UppercaseName||Component.prototype.connectedCallback =()=> {
-        self.appendChild(||name||)
+      HTMLColComponent.prototype.connectedCallback =()=> {
+        self.appendChild(col)
       }
     }
 
 // Return component to the caller...
-    return HTML||UppercaseName||Component
+    return HTMLColComponent
   }
 }
 
 
-export { ||UppercaseName|| }
+export { Col }

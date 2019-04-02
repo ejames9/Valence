@@ -1,8 +1,8 @@
 /*
-** Section.js
+** Header.js
 **
-** Section.js is an extensible HTML5 Web Component wrapper, built around the Section
-** element. It's aim is in providing an section element that is able to be
+** Header.js is an extensible HTML5 Web Component wrapper, built around the Header
+** element. It's aim is in providing an header element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class Section {
-// A CSS template literal, holding default styles for an section...
+class Header {
+// A CSS template literal, holding default styles for an header...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class Section {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus section element...
+// Static method for defining a flare header element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLSectionComponent,
+    let HTMLHeaderComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    section,
+    header,
     self,
     obj
 
@@ -79,73 +79,73 @@ class Section {
         true
     }
 
-// Create an HTMLSectionElement...
-    section = document.createElement('section')
-// Some default settings for section elements...
-// Set venus identifier flag..
-    section.venus = true
+// Create an HTMLHeaderElement...
+    header = document.createElement('header')
+// Some default settings for header elements...
+// Set flare identifier flag..
+    header.flare = true
 
-// Pass props from venus component declaration on to the inner section el...
+// Pass props from flare component declaration on to the inner header el...
     for (let key of Object.keys(props)) {
-// Check all keys in section el object...
-      if (key in section) {
+// Check all keys in header el object...
+      if (key in header) {
 // Pass on the ones that match...
-        // log(`${key} in section`, ['yellow', 'bold'])
-        section[`${key}`] = props[`${key}`]
+        // log(`${key} in header`, ['yellow', 'bold'])
+        header[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in section.style) {
-        // log(`${key} in section`, ['pink', 'bold'])
+      } else if (key in header.style) {
+        // log(`${key} in header`, ['pink', 'bold'])
 // Put them here...
-        section.style[`${key}`] = props[`${key}`]
+        header.style[`${key}`] = props[`${key}`]
       }
     }
 
-// Check for 'content' attribute,
-    if ('content' in props) {
-      section.textContent = props.content
-      // section.style.margin = '5'
-    }
+// // Check for '-----' attribute,
+//     if ('-----' in props) {
+//       header.textContent = props.-----
+//       // header.style.margin = '5'
+//     }
 
 
-// The section component element's constructor definition...
-    HTMLSectionComponent =()=> {
+// The header component element's constructor definition...
+    HTMLHeaderComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLSectionComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLHeaderComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(section)
+        shadowRoot.appendChild(header)
 // Create a node from the template function, and append to shadowRoot....
-        Section._appendStyleNode(shadowRoot, template)
+        Header._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLSectionComponent.prototype = Object.create(HTMLSectionElement.prototype)
+    HTMLHeaderComponent.prototype = Object.create(HTMLHeaderElement.prototype)
 // Add constructor...
-    HTMLSectionComponent.prototype.constructor = HTMLSectionComponent
+    HTMLHeaderComponent.prototype.constructor = HTMLHeaderComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLSectionComponent, eListeners)
+    Events.registerCallbacks(HTMLHeaderComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLSectionComponent.prototype.connectedCallback =()=> {
-        self.appendChild(section)
+      HTMLHeaderComponent.prototype.connectedCallback =()=> {
+        self.appendChild(header)
       }
     }
 
 // Return component to the caller...
-    return HTMLSectionComponent
+    return HTMLHeaderComponent
   }
 }
 
 
-export { Section }
+export { Header }

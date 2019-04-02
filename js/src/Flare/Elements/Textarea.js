@@ -1,8 +1,8 @@
 /*
-** Aside.js
+** Textarea.js
 **
-** Aside.js is an extensible HTML5 Web Component wrapper, built around the Aside
-** element. It's aim is in providing an aside element that is able to be
+** Textarea.js is an extensible HTML5 Web Component wrapper, built around the Textarea
+** element. It's aim is in providing an textarea element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class Aside {
-// A CSS template literal, holding default styles for an aside...
+class Textarea {
+// A CSS template literal, holding default styles for an textarea...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class Aside {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus aside element...
+// Static method for defining a flare textarea element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLAsideComponent,
+    let HTMLTextareaComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    aside,
+    textarea,
     self,
     obj
 
@@ -79,73 +79,73 @@ class Aside {
         true
     }
 
-// Create an HTMLAsideElement...
-    aside = document.createElement('aside')
-// Some default settings for aside elements...
-// Set venus identifier flag..
-    aside.venus = true
+// Create an HTMLTextareaElement...
+    textarea = document.createElement('textarea')
+// Some default settings for textarea elements...
+// Set flare identifier flag..
+    textarea.flare = true
 
-// Pass props from venus component declaration on to the inner aside el...
+// Pass props from flare component declaration on to the inner textarea el...
     for (let key of Object.keys(props)) {
-// Check all keys in aside el object...
-      if (key in aside) {
+// Check all keys in textarea el object...
+      if (key in textarea) {
 // Pass on the ones that match...
-        // log(`${key} in aside`, ['yellow', 'bold'])
-        aside[`${key}`] = props[`${key}`]
+        // log(`${key} in textarea`, ['yellow', 'bold'])
+        textarea[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in aside.style) {
-        // log(`${key} in aside`, ['pink', 'bold'])
+      } else if (key in textarea.style) {
+        // log(`${key} in textarea`, ['pink', 'bold'])
 // Put them here...
-        aside.style[`${key}`] = props[`${key}`]
+        textarea.style[`${key}`] = props[`${key}`]
       }
     }
 
-// // Check for '-----' attribute,
-//     if ('-----' in props) {
-//       aside.textContent = props.-----
-//       // aside.style.margin = '5'
-//     }
+// Check for 'content' attribute,
+    if ('content' in props) {
+      textarea.textContent = props.content
+      // textarea.style.margin = '5'
+    }
 
 
-// The aside component element's constructor definition...
-    HTMLAsideComponent =()=> {
+// The textarea component element's constructor definition...
+    HTMLTextareaComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLAsideComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLTextareaComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(aside)
+        shadowRoot.appendChild(textarea)
 // Create a node from the template function, and append to shadowRoot....
-        Aside._appendStyleNode(shadowRoot, template)
+        Textarea._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLAsideComponent.prototype = Object.create(HTMLAsideElement.prototype)
+    HTMLTextareaComponent.prototype = Object.create(HTMLTextareaElement.prototype)
 // Add constructor...
-    HTMLAsideComponent.prototype.constructor = HTMLAsideComponent
+    HTMLTextareaComponent.prototype.constructor = HTMLTextareaComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLAsideComponent, eListeners)
+    Events.registerCallbacks(HTMLTextareaComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLAsideComponent.prototype.connectedCallback =()=> {
-        self.appendChild(aside)
+      HTMLTextareaComponent.prototype.connectedCallback =()=> {
+        self.appendChild(textarea)
       }
     }
 
 // Return component to the caller...
-    return HTMLAsideComponent
+    return HTMLTextareaComponent
   }
 }
 
 
-export { Aside }
+export { Textarea }

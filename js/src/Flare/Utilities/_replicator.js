@@ -1,7 +1,7 @@
 /*
 ** elementReplicator.js
 **
-** elementReplicator.js is a node programm that takes a Venus element/
+** elementReplicator.js is a node programm that takes a Flare element/
 ** component creation code template and with a given array of element names,
 ** generates the files/code necessary to instantiate those elements...
 **
@@ -100,7 +100,7 @@ loader =(obj, code)=> {
   let replaceRE = /\|\|[\w 0-9]+\|\|/,
   variableRE    = /[\w 0-9 ]+/,
   variable,
-  tuple = [],
+  pair = [],
   match,
   temp
 // Convert code to string format...
@@ -138,12 +138,13 @@ loader =(obj, code)=> {
   if (replaceRE.test(temp)) {
 // And if we do... recurse....
     return loader(obj, temp)
+// Else create the return array and return...
   } else {
-// load tuple with UppercaseName and code...
-    tuple.push(obj.UppercaseName)
-    tuple.push(temp)
-// Return the tuple...
-    return tuple
+// load pair with UppercaseName and code...
+    pair.push(obj.UppercaseName)
+    pair.push(temp)
+// Return the pair...
+    return pair
   }
 }
 

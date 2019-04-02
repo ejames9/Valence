@@ -112,8 +112,8 @@ class Props {
       name === 'ref' ||
       name === 'noChild' ||
       name === 'rootNode' ||
-      name === 'Venus' ||
-      name === 'venus' ||
+      name === 'Flare' ||
+      name === 'flare' ||
       name === 'label' ||
       name === 'content' ||
       name === 'identity'

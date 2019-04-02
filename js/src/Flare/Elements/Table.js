@@ -1,8 +1,8 @@
 /*
-** H4.js
+** Table.js
 **
-** H4.js is an extensible HTML5 Web Component wrapper, built around the H4
-** element. It's aim is in providing an h4 element that is able to be
+** Table.js is an extensible HTML5 Web Component wrapper, built around the Table
+** element. It's aim is in providing an table element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class H4 {
-// A CSS template literal, holding default styles for an h4...
+class Table {
+// A CSS template literal, holding default styles for an table...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class H4 {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus h4 element...
+// Static method for defining a flare table element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLH4Component,
+    let HTMLTableComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    h4,
+    table,
     self,
     obj
 
@@ -79,73 +79,73 @@ class H4 {
         true
     }
 
-// Create an HTMLH4Element...
-    h4 = document.createElement('h4')
-// Some default settings for h4 elements...
-// Set venus identifier flag..
-    h4.venus = true
+// Create an HTMLTableElement...
+    table = document.createElement('table')
+// Some default settings for table elements...
+// Set flare identifier flag..
+    table.flare = true
 
-// Pass props from venus component declaration on to the inner h4 el...
+// Pass props from flare component declaration on to the inner table el...
     for (let key of Object.keys(props)) {
-// Check all keys in h4 el object...
-      if (key in h4) {
+// Check all keys in table el object...
+      if (key in table) {
 // Pass on the ones that match...
-        // log(`${key} in h4`, ['yellow', 'bold'])
-        h4[`${key}`] = props[`${key}`]
+        // log(`${key} in table`, ['yellow', 'bold'])
+        table[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in h4.style) {
-        // log(`${key} in h4`, ['pink', 'bold'])
+      } else if (key in table.style) {
+        // log(`${key} in table`, ['pink', 'bold'])
 // Put them here...
-        h4.style[`${key}`] = props[`${key}`]
+        table.style[`${key}`] = props[`${key}`]
       }
     }
 
-// Check for 'content' attribute,
-    if ('content' in props) {
-      h4.textContent = props.content
-      // h4.style.margin = '5'
-    }
+// // Check for '-----' attribute,
+//     if ('-----' in props) {
+//       table.textContent = props.-----
+//       // table.style.margin = '5'
+//     }
 
 
-// The h4 component element's constructor definition...
-    HTMLH4Component =()=> {
+// The table component element's constructor definition...
+    HTMLTableComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLH4Component)
+      self = Reflect.construct(HTMLElement, [], HTMLTableComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(h4)
+        shadowRoot.appendChild(table)
 // Create a node from the template function, and append to shadowRoot....
-        H4._appendStyleNode(shadowRoot, template)
+        Table._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLH4Component.prototype = Object.create(HTMLH4Element.prototype)
+    HTMLTableComponent.prototype = Object.create(HTMLTableElement.prototype)
 // Add constructor...
-    HTMLH4Component.prototype.constructor = HTMLH4Component
+    HTMLTableComponent.prototype.constructor = HTMLTableComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLH4Component, eListeners)
+    Events.registerCallbacks(HTMLTableComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLH4Component.prototype.connectedCallback =()=> {
-        self.appendChild(h4)
+      HTMLTableComponent.prototype.connectedCallback =()=> {
+        self.appendChild(table)
       }
     }
 
 // Return component to the caller...
-    return HTMLH4Component
+    return HTMLTableComponent
   }
 }
 
 
-export { H4 }
+export { Table }

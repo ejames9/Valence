@@ -1,8 +1,8 @@
 /*
-** Header.js
+** H3.js
 **
-** Header.js is an extensible HTML5 Web Component wrapper, built around the Header
-** element. It's aim is in providing an header element that is able to be
+** H3.js is an extensible HTML5 Web Component wrapper, built around the H3
+** element. It's aim is in providing an h3 element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class Header {
-// A CSS template literal, holding default styles for an header...
+class H3 {
+// A CSS template literal, holding default styles for an h3...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class Header {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus header element...
+// Static method for defining a flare h3 element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLHeaderComponent,
+    let HTMLH3Component,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    header,
+    h3,
     self,
     obj
 
@@ -79,73 +79,73 @@ class Header {
         true
     }
 
-// Create an HTMLHeaderElement...
-    header = document.createElement('header')
-// Some default settings for header elements...
-// Set venus identifier flag..
-    header.venus = true
+// Create an HTMLH3Element...
+    h3 = document.createElement('h3')
+// Some default settings for h3 elements...
+// Set flare identifier flag..
+    h3.flare = true
 
-// Pass props from venus component declaration on to the inner header el...
+// Pass props from flare component declaration on to the inner h3 el...
     for (let key of Object.keys(props)) {
-// Check all keys in header el object...
-      if (key in header) {
+// Check all keys in h3 el object...
+      if (key in h3) {
 // Pass on the ones that match...
-        // log(`${key} in header`, ['yellow', 'bold'])
-        header[`${key}`] = props[`${key}`]
+        // log(`${key} in h3`, ['yellow', 'bold'])
+        h3[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in header.style) {
-        // log(`${key} in header`, ['pink', 'bold'])
+      } else if (key in h3.style) {
+        // log(`${key} in h3`, ['pink', 'bold'])
 // Put them here...
-        header.style[`${key}`] = props[`${key}`]
+        h3.style[`${key}`] = props[`${key}`]
       }
     }
 
-// // Check for '-----' attribute,
-//     if ('-----' in props) {
-//       header.textContent = props.-----
-//       // header.style.margin = '5'
-//     }
+// Check for 'content' attribute,
+    if ('content' in props) {
+      h3.textContent = props.content
+      // h3.style.margin = '5'
+    }
 
 
-// The header component element's constructor definition...
-    HTMLHeaderComponent =()=> {
+// The h3 component element's constructor definition...
+    HTMLH3Component =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLHeaderComponent)
+      self = Reflect.construct(HTMLElement, [], HTMLH3Component)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(header)
+        shadowRoot.appendChild(h3)
 // Create a node from the template function, and append to shadowRoot....
-        Header._appendStyleNode(shadowRoot, template)
+        H3._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLHeaderComponent.prototype = Object.create(HTMLHeaderElement.prototype)
+    HTMLH3Component.prototype = Object.create(HTMLH3Element.prototype)
 // Add constructor...
-    HTMLHeaderComponent.prototype.constructor = HTMLHeaderComponent
+    HTMLH3Component.prototype.constructor = HTMLH3Component
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLHeaderComponent, eListeners)
+    Events.registerCallbacks(HTMLH3Component, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLHeaderComponent.prototype.connectedCallback =()=> {
-        self.appendChild(header)
+      HTMLH3Component.prototype.connectedCallback =()=> {
+        self.appendChild(h3)
       }
     }
 
 // Return component to the caller...
-    return HTMLHeaderComponent
+    return HTMLH3Component
   }
 }
 
 
-export { Header }
+export { H3 }

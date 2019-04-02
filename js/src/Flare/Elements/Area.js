@@ -1,8 +1,8 @@
 /*
-** H3.js
+** Area.js
 **
-** H3.js is an extensible HTML5 Web Component wrapper, built around the H3
-** element. It's aim is in providing an h3 element that is able to be
+** Area.js is an extensible HTML5 Web Component wrapper, built around the Area
+** element. It's aim is in providing an area element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,8 +27,8 @@ const el  = _.el
 const dom = _.dom
 
 
-class H3 {
-// A CSS template literal, holding default styles for an h3...
+class Area {
+// A CSS template literal, holding default styles for an area...
   static _tempLiteral = `:host {
 
                         }`
@@ -38,18 +38,18 @@ class H3 {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus h3 element...
+// Static method for defining a flare area element...
   static createComponent(props={}, template=false) {
     // log('props', ['orange', 'bold'])
     // dir(props)
 
 // Declarations..
-    let HTMLH3Component,
+    let HTMLAreaComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    h3,
+    area,
     self,
     obj
 
@@ -79,73 +79,73 @@ class H3 {
         true
     }
 
-// Create an HTMLH3Element...
-    h3 = document.createElement('h3')
-// Some default settings for h3 elements...
-// Set venus identifier flag..
-    h3.venus = true
+// Create an HTMLAreaElement...
+    area = document.createElement('area')
+// Some default settings for area elements...
+// Set flare identifier flag..
+    area.flare = true
 
-// Pass props from venus component declaration on to the inner h3 el...
+// Pass props from flare component declaration on to the inner area el...
     for (let key of Object.keys(props)) {
-// Check all keys in h3 el object...
-      if (key in h3) {
+// Check all keys in area el object...
+      if (key in area) {
 // Pass on the ones that match...
-        // log(`${key} in h3`, ['yellow', 'bold'])
-        h3[`${key}`] = props[`${key}`]
+        // log(`${key} in area`, ['yellow', 'bold'])
+        area[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in h3.style) {
-        // log(`${key} in h3`, ['pink', 'bold'])
+      } else if (key in area.style) {
+        // log(`${key} in area`, ['pink', 'bold'])
 // Put them here...
-        h3.style[`${key}`] = props[`${key}`]
+        area.style[`${key}`] = props[`${key}`]
       }
     }
 
-// Check for 'content' attribute,
-    if ('content' in props) {
-      h3.textContent = props.content
-      // h3.style.margin = '5'
-    }
+// // Check for '-----' attribute,
+//     if ('-----' in props) {
+//       area.textContent = props.-----
+//       // area.style.margin = '5'
+//     }
 
 
-// The h3 component element's constructor definition...
-    HTMLH3Component =()=> {
+// The area component element's constructor definition...
+    HTMLAreaComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLH3Component)
+      self = Reflect.construct(HTMLElement, [], HTMLAreaComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(h3)
+        shadowRoot.appendChild(area)
 // Create a node from the template function, and append to shadowRoot....
-        H3._appendStyleNode(shadowRoot, template)
+        Area._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLH3Component.prototype = Object.create(HTMLH3Element.prototype)
+    HTMLAreaComponent.prototype = Object.create(HTMLAreaElement.prototype)
 // Add constructor...
-    HTMLH3Component.prototype.constructor = HTMLH3Component
+    HTMLAreaComponent.prototype.constructor = HTMLAreaComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLH3Component, eListeners)
+    Events.registerCallbacks(HTMLAreaComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLH3Component.prototype.connectedCallback =()=> {
-        self.appendChild(h3)
+      HTMLAreaComponent.prototype.connectedCallback =()=> {
+        self.appendChild(area)
       }
     }
 
 // Return component to the caller...
-    return HTMLH3Component
+    return HTMLAreaComponent
   }
 }
 
 
-export { H3 }
+export { Area }

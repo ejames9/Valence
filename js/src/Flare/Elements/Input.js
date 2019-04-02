@@ -1,8 +1,8 @@
 /*
-** H2.js
+** Input.js
 **
-** H2.js is an extensible HTML5 Web Component wrapper, built around the H2
-** element. It's aim is in providing an h2 element that is able to be
+** Input.js is an extensible HTML5 Web Component wrapper, built around the Input
+** element. It's aim is in providing an input element that is able to be
 ** extended via the v1 web components api...
 **
 ** Eric James Foster, Fostware LLC, MIT License.
@@ -27,10 +27,11 @@ const el  = _.el
 const dom = _.dom
 
 
-class H2 {
-// A CSS template literal, holding default styles for an h2...
-  static _tempLiteral = `:host {
-
+class Input {
+// A CSS template literal, holding default styles for an input...
+  static _textLiteral = `:host {
+                          background-color: black;
+                          border-radius: 5%;
                         }`
 
 // Static method for appending child nodes to parent elements...
@@ -38,18 +39,18 @@ class H2 {
     return root.appendChild(Node.createNode(child()))
   }
 
-// Static method for defining a Venus h2 element...
+// Static method for defining a flare input element...
   static createComponent(props={}, template=false) {
-    // log('props', ['orange', 'bold'])
-    // dir(props)
+    log('props', ['orange', 'bold'])
+    dir(props)
 
 // Declarations..
-    let HTMLH2Component,
+    let HTMLInputComponent,
     eListeners  = [],
     customProps = [],
     shadowBool,
     shadow,
-    h2,
+    input,
     self,
     obj
 
@@ -79,73 +80,68 @@ class H2 {
         true
     }
 
-// Create an HTMLH2Element...
-    h2 = document.createElement('h2')
-// Some default settings for h2 elements...
-// Set venus identifier flag..
-    h2.venus = true
+// Create an HTMLInputElement...
+    input = document.createElement('input')
+// Some default settings for input elements...
+// Set flare identifier flag..
+    // input.flare = true
+    // if (props.type == 'text') {
+    //
+    // }
 
-// Pass props from venus component declaration on to the inner h2 el...
+// Pass props from flare component declaration on to the inner input el...
     for (let key of Object.keys(props)) {
-// Check all keys in h2 el object...
-      if (key in h2) {
+// Check all keys in input el object...
+      if (key in input) {
 // Pass on the ones that match...
-        // log(`${key} in h2`, ['yellow', 'bold'])
-        h2[`${key}`] = props[`${key}`]
+        log(`${key} in input`, ['yellow', 'bold'])
+        input[`${key}`] = props[`${key}`]
 // Or if they are style properties...,
-      } else if (key in h2.style) {
-        // log(`${key} in h2`, ['pink', 'bold'])
+      } else if (key in input.style) {
+        log(`${key} in input`, ['pink', 'bold'])
 // Put them here...
-        h2.style[`${key}`] = props[`${key}`]
+        input.style[`${key}`] = props[`${key}`]
       }
     }
 
-// Check for 'content' attribute,
-    if ('content' in props) {
-      h2.textContent = props.content
-      // h2.style.margin = '5'
-    }
-
-
-// The h2 component element's constructor definition...
-    HTMLH2Component =()=> {
+// The input component element's constructor definition...
+    HTMLInputComponent =()=> {
       let shadowRoot
 
 // Construct an element, store as self...
-      self = Reflect.construct(HTMLElement, [], HTMLH2Component)
+      self = Reflect.construct(HTMLElement, [], HTMLInputComponent)
 
       if (shadow) {
 // Create shadow root...
         shadowRoot = self.attachShadow({mode: 'open'})
 // Append to shadow root...
-        shadowRoot.appendChild(h2)
+        shadowRoot.appendChild(input)
 // Create a node from the template function, and append to shadowRoot....
-        H2._appendStyleNode(shadowRoot, template)
+        Input._appendStyleNode(shadowRoot, template)
       }
 // Return constructor...
       return self
     }
 
 // Add superclass prototype...
-    HTMLH2Component.prototype = Object.create(HTMLH2Element.prototype)
+    HTMLInputComponent.prototype = Object.create(HTMLInputElement.prototype)
 // Add constructor...
-    HTMLH2Component.prototype.constructor = HTMLH2Component
+    HTMLInputComponent.prototype.constructor = HTMLInputComponent
 
 // Register event listener methods..
-    Events.registerCallbacks(HTMLH2Component, eListeners)
+    Events.registerCallbacks(HTMLInputComponent, eListeners)
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLH2Component.prototype.connectedCallback =()=> {
-        self.appendChild(h2)
+      HTMLInputComponent.prototype.connectedCallback =()=> {
+        self.appendChild(input)
       }
     }
 
 // Return component to the caller...
-    return HTMLH2Component
+    return HTMLInputComponent
   }
 }
 
-
-export { H2 }
+export { Input }

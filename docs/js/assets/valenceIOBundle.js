@@ -349,8 +349,38 @@ function (module, __webpack_exports__, __webpack_require__) {
     return _setPrototypeOf(o, p);
   }
 
-  function _templateObject7() {
+  function _templateObject10() {
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: -500px;\n  height: 300px;\n  width: 300px;\n  display: inline-block;\n  animation: ", " 2s linear infinite;\n  padding: 5px;\n\n  h1 {\n    position: absolute;\n    font-size: 44px;\n    color: white;\n    text-align: center;\n    font-family: sf mono;\n    top: 45%;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    margin: 0 auto;\n  }\n"]);
+
+    _templateObject10 = function _templateObject10() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject9() {
+    var data = _taggedTemplateLiteral(["\n  from {\n    transform: rotate(0deg);\n  }\n\n  to {\n    transform: rotate(360deg);\n  }\n"]);
+
+    _templateObject9 = function _templateObject9() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject8() {
     var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  opacity: ", ";\n  color: white;\n  border: 2px solid ", "\n"]);
+
+    _templateObject8 = function _templateObject8() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject7() {
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: sf mono;\n  font-size: 38px;\n  width: 200px;\n  height: 38px;\n  margin: 0 auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background-color: orange;\n  border: none;\n  border-radius: 5px;\n  color: blue;\n\n  @media (max-height: 400px) {\n      background: blue;\n  }\n"]);
 
     _templateObject7 = function _templateObject7() {
       return data;
@@ -360,7 +390,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject6() {
-    var data = _taggedTemplateLiteral(["\n  height: ", ";\n  width: 75px;\n  border: none;\n  border-radius: 7px;\n  background-color: pink;\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: 80%;\n  top: 25%;\n  height: ", ";\n  width: 200px;\n  background-color: ", ";\n  z-index: 99;\n  p {\n    color: white;\n  }\n"]);
 
     _templateObject6 = function _templateObject6() {
       return data;
@@ -370,7 +400,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject5() {
-    var data = _taggedTemplateLiteral(["\nposition: absolute;\nheight: 100%;\nwidth: 100%;\npadding: 0;\n\n"]);
+    var data = _taggedTemplateLiteral(["\n  height: ", ";\n  width: 75px;\n  border: none;\n  border-radius: 7px;\n  background-color: pink;\n"]);
 
     _templateObject5 = function _templateObject5() {
       return data;
@@ -380,7 +410,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject4() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: sf mono;\n  font-size: 38px;\n  width: 200px;\n  height: 38px;\n  margin: 0 auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background-color: orange;\n  border: none;\n  border-radius: 5px;\n  color: blue;\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: 50%;\n  top: 25%;\n  height: ", ";\n  width: 200px;\n  background: ", "\n  z-index: 99;\n\n\n"]);
 
     _templateObject4 = function _templateObject4() {
       return data;
@@ -390,7 +420,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject3() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: 50%;\n  top: 25%;\n  height: ", ";\n  width: 200px;\n  background-color: ", ";\n  z-index: 99;\n  p {\n    color: brown;\n  }\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute\n  top: 50%\n  height: 200px\n  width: 100%\n  margin-top: -130px\n  padding: 30px\n  background-color: ", "\n\n  h1 {\n    color: yellow;\n    position: absolute;\n    top: -150px;\n    left: 100px;\n    text-align: center;\n    vertical-align: middle;\n    font-size: 84px;\n    font-family: sf mono;\n  }\n\n  @media (max-height: 400px) {\n    background: red;\n    border-radius: 40%;\n  }\n"]);
 
     _templateObject3 = function _templateObject3() {
       return data;
@@ -400,7 +430,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject2() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute\n  top: 50%\n  height: 200px\n  width: 100%\n  margin-top: -130px\n  padding: 30px\n  background-color: ", "\n\n  h1 {\n    color: yellow;\n    position: absolute;\n    top: -150px;\n    left: 100px;\n    text-align: center;\n    vertical-align: middle;\n    font-size: 84px;\n    font-family: sf mono;\n  }\n"]);
+    var data = _taggedTemplateLiteral(["\nposition: absolute;\nheight: 100%;\nwidth: 100%;\npadding: 0;\n\n"]);
 
     _templateObject2 = function _templateObject2() {
       return data;
@@ -410,7 +440,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject() {
-    var data = _taggedTemplateLiteral(["\nbody  {\n    background-color: ", "\n  }\n"]);
+    var data = _taggedTemplateLiteral(["\nbody {\n  background: ", "\n}\n"]);
 
     _templateObject = function _templateObject() {
       return data;
@@ -450,15 +480,36 @@ function (module, __webpack_exports__, __webpack_require__) {
   var blue = '#0057ff';
   var yellow = '#ffc700';
   var tomato = '#ff4500';
-  var green = '#17a637'; //global styles..
+  var green = '#17a637';
+  var coolGreen = '#669a0f'; //global styles..
 
-  __(_templateObject(), tomato);
+  __(_templateObject(), coolGreen);
 
+  var Fluid = div({
+    className: 'container-fluid',
+    shadow: false,
+    id: 'hwhatthe'
+  })(_templateObject2());
   var Box = div({
+    id: 'box',
     className: 'boxy'
-  })(_templateObject2(), blue);
-  var MyDiv = div(_templateObject3(), function (_ref) {
+  })(_templateObject3(), blue);
+  var MyDiv = div(_templateObject4(), function (_ref) {
     var shadow = _ref.shadow;
+    return shadow ? '100px' : '700px';
+  }, tomato); // attribute for inner button text.....
+
+  var Thing = button({
+    id: 'buttonThing',
+    className: 'thang',
+    type: 'submit',
+    label: 'press'
+  })(_templateObject5(), function (_ref2) {
+    var myAtty = _ref2.myAtty;
+    return myAtty;
+  });
+  var MyDiv2 = div(_templateObject6(), function (_ref3) {
+    var shadow = _ref3.shadow;
     return shadow ? '100px' : '700px';
   }, green);
   var MyInput = input({
@@ -466,44 +517,30 @@ function (module, __webpack_exports__, __webpack_require__) {
     type: 'text',
     className: 'myput',
     shadow: true
-  })(_templateObject4());
-  var Fluid = div({
-    className: 'container-fluid',
-    shadow: false,
-    id: 'hwhatthe'
-  })(_templateObject5()); // attribute for inner button text.....
-
-  var Thing = button({
-    id: 'buttonThing',
-    type: 'submit',
-    label: 'press'
-  })(_templateObject6(), function (_ref2) {
-    var myAtty = _ref2.myAtty;
-    return myAtty;
-  }); //
+  })(_templateObject7()); //
 
   var Thing2 = extend(Thing, {
     id: 'thing2',
     label: 'press me!'
-  })(_templateObject7(), tomato, function (_ref3) {
-    var attrib = _ref3.attrib;
+  })(_templateObject8(), tomato, function (_ref4) {
+    var attrib = _ref4.attrib;
     return attrib;
-  }, function (_ref4) {
-    var shadow = _ref4.shadow;
+  }, function (_ref5) {
+    var shadow = _ref5.shadow;
     return shadow ? 'black' : 'orange';
   });
+  var rotate = keyframes(_templateObject9());
+  var Spinner = div(_templateObject10(), rotate);
 
   var MyName = function MyName() {
-    return x("div", null, x(Box, null, x(MyDiv, {
-      shadow: false
-    }, x("h1", null, "Yesserri!"), x("p", null, "I'm inside a custom element!")), x(Thing, {
+    return x("div", null, x(Box, null, x(MyDiv, null, x(Thing, {
       myAtty: "75px",
       shadow: false
-    }), x("p", null, "What is happening"), x(MyInput, null), x("h1", {
+    }), x(Spinner, null, x("h1", null, "Yesserri!")), x("p", null, "I'm inside a custom element!")), x("p", null, "What is happening"), x("h1", {
       className: "name"
-    }, "My Name Is:"), x(Thing2, {
+    }, "My Name Is:"), x(MyDiv2, null, x(MyInput, null), x(Thing2, {
       attrib: 9
-    })));
+    }))));
   };
 
   var App =
@@ -586,7 +623,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _js_src_Errors_Errors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(52);
+  var _js_src_Errors_Errors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(66);
   /* harmony import */
 
 
@@ -598,7 +635,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(39);
+  var _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(39);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -692,10 +729,10 @@ function (module, __webpack_exports__, __webpack_require__) {
   // Get errors...
   // Get Props...
   // Get styles...
-  // Initializing an array for venus component tag names...
+  // Initializing an array for flare component tag names...
 
 
-  window.venusComponents = []; // Initializing an array for all stateless instantiated component tag names...
+  window.flareComponents = []; // Initializing an array for all stateless instantiated component tag names...
 
   window.statelessComponents = []; // initialize component element hash on window object...
 
@@ -711,17 +748,18 @@ function (module, __webpack_exports__, __webpack_require__) {
   window.el = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["el"];
   window.dom = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["dom"];
   window.dir = console.dir;
-  window.log = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["log"]; //Globalize venus functions for convenience...
+  window.log = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["log"]; //Globalize flare functions for convenience...
 
-  window.global = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].global;
-  window.extend = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].extend; // Globalize style elements for convenience...
+  window.global = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].global;
+  window.extend = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].extend;
+  window.keyframes = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].keyframes; // Globalize style elements for convenience...
 
-  window.div = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].div;
-  window.input = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].input;
-  window.button = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].button;
-  window.p = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].p;
-  window.h1 = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].h1;
-  window.h6 = _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].h6; // The framework's API class...
+  window.div = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].div;
+  window.input = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].input;
+  window.button = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].button;
+  window.p = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].p;
+  window.h1 = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].h1;
+  window.h6 = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].h6; // The framework's API class...
 
   var Valence =
   /*#__PURE__*/
@@ -743,7 +781,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // The true DOM representation of the rootNode...
       // The root Valence component...
       // The form virtual DOM instance...
-      // Add config method from the venus class...
+      // Add config method from the flare class...
 
       /*
        * Class Methods...
@@ -840,7 +878,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
   _defineProperty(Valence, "form", null);
 
-  _defineProperty(Valence, "config", _js_src_Venus_Venus__WEBPACK_IMPORTED_MODULE_9__["Venus"].config);
+  _defineProperty(Valence, "config", _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].config);
   /***/
 
 },
@@ -945,8 +983,8 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony export (binding) */
 
 
-  __webpack_require__.d(__webpack_exports__, "venusComponentNamesRE", function () {
-    return venusComponentNamesRE;
+  __webpack_require__.d(__webpack_exports__, "flareComponentNamesRE", function () {
+    return flareComponentNamesRE;
   });
   /* harmony export (binding) */
 
@@ -1122,6 +1160,12 @@ function (module, __webpack_exports__, __webpack_require__) {
   __webpack_require__.d(__webpack_exports__, "separateStyleRules", function () {
     return separateStyleRules;
   });
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "deeplicateObject", function () {
+    return deeplicateObject;
+  });
   /* harmony import */
 
 
@@ -1238,7 +1282,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   // source code...
 
 
-  var venusComponentNamesRE = function venusComponentNamesRE() {
+  var flareComponentNamesRE = function flareComponentNamesRE() {
     return /(\([A-Z]\w*-?)+/g;
   };
 
@@ -1377,12 +1421,12 @@ function (module, __webpack_exports__, __webpack_require__) {
 
   var capitalizeAndRemoveHyphen = function capitalizeAndRemoveHyphen(name) {
     return name[0].toUpperCase() + name.slice(1, name.length - 1);
-  }; // Creates a unique custom event string for individual venus element instantiation
+  }; // Creates a unique custom event string for individual flare element instantiation
   // notification...
 
 
   var uniqueCustomEventString = function uniqueCustomEventString(tagName) {
-    return "venus".concat(capitalizeAndRemoveHyphen(tagName), "ElementInstantiated");
+    return "flare".concat(capitalizeAndRemoveHyphen(tagName), "ElementInstantiated");
   }; // A small helper function for determining if a given string is in a given array..
 
 
@@ -1433,8 +1477,9 @@ function (module, __webpack_exports__, __webpack_require__) {
     }); // Return the array...
 
     return loadedArray;
-  }; // An array filter function, which splits the array into 2 new arrays.. Those that
-  // agree with the given boolean, and those that do not...
+  };
+  /* An array filter function, which splits the array into 2 new arrays.. Those that
+  agree with the given boolean, and those that do not...*/
 
 
   var splitFilter = function splitFilter(array, bool) {
@@ -1447,7 +1492,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       } else {
         f.push(i);
       }
-    }); // Return a tuple of both arrays...
+    }); // Return an object containing both arrays...
 
     return {
       true: t,
@@ -1510,14 +1555,46 @@ function (module, __webpack_exports__, __webpack_require__) {
   /*
   A helper function that takes a string containing css rules and splits them up
   into individual rule/strings and appends them to an array. An array of rules
-  is returned...
-  */
+  is returned...*/
 
 
   var separateStyleRules = function separateStyleRules(css) {
     return (// Below we are using a regular expression, returning an array of all of it's matches....
       css.match(/[^\s\{][^\{]*\{[^\}]*\}/g)
     );
+  }; // A simple trick to deep copy an object....
+  //NOTE: This will now work on an object with methods....
+
+
+  var deeplicateObject = function deeplicateObject(obj) {
+    // Get a shallow copy of given obj. 2nd level, and beyond, objects will be copied later..
+    var newObj = JSON.parse(JSON.stringify(obj)); // Recursive deeper level object copier...
+
+    var reCopier = function reCopier(newie, oldie) {
+      // Iterate over the object to be copied...
+      for (key in oldie) {
+        // Manually copy in all functions, regexp's...
+        if (typeof oldie[key] === 'function' || oldie[key] instanceof RegExp) {
+          newie[key] = oldie[key];
+        } // Deal with arrays...
+
+
+        if (Array.isArray(oldie[key])) {
+          newie[key] = Array.from(oldie[key]);
+        } // Recursively copy in all objects, save nulls, regexp's and arrays...
+
+
+        if (_typeof(oldie[key]) === 'object' && !(oldie[key] instanceof RegExp) && oldie[key] !== null && !_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(oldie[key])) {
+          // Copy away...
+          newie[key] = Object.assign({}, oldie[key]);
+          reCopier(newie[key], oldie[key]);
+        }
+      }
+
+      return newie;
+    };
+
+    return reCopier(newObj, obj);
   };
   /***/
 
@@ -6138,7 +6215,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Venus_Venus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(39);
+  var _Flare_Flare__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(39);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -6189,7 +6266,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   // Grab Node...
   // Get Props class...
   // Get Events...
-  // Get Venus...
+  // Get Flare...
   // Globalize common utilities...
 
 
@@ -6217,7 +6294,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
       this.rootNode = root;
-    } // Variable holds an array of venusComponent names..
+    } // Variable holds an array of flareComponent names..
 
 
     _createClass(Form, [{
@@ -6328,15 +6405,15 @@ function (module, __webpack_exports__, __webpack_require__) {
       }(function (type, props) {
         for (var _len = arguments.length, children = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
           children[_key - 2] = arguments[_key];
-        } // If type = false, the node is a venus component, and needs to be defined.
+        } // If type = false, the node is a flare component, and needs to be defined.
 
 
-        if (type.venus) {
+        if (type.flare) {
           // Get a variable... load with x's caller function's code
           var xCaller = x.caller.toString(),
-              xCallerName = x.caller.name; // Use the above to define Venus Component.. and also 'type' for the node...
+              xCallerName = x.caller.name; // Use the above to define Flare Component.. and also 'type' for the node...
 
-          type = _Venus_Venus__WEBPACK_IMPORTED_MODULE_5__["Venus"].interfaceFormX(xCallerName, xCaller, type.el, type.taggedTempLit, props, type.props);
+          type = _Flare_Flare__WEBPACK_IMPORTED_MODULE_5__["Flare"].interfaceFormX(xCallerName, xCaller, type.el, type.taggedTempLit, props, type.props);
         } // Return a new Node...
 
 
@@ -6351,7 +6428,7 @@ function (module, __webpack_exports__, __webpack_require__) {
     return Form;
   }();
 
-  _defineProperty(Form, "_venusComponentNames", []);
+  _defineProperty(Form, "_flareComponentNames", []);
   /***/
 
 },
@@ -6657,17 +6734,17 @@ function (module, __webpack_exports__, __webpack_require__) {
         var makeDOMElement, setProps, addEventListeners, appendChildren, elem; // Create a new DOM element...
 
         makeDOMElement = function makeDOMElement(tagName) {
-          //       if (window.venusComponents.indexOf(tagName) != -1) {
+          //       if (window.flareComponents.indexOf(tagName) != -1) {
           // // Flip the required switches...
           //         window.useNativeShim = false
           //         window.HTMLElement   = window._HTMLElement
           //       }
           // Create a new element given the tag name, and
           // store for sending through the pipe......
-          elem = document.createElement(tagName); // If we just created a Venus Component element...
+          elem = document.createElement(tagName); // If we just created a Flare Component element...
 
-          if (window.venusComponents.indexOf(tagName) != -1) {
-            // Emit an event that cues Venus to set props on the newly created element...
+          if (window.flareComponents.indexOf(tagName) != -1) {
+            // Emit an event that cues Flare to set props on the newly created element...
             _Events__WEBPACK_IMPORTED_MODULE_3__["Events"].emit(tagName, {
               element: elem
             });
@@ -6789,8 +6866,10 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
   /*
   Dispatch.js
+  
   Dispatch is the custom event creation and dispatch class behind
   the Valence component lifecycle methods...
+  
   Eric James Foster, MIT License.
   */
   // Globalize log function...
@@ -6824,7 +6903,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         var detail = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}; // Determine whether first arg is an event string or a tagname...
 
         if (_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["included"]('-', eventOrTag)) {
-          // If tagname, create a listener for a custom venus event.
+          // If tagname, create a listener for a custom flare event.
           var customEventString = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["uniqueCustomEventString"](eventOrTag); // Instantiate custom event...
 
 
@@ -6849,7 +6928,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       value: function listen(eventOrTag, cb) {
         // Determine whether first arg is an event string or a tagname...
         if (_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["included"]('-', eventOrTag)) {
-          // If tagname, create a listener for a custom venus event.
+          // If tagname, create a listener for a custom flare event.
           var customEventString = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["uniqueCustomEventString"](eventOrTag); // Add listener...
 
 
@@ -7076,7 +7155,7 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "_isPrivateProp",
       value: function _isPrivateProp(name) {
-        return _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].eventListener(name) || name === 'forceUpdate' || name === 'isStatefulComponent' || name === 'isStatelessComponent' || name === 'ref' || name === 'noChild' || name === 'rootNode' || name === 'Venus' || name === 'venus' || name === 'label' || name === 'content' || name === 'identity';
+        return _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].eventListener(name) || name === 'forceUpdate' || name === 'isStatefulComponent' || name === 'isStatelessComponent' || name === 'ref' || name === 'noChild' || name === 'rootNode' || name === 'Flare' || name === 'flare' || name === 'label' || name === 'content' || name === 'identity';
       } // Method for updating props...
 
     }, {
@@ -7945,8 +8024,8 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony export (binding) */
 
 
-  __webpack_require__.d(__webpack_exports__, "Venus", function () {
-    return Venus;
+  __webpack_require__.d(__webpack_exports__, "Flare", function () {
+    return Flare;
   });
   /* harmony import */
 
@@ -7975,47 +8054,87 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Elements_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40);
+  var _CSS__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40);
   /* harmony import */
 
 
-  var _Elements_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(43);
+  var _Utilities_arrayBuilder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(46);
   /* harmony import */
 
 
-  var _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(44);
+  var _Elements_Area__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(47);
   /* harmony import */
 
 
-  var _Elements_H1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(45);
+  var _Elements_Aside__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(48);
   /* harmony import */
 
 
-  var _Elements_H2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(46);
+  var _Elements_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(49);
   /* harmony import */
 
 
-  var _Elements_H3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(47);
+  var _Elements_Col__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(50);
   /* harmony import */
 
 
-  var _Elements_H4__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(48);
+  var _Elements_Colgroup__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(51);
   /* harmony import */
 
 
-  var _Elements_H5__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(49);
+  var _Elements_Footer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(52);
   /* harmony import */
 
 
-  var _Elements_H6__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(50);
+  var _Elements_H1__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(53);
   /* harmony import */
 
 
-  var _Elements_Header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(51);
+  var _Elements_H2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(54);
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(41);
+  var _Elements_H3__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(55);
+  /* harmony import */
+
+
+  var _Elements_H4__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(56);
+  /* harmony import */
+
+
+  var _Elements_H5__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(57);
+  /* harmony import */
+
+
+  var _Elements_H6__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(58);
+  /* harmony import */
+
+
+  var _Elements_Header__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(59);
+  /* harmony import */
+
+
+  var _Elements_Input__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(60);
+  /* harmony import */
+
+
+  var _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(61);
+  /* harmony import */
+
+
+  var _Elements_Section__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(62);
+  /* harmony import */
+
+
+  var _Elements_Span__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(63);
+  /* harmony import */
+
+
+  var _Elements_Table__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(64);
+  /* harmony import */
+
+
+  var _Elements_Textarea__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(65);
 
   function _objectSpread(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -8073,10 +8192,10 @@ function (module, __webpack_exports__, __webpack_require__) {
     return obj;
   }
   /*
-  ** Venus.js
+  ** Flare.js
   **
-  ** Venus.js is essentially a styled-components clone in the way that
-  ** Valence.js is a React.js clone. Venus simply provides a way to use
+  ** Flare.js is essentially a styled-components clone in the way that
+  ** Valence.js is a React.js clone. Flare simply provides a way to use
   ** the styled-components style api with Valence.js... It is very simple at
   ** this time and by no means encompasses all that styled-components
   ** has to offer.
@@ -8084,166 +8203,141 @@ function (module, __webpack_exports__, __webpack_require__) {
   ** Eric James Foster, Fostware LLC, MIT License.
   ***/
 
-  /*
-  ** Venus Features to incorporate
-  *********************************/
+  /* TODO's **********************************
+  
+  ** TODO-MACRO Flare Features to incorporate
+  ********************************************/
   //TODO:[X] Ability to extend all element types.. 1
   //TODO:[X] Ability to extend a component.. 2
   //TODO:[X] Stylis integration.. 4
   //TODO:[X] Ability to Inject global styles.. 5
-  //TODO:[ ] Media Queries.. 6
-  //TODO:[ ] Keyframe Animations.. 7
-  //TODO:[ ] SVG.. 8
+  //TODO:[X] Keyframe Animations.. 7
   //TODO:[X] Variables, functions (tagged template literals).. 3
+  //TODO:[ ] Media Queries.. 6
+  //TODO:[ ] Incorporate SVG.. 8
 
   /*
-  ** Venus Work to complete
-  *********************************/
-  //TODO:[ ] Ability to extend all element types..
-  //TODO:[ ] Ability to extend a component..
-  //TODO:[ ] Stylis integration..
-  //TODO:[ ] Ability to Inject global styles..
+  ** TODO-MICRO Flare work to complete
+  ********************************************/
+  //TODO:[X] Finish work on all element component classes...
+  //TODO:[ ] Move from static class structure to singleton structure...
+  //TODO:[ ] 
+  //TODO:[ ]
+  //TODO:[ ]
+  //TODO:[ ]
+  //TODO:[ ]
 
-  /* Venus Styling related libraries......*/
-  // import our extensible element constructors...
+  /*
+  ** TODO-RELATED spin-off projects to do....
+  ********************************************/
+  //TODO:[ ] Replicator library...
+  //TODO:[ ] DeeplicateObject library...
+  //TODO:[ ]
+  //TODO:[ ]
+  //TODO:[ ]
+  //TODO:[ ]
+  // Grab utilities...
+  // Get value validation...
+  // Get Component Class...
+  // Get Node and Props classes...
+  // Get Events....
   // import CSS class...
+  // Get the tagName array builder function....
+  // Get the tagName array builder function....
+  // import _acquireComponentTagName from './Utilities/_acquireComponentTagName'
+
+  /* Flare Styling related libraries......*/
+  // import our extensible element constructors...
   // Globalize common helpers..
 
 
   var dir = console.dir;
   var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"]; // Valence class dealing with JS context, css styling of components...
 
-  var Venus =
+  var Flare =
   /*#__PURE__*/
   function () {
-    function Venus() {
-      _classCallCheck(this, Venus);
+    function Flare() {
+      _classCallCheck(this, Flare);
     }
 
-    _createClass(Venus, null, [{
+    _createClass(Flare, null, [{
       key: "config",
       value: function config(userAssumptions) {
-        Venus.assumptions = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["combineObjects"](Venus.assumptions, userAssumptions);
-        return Venus.assumptions;
-      } // Internal method closure for grabbing the variable name from a venus component
+        Flare.assumptions = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["combineObjects"](Flare.assumptions, userAssumptions);
+        return Flare.assumptions;
+      } // Internal method closure for grabbing the variable name from a flare component
       // declaration, for tagname representation in custom element creation...
 
     }, {
-      key: "_extractComponentTagName",
-      value: function _extractComponentTagName(xCaller, callerName, array) {
-        var buildArray, _typeShifter, type;
-        /***********************************************************************************
-        ** A function for shifting a type from the beginning of the component names array....
-        ************************************************************************************/
+      key: "_acquireComponentTagName",
+      value: function _acquireComponentTagName(xCaller, callerName, array) {
+        var _tagShifter, tagTwister, tagArray, tag; // log("I've been passed in", ['pink', 'bold']);log(array)
+        // A very simple function for moving the first item of an array to the end.
 
 
-        _typeShifter = function typeShifter(array) {
-          var obj = {}; // If we don't have an empty array....
+        tagTwister = function tagTwister(ra) {
+          ra.push(ra.shift());
+          return ra;
+        }; // A function for shifting a tag from the beginning of the component names array....
 
-          if (array.length > 0) {
-            // We can shift out a type....
-            obj.type = array.shift();
-            obj.array = array; // Else, we have a new component and must rebuild...
+
+        _tagShifter = function tagShifter(ra) {
+          var array = [],
+              object,
+              obj = {}; // If we don't have an empty array....
+
+          if (ra.length > 0) {
+            // We can shift out a tag....
+            obj.tag = ra.shift(); // log(`tag: ${obj.tag}`)
+            // Determine whether or not the array item is a tag or new array....
+
+            if (_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(obj.tag)) {
+              // log('tag is array', ['green', 'bold']);dir(obj.tag)
+              // Put the original array back, so we can move on to the new one...
+              Flare._tagQueue = ra; // Shift the first tagname to the end....
+
+              array = tagTwister(obj.tag); // Shift out the first tagname....
+
+              return _tagShifter(array);
+            } else {
+              obj.array = ra;
+            } // Else, we have a new component and must rebuild...
+
           } else {
-            obj.array = buildArray(xCaller);
-            obj.type = _typeShifter(obj.array).type;
+            // log('Rebuilding', ['green', 'bold'])
+            obj.array = Object(_Utilities_arrayBuilder__WEBPACK_IMPORTED_MODULE_7__["default"])(xCaller, callerName);
+            return _tagShifter(obj.array);
           } // Check the statelessComponents registry for a redundancy...
 
 
-          if (window.statelessComponents.indexOf(obj.type) !== -1) {
-            return _typeShifter(obj.array);
-          } // If we reach this point, we are ready to return type...
+          if (window.statelessComponents.indexOf(obj.tag) !== -1) {
+            // log('Registry', ['orange', 'bold']);log(obj.tag)
+            return _tagShifter(obj.array);
+          } // If we reach this point, we are ready to return tag...
+          // log('return obj', ['yellow', 'bold']);dir(obj)
 
 
           return obj;
-        };
-        /***************************************************************************
-        ** A function for building out the venusComponentNames Array...
-        ****************************************************************************/
-
-
-        buildArray = function buildArray(source) {
-          // Some vars...
-          var callerTagName,
-              _extractEntryFromSource,
-              componentNameArray = [];
-          /*****************************************************************************
-          ** A recursive function for extracting regExp matches from a bit of source code.
-          ** The purpose is to programmatically extract variable names from venus component
-          ** declarations for the purpose of custom element tag names.
-          ******************************************************************************/
-
-
-          _extractEntryFromSource = function extractEntryFromSource(source) {
-            // Some vars...
-            var sib, componentName; // Execute regexp... and single out result..
-
-            sib = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["venusComponentNamesRE"]().exec(source)[1], // Eliminate result from source code string, so that it won't be found again,
-            // and store in temp variable...
-            source = source.replace(sib, ''); // log(source, 'red')
-            // Remove "(" from the string, and return a new one..
-            // Convert to tagname with kebab-case...
-
-            componentName = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["convertFuncNameToTagName"](sib.replace('(', '')); //log('component tagname.', ['orange', 'bold']); log(componentName, ['yellow', 'bold'])
-            // Push component name into a local array..
-
-            componentNameArray.push(componentName); // Push also into a global collection....
-
-            window.venusComponents.push(componentName.toLowerCase()); // If there are still matches in the caller source code, call function again,
-            // recursively, with the altered source...
-
-            if (_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["venusComponentNamesRE"]().test(source)) {
-              return _extractEntryFromSource(source);
-            } // return..
-            // log('componentNameArray'); log(componentNameArray)
-
-
-            return componentNameArray;
-          }; // If there are any matches in the caller's source code, start the process of building
-          // out the array...
-
-
-          if (_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["venusComponentNamesRE"]().test(source)) {
-            array = _extractEntryFromSource(source); //log('The Array', ['yellow', 'bold']); dir(array)
-          } // Also convert x.caller func name to tag-name to identify stateless components...
-
-
-          callerTagName = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["convertFuncNameToTagName"](callerName); // log(callerTagName)
-          // Check global registry of stateless components for the caller's tag name. If it is
-          // present, we must rearrange the array...
-
-          if (window.statelessComponents.indexOf(callerTagName) != -1) {
-            // log('rearranged', ['orange', 'bold'])
-            // Rearrange the array...
-            // Remove the first item...
-            var item = array.shift(); // Push it on to the end of the array..
-
-            array.push(item); // log(array)
-          } // return array...
-
-
-          return array;
-        }; // Build an array...
-        // If there are no component names in the array, lets's get some..
+        }; // If there are no component names in the array, lets's get some..
 
 
         if (array.length == 0) {
-          // Build array with x.caller source code...
-          array = buildArray(xCaller);
+          // Build array with x.caller source code, and twist it....
+          array = Object(_Utilities_arrayBuilder__WEBPACK_IMPORTED_MODULE_7__["default"])(xCaller, callerName); // log('building', ['red', 'bold']);dir(array);log(array.length)
         }
-        /* Call typeShifter function to shift out the bottom-most tagname in the list...
-        If it has already been instantiated, then it is not a venus component- Pop from
-        the list and move on... Return both the altered array and the shifted out type...*/
+        /* Call tagShifter function to shift out the bottom-most tagname in the list...
+        If it has already been instantiated, then it is not a flare component- Pop from
+        the list and move on... Return both the altered array and the shifted out tag...*/
 
 
-        var obj = _typeShifter(array); // log('arrayLength'); log(obj.array.length, ['pink', 'bold']);dir(obj.array)
-        // log('type', ['orange', 'bold']);dir(obj.type)
+        var obj = _tagShifter(array); // log('tag', ['orange', 'bold']);dir(obj.tag);
 
 
-        Venus._venusComponentNames = obj.array; // Return type..
+        Flare._tagQueue = obj.array; // Return tag..
 
-        return obj.type.toLowerCase();
-      } // A helper method for accessing the Venus class and defining it's components...
+        return obj.tag.toLowerCase();
+      } // A helper method for accessing the Flare class and defining it's components...
 
     }, {
       key: "interfaceFormX",
@@ -8251,18 +8345,16 @@ function (module, __webpack_exports__, __webpack_require__) {
         var props1 = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
         var props2 = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {}; // extract var name..
 
-        var tagName = Venus._extractComponentTagName(xCr, xCrName, Venus._venusComponentNames); // Add props from venus to props object...
+        var tagName = Flare._acquireComponentTagName(xCr, xCrName, Flare._tagQueue); // log(`Tag name is: ${tagName}`, ['orange', 'bold'])
+        // Add props from flare to props object...
 
 
-        props = _objectSpread({}, props2, props1); //log('Venus.propsobj');dir(props1); dir(props2); dir(props)
+        props = _objectSpread({}, props2, props1); // log('Flare.propsobj');dir(props1); dir(props2); dir(props)
         // Determine whether or not the component will utilize shadow dom by default...
 
         if (!Reflect.has(props, 'shadow')) {
-          log('Venus.config.shadowByDefault', ['orange', 'bold']);
-          dir(props1);
-          dir(props2); // If 'shadow' is not set in props, and if 'shadow' is 'on' by default...
-
-          if (Venus.config.shadowByDefault) {
+          // If 'shadow' is not set in props, and if 'shadow' is 'on' by default...
+          if (Flare.config.shadowByDefault) {
             // Set the 'shadow' prop to true...
             props.shadow = true;
           } else {
@@ -8271,18 +8363,18 @@ function (module, __webpack_exports__, __webpack_require__) {
           }
         }
 
-        _CSS__WEBPACK_IMPORTED_MODULE_16__["CSS"]._superProps[props2.identity] = [tagName, props]; // If a venus component does not use shadow dom...
+        _CSS__WEBPACK_IMPORTED_MODULE_6__["CSS"]._superProps[props2.identity] = [tagName, props]; // If a flare component does not use shadow dom...
 
         if (!props.shadow) {
           // it will not need to append anything to it's shadow root later on...
           props.noChild = true; // Define component and add Styles..
 
-          Venus._defineComponent(tagName, props, elTag);
+          Flare._defineComponent(tagName, props, elTag);
 
-          _CSS__WEBPACK_IMPORTED_MODULE_16__["CSS"].addStyles(true, tagName, elTag, props, tagTempLit);
+          _CSS__WEBPACK_IMPORTED_MODULE_6__["CSS"].addStyles(true, tagName, elTag, props, tagTempLit);
         } else {
           // Define component and add Styles..
-          Venus._defineComponent(tagName, props, elTag, _CSS__WEBPACK_IMPORTED_MODULE_16__["CSS"].addStyles(false, tagName, elTag, props, tagTempLit));
+          Flare._defineComponent(tagName, props, elTag, _CSS__WEBPACK_IMPORTED_MODULE_6__["CSS"].addStyles(false, tagName, elTag, props, tagTempLit));
         } //
 
 
@@ -8294,16 +8386,19 @@ function (module, __webpack_exports__, __webpack_require__) {
       value: function _resetFlags() {
         // Reset these, they were flipped for Component definition, and would typically
         // be reset in the flow of component creation just after the call to doc.createEl(),
-        // but when creating components with Venus, element instantiation is delayed...
+        // but when creating components with Flare, element instantiation is delayed...
         window.useNativeShim = true;
         window.HTMLElement = window.HTMLElement_;
-      }
+      } // Static method used for defining Flare components...
+
     }, {
       key: "_defineComponent",
       value: function _defineComponent(name) {
         var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
         var el = arguments.length > 2 ? arguments[2] : undefined;
-        var template = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false; // Declare element constructior var..
+        var template = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false; // log('Looka Here', ['red', 'bold']);log(`name is: ${name}`);log(`el is: ${el}`)
+
+        dir(props); // Declare element constructior var..
 
         var elemCtor,
             // Create function will create the component element definition..
@@ -8311,59 +8406,104 @@ function (module, __webpack_exports__, __webpack_require__) {
           // Pulling a switch here, so that we can choose what type of constructor we'd
           // like to use for our component...
           switch (el) {
+            case 'area':
+              // Grab the extensible area element constructor..
+              elemCtor = _Elements_Area__WEBPACK_IMPORTED_MODULE_8__["Area"].createComponent(props, template);
+              break;
+
+            case 'aside':
+              // Grab the extensible aside element constructor..
+              elemCtor = _Elements_Aside__WEBPACK_IMPORTED_MODULE_9__["Aside"].createComponent(props, template);
+              break;
+
+            case 'button':
+              // Grab the extensible input element constructor..
+              elemCtor = _Elements_Button__WEBPACK_IMPORTED_MODULE_10__["Button"].createComponent(props, template);
+              break;
+
+            case 'col':
+              // Grab the extensible col element constructor..
+              elemCtor = _Elements_Col__WEBPACK_IMPORTED_MODULE_11__["Col"].createComponent(props, template);
+              break;
+
+            case 'colgroup':
+              // Grab the extensible colgroup element constructor..
+              elemCtor = _Elements_Colgroup__WEBPACK_IMPORTED_MODULE_12__["Colgroup"].createComponent(props, template);
+              break;
+
             case 'div':
               // Do CreateComponent..
               elemCtor = _Component__WEBPACK_IMPORTED_MODULE_2__["Component"].createComponent([name, template, el], props);
               break;
 
-            case 'input':
-              // Grab the extensible input element constructor..
-              elemCtor = _Elements_Input__WEBPACK_IMPORTED_MODULE_6__["Input"].createComponent(props, template);
-              break;
-
-            case 'button':
-              // Grab the extensible input element constructor..
-              elemCtor = _Elements_Button__WEBPACK_IMPORTED_MODULE_7__["Button"].createComponent(props, template);
-              break;
-
-            case 'p':
-              // Grab the extensible input element constructor..
-              elemCtor = _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_8__["Paragraph"].createComponent(props, template);
+            case 'footer':
+              // Grab the extensible footer element constructor..
+              elemCtor = _Elements_Footer__WEBPACK_IMPORTED_MODULE_13__["Footer"].createComponent(props, template);
               break;
 
             case 'h1':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H1__WEBPACK_IMPORTED_MODULE_9__["H1"].createComponent(props, template);
+              elemCtor = _Elements_H1__WEBPACK_IMPORTED_MODULE_14__["H1"].createComponent(props, template);
               break;
 
             case 'h2':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H2__WEBPACK_IMPORTED_MODULE_10__["H2"].createComponent(props, template);
+              elemCtor = _Elements_H2__WEBPACK_IMPORTED_MODULE_15__["H2"].createComponent(props, template);
               break;
 
             case 'h3':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H3__WEBPACK_IMPORTED_MODULE_11__["H3"].createComponent(props, template);
+              elemCtor = _Elements_H3__WEBPACK_IMPORTED_MODULE_16__["H3"].createComponent(props, template);
               break;
 
             case 'h4':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H4__WEBPACK_IMPORTED_MODULE_12__["H4"].createComponent(props, template);
+              elemCtor = _Elements_H4__WEBPACK_IMPORTED_MODULE_17__["H4"].createComponent(props, template);
               break;
 
             case 'h5':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H5__WEBPACK_IMPORTED_MODULE_13__["H5"].createComponent(props, template);
+              elemCtor = _Elements_H5__WEBPACK_IMPORTED_MODULE_18__["H5"].createComponent(props, template);
               break;
 
             case 'h6':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H6__WEBPACK_IMPORTED_MODULE_14__["H6"].createComponent(props, template);
+              elemCtor = _Elements_H6__WEBPACK_IMPORTED_MODULE_19__["H6"].createComponent(props, template);
               break;
 
             case 'header':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_Header__WEBPACK_IMPORTED_MODULE_15__["Header"].createComponent(props, template);
+              elemCtor = _Elements_Header__WEBPACK_IMPORTED_MODULE_20__["Header"].createComponent(props, template);
+              break;
+
+            case 'input':
+              // Grab the extensible input element constructor..
+              elemCtor = _Elements_Input__WEBPACK_IMPORTED_MODULE_21__["Input"].createComponent(props, template);
+              break;
+
+            case 'p':
+              // Grab the extensible input element constructor..
+              elemCtor = _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_22__["Paragraph"].createComponent(props, template);
+              break;
+
+            case 'section':
+              // Grab the extensible section element constructor..
+              elemCtor = _Elements_Section__WEBPACK_IMPORTED_MODULE_23__["Section"].createComponent(props, template);
+              break;
+
+            case 'span':
+              // Grab the extensible span element constructor..
+              elemCtor = _Elements_Span__WEBPACK_IMPORTED_MODULE_24__["Span"].createComponent(props, template);
+              break;
+
+            case 'table':
+              // Grab the extensible table element constructor..
+              elemCtor = _Elements_Table__WEBPACK_IMPORTED_MODULE_25__["Table"].createComponent(props, template);
+              break;
+
+            case 'textarea':
+              // Grab the extensible textarea element constructor..
+              elemCtor = _Elements_Textarea__WEBPACK_IMPORTED_MODULE_26__["Textarea"].createComponent(props, template);
               break;
 
             case 'default':
@@ -8371,13 +8511,13 @@ function (module, __webpack_exports__, __webpack_require__) {
           } // Process props...
 
 
-          var processed = _Form_Node__WEBPACK_IMPORTED_MODULE_3__["Node"].processNodeProps(props, elemCtor); // Add venusComponent property to venus component constructor...
+          var processed = _Form_Node__WEBPACK_IMPORTED_MODULE_3__["Node"].processNodeProps(props, elemCtor); // Add flareComponent property to flare component constructor...
 
 
-          processed.ctor.prototype.venusComponent = true; // Define component...
+          processed.ctor.prototype.flareComponent = true; // Define component...
 
           window.customElements.define(name, processed.ctor); // Reset nativeShim flags..
-          // Venus._resetFlags()
+          // Flare._resetFlags()
           // Listen for element instantiation, grab element...
 
           _Events__WEBPACK_IMPORTED_MODULE_5__["Events"].listen(name, function (e) {
@@ -8395,36 +8535,57 @@ function (module, __webpack_exports__, __webpack_require__) {
           create();
         } else {
           // Listen for supporting files to be loaded, then create and define component...
-          _Events__WEBPACK_IMPORTED_MODULE_5__["Events"].listen('webComponentsLoaded', function () {
+          _Events__WEBPACK_IMPORTED_MODULE_5__["Events"].listen('rootComponentMounted', function () {
             create();
           });
         }
+      } // A static public method for instantiating a keyframes instance for css animation...
+
+    }, {
+      key: "keyframes",
+      value: function keyframes() {
+        var obj = {};
+
+        for (var _len = arguments.length, tempLit = new Array(_len), _key = 0; _key < _len; _key++) {
+          tempLit[_key] = arguments[_key];
+        }
+
+        obj.array = [].concat(tempLit);
+        obj.extended = false; // Send the ttLiteral object over to CSS for processing and inserting into the stylesheet...
+
+        return _CSS__WEBPACK_IMPORTED_MODULE_6__["CSS"].keyframes(obj);
       } //A static public method for inserting global rules into the styleSheet...
 
     }, {
       key: "global",
       value: function global() {
-        for (var _len = arguments.length, tempLit = new Array(_len), _key = 0; _key < _len; _key++) {
-          tempLit[_key] = arguments[_key];
-        } // Send the ttLiteral over to CSS for inserting into the stylesheet...
+        var obj = {};
 
+        for (var _len2 = arguments.length, tempLit = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          tempLit[_key2] = arguments[_key2];
+        }
 
-        _CSS__WEBPACK_IMPORTED_MODULE_16__["CSS"].insertGlobal([].concat(tempLit));
+        obj.array = [].concat(tempLit);
+        obj.extended = false; // Send the ttLiteral object over to CSS for processing and inserting into the stylesheet...
+
+        _CSS__WEBPACK_IMPORTED_MODULE_6__["CSS"].insertGlobal(obj);
       } // An internal method used for retrieving a css template literal..
 
     }, {
       key: "_getTemplateLiteral",
       value: function _getTemplateLiteral() {
-        for (var _len2 = arguments.length, tempLit = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          tempLit[_key2] = arguments[_key2];
+        for (var _len3 = arguments.length, tempLit = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+          tempLit[_key3] = arguments[_key3];
         }
 
         var tmpl,
             // Store ref functions with tempLit in an array
-        array = [].concat(tempLit);
+        array = [].concat(tempLit); // log('array', ['orange', 'bold'])
+        //  dir(array)
+
         console.log(array); //
 
-        if (Venus._extend) {
+        if (Flare._extend) {
           /* An object holding the styles of the extended component, and also,
           an array holding the broken up tempLit and ref functions... Once the Props
           from component instantiation are merged with the existing prop object, the
@@ -8432,9 +8593,9 @@ function (module, __webpack_exports__, __webpack_require__) {
           the css can be completed...*/
           tmpl = {
             extended: true,
-            super: Venus._superTempLit,
-            superEl: Venus._elementTag,
-            superId: Venus._superId,
+            super: Flare._superTempLit,
+            superEl: Flare._superTag,
+            superId: Flare._superId,
             array: array
           };
         } else {
@@ -8445,81 +8606,84 @@ function (module, __webpack_exports__, __webpack_require__) {
         }
 
         return {
-          venus: true,
+          flare: true,
           taggedTempLit: tmpl,
-          props: Venus._propObj,
-          el: Venus._elementTag
+          props: Flare._propObj,
+          el: tmpl.extended ? Flare._superTag : Flare._elementTag
         };
       } // Component extend Static API Method
-      // A public method for extending user-defined venus components...
+      // A public method for extending user-defined flare components...
 
     }, {
       key: "extend",
       value: function extend(component) {
-        var attrs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // Filter component arg's props for id and classname properties, which can
+        var attrs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // Get a copy of the component so that we don't delete any of the extended component's attrs...
+
+        var superComponent = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["deeplicateObject"](component); // Filter component arg's props for id and classname properties, which can
         // not, obviously, be shared with other elements/components...
 
-        if ('id' in component.props) {
-          delete component.props.id;
+
+        if ('id' in superComponent.props) {
+          delete superComponent.props.id;
         }
 
-        if ('className' in component) {
-          delete component.props.className;
+        if ('className' in superComponent.props) {
+          delete superComponent.props.className;
         } // If arg is an object...
 
 
         if (attrs) {
           // Let's first combine prop objects so as to override any common props...
-          var _props = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["combineObjects"](component.props, attrs); // Set the Venus component indicator...
+          var _props = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["combineObjects"](superComponent.props, attrs); // Set the Flare component indicator...
 
 
-          _props.Venus = true; // Set a unique id on the component's props...
+          _props.Flare = true; // Set a unique id on the component's props...
 
-          _props.identity = "venusX".concat(component.el).concat(Venus._incrementor); // Set stateless-component flag for the component..
+          _props.identity = "flareX".concat(superComponent.el).concat(Flare._incrementor); // Set stateless-component flag for the component..
 
           _props.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
-          Venus._propObj = _props;
+          Flare._propObj = _props;
         }
 
-        Venus._superId = component.props.identity;
-        Venus._superEl = component.el;
-        Venus._superTempLit = component.taggedTempLit.array;
-        Venus._extend = true; // Get css..
+        Flare._superId = superComponent.props.identity;
+        Flare._superTag = superComponent.el;
+        Flare._superTempLit = superComponent.taggedTempLit.array;
+        Flare._extend = true; // Get css..
 
-        return Venus._getTemplateLiteral;
+        return Flare._getTemplateLiteral;
       } // Div Static API Method
 
     }, {
       key: "div",
       value: function div() {
-        for (var _len3 = arguments.length, arg = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-          arg[_key3] = arguments[_key3];
+        for (var _len4 = arguments.length, arg = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+          arg[_key4] = arguments[_key4];
         } // If the argument is not an array, it's probably our props object...
 
 
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
-          var _props2 = arg[0]; // Set the Venus component indicator...
+          var _props2 = arg[0]; // Set the Flare component indicator...
 
-          _props2.Venus = true; // Set a unique id on the component's props...
+          _props2.Flare = true; // Set a unique id on the component's props...
 
-          _props2.identity = "venusDiv".concat(Venus._incrementor); // Set stateless-component flag for the component..
+          _props2.identity = "flareDiv".concat(Flare._incrementor); // Set stateless-component flag for the component..
 
           _props2.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
-          Venus._propObj = _props2;
-          Venus._elementTag = 'div'; // Define component..
+          Flare._propObj = _props2;
+          Flare._elementTag = 'div'; // Define component..
 
-          return Venus._getTemplateLiteral;
+          return Flare._getTemplateLiteral;
         } else {
           var array = [].concat(arg),
               _privateProps = {}; //
 
-          _privateProps.Venus = true;
+          _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "venusDiv".concat(Venus._incrementor);
+          _privateProps.identity = "flareDiv".concat(Flare._incrementor);
           return {
-            venus: true,
+            flare: true,
             taggedTempLit: {
               extended: false,
               array: array
@@ -8533,34 +8697,37 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "input",
       value: function input() {
-        for (var _len4 = arguments.length, arg = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-          arg[_key4] = arguments[_key4];
-        } // If the argument is not an array, it's probably our props object...
+        log('Looka these', ['red', 'bold']);
 
+        for (var _len5 = arguments.length, arg = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+          arg[_key5] = arguments[_key5];
+        }
+
+        dir(arg[0]); // If the argument is not an array, it's probably our props object...
 
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
-          var _props3 = arg[0]; // Set the Venus component indicator...
+          var _props3 = arg[0]; // Set the Flare component indicator...
 
-          _props3.Venus = true; // Set a unique id on the component's props...
+          _props3.Flare = true; // Set a unique id on the component's props...
 
-          _props3.identity = "venusInput".concat(Venus._incrementor); // Set stateless-component flag for the component..
+          _props3.identity = "flareInput".concat(Flare._incrementor); // Set stateless-component flag for the component..
 
           _props3.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
-          Venus._propObj = _props3;
-          Venus._elementTag = 'input'; // Define component..
+          Flare._propObj = _props3;
+          Flare._elementTag = 'input'; // Define component..
 
-          return Venus._getTemplateLiteral;
+          return Flare._getTemplateLiteral;
         } else {
           var array = [].concat(arg),
               _privateProps = {}; // Add some properties to the private props object....
 
-          _privateProps.Venus = true;
+          _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "venusInput".concat(Venus._incrementor); // Add private props to return object and... return..
+          _privateProps.identity = "flareInput".concat(Flare._incrementor); // Add private props to return object and... return..
 
           return {
-            venus: true,
+            flare: true,
             taggedTempLit: {
               extended: false,
               array: array
@@ -8574,34 +8741,35 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "button",
       value: function button() {
-        for (var _len5 = arguments.length, arg = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
-          arg[_key5] = arguments[_key5];
-        } // If the argument is not an array, it's probably our props object...
+        for (var _len6 = arguments.length, arg = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+          arg[_key6] = arguments[_key6];
+        }
 
+        var args = [].concat(arg); // If the argument is not an array, it's probably our props object...
 
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
-          var _props4 = arg[0]; // Set the Venus component indicator...
+          var _props4 = arg[0]; // Set the Flare component indicator...
 
-          _props4.Venus = true; // Set a unique id on the component's props...
+          _props4.Flare = true; // Set a unique id on the component's props...
 
-          _props4.identity = "venusButton".concat(Venus._incrementor); // Set stateless-component flag for the component..
+          _props4.identity = "flareButton".concat(Flare._incrementor); // Set stateless-component flag for the component..
 
           _props4.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
-          Venus._propObj = _props4;
-          Venus._elementTag = 'button'; // Define component..
+          Flare._propObj = _props4;
+          Flare._elementTag = 'button'; // Define component..
 
-          return Venus._getTemplateLiteral;
+          return Flare._getTemplateLiteral;
         } else {
           var array = [].concat(arg),
               _privateProps = {}; // Add some properties to the private props object....
 
-          _privateProps.Venus = true;
+          _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "venusButton".concat(Venus._incrementor); // Add private props to return object and... return..
+          _privateProps.identity = "flareButton".concat(Flare._incrementor); // Add private props to return object and... return..
 
           return {
-            venus: true,
+            flare: true,
             taggedTempLit: {
               extended: false,
               array: array
@@ -8615,34 +8783,34 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "p",
       value: function p() {
-        for (var _len6 = arguments.length, arg = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
-          arg[_key6] = arguments[_key6];
+        for (var _len7 = arguments.length, arg = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+          arg[_key7] = arguments[_key7];
         } // If the argument is not an array, it's probably our props object...
 
 
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
-          var _props5 = arg[0]; // Set the Venus component indicator...
+          var _props5 = arg[0]; // Set the Flare component indicator...
 
-          _props5.Venus = true; // Set a unique id on the component's props...
+          _props5.Flare = true; // Set a unique id on the component's props...
 
-          _props5.identity = "venusP".concat(Venus._incrementor); // Set stateless-component flag for the component..
+          _props5.identity = "flareP".concat(Flare._incrementor); // Set stateless-component flag for the component..
 
           _props5.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
-          Venus._propObj = _props5;
-          Venus._elementTag = 'p'; // Define component..
+          Flare._propObj = _props5;
+          Flare._elementTag = 'p'; // Define component..
 
-          return Venus._getTemplateLiteral;
+          return Flare._getTemplateLiteral;
         } else {
           var array = [].concat(arg),
               _privateProps = {}; // Add some properties to the private props object....
 
-          _privateProps.Venus = true;
+          _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "venusP".concat(Venus._incrementor); // Add private props to return object and... return..
+          _privateProps.identity = "flareP".concat(Flare._incrementor); // Add private props to return object and... return..
 
           return {
-            venus: true,
+            flare: true,
             taggedTempLit: {
               extended: false,
               array: array
@@ -8656,34 +8824,34 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "h1",
       value: function h1() {
-        for (var _len7 = arguments.length, arg = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
-          arg[_key7] = arguments[_key7];
+        for (var _len8 = arguments.length, arg = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+          arg[_key8] = arguments[_key8];
         } // If the argument is not an array, it's probably our props object...
 
 
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
-          var _props6 = arg[0]; // Set the Venus component indicator...
+          var _props6 = arg[0]; // Set the Flare component indicator...
 
-          _props6.Venus = true; // Set a unique id on the component's props...
+          _props6.Flare = true; // Set a unique id on the component's props...
 
-          _props6.identity = "venusH1".concat(Venus._incrementor); // Set stateless-component flag for the component..
+          _props6.identity = "flareH1".concat(Flare._incrementor); // Set stateless-component flag for the component..
 
           _props6.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
-          Venus._propObj = _props6;
-          Venus._elementTag = 'h1'; // Define component..
+          Flare._propObj = _props6;
+          Flare._elementTag = 'h1'; // Define component..
 
-          return Venus._getTemplateLiteral;
+          return Flare._getTemplateLiteral;
         } else {
           var array = [].concat(arg),
               _privateProps = {}; // Add some properties to the private props object....
 
-          _privateProps.Venus = true;
+          _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "venusH1".concat(Venus._incrementor); // Add private props to return object and... return..
+          _privateProps.identity = "flareH1".concat(Flare._incrementor); // Add private props to return object and... return..
 
           return {
-            venus: true,
+            flare: true,
             taggedTempLit: {
               extended: false,
               array: array
@@ -8697,34 +8865,34 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "h6",
       value: function h6() {
-        for (var _len8 = arguments.length, arg = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
-          arg[_key8] = arguments[_key8];
+        for (var _len9 = arguments.length, arg = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
+          arg[_key9] = arguments[_key9];
         } // If the argument is not an array, it's probably our props object...
 
 
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
-          var _props7 = arg[0]; // Set the Venus component indicator...
+          var _props7 = arg[0]; // Set the Flare component indicator...
 
-          _props7.Venus = true; // Set a unique id on the component's props...
+          _props7.Flare = true; // Set a unique id on the component's props...
 
-          _props7.identity = "venusH6".concat(Venus._incrementor); // Set stateless-component flag for the component..
+          _props7.identity = "flareH6".concat(Flare._incrementor); // Set stateless-component flag for the component..
 
           _props7.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
-          Venus._propObj = _props7;
-          Venus._elementTag = 'h6'; // Define component..
+          Flare._propObj = _props7;
+          Flare._elementTag = 'h6'; // Define component..
 
-          return Venus._getTemplateLiteral;
+          return Flare._getTemplateLiteral;
         } else {
           var array = [].concat(arg),
               _privateProps = {}; // Add some properties to the private props object....
 
-          _privateProps.Venus = true;
+          _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "venusH6".concat(Venus._incrementor); // Add private props to return object and... return..
+          _privateProps.identity = "flareH6".concat(Flare._incrementor); // Add private props to return object and... return..
 
           return {
-            venus: true,
+            flare: true,
             taggedTempLit: {
               extended: false,
               array: array
@@ -8735,8 +8903,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         }
       }
     }, {
-      key: "_incrementor",
-      // Static member to hold component names...
+      key: "_tagQueue",
       // Static member to hold element tag name to be created...
       // Static member to hold element tag name to be created...
       // Static member to hold a unique ID for an extended component's parent...
@@ -8746,299 +8913,254 @@ function (module, __webpack_exports__, __webpack_require__) {
       // A reference to an extended element's parent props object...
       // A boolean flag used to determine whether or not a component is a extension
       // of another, or not....
-      // Number places for _numeral
-      // A number that increments every time it is used. Aids in creating a unique identifier
-      // for components...
+      // static _flareNames = []
+      // Static member to hold arrays awaiting to shift out their tags (inner parent components)....
+      // Static member to hold the main component name array ...
+      // Getter for the component tagName queue...
+      get: function get() {
+        // If we have an array in the queue, return it, otherwise return the main array....
+        if (Flare._tagNameArrayQueue.length > 0) {
+          if (Flare._tagNameArrayQueue[0].length < 1) {
+            Flare._tagNameArrayQueue.shift();
+
+            return Flare._flareComponentNames.shift();
+          } else {
+            return Flare._tagNameArrayQueue.shift();
+          }
+        } else {
+          return Flare._flareComponentNames.shift();
+        }
+      } // Setter for the tag queue...
+      ,
+      set: function set(array) {
+        /* If the main array is empty, pass the argument to it, otherwise, shift the argument
+         in to the beginning of the queue array...*/
+        if (Flare._flareComponentNames.length === 0) {
+          Flare._flareComponentNames.unshift(array);
+        } else {
+          Flare._tagNameArrayQueue.unshift(array);
+        }
+      } // Number places for _numeral
+
+    }, {
+      key: "_incrementor",
       // A simple getter for static _numeral
       get: function get() {
         // Increment ones place first, then rest accordingly...
-        if (Venus._ones_ < 9) {
-          ++Venus._ones_;
+        if (Flare._ones_ < 9) {
+          ++Flare._ones_;
         } else {
-          Venus._ones_ = 0;
+          Flare._ones_ = 0;
 
-          if (Venus._tens_ < 9) {
-            ++Venus._tens_;
+          if (Flare._tens_ < 9) {
+            ++Flare._tens_;
           } else {
-            Venus._tens_ = 0;
+            Flare._tens_ = 0;
 
-            if (Venus._huns_ < 9) {
-              ++Venus._huns_;
+            if (Flare._huns_ < 9) {
+              ++Flare._huns_;
             } else {
-              Venus._huns_ = 0;
+              Flare._huns_ = 0;
             }
           }
         } // Assemble the numeral string...
 
 
-        Venus._numeral = "".concat(Venus._huns_).concat(Venus._tens_).concat(Venus._ones_); // Return..
+        Flare._numeral = "".concat(Flare._huns_).concat(Flare._tens_).concat(Flare._ones_); // Return..
 
-        return Venus._numeral;
+        return Flare._numeral;
       } // The config options object.. with default assumptions...
 
     }]);
 
-    return Venus;
+    return Flare;
   }();
 
-  _defineProperty(Venus, "_venusComponentNames", []);
+  _defineProperty(Flare, "_elementTag", '');
 
-  _defineProperty(Venus, "_elementTag", '');
+  _defineProperty(Flare, "_superTag", '');
 
-  _defineProperty(Venus, "_superTag", '');
+  _defineProperty(Flare, "_superId", '');
 
-  _defineProperty(Venus, "_superId", '');
+  _defineProperty(Flare, "_id", '');
 
-  _defineProperty(Venus, "_id", '');
+  _defineProperty(Flare, "_propObj", {});
 
-  _defineProperty(Venus, "_propObj", {});
+  _defineProperty(Flare, "_superTempLit", "");
 
-  _defineProperty(Venus, "_superTempLit", "");
+  _defineProperty(Flare, "_superProps", {});
 
-  _defineProperty(Venus, "_superProps", {});
+  _defineProperty(Flare, "_extend", false);
 
-  _defineProperty(Venus, "_extend", false);
+  _defineProperty(Flare, "_tagNameArrayQueue", []);
 
-  _defineProperty(Venus, "_ones_", 0);
+  _defineProperty(Flare, "_flareComponentNames", [[]]);
 
-  _defineProperty(Venus, "_tens_", 0);
+  _defineProperty(Flare, "_ones_", 0);
 
-  _defineProperty(Venus, "_huns_", 0);
+  _defineProperty(Flare, "_tens_", 0);
 
-  _defineProperty(Venus, "_numeral", -1);
+  _defineProperty(Flare, "_huns_", 0);
 
-  _defineProperty(Venus, "assumptions", {
+  _defineProperty(Flare, "_numeral", -1);
+
+  _defineProperty(Flare, "assumptions", {
     shadowByDefault: true,
-    kebabCase: true // // Static member object for holding configuration options... Using a getter
-    // // and setter so that configuration objects may be combined.
-    //   static get config() {
-    // // Return the assumptions object..
-    //     return Venus.assumptions
-    //   }
-    //   static set config(obj) {
-    // // Take in a new assumptions obj, combine with existing, and store...
-    //     Venus.assumptions = _.combineObjects(Venus.assumptions, obj)
-    //   }
+    kebabCase: true // A public helper method for setting Flare assumptions, config options...
 
-  });
+  }); // // Internal method closure for grabbing the variable name from a flare component
+  // // declaration, for tagname representation in custom element creation...
+  //   static _acquireComponentTagName(xCaller, callerName, array) {
+  //     let buildArray,
+  //     typeShifter,
+  //     type
+  //
+  // /***********************************************************************************
+  // ** A function for shifting a type from the beginning of the component names array....
+  // ************************************************************************************/
+  //     typeShifter =(array)=> {
+  //       let obj = {}
+  // // If we don't have an empty array....
+  //       if (array.length > 0) {
+  // // We can shift out a type....
+  //         obj.type  = array.shift()
+  //         obj.array = array
+  // // Else, we have a new component and must rebuild...
+  //       } else {
+  //         obj.array = buildArray(xCaller)
+  //         obj.type  = typeShifter(obj.array).type
+  //       }
+  // // Check the statelessComponents registry for a redundancy...
+  //       if (window.statelessComponents.indexOf(obj.type) !== -1) {
+  //         return typeShifter(obj.array)
+  //       }
+  // // If we reach this point, we are ready to return type...
+  //       return obj
+  //     }
+  //
+  //
+  // /***************************************************************************
+  // ** A function for building out the flareComponentNames Array...
+  // ****************************************************************************/
+  //     buildArray =(source)=> {
+  // // Some vars...
+  //       let callerTagName,
+  //       extractEntryFromSource,
+  //       componentNameArray = []
+  //
+  // /*****************************************************************************
+  // ** A recursive function for extracting regExp matches from a bit of source code.
+  // ** The purpose is to programmatically extract variable names from flare component
+  // ** declarations for the purpose of custom element tag names.
+  // ******************************************************************************/
+  //       extractEntryFromSource =(source)=> {
+  // // Some vars...
+  //         let sib,
+  //         componentName
+  //
+  // // Execute regexp... and single out result..
+  //         sib = _.flareComponentNamesRE().exec(source)[1],
+  // // Eliminate result from source code string, so that it won't be found again,
+  // // and store in temp variable...
+  //         source = source.replace(
+  //           sib,
+  //           ''
+  //         )
+  //         // log(source, 'red')
+  // // Remove "(" from the string, and return a new one..
+  // // Convert to tagname with kebab-case...
+  //         componentName =  _.convertFuncNameToTagName(
+  //           sib.replace('(', '')
+  //         )
+  //         //log('component tagname.', ['orange', 'bold']); log(componentName, ['yellow', 'bold'])
+  // // Push component name into a local array..
+  //         componentNameArray.push(componentName)
+  // // Push also into a global collection....
+  //         window.flareComponents.push(componentName.toLowerCase())
+  // // If there are still matches in the caller source code, call function again,
+  // // recursively, with the altered source...
+  //         if (_.flareComponentNamesRE().test(source)) {
+  //           return extractEntryFromSource(source)
+  //         }
+  // // return..
+  //         // log('componentNameArray'); log(componentNameArray)
+  //         return componentNameArray
+  //       }
+  //
+  //
+  // // If there are any matches in the caller's source code, start the process of building
+  // // out the array...
+  //       if (_.flareComponentNamesRE().test(source)) {
+  //         array = extractEntryFromSource(source)
+  //         //log('The Array', ['yellow', 'bold']); dir(array)
+  //       }
+  //
+  // // Also convert x.caller func name to tag-name to identify stateless components...
+  //       callerTagName =  _.convertFuncNameToTagName(callerName)
+  //       // log(callerTagName)
+  // // Check global registry of stateless components for the caller's tag name. If it is
+  // // present, we must rearrange the array...
+  //       log('window.statelessComponents', ['red', 'bold'])
+  //        log(window.statelessComponents)
+  //       if (window.statelessComponents.indexOf(callerTagName) != -1) {
+  //         log('rearranged', ['orange', 'bold'])
+  // // Rearrange the array...
+  // // Remove the first item...
+  //         let item = array.shift()
+  // // Push it on to the end of the array..
+  //         array.push(item)
+  //         log(array)
+  //       }
+  // // return array...
+  //       return array
+  //     }
+  //
+  // // Build an array...
+  // // If there are no component names in the array, lets's get some..
+  //     if (array.length == 0) {
+  // // Build array with x.caller source code...
+  //       array = buildArray(xCaller)
+  //     }
+  //
+  // /* Call typeShifter function to shift out the bottom-most tagname in the list...
+  // If it has already been instantiated, then it is not a flare component- Pop from
+  // the list and move on... Return both the altered array and the shifted out type...*/
+  //     let obj = typeShifter(array)
+  //     // log('arrayLength'); log(obj.array.length, ['pink', 'bold']);dir(obj.array)
+  //     // log('type', ['orange', 'bold']);dir(obj.type)
+  //     Flare._flareNames = obj.array
+  // // Return type..
+  //     return obj.type.toLowerCase()
+  //   }
+  // var obj = {
+  //    a: 'string',
+  //    b: function func(str) { console.log(str) },
+  //    c: 9,
+  //    d: {
+  //     e: 6,
+  //     f: 'hello',
+  //     j: {
+  //       q: 5,
+  //       r: 'jesus',
+  //       c: {
+  //         m: 4,
+  //         n: 'christ'
+  //       }
+  //     }
+  //    },
+  //    e: /hello/g,
+  //    g: null
+  // }
+  // let newObj = _.deeplicateObject(obj)
+  // newObj.d.j = 'lord'
+  // log('objs', 'tomato')
+  // dir(obj)
+  // dir(newObj)
+
   /***/
 
 },
 /* 40 */
-
-/***/
-function (module, __webpack_exports__, __webpack_require__) {
-  ;
-
-  __webpack_require__.r(__webpack_exports__);
-  /* harmony export (binding) */
-
-
-  __webpack_require__.d(__webpack_exports__, "Input", function () {
-    return Input;
-  });
-  /* harmony import */
-
-
-  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-  /* harmony import */
-
-
-  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
-  /* harmony import */
-
-
-  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
-  /* harmony import */
-
-
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
-  /* harmony import */
-
-
-  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-  /*
-  ** Input.js
-  **
-  ** Input.js is an extensible HTML5 Web Component wrapper, built around the Input
-  ** element. It's aim is in providing an input element that is able to be
-  ** extended via the v1 web components api...
-  **
-  ** Eric James Foster, Fostware LLC, MIT License.
-  ***/
-  // Get utilities...
-  // Get data...
-  // Get Events...
-  // Get CSS...
-  // Get Node class...
-  // Globalize common utility functions...
-
-
-  var dir = console.dir;
-  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
-  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
-  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
-
-  var Input =
-  /*#__PURE__*/
-  function () {
-    function Input() {
-      _classCallCheck(this, Input);
-    }
-
-    _createClass(Input, null, [{
-      key: "_appendStyleNode",
-      // A CSS template literal, holding default styles for an input...
-      // Static method for appending child nodes to parent elements...
-      value: function _appendStyleNode(root, child) {
-        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus input element...
-
-    }, {
-      key: "createComponent",
-      value: function createComponent() {
-        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-        log('props', ['orange', 'bold']);
-        dir(props); // Declarations..
-
-        var _HTMLInputComponent,
-            eListeners = [],
-            customProps = [],
-            shadowBool,
-            shadow,
-            input,
-            self,
-            obj; // Return boolean value for shadow...
-
-
-        shadowBool = function shadowBool(arr) {
-          return arr.reduce(function (shadow, keyVal, index) {
-            return keyVal.indexOf('shadow') == -1 ? shadow : index;
-          }, false);
-        }; // Get attribute names and Listeners...
-
-
-        if (props) {
-          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
-
-          customProps = obj.props;
-          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
-
-          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
-        } // Create an HTMLInputElement...
-
-
-        input = document.createElement('input'); // Some default settings for input elements...
-        // Set venus identifier flag..
-        // input.venus = true
-        // if (props.type == 'text') {
-        //
-        // }
-        // Pass props from venus component declaration on to the inner input el...
-
-        var _arr = Object.keys(props);
-
-        for (var _i = 0; _i < _arr.length; _i++) {
-          var key = _arr[_i]; // Check all keys in input el object...
-
-          if (key in input) {
-            // Pass on the ones that match...
-            log("".concat(key, " in input"), ['yellow', 'bold']);
-            input["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
-          } else if (key in input.style) {
-            log("".concat(key, " in input"), ['pink', 'bold']); // Put them here...
-
-            input.style["".concat(key)] = props["".concat(key)];
-          }
-        } // The input component element's constructor definition...
-
-
-        _HTMLInputComponent = function HTMLInputComponent() {
-          var shadowRoot; // Construct an element, store as self...
-
-          self = Reflect.construct(HTMLElement, [], _HTMLInputComponent);
-
-          if (shadow) {
-            // Create shadow root...
-            shadowRoot = self.attachShadow({
-              mode: 'open'
-            }); // Append to shadow root...
-
-            shadowRoot.appendChild(input); // Create a node from the template function, and append to shadowRoot....
-
-            Input._appendStyleNode(shadowRoot, template);
-          } // Return constructor...
-
-
-          return self;
-        }; // Add superclass prototype...
-
-
-        _HTMLInputComponent.prototype = Object.create(HTMLInputElement.prototype); // Add constructor...
-
-        _HTMLInputComponent.prototype.constructor = _HTMLInputComponent; // Register event listener methods..
-
-        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLInputComponent, eListeners); // console.dir(HTMLComponent)
-        // Add connectedCallback method appending children if shadow is false...
-
-
-        if (!shadow) {
-          _HTMLInputComponent.prototype.connectedCallback = function () {
-            self.appendChild(input);
-          };
-        } // Return component to the caller...
-
-
-        return _HTMLInputComponent;
-      }
-    }]);
-
-    return Input;
-  }();
-
-  _defineProperty(Input, "_textLiteral", ":host {\n                          background-color: black;\n                          border-radius: 5%;\n                        }");
-  /***/
-
-},
-/* 41 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -9062,13 +9184,29 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var stylis__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
+  var _Keyframes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41);
   /* harmony import */
 
 
-  var stylis__WEBPACK_IMPORTED_MODULE_2___default =
+  var _Utilities_interpolationStation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
+  /* harmony import */
+
+
+  var _Utilities_alphaStringFromHash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(43);
+  /* harmony import */
+
+
+  var _Utilities_murmurHash__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(44);
+  /* harmony import */
+
+
+  var stylis__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(45);
+  /* harmony import */
+
+
+  var stylis__WEBPACK_IMPORTED_MODULE_6___default =
   /*#__PURE__*/
-  __webpack_require__.n(stylis__WEBPACK_IMPORTED_MODULE_2__);
+  __webpack_require__.n(stylis__WEBPACK_IMPORTED_MODULE_6__);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -9109,16 +9247,30 @@ function (module, __webpack_exports__, __webpack_require__) {
   /*
   ** CSS.js
   **
-  ** CSS.js performs CSS functionality within the Venus library..
+  ** CSS.js performs CSS functionality within the flare library..
   **
   ** Eric James Foster, Fostware LLC, MIT License.
   ***/
+  //OPTIMIZE: Rework process function so that there aren't so many checks for Is.interpolated()...
+  // Get helper funcs...
+  // Get type validation lib...
+  // Get Keyframes class....
+  // Grab tagged template literal interpolation code...
+  // Grab hash to string converter...
+  // Get murmurhash...
+  // Get stylis...
 
 
   window.log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
-  window.dir = console.dir;
-  stylis__WEBPACK_IMPORTED_MODULE_2___default.a.set({
-    compress: true
+  window.dir = console.dir; // Stylis configuration options...
+
+  stylis__WEBPACK_IMPORTED_MODULE_6___default.a.set({
+    global: false,
+    cascade: true,
+    keyframe: false,
+    prefix: true,
+    compress: false,
+    semicolon: false
   });
 
   var CSS =
@@ -9158,78 +9310,89 @@ function (module, __webpack_exports__, __webpack_require__) {
         } else if ('addRule' in sheet) {
           sheet.addRule(selector, rules, 1);
         }
-      } // A private method for appending an array of CSS rules to the default stylesheet,
-      // one by one.
+      } // An internal static class method for creating usable css from a tagged template literal....
+
+    }, {
+      key: "_createCSS",
+      value: function _createCSS(ttlObj, selector) {
+        var props = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+        var css;
+        /* If we are working on an extended component, execute interpolation functions,
+        bring in the parent's styles, and finally, process the resulting css with 'stylis'...
+        */
+        // Is this an extended component? ....
+
+        css = ttlObj.extended ?
+        /* If so, go ahead and execute the interpolation functions with superProps, ...
+        Also check if we have interpolations in the child component, and if so, execute them and
+        combine the resulting css blocks, and process with Stylis.
+         */
+        stylis__WEBPACK_IMPORTED_MODULE_6___default()(selector, "".concat(Object(_Utilities_interpolationStation__WEBPACK_IMPORTED_MODULE_3__["default"])(ttlObj.super, CSS._superProps[ttlObj.superId][1]), "\n         ").concat(Object(_Utilities_interpolationStation__WEBPACK_IMPORTED_MODULE_3__["default"])(ttlObj.array, props)))
+        /* If not.......*/
+        :
+        /* If not, combine the resulting
+        parent code block and with the untouched child block, and process with Stylis...
+        */
+        stylis__WEBPACK_IMPORTED_MODULE_6___default()(selector, // Execute interpolations, with props, process with Stylis ....*/
+        Object(_Utilities_interpolationStation__WEBPACK_IMPORTED_MODULE_3__["default"])(ttlObj.array, props)); // Return css....
+
+        return css;
+      }
+      /* A private method for appending a CSS rule or an array of CSS rules to the default stylesheet,
+      one by one.*/
 
     }, {
       key: "_insertRules",
-      value: function _insertRules(array) {
-        array.forEach(function (rule) {
-          /* The _styleSheet setter will create a new sheet and append to a new style tag
-          if necessary, then insert the given css..*/
-          CSS._styleSheet = rule;
-        });
+      value: function _insertRules(rules) {
+        if (_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(rules)) {
+          rules.forEach(function (rule) {
+            /* The _styleSheet setter will create a new sheet and append to a new style tag
+            if necessary, then insert the given css..*/
+            CSS._styleSheet = rule;
+          });
+        } else {
+          CSS._styleSheet = rules;
+        }
       } // A Public method for inserting global styles into the stylesheet...
 
     }, {
       key: "insertGlobal",
-      value: function insertGlobal(ttlArray) {
-        var css = _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttlArray) ? stylis__WEBPACK_IMPORTED_MODULE_2___default()('', _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttlArray)) : stylis__WEBPACK_IMPORTED_MODULE_2___default()('', ttlArray[0].join(''));
+      value: function insertGlobal(obj) {
+        log('obj', ['yellow', 'bold']);
+        log(obj);
+        dir(obj);
+
+        var css = CSS._createCSS(obj, ' '); // Separate and insert rules...
+
 
         CSS._insertRules(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["separateStyleRules"](css));
-
-        log('CSS._styleSheet', ['purple', 'bold']);
-        log(CSS._styleSheet);
-        log(ttlArray[0].join(''));
-      } //DEPRECATED: NOT NEEDED FOR NOW...
-      // Public class for creating an HTML style tag loaded with styles...
+      }
+      /* an instance constructor for the keyframes class.... Returns the instance and
+      inserts the rules into the stylesheet...*/
 
     }, {
-      key: "loadStyleTemplate",
-      value: function loadStyleTemplate(tempLit) {
-        var html = "<style>".concat(tempLit, "</style>"),
-            tmpl; // Create a template el..
+      key: "keyframes",
+      value: function keyframes(obj) {
+        // Create a css string from the objects array... and remove whitespace...
+        var css,
+            str = obj.array.join('').replace(/\s|\n/g, ''),
+            // Create hash from string, and then a name from the hash....
+        name = Object(_Utilities_alphaStringFromHash__WEBPACK_IMPORTED_MODULE_4__["default"])(Object(_Utilities_murmurHash__WEBPACK_IMPORTED_MODULE_5__["default"])(str)),
+            // Create some usable css ...
+        object = {};
+        object.selector = "@keyframes ".concat(name);
+        object.code = obj.array.join(''); // Use the computed keyframes property to generate our animation code...
 
-        tmpl = document.createElement('template'); // Set the innerHTML..
+        CSS._keyframesCSS = object; // Insert the rules...
 
-        tmpl.innerHTML = html;
-        return tmpl;
-      } // A private method for processing the given CSS literals (Activation of
-      // interpolation functions and preprocessing with stylis) and returning a
-      // final product, ready for the stylesheet...
+        css = CSS._keyframesCSS;
+        log('css', ['red', 'bold']);
+        log(css);
 
-    }, {
-      key: "_process",
-      value: function _process(ttl, props, cTag) {
-        var css;
-        /* If we are working on an extended component, execute interpolation functions,
-        bring in the parent's styles, and finally, process the resulting css with 'stylis'...
-        Having some fun with tertiary expressions here..*/
-        // Is this an extended component? ....
-        // log('Is.interpolated(ttl.super[0][0]', ['tomato', 'bold'])
-        // log(Is.interpolated(ttl.super[0][0])
+        CSS._insertRules(css); // Return a keframes instance....
 
-        ttl.extended ? // If so, first let's check if we have interpolations in the parent to deal with...
-        css = _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.super) ?
-        /* If so, go ahead and execute the interpolation functions with superProps, ...
-        Also check if we have interpolations in the child component, and if so, execute them and
-        combine the resulting css blocks, and process with Stylis. If not, combine the resulting
-        parent code block and with the untouched child block, and process with Stylis...
-         */
-        stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, "".concat(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.super, CSS._superProps[ttl.superId][1]), "\n         ").concat(_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.array) ? _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.array, props) : ttl.array))
-        /* If not.......*/
-        :
-        /* Check first if we have interpolations in the child, either way, combine the result
-        with the untouched parent code block, and process with Stylis.
-        */
-        stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, "".concat(ttl.super[0][0], "\n         ").concat(_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.array) ? _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.array, props) : ttl.array))
-        /* Not extended.....*/
-        : // Check for interpolations....*/
-        css = _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttl.array) ? stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, // Execute interpolations, with props, process with Stylis ....*/
-        _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["applyInterpolations"](ttl.array, props)) : // Otherwise, run the untouched styles through Stylis...*/
-        stylis__WEBPACK_IMPORTED_MODULE_2___default()(cTag, ttl.array[0][0]); // return completed CSS ...
 
-        return css;
+        return new _Keyframes__WEBPACK_IMPORTED_MODULE_2__["Keyframes"](name, css);
       }
       /* Class method dealing with adding styles to the component. If a tag
        is present in the arguments, the style is appended to the head of the doc,
@@ -9238,6 +9401,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "addStyles",
       value: function addStyles(appendStyle, cTag, eTag, props, tagTempLit) {
+        // log('tagTempLit', ['orange', 'bold'])
+        //  dir(tagTempLit)
         // Declare vars...
         var sheet,
             styleTag = eTag === 'div' ? cTag : "".concat(cTag, " ").concat(eTag),
@@ -9245,11 +9410,11 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         if (appendStyle) {
           // Process the css...
-          css = CSS._process(tagTempLit, props, styleTag); // Split rules into an array. Insert into style sheet...
+          css = CSS._createCSS(tagTempLit, styleTag, props); // Split rules into an array. Insert into style sheet...
 
           CSS._insertRules(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["separateStyleRules"](css));
         } else {
-          css = eTag === 'div' ? CSS._process(tagTempLit, props, ':host') : CSS._process(tagTempLit, props, ":host ".concat(eTag)); // Return function that returns style related html...
+          css = eTag === 'div' ? CSS._createCSS(tagTempLit, ':host', props) : CSS._createCSS(tagTempLit, ":host ".concat(eTag), props); // Return function that returns style related html...
 
           return function () {
             return x("style", null, css);
@@ -9257,9 +9422,20 @@ function (module, __webpack_exports__, __webpack_require__) {
         }
       }
     }, {
-      key: "_styleSheet",
+      key: "_keyframesCSS",
       // A static class property for holding an extended element's parent props....
-      // A property to hold the default stylesheet of the app...
+      // A static class property for holding a keyframes css template...
+      // A getter for the keyframes template...
+      get: function get() {
+        return CSS._template;
+      } // A setter for the keyframes template...
+      ,
+      set: function set(obj) {
+        CSS._template = "".concat(obj.selector, " {\n      ").concat(obj.code, "\n    }");
+      } // A property to hold the default stylesheet of the app...
+
+    }, {
+      key: "_styleSheet",
       // A getter for _sheet...
       get: function get() {
         // return the sheet!
@@ -9282,11 +9458,386 @@ function (module, __webpack_exports__, __webpack_require__) {
 
   _defineProperty(CSS, "_superProps", {});
 
+  _defineProperty(CSS, "_template", "");
+
   _defineProperty(CSS, "_sheet", null);
   /***/
 
 },
+/* 41 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Keyframes", function () {
+    return Keyframes;
+  });
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Keyframes.js
+  **
+  ** Keyframes.js holds the Keyframes class, and implements @keyframe functionality
+  ** in the component styling branch of Valence, Flare...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+
+
+  var Keyframes =
+  /*#__PURE__*/
+  function () {
+    // The name of the animation...
+    // CSS Rules...
+    // Instance id...
+    // Instance constructor...
+    function Keyframes(name, css) {
+      _classCallCheck(this, Keyframes);
+
+      _defineProperty(this, "animationName", '');
+
+      _defineProperty(this, "rules", '');
+
+      _defineProperty(this, "id", '');
+
+      this.rules = css;
+      this.animationName = name;
+      this.id = "flare-keyframes-".concat(name);
+    } // Getter for 'name'..
+
+
+    _createClass(Keyframes, [{
+      key: "name",
+      get: function get() {
+        return this.animationName;
+      }
+    }]);
+
+    return Keyframes;
+  }();
+  /***/
+
+},
 /* 42 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+  /* harmony import */
+
+
+  var _Keyframes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41);
+
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof(obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function _typeof(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+  /*
+  ** interpolationStation.js
+  **
+  ** interpolationStation.js takes in an array with css rules and also an undefined
+  ** number of interpolations...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get splitFilter from helpers...
+  // Get verification library...
+  // Get Keyframes class for validation....
+  // Pre-declaring all functions here, mainly a style thing...
+
+
+  var stringWeaver, interpolationFilter;
+  /* A helper function for processing tagged template literal interpolation functions,
+  and inserting their values back into the template.... The function takes an array
+  of strings and an array of interpolation, and props as arguments, and returns the completed
+  css string....*/
+
+  stringWeaver = function stringWeaver(strings, interpolations, props) {
+    return (// We need to execute them with the props object, and add the value into the template...
+      strings.map(function (string, i) {
+        var val;
+        /*
+        Since the interpolation functions (refs) array will always be 1 shorter in length than
+        the strings array, The last index will be undefined if we are iterating based on 'string's'
+        indeces. So, we make sure that  we don't try to execute an undefined function by skipping
+        the last index.....
+        */
+
+        if (i < strings.length - 1) {
+          // Utilizing a switch for the different types of interpolations we may encounter...
+          switch (true) {
+            // If we find a function, execute it with props passed in...
+            case typeof interpolations[i] === 'function':
+              val = interpolations[i](props);
+              break;
+            // If we have a string, It is the return value of a variable, just take it as it is...
+
+            case typeof interpolations[i] === 'string':
+              val = interpolations[i];
+              break;
+            // If we find a keyframes instance, we need it's name....
+
+            case interpolations[i] instanceof _Keyframes__WEBPACK_IMPORTED_MODULE_2__["Keyframes"]:
+              val = interpolations[i].name;
+              log('VAL', ['orange', 'bold']);
+              log(val);
+              break;
+
+            /* Otherwise, I don't know what the hell we're dealing with..... Better off
+            throwing an error!*/
+
+            default:
+              throw TypeError("Expecting a 'Keyframe', 'string' or a 'function' here. A value of type: ".concat(_typeof(interpolations[i]), ", was given."));
+          }
+          /* The last index will end up here. Since there will never be an interpolation here,
+          we'll just give the value an empty string....*/
+
+        } else {
+          val = '';
+        }
+
+        log('val', ['red', 'bold']);
+        log(val); // Add interpolation values to array strings, join them...
+
+        return string.concat('', val);
+      }).join('')
+    );
+  };
+  /*
+  This function serves to activate prop function interpolations in css styling...
+  The function simply takes a tagged template literal as an argument, and spits out
+  completed styles, ready for appending to a style tag...   */
+
+  /* harmony default export */
+
+
+  __webpack_exports__["default"] = interpolationFilter = function interpolationFilter(ttlArray, props) {
+    // First let's check if we have interpolations to deal with...
+    if (_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].interpolated(ttlArray)) {
+      // Declare var for splitting strings and functions into respective arrays...
+      var arrays = Object(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["splitFilter"])(ttlArray, function (index) {
+        return _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(index);
+      }); // Reassemble the css literals...
+
+      var s = stringWeaver(arrays.true[0], arrays.false, props);
+      log('S', ['orange', 'bold']);
+      log(s);
+      return s; // Otherwise, rejoin the css fragments and return...
+    } else {
+      return ttlArray.join('');
+    }
+  };
+  /***/
+
+},
+/* 43 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "default", function () {
+    return alphaStringFromHash;
+  });
+  /*
+  ** alphaStringFromHash.js
+  **
+  ** alphaStringFromHash.js is a very particular algorithm for converting a numeric hash
+  ** into a string of alphabetical characters. Very nearly a copy/paste of the styled-
+  ** components algorithm to do the very same thing. https://github.com/styled-components/
+  ** styled-components/blob/master/packages/styled-components/src/utils/generateAlphabeticName.js
+  ** It is used in conjuction with the murmurhash algorithm to convert a string first
+  ** into a 10 digit hash, then into a unique string of alphabetical characters to be used
+  ** as a name for a css keyframes instance...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // The number of letters (cap and lower case) in the alphabet..
+
+
+  var alphaRange = 52; // This number determines the length of the returned string. '52' = 6, '26' = 7 chars...
+
+  var divisor = 26;
+  /* Once the modulo function gets x within a 2 digit range, we can get into ascii
+  alphabet range by adding either 39 or 97, depending on whether or not the value
+  is > than 25.*/
+
+  var getACharacter = function getACharacter(code) {
+    return String.fromCharCode(code + (code > 25 ? 39 : 97));
+  };
+
+  function alphaStringFromHash(hash) {
+    var name = '',
+        x = hash;
+
+    do {
+      // Diminish the hash by dividing by 26...
+      x = Math.floor(x / divisor); //  Add a character to 'name'...
+
+      name = "".concat(getACharacter(x % alphaRange)).concat(name); // Continue looping until x is dwindled to below 52...
+    } while (x > alphaRange); // The remainder should be a number in the 0 - 52 range, so we can grab one last char...
+
+
+    return "".concat(getACharacter(x % alphaRange)).concat(name);
+  }
+  /**********************************************************
+  ***********************************************************
+  ***********************************************************
+  ***********************************************************
+  ***********************************************************
+  ***********************************************************
+  **********************************************************/
+  // Minimal es6 version, for executing in Mancy REPL ...
+  // var alphaRange = 52
+  // var divisor = 26
+  //
+  // var getACharacter =(code)=>
+  //   String.fromCharCode(code + (code > 25 ? 39 : 97))
+  //
+  // function alphaStringFromHash(code) {
+  //   var name = '',
+  //   x = code
+  //
+  //   do {
+  // // Diminish the has by dividing by 52...
+  //     x = Math.floor(x / divisor)
+  // //  Add a character to 'name'...
+  //     name = `${getACharacter(x % alphaRange)}${name}`
+  // // Continue looping until x is dwindled to below 52...
+  //   } while (x > alphaRange)
+  //
+  // // The remainder should be a number in the 0 - 52 range, so we can grab one last char...
+  //   return `${getACharacter(x % alphaRange)}${name}`
+  // }
+
+  /***/
+
+},
+/* 44 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "default", function () {
+    return murmurHash;
+  });
+  /*
+  ** murmurHash.js
+  **
+  ** murmurHash.js is a copy/pasting of garycourt's JavaScript implementation of
+  ** the murmurhash algorithm. https://github.com/garycourt/murmurhash-js/blob/master/murmurhash2_gc.js
+  ** It is claimed to be sub-millisecond fast... Using this upon seeing how styled-components
+  ** name's their keyframe animations... I am implementing a very similar system in flare.
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+
+
+  function murmurHash(str, seed) {
+    var l = str.length,
+        h = seed ^ l,
+        i = 0,
+        k;
+
+    while (l >= 4) {
+      k = str.charCodeAt(i) & 0xff | (str.charCodeAt(++i) & 0xff) << 8 | (str.charCodeAt(++i) & 0xff) << 16 | (str.charCodeAt(++i) & 0xff) << 24;
+      k = (k & 0xffff) * 0x5bd1e995 + (((k >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+      k ^= k >>> 24;
+      k = (k & 0xffff) * 0x5bd1e995 + (((k >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+      h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16) ^ k;
+      l -= 4;
+      ++i;
+    }
+
+    switch (l) {
+      case 3:
+        h ^= (str.charCodeAt(i + 2) & 0xff) << 16;
+
+      case 2:
+        h ^= (str.charCodeAt(i + 1) & 0xff) << 8;
+
+      case 1:
+        h ^= str.charCodeAt(i) & 0xff;
+        h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+    }
+
+    h ^= h >>> 13;
+    h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+    h ^= h >>> 15;
+    return h >>> 0;
+  }
+  /***/
+
+},
+/* 45 */
 
 /***/
 function (module, exports, __webpack_require__) {
@@ -11440,7 +11991,628 @@ function (module, exports, __webpack_require__) {
   /***/
 
 },
-/* 43 */
+/* 46 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "default", function () {
+    return manifestArray;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /*
+  ** arrayBuilder.js
+  **
+  ** arrayBuilder.js is a pretty straightforward algorithm for creating a usable array
+  ** of component names, nesting and all, from the simple vDOM function markup...
+  ** This is done to preserve the component names for actual html tagnames. Being that
+  ** the components are created as variables and not functions, many hoops needed
+  ** jumping through in order to do this....
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // window.log = _.log
+
+  /* A very functionally-minded version of this algorithm, this function takes source
+  code from a function, and produces a usable array of component tagnames...*/
+
+
+  function manifestArray(source, fnName) {
+    var nameRE = /\([A-Z a-z 0-9]+/g,
+        placeholderRE = /\[--\]|--/,
+        substitutions,
+        toTrim,
+        toTwist,
+        animate,
+        _rePlaceholder,
+        rePlacements,
+        nameTwister,
+        arrayString,
+        logOut,
+        bracketHelper,
+        commaHelper,
+        names = source.match(nameRE).map(function (i) {
+      return "'".concat(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["convertFuncNameToTagName"](i.replace(/\(/, '')), "'");
+    }); // A function for logging a string to the console, mid _.piper() stream...
+
+
+    logOut = function logOut(string) {
+      log('PIPER-LOG', ['tomato', 'bold']);
+      log(string);
+      return string;
+    }; // This function executes a list of RegExp string replacements...
+
+
+    substitutions = function substitutions(source) {
+      return source.replace(nameRE, '(--').replace(/[^()-]/g, '').replace(/\(/g, '[').replace(/\)/g, ']').replace(/\[\]/g, '');
+    }; // Determines whether or not the string should be trimmed of it's first and last chars...
+
+
+    toTrim = function toTrim(string) {
+      return fnName !== 'render' ? string.substring(1, string.length - 1) : string;
+    }; // Replaces names from name array into string placeholders...
+
+
+    _rePlaceholder = function rePlaceholder(string) {
+      var temp = string.replace(placeholderRE, "".concat(names.shift(), ","));
+
+      if (placeholderRE.test(temp)) {
+        return _rePlaceholder(temp);
+      }
+
+      return temp;
+    }; // Executes rePlaceholder and a couple regexp replacements...
+
+
+    rePlacements = function rePlacements(string) {
+      return _rePlaceholder(string).replace(/\,\]/g, '],').replace(/\,\]/g, ']');
+    }; // Determines whether or not the string has enough brackets, and adds one if necessary...
+
+
+    bracketHelper = function bracketHelper(string) {
+      var brackets = string.match(/[\[\]]/g); // log('brackets', ['yellow', 'bold']);log(brackets);dir(brackets)
+
+      if (brackets.length % 2 !== 0) {
+        return "".concat(string, "]");
+      }
+
+      return string;
+    }; // Determines whether or not a trailing comma needs removed or not...
+
+
+    commaHelper = function commaHelper(string) {
+      if (string[string.length - 1] === ',') {
+        return string.substring(0, string.length - 1);
+      }
+
+      return string;
+    }; // Moves the first item of an array to the end...
+
+
+    nameTwister = function nameTwister(ra) {
+      ra.push(ra.shift());
+      return ra;
+    }; // Brings a string array to life...
+
+
+    animate = function animate(string) {
+      return Function("return ".concat(string))();
+    }; // Determines whether or not an array needs twisted or not...
+
+
+    toTwist = function toTwist(array) {
+      if (fnName !== 'render') {
+        return nameTwister(array);
+      }
+
+      return array;
+    }; // Run functions through the _.piper() stream and return....
+
+
+    return _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["piper"](substitutions, logOut, toTrim, logOut, rePlacements, logOut, bracketHelper, commaHelper, animate, toTwist)(source);
+  }
+  /**********************************************************
+  ***********************************************************
+  ***********************************************************
+  ***********************************************************
+  ***********************************************************
+  ***********************************************************
+  **********************************************************/
+  //Minimal es6 version, for executing in Mancy REPL ...
+  // export default function manifestArray(source, fnName) {
+  //   console.log('callername')
+  //   console.log(fnName)
+  //   let nameRE = /\([A-Z a-z 0-9]+/g,
+  //   placeholderRE = /\[--\]|--/,
+  //   names = source.match(nameRE)
+  //                 .map((i)=> {
+  //     return `'${_.convertFuncNameToTagName(i.replace(/\(/, ''))}'`
+  //   }),
+  //   fs = source.replace(nameRE, '(--')
+  //              .replace(/[^()-]/g, '')
+  //              .replace(/\(/g, '[')
+  //              .replace(/\)/g, ']')
+  //              .replace(/\[\]/g, ''),
+  //
+  //   fs2 = (fnName !== 'render')?
+  //         fs.substring(1, fs.length-1)
+  //       :
+  //         fs,
+  //
+  //   replacePlaceholder =(string)=> {
+  //     var temp = string.replace(placeholderRE, `${names.shift()},`)
+  //     if (placeholderRE.test(temp)) {
+  //       return replacePlaceholder(temp)
+  //     }
+  //     return temp
+  //   },
+  //   fs3 = replacePlaceholder(fs2)
+  //             .replace(/\,\]/g, '],')
+  //             .replace(/\,\]/g, ''),
+  //   tagTwister =(ra)=>  {
+  //     ra.push(ra.shift())
+  //     return ra
+  //   }
+  //
+  //   log('fs3', ['tomato', 'bold'])
+  //    log(fs3)
+  //
+  //   return (fnName !== 'render')?
+  //     tagTwister(
+  //       Function(
+  //         `return ${fs3.substring(0, fs3.length-1)}`
+  //       )()
+  //     )
+  //   :
+  //     Function(
+  //       `return ${fs3.substring(0, fs3.length-1)}`
+  //     )()
+  // }
+
+  /***/
+
+},
+/* 47 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Area", function () {
+    return Area;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Area.js
+  **
+  ** Area.js is an extensible HTML5 Web Component wrapper, built around the Area
+  ** element. It's aim is in providing an area element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Area =
+  /*#__PURE__*/
+  function () {
+    function Area() {
+      _classCallCheck(this, Area);
+    }
+
+    _createClass(Area, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an area...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare area element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLAreaComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            area,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLAreaElement...
+
+
+        area = document.createElement('area'); // Some default settings for area elements...
+        // Set flare identifier flag..
+
+        area.flare = true; // Pass props from flare component declaration on to the inner area el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in area el object...
+
+          if (key in area) {
+            // Pass on the ones that match...
+            // log(`${key} in area`, ['yellow', 'bold'])
+            area["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in area.style) {
+            // log(`${key} in area`, ['pink', 'bold'])
+            // Put them here...
+            area.style["".concat(key)] = props["".concat(key)];
+          }
+        } // // Check for '-----' attribute,
+        //     if ('-----' in props) {
+        //       area.textContent = props.-----
+        //       // area.style.margin = '5'
+        //     }
+        // The area component element's constructor definition...
+
+
+        _HTMLAreaComponent = function HTMLAreaComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLAreaComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(area); // Create a node from the template function, and append to shadowRoot....
+
+            Area._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLAreaComponent.prototype = Object.create(HTMLAreaElement.prototype); // Add constructor...
+
+        _HTMLAreaComponent.prototype.constructor = _HTMLAreaComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLAreaComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLAreaComponent.prototype.connectedCallback = function () {
+            self.appendChild(area);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLAreaComponent;
+      }
+    }]);
+
+    return Area;
+  }();
+
+  _defineProperty(Area, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 48 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Aside", function () {
+    return Aside;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Aside.js
+  **
+  ** Aside.js is an extensible HTML5 Web Component wrapper, built around the Aside
+  ** element. It's aim is in providing an aside element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Aside =
+  /*#__PURE__*/
+  function () {
+    function Aside() {
+      _classCallCheck(this, Aside);
+    }
+
+    _createClass(Aside, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an aside...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare aside element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLAsideComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            aside,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLAsideElement...
+
+
+        aside = document.createElement('aside'); // Some default settings for aside elements...
+        // Set flare identifier flag..
+
+        aside.flare = true; // Pass props from flare component declaration on to the inner aside el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in aside el object...
+
+          if (key in aside) {
+            // Pass on the ones that match...
+            // log(`${key} in aside`, ['yellow', 'bold'])
+            aside["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in aside.style) {
+            // log(`${key} in aside`, ['pink', 'bold'])
+            // Put them here...
+            aside.style["".concat(key)] = props["".concat(key)];
+          }
+        } // // Check for '-----' attribute,
+        //     if ('-----' in props) {
+        //       aside.textContent = props.-----
+        //       // aside.style.margin = '5'
+        //     }
+        // The aside component element's constructor definition...
+
+
+        _HTMLAsideComponent = function HTMLAsideComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLAsideComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(aside); // Create a node from the template function, and append to shadowRoot....
+
+            Aside._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLAsideComponent.prototype = Object.create(HTMLAsideElement.prototype); // Add constructor...
+
+        _HTMLAsideComponent.prototype.constructor = _HTMLAsideComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLAsideComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLAsideComponent.prototype.connectedCallback = function () {
+            self.appendChild(aside);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLAsideComponent;
+      }
+    }]);
+
+    return Aside;
+  }();
+
+  _defineProperty(Aside, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 49 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -11468,7 +12640,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -11545,7 +12717,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus button element...
+      } // Static method for defining a flare button element...
 
     }, {
       key: "createComponent",
@@ -11583,12 +12755,12 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         button = document.createElement('button'); // Some default settings for button elements...
-        // Set venus identifier flag..
-        // button.venus = true
+        // Set flare identifier flag..
+        // button.flare = true
         // if (props.type == 'text') {
         //
         // }
-        // Pass props from venus component declaration on to the inner button el...
+        // Pass props from flare component declaration on to the inner button el...
 
         var _arr = Object.keys(props);
 
@@ -11644,7 +12816,19 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         if (!shadow) {
           _HTMLButtonComponent.prototype.connectedCallback = function () {
-            self.appendChild(button);
+            log('Im Here', ['red', 'bold']);
+            dir(self);
+
+            if (self) {
+              log('self', ['yellow', 'bold']);
+              self.appendChild(button);
+            } else if (this) {
+              log('this', ['yellow', 'bold']);
+              dir(this);
+              this.appendChild(button);
+            } else {
+              throw Error('ConnectedCallbackError: A problem has occured while appending component children.');
+            }
           };
         } // Return component to the caller...
 
@@ -11660,7 +12844,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 44 */
+/* 50 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -11670,8 +12854,8 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony export (binding) */
 
 
-  __webpack_require__.d(__webpack_exports__, "Paragraph", function () {
-    return Paragraph;
+  __webpack_require__.d(__webpack_exports__, "Col", function () {
+    return Col;
   });
   /* harmony import */
 
@@ -11688,7 +12872,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -11731,10 +12915,10 @@ function (module, __webpack_exports__, __webpack_require__) {
     return obj;
   }
   /*
-  ** Paragraph.js
+  ** Col.js
   **
-  ** Paragraph.js is an extensible HTML5 Web Component wrapper, built around the P
-  ** element. It's aim is in providing a p element that is able to be
+  ** Col.js is an extensible HTML5 Web Component wrapper, built around the Col
+  ** element. It's aim is in providing an col element that is able to be
   ** extended via the v1 web components api...
   **
   ** Eric James Foster, Fostware LLC, MIT License.
@@ -11752,33 +12936,35 @@ function (module, __webpack_exports__, __webpack_require__) {
   var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
   var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
 
-  var Paragraph =
+  var Col =
   /*#__PURE__*/
   function () {
-    function Paragraph() {
-      _classCallCheck(this, Paragraph);
+    function Col() {
+      _classCallCheck(this, Col);
     }
 
-    _createClass(Paragraph, null, [{
+    _createClass(Col, null, [{
       key: "_appendStyleNode",
-      // A CSS template literal, holding default styles for a p...
+      // A CSS template literal, holding default styles for an col...
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus p element...
+      } // Static method for defining a flare col element...
 
     }, {
       key: "createComponent",
       value: function createComponent() {
         var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // Declarations..
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
 
-        var _HTMLPGraphComponent,
+        var _HTMLColComponent,
             eListeners = [],
             customProps = [],
             shadowBool,
             shadow,
-            p,
+            col,
             self,
             obj; // Return boolean value for shadow...
 
@@ -11797,42 +12983,40 @@ function (module, __webpack_exports__, __webpack_require__) {
           eListeners = obj.eventListeners; // Determine if shadow option is set or not...
 
           shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
-        } // Create an HTMLPElement...
+        } // Create an HTMLColElement...
 
 
-        p = document.createElement('p'); // Some default settings for p elements...
-        // Set venus identifier flag..
-        // p.venus = true
-        // if (props.type == 'text') {
-        //
-        // }
-        // Pass props from venus component declaration on to the inner p el...
+        col = document.createElement('col'); // Some default settings for col elements...
+        // Set flare identifier flag..
+
+        col.flare = true; // Pass props from flare component declaration on to the inner col el...
 
         var _arr = Object.keys(props);
 
         for (var _i = 0; _i < _arr.length; _i++) {
-          var key = _arr[_i]; // Check all keys in p el object...
+          var key = _arr[_i]; // Check all keys in col el object...
 
-          if (key in p) {
+          if (key in col) {
             // Pass on the ones that match...
-            log("".concat(key, " in p"), ['yellow', 'bold']);
-            p["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
-          } else if (key in p.style) {
-            log("".concat(key, " in p"), ['pink', 'bold']); // Put them here...
-
-            p.style["".concat(key)] = props["".concat(key)];
+            // log(`${key} in col`, ['yellow', 'bold'])
+            col["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in col.style) {
+            // log(`${key} in col`, ['pink', 'bold'])
+            // Put them here...
+            col.style["".concat(key)] = props["".concat(key)];
           }
-        } // // Check for 'content' attribute,
-        //     if ('content' in props) {
-        //       p.textContent = props.content
+        } // // Check for '-----' attribute,
+        //     if ('-----' in props) {
+        //       col.textContent = props.-----
+        //       // col.style.margin = '5'
         //     }
-        // The p component element's constructor definition...
+        // The col component element's constructor definition...
 
 
-        _HTMLPGraphComponent = function HTMLPGraphComponent() {
+        _HTMLColComponent = function HTMLColComponent() {
           var shadowRoot; // Construct an element, store as self...
 
-          self = Reflect.construct(HTMLElement, [], _HTMLPGraphComponent);
+          self = Reflect.construct(HTMLElement, [], _HTMLColComponent);
 
           if (shadow) {
             // Create shadow root...
@@ -11840,9 +13024,9 @@ function (module, __webpack_exports__, __webpack_require__) {
               mode: 'open'
             }); // Append to shadow root...
 
-            shadowRoot.appendChild(p); // Create a node from the template function, and append to shadowRoot....
+            shadowRoot.appendChild(col); // Create a node from the template function, and append to shadowRoot....
 
-            Paragraph._appendStyleNode(shadowRoot, template);
+            Col._appendStyleNode(shadowRoot, template);
           } // Return constructor...
 
 
@@ -11850,33 +13034,465 @@ function (module, __webpack_exports__, __webpack_require__) {
         }; // Add superclass prototype...
 
 
-        _HTMLPGraphComponent.prototype = Object.create(HTMLParagraphElement.prototype); // Add constructor...
+        _HTMLColComponent.prototype = Object.create(HTMLColElement.prototype); // Add constructor...
 
-        _HTMLPGraphComponent.prototype.constructor = _HTMLPGraphComponent; // Register event listener methods..
+        _HTMLColComponent.prototype.constructor = _HTMLColComponent; // Register event listener methods..
 
-        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLPGraphComponent, eListeners); // console.dir(HTMLComponent)
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLColComponent, eListeners); // console.dir(HTMLComponent)
         // Add connectedCallback method appending children if shadow is false...
 
 
         if (!shadow) {
-          _HTMLPGraphComponent.prototype.connectedCallback = function () {
-            self.appendChild(p);
+          _HTMLColComponent.prototype.connectedCallback = function () {
+            self.appendChild(col);
           };
         } // Return component to the caller...
 
 
-        return _HTMLPGraphComponent;
+        return _HTMLColComponent;
       }
     }]);
 
-    return Paragraph;
+    return Col;
   }();
 
-  _defineProperty(Paragraph, "_textLiteral", ":host {\n\n                        }");
+  _defineProperty(Col, "_tempLiteral", ":host {\n\n                        }");
   /***/
 
 },
-/* 45 */
+/* 51 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Colgroup", function () {
+    return Colgroup;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Colgroup.js
+  **
+  ** Colgroup.js is an extensible HTML5 Web Component wrapper, built around the Colgroup
+  ** element. It's aim is in providing an colgroup element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Colgroup =
+  /*#__PURE__*/
+  function () {
+    function Colgroup() {
+      _classCallCheck(this, Colgroup);
+    }
+
+    _createClass(Colgroup, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an colgroup...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare colgroup element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLColgroupComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            colgroup,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLColgroupElement...
+
+
+        colgroup = document.createElement('colgroup'); // Some default settings for colgroup elements...
+        // Set flare identifier flag..
+
+        colgroup.flare = true; // Pass props from flare component declaration on to the inner colgroup el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in colgroup el object...
+
+          if (key in colgroup) {
+            // Pass on the ones that match...
+            // log(`${key} in colgroup`, ['yellow', 'bold'])
+            colgroup["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in colgroup.style) {
+            // log(`${key} in colgroup`, ['pink', 'bold'])
+            // Put them here...
+            colgroup.style["".concat(key)] = props["".concat(key)];
+          }
+        } // // Check for '-----' attribute,
+        //     if ('-----' in props) {
+        //       colgroup.textContent = props.-----
+        //       // colgroup.style.margin = '5'
+        //     }
+        // The colgroup component element's constructor definition...
+
+
+        _HTMLColgroupComponent = function HTMLColgroupComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLColgroupComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(colgroup); // Create a node from the template function, and append to shadowRoot....
+
+            Colgroup._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLColgroupComponent.prototype = Object.create(HTMLColgroupElement.prototype); // Add constructor...
+
+        _HTMLColgroupComponent.prototype.constructor = _HTMLColgroupComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLColgroupComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLColgroupComponent.prototype.connectedCallback = function () {
+            self.appendChild(colgroup);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLColgroupComponent;
+      }
+    }]);
+
+    return Colgroup;
+  }();
+
+  _defineProperty(Colgroup, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 52 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Footer", function () {
+    return Footer;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Footer.js
+  **
+  ** Footer.js is an extensible HTML5 Web Component wrapper, built around the Footer
+  ** element. It's aim is in providing an footer element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Footer =
+  /*#__PURE__*/
+  function () {
+    function Footer() {
+      _classCallCheck(this, Footer);
+    }
+
+    _createClass(Footer, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an footer...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare footer element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLFooterComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            footer,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLFooterElement...
+
+
+        footer = document.createElement('footer'); // Some default settings for footer elements...
+        // Set flare identifier flag..
+
+        footer.flare = true; // Pass props from flare component declaration on to the inner footer el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in footer el object...
+
+          if (key in footer) {
+            // Pass on the ones that match...
+            // log(`${key} in footer`, ['yellow', 'bold'])
+            footer["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in footer.style) {
+            // log(`${key} in footer`, ['pink', 'bold'])
+            // Put them here...
+            footer.style["".concat(key)] = props["".concat(key)];
+          }
+        } // // Check for '-----' attribute,
+        //     if ('-----' in props) {
+        //       footer.textContent = props.-----
+        //       // footer.style.margin = '5'
+        //     }
+        // The footer component element's constructor definition...
+
+
+        _HTMLFooterComponent = function HTMLFooterComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLFooterComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(footer); // Create a node from the template function, and append to shadowRoot....
+
+            Footer._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLFooterComponent.prototype = Object.create(HTMLFooterElement.prototype); // Add constructor...
+
+        _HTMLFooterComponent.prototype.constructor = _HTMLFooterComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLFooterComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLFooterComponent.prototype.connectedCallback = function () {
+            self.appendChild(footer);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLFooterComponent;
+      }
+    }]);
+
+    return Footer;
+  }();
+
+  _defineProperty(Footer, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 53 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -11904,7 +13520,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -11981,7 +13597,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus h1 element...
+      } // Static method for defining a flare h1 element...
 
     }, {
       key: "createComponent",
@@ -12019,12 +13635,12 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         h1 = document.createElement('h1'); // Some default settings for h1 elements...
-        // Set venus identifier flag..
+        // Set flare identifier flag..
 
-        h1.venus = true; // if (props.type == 'text') {
+        h1.flare = true; // if (props.type == 'text') {
         //
         // }
-        // Pass props from venus component declaration on to the inner h1 el...
+        // Pass props from flare component declaration on to the inner h1 el...
 
         var _arr = Object.keys(props);
 
@@ -12095,7 +13711,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 46 */
+/* 54 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -12123,7 +13739,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -12200,7 +13816,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus h2 element...
+      } // Static method for defining a flare h2 element...
 
     }, {
       key: "createComponent",
@@ -12238,9 +13854,9 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         h2 = document.createElement('h2'); // Some default settings for h2 elements...
-        // Set venus identifier flag..
+        // Set flare identifier flag..
 
-        h2.venus = true; // Pass props from venus component declaration on to the inner h2 el...
+        h2.flare = true; // Pass props from flare component declaration on to the inner h2 el...
 
         var _arr = Object.keys(props);
 
@@ -12311,7 +13927,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 47 */
+/* 55 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -12339,7 +13955,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -12416,7 +14032,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus h3 element...
+      } // Static method for defining a flare h3 element...
 
     }, {
       key: "createComponent",
@@ -12454,9 +14070,9 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         h3 = document.createElement('h3'); // Some default settings for h3 elements...
-        // Set venus identifier flag..
+        // Set flare identifier flag..
 
-        h3.venus = true; // Pass props from venus component declaration on to the inner h3 el...
+        h3.flare = true; // Pass props from flare component declaration on to the inner h3 el...
 
         var _arr = Object.keys(props);
 
@@ -12527,7 +14143,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 48 */
+/* 56 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -12555,7 +14171,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -12632,7 +14248,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus h4 element...
+      } // Static method for defining a flare h4 element...
 
     }, {
       key: "createComponent",
@@ -12670,9 +14286,9 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         h4 = document.createElement('h4'); // Some default settings for h4 elements...
-        // Set venus identifier flag..
+        // Set flare identifier flag..
 
-        h4.venus = true; // Pass props from venus component declaration on to the inner h4 el...
+        h4.flare = true; // Pass props from flare component declaration on to the inner h4 el...
 
         var _arr = Object.keys(props);
 
@@ -12743,7 +14359,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 49 */
+/* 57 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -12771,7 +14387,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -12848,7 +14464,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus h5 element...
+      } // Static method for defining a flare h5 element...
 
     }, {
       key: "createComponent",
@@ -12886,9 +14502,9 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         h5 = document.createElement('h5'); // Some default settings for h5 elements...
-        // Set venus identifier flag..
+        // Set flare identifier flag..
 
-        h5.venus = true; // Pass props from venus component declaration on to the inner h5 el...
+        h5.flare = true; // Pass props from flare component declaration on to the inner h5 el...
 
         var _arr = Object.keys(props);
 
@@ -12959,7 +14575,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 50 */
+/* 58 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -12987,7 +14603,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -13064,7 +14680,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus h6 element...
+      } // Static method for defining a flare h6 element...
 
     }, {
       key: "createComponent",
@@ -13102,9 +14718,9 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         h6 = document.createElement('h6'); // Some default settings for h6 elements...
-        // Set venus identifier flag..
+        // Set flare identifier flag..
 
-        h6.venus = true; // Pass props from venus component declaration on to the inner h6 el...
+        h6.flare = true; // Pass props from flare component declaration on to the inner h6 el...
 
         var _arr = Object.keys(props);
 
@@ -13175,7 +14791,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 51 */
+/* 59 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -13203,7 +14819,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
   /* harmony import */
 
 
@@ -13280,7 +14896,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Static method for appending child nodes to parent elements...
       value: function _appendStyleNode(root, child) {
         return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
-      } // Static method for defining a Venus header element...
+      } // Static method for defining a flare header element...
 
     }, {
       key: "createComponent",
@@ -13318,9 +14934,9 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         header = document.createElement('header'); // Some default settings for header elements...
-        // Set venus identifier flag..
+        // Set flare identifier flag..
 
-        header.venus = true; // Pass props from venus component declaration on to the inner header el...
+        header.flare = true; // Pass props from flare component declaration on to the inner header el...
 
         var _arr = Object.keys(props);
 
@@ -13391,7 +15007,1301 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 52 */
+/* 60 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Input", function () {
+    return Input;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Input.js
+  **
+  ** Input.js is an extensible HTML5 Web Component wrapper, built around the Input
+  ** element. It's aim is in providing an input element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Input =
+  /*#__PURE__*/
+  function () {
+    function Input() {
+      _classCallCheck(this, Input);
+    }
+
+    _createClass(Input, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an input...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare input element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+        log('props', ['orange', 'bold']);
+        dir(props); // Declarations..
+
+        var _HTMLInputComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            input,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLInputElement...
+
+
+        input = document.createElement('input'); // Some default settings for input elements...
+        // Set flare identifier flag..
+        // input.flare = true
+        // if (props.type == 'text') {
+        //
+        // }
+        // Pass props from flare component declaration on to the inner input el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in input el object...
+
+          if (key in input) {
+            // Pass on the ones that match...
+            log("".concat(key, " in input"), ['yellow', 'bold']);
+            input["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in input.style) {
+            log("".concat(key, " in input"), ['pink', 'bold']); // Put them here...
+
+            input.style["".concat(key)] = props["".concat(key)];
+          }
+        } // The input component element's constructor definition...
+
+
+        _HTMLInputComponent = function HTMLInputComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLInputComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(input); // Create a node from the template function, and append to shadowRoot....
+
+            Input._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLInputComponent.prototype = Object.create(HTMLInputElement.prototype); // Add constructor...
+
+        _HTMLInputComponent.prototype.constructor = _HTMLInputComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLInputComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLInputComponent.prototype.connectedCallback = function () {
+            self.appendChild(input);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLInputComponent;
+      }
+    }]);
+
+    return Input;
+  }();
+
+  _defineProperty(Input, "_textLiteral", ":host {\n                          background-color: black;\n                          border-radius: 5%;\n                        }");
+  /***/
+
+},
+/* 61 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Paragraph", function () {
+    return Paragraph;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Paragraph.js
+  **
+  ** Paragraph.js is an extensible HTML5 Web Component wrapper, built around the P
+  ** element. It's aim is in providing a p element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Paragraph =
+  /*#__PURE__*/
+  function () {
+    function Paragraph() {
+      _classCallCheck(this, Paragraph);
+    }
+
+    _createClass(Paragraph, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for a p...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare p element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // Declarations..
+
+        var _HTMLPGraphComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            p,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLPElement...
+
+
+        p = document.createElement('p'); // Some default settings for p elements...
+        // Set flare identifier flag..
+        // p.flare = true
+        // if (props.type == 'text') {
+        //
+        // }
+        // Pass props from flare component declaration on to the inner p el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in p el object...
+
+          if (key in p) {
+            // Pass on the ones that match...
+            log("".concat(key, " in p"), ['yellow', 'bold']);
+            p["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in p.style) {
+            log("".concat(key, " in p"), ['pink', 'bold']); // Put them here...
+
+            p.style["".concat(key)] = props["".concat(key)];
+          }
+        } // // Check for 'content' attribute,
+        //     if ('content' in props) {
+        //       p.textContent = props.content
+        //     }
+        // The p component element's constructor definition...
+
+
+        _HTMLPGraphComponent = function HTMLPGraphComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLPGraphComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(p); // Create a node from the template function, and append to shadowRoot....
+
+            Paragraph._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLPGraphComponent.prototype = Object.create(HTMLParagraphElement.prototype); // Add constructor...
+
+        _HTMLPGraphComponent.prototype.constructor = _HTMLPGraphComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLPGraphComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLPGraphComponent.prototype.connectedCallback = function () {
+            self.appendChild(p);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLPGraphComponent;
+      }
+    }]);
+
+    return Paragraph;
+  }();
+
+  _defineProperty(Paragraph, "_textLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 62 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Section", function () {
+    return Section;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Section.js
+  **
+  ** Section.js is an extensible HTML5 Web Component wrapper, built around the Section
+  ** element. It's aim is in providing an section element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Section =
+  /*#__PURE__*/
+  function () {
+    function Section() {
+      _classCallCheck(this, Section);
+    }
+
+    _createClass(Section, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an section...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare section element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLSectionComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            section,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLSectionElement...
+
+
+        section = document.createElement('section'); // Some default settings for section elements...
+        // Set flare identifier flag..
+
+        section.flare = true; // Pass props from flare component declaration on to the inner section el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in section el object...
+
+          if (key in section) {
+            // Pass on the ones that match...
+            // log(`${key} in section`, ['yellow', 'bold'])
+            section["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in section.style) {
+            // log(`${key} in section`, ['pink', 'bold'])
+            // Put them here...
+            section.style["".concat(key)] = props["".concat(key)];
+          }
+        } // Check for 'content' attribute,
+
+
+        if ('content' in props) {
+          section.textContent = props.content; // section.style.margin = '5'
+        } // The section component element's constructor definition...
+
+
+        _HTMLSectionComponent = function HTMLSectionComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLSectionComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(section); // Create a node from the template function, and append to shadowRoot....
+
+            Section._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLSectionComponent.prototype = Object.create(HTMLSectionElement.prototype); // Add constructor...
+
+        _HTMLSectionComponent.prototype.constructor = _HTMLSectionComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLSectionComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLSectionComponent.prototype.connectedCallback = function () {
+            self.appendChild(section);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLSectionComponent;
+      }
+    }]);
+
+    return Section;
+  }();
+
+  _defineProperty(Section, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 63 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Span", function () {
+    return Span;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Span.js
+  **
+  ** Span.js is an extensible HTML5 Web Component wrapper, built around the Span
+  ** element. It's aim is in providing an span element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Span =
+  /*#__PURE__*/
+  function () {
+    function Span() {
+      _classCallCheck(this, Span);
+    }
+
+    _createClass(Span, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an span...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare span element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLSpanComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            span,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLSpanElement...
+
+
+        span = document.createElement('span'); // Some default settings for span elements...
+        // Set flare identifier flag..
+
+        span.flare = true; // Pass props from flare component declaration on to the inner span el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in span el object...
+
+          if (key in span) {
+            // Pass on the ones that match...
+            // log(`${key} in span`, ['yellow', 'bold'])
+            span["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in span.style) {
+            // log(`${key} in span`, ['pink', 'bold'])
+            // Put them here...
+            span.style["".concat(key)] = props["".concat(key)];
+          }
+        } // Check for 'content' attribute,
+
+
+        if ('content' in props) {
+          span.textContent = props.content; // span.style.margin = '5'
+        } // The span component element's constructor definition...
+
+
+        _HTMLSpanComponent = function HTMLSpanComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLSpanComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(span); // Create a node from the template function, and append to shadowRoot....
+
+            Span._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLSpanComponent.prototype = Object.create(HTMLSpanElement.prototype); // Add constructor...
+
+        _HTMLSpanComponent.prototype.constructor = _HTMLSpanComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLSpanComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLSpanComponent.prototype.connectedCallback = function () {
+            self.appendChild(span);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLSpanComponent;
+      }
+    }]);
+
+    return Span;
+  }();
+
+  _defineProperty(Span, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 64 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Table", function () {
+    return Table;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Table.js
+  **
+  ** Table.js is an extensible HTML5 Web Component wrapper, built around the Table
+  ** element. It's aim is in providing an table element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Table =
+  /*#__PURE__*/
+  function () {
+    function Table() {
+      _classCallCheck(this, Table);
+    }
+
+    _createClass(Table, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an table...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare table element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLTableComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            table,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLTableElement...
+
+
+        table = document.createElement('table'); // Some default settings for table elements...
+        // Set flare identifier flag..
+
+        table.flare = true; // Pass props from flare component declaration on to the inner table el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in table el object...
+
+          if (key in table) {
+            // Pass on the ones that match...
+            // log(`${key} in table`, ['yellow', 'bold'])
+            table["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in table.style) {
+            // log(`${key} in table`, ['pink', 'bold'])
+            // Put them here...
+            table.style["".concat(key)] = props["".concat(key)];
+          }
+        } // // Check for '-----' attribute,
+        //     if ('-----' in props) {
+        //       table.textContent = props.-----
+        //       // table.style.margin = '5'
+        //     }
+        // The table component element's constructor definition...
+
+
+        _HTMLTableComponent = function HTMLTableComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLTableComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(table); // Create a node from the template function, and append to shadowRoot....
+
+            Table._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLTableComponent.prototype = Object.create(HTMLTableElement.prototype); // Add constructor...
+
+        _HTMLTableComponent.prototype.constructor = _HTMLTableComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLTableComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLTableComponent.prototype.connectedCallback = function () {
+            self.appendChild(table);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLTableComponent;
+      }
+    }]);
+
+    return Table;
+  }();
+
+  _defineProperty(Table, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 65 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "Textarea", function () {
+    return Textarea;
+  });
+  /* harmony import */
+
+
+  var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+  /* harmony import */
+
+
+  var _Events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+  /* harmony import */
+
+
+  var _CSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+  /* harmony import */
+
+
+  var _Form_Node__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33);
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+  /*
+  ** Textarea.js
+  **
+  ** Textarea.js is an extensible HTML5 Web Component wrapper, built around the Textarea
+  ** element. It's aim is in providing an textarea element that is able to be
+  ** extended via the v1 web components api...
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+  // Get utilities...
+  // Get data...
+  // Get Events...
+  // Get CSS...
+  // Get Node class...
+  // Globalize common utility functions...
+
+
+  var dir = console.dir;
+  var log = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["log"];
+  var el = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["el"];
+  var dom = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["dom"];
+
+  var Textarea =
+  /*#__PURE__*/
+  function () {
+    function Textarea() {
+      _classCallCheck(this, Textarea);
+    }
+
+    _createClass(Textarea, null, [{
+      key: "_appendStyleNode",
+      // A CSS template literal, holding default styles for an textarea...
+      // Static method for appending child nodes to parent elements...
+      value: function _appendStyleNode(root, child) {
+        return root.appendChild(_Form_Node__WEBPACK_IMPORTED_MODULE_4__["Node"].createNode(child()));
+      } // Static method for defining a flare textarea element...
+
+    }, {
+      key: "createComponent",
+      value: function createComponent() {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false; // log('props', ['orange', 'bold'])
+        // dir(props)
+        // Declarations..
+
+        var _HTMLTextareaComponent,
+            eListeners = [],
+            customProps = [],
+            shadowBool,
+            shadow,
+            textarea,
+            self,
+            obj; // Return boolean value for shadow...
+
+
+        shadowBool = function shadowBool(arr) {
+          return arr.reduce(function (shadow, keyVal, index) {
+            return keyVal.indexOf('shadow') == -1 ? shadow : index;
+          }, false);
+        }; // Get attribute names and Listeners...
+
+
+        if (props) {
+          obj = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["processData"](_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["propsArray"](props)); // Store attribute and Listener pairs...
+
+          customProps = obj.props;
+          eListeners = obj.eventListeners; // Determine if shadow option is set or not...
+
+          shadow = shadowBool(customProps) !== false ? customProps[shadowBool(customProps)][1] : true;
+        } // Create an HTMLTextareaElement...
+
+
+        textarea = document.createElement('textarea'); // Some default settings for textarea elements...
+        // Set flare identifier flag..
+
+        textarea.flare = true; // Pass props from flare component declaration on to the inner textarea el...
+
+        var _arr = Object.keys(props);
+
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var key = _arr[_i]; // Check all keys in textarea el object...
+
+          if (key in textarea) {
+            // Pass on the ones that match...
+            // log(`${key} in textarea`, ['yellow', 'bold'])
+            textarea["".concat(key)] = props["".concat(key)]; // Or if they are style properties...,
+          } else if (key in textarea.style) {
+            // log(`${key} in textarea`, ['pink', 'bold'])
+            // Put them here...
+            textarea.style["".concat(key)] = props["".concat(key)];
+          }
+        } // Check for 'content' attribute,
+
+
+        if ('content' in props) {
+          textarea.textContent = props.content; // textarea.style.margin = '5'
+        } // The textarea component element's constructor definition...
+
+
+        _HTMLTextareaComponent = function HTMLTextareaComponent() {
+          var shadowRoot; // Construct an element, store as self...
+
+          self = Reflect.construct(HTMLElement, [], _HTMLTextareaComponent);
+
+          if (shadow) {
+            // Create shadow root...
+            shadowRoot = self.attachShadow({
+              mode: 'open'
+            }); // Append to shadow root...
+
+            shadowRoot.appendChild(textarea); // Create a node from the template function, and append to shadowRoot....
+
+            Textarea._appendStyleNode(shadowRoot, template);
+          } // Return constructor...
+
+
+          return self;
+        }; // Add superclass prototype...
+
+
+        _HTMLTextareaComponent.prototype = Object.create(HTMLTextareaElement.prototype); // Add constructor...
+
+        _HTMLTextareaComponent.prototype.constructor = _HTMLTextareaComponent; // Register event listener methods..
+
+        _Events__WEBPACK_IMPORTED_MODULE_2__["Events"].registerCallbacks(_HTMLTextareaComponent, eListeners); // console.dir(HTMLComponent)
+        // Add connectedCallback method appending children if shadow is false...
+
+
+        if (!shadow) {
+          _HTMLTextareaComponent.prototype.connectedCallback = function () {
+            self.appendChild(textarea);
+          };
+        } // Return component to the caller...
+
+
+        return _HTMLTextareaComponent;
+      }
+    }]);
+
+    return Textarea;
+  }();
+
+  _defineProperty(Textarea, "_tempLiteral", ":host {\n\n                        }");
+  /***/
+
+},
+/* 66 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -13407,15 +16317,15 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _MountingError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53);
+  var _MountingError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67);
   /* harmony import */
 
 
-  var _UnmountError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54);
+  var _UnmountError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(68);
   /* harmony import */
 
 
-  var _UpdateError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(55);
+  var _UpdateError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(69);
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -13468,7 +16378,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 53 */
+/* 67 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -13543,7 +16453,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 54 */
+/* 68 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
@@ -13618,7 +16528,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   /***/
 
 },
-/* 55 */
+/* 69 */
 
 /***/
 function (module, __webpack_exports__, __webpack_require__) {
