@@ -6371,8 +6371,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
     }, {
       key: "draw",
-      // Method for rendering the virtual dom to real dom... The method takes
-      // Valence.createElement as it's second argument...
+      // Method for rendering the virtual dom to real dom...
       value: function draw() {
         return _Node__WEBPACK_IMPORTED_MODULE_2__["Node"].createNode(this.DOM);
       }
@@ -6413,7 +6412,7 @@ function (module, __webpack_exports__, __webpack_require__) {
           var xCaller = x.caller.toString(),
               xCallerName = x.caller.name; // Use the above to define Flare Component.. and also 'type' for the node...
 
-          type = _Flare_Flare__WEBPACK_IMPORTED_MODULE_5__["Flare"].interfaceFormX(xCallerName, xCaller, type.el, type.taggedTempLit, props, type.props);
+          type = _Flare_Flare__WEBPACK_IMPORTED_MODULE_5__["Flare"].interfaceValenceX(xCallerName, xCaller, type.el, type.taggedTempLit, props, type.props);
         } // Return a new Node...
 
 
@@ -8221,7 +8220,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   ********************************************/
   //TODO:[X] Finish work on all element component classes...
   //TODO:[ ] Move from static class structure to singleton structure...
-  //TODO:[ ] 
+  //TODO:[ ]
   //TODO:[ ]
   //TODO:[ ]
   //TODO:[ ]
@@ -8340,8 +8339,8 @@ function (module, __webpack_exports__, __webpack_require__) {
       } // A helper method for accessing the Flare class and defining it's components...
 
     }, {
-      key: "interfaceFormX",
-      value: function interfaceFormX(xCrName, xCr, elTag, tagTempLit) {
+      key: "interfaceValenceX",
+      value: function interfaceValenceX(xCrName, xCr, elTag, tagTempLit) {
         var props1 = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
         var props2 = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {}; // extract var name..
 
@@ -8396,9 +8395,8 @@ function (module, __webpack_exports__, __webpack_require__) {
       value: function _defineComponent(name) {
         var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
         var el = arguments.length > 2 ? arguments[2] : undefined;
-        var template = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false; // log('Looka Here', ['red', 'bold']);log(`name is: ${name}`);log(`el is: ${el}`)
-
-        dir(props); // Declare element constructior var..
+        var template = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false; // log('Looka Here', ['red', 'bold']);log(`name is: ${name}`);log(`el is: ${el}`);dir(props)
+        // Declare element constructior var..
 
         var elemCtor,
             // Create function will create the component element definition..
