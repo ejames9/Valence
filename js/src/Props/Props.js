@@ -115,8 +115,7 @@ class Props {
       name === 'Flare' ||
       name === 'flare' ||
       name === 'label' ||
-      name === 'content' ||
-      name === 'identity'
+      name === 'content' 
   }
 
 // Method for updating props...

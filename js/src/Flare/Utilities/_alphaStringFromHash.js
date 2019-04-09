@@ -16,17 +16,18 @@
 
 // The number of letters (cap and lower case) in the alphabet..
 const alphaRange = 52
-// This number determines the length of the returned string. '52' = 6, '26' = 7 chars...
-const divisor = 26
+
 /* Once the modulo function gets x within a 2 digit range, we can get into ascii
 alphabet range by adding either 39 or 97, depending on whether or not the value
 is > than 25.*/
 const getACharacter =(code)=>
   String.fromCharCode(code + (code > 25 ? 39 : 97))
 
-export default function alphaStringFromHash(hash) {
+export default function alphaStringFromHash(hash, chars=7) {
   let name = '',
-  x = hash
+  x = hash,
+// This number determines the length of the returned string. '52' = 6, '26' = 7 chars...
+  divisor = chars=6? 52 : 26
 
   do {
 // Diminish the hash by dividing by 26...

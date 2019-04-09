@@ -21,7 +21,7 @@
 //TODO:[X] Ability to Inject global styles.. 5
 //TODO:[X] Keyframe Animations.. 7
 //TODO:[X] Variables, functions (tagged template literals).. 3
-//TODO:[ ] Media Queries.. 6
+//TODO:[X] Media Queries.. 6
 //TODO:[ ] Incorporate SVG.. 8
 
 /*
@@ -61,6 +61,9 @@ import { Events } from '../Events'
 import { CSS } from './CSS'
 // Get the tagName array builder function....
 import _buildArray from './Utilities/_arrayBuilder'
+// Get unique identity creating functions...
+import _murmurHash from './Utilities/_murmurHash'
+import _alphaStringFromHash from './Utilities/_alphaStringFromHash'
 // Get the tagName array builder function....
 // import _acquireComponentTagName from './Utilities/_acquireComponentTagName'
 
@@ -93,6 +96,21 @@ const log = _.log
 
 // Valence class dealing with JS context, css styling of components...
 class Flare {
+// The config options object.. with default assumptions...
+  static _assumptions = {
+    shadowByDefault: true,
+    kebabCase: true,
+    globalFunctions: true,
+    underscoreGlobal: false
+  }
+  static get options() {
+    return Flare._assumptions
+  }
+// A public helper method for setting Flare assumptions, config options...
+  static assume(userAssumptions) {
+    Flare._assumptions = _.combineObjects(Flare._assumptions, userAssumptions)
+    return Flare._assumptions
+  }
 
 // Static member to hold element tag name to be created...
   static _elementTag = ''
@@ -174,27 +192,28 @@ class Flare {
     return Flare._numeral
   }
 
-// The config options object.. with default assumptions...
-  static assumptions = {
-    shadowByDefault: true,
-    kebabCase: true,
-  }
-// A public helper method for setting Flare assumptions, config options...
-  static config(userAssumptions) {
-    Flare.assumptions = _.combineObjects(Flare.assumptions, userAssumptions)
-    return Flare.assumptions
+
+
+// An internal static method for first, creating a 10 digit hash from a string of
+// css, then a 7 digit alphabetical string from the hash....
+  static _createFlareId(array) {
+// Create string from template array...
+    let string = array[0].join('')
+                       .replace(/\s|\n/g, '')
+// Create and return unique id...
+    return _alphaStringFromHash(_murmurHash(string))
   }
 
 
 // Internal method closure for grabbing the variable name from a flare component
 // declaration, for tagname representation in custom element creation...
-  static _acquireComponentTagName(xCaller, callerName, array) {
+  static _acquireComponentTagName(xCaller, callerName, array, props) {
     let tagShifter,
     tagTwister,
     tagArray,
     tag
 
-    // log("I've been passed in", ['pink', 'bold']);log(array)
+    log("I've been passed in", ['pink', 'bold']);log(array)
 // A very simple function for moving the first item of an array to the end.
     tagTwister =(ra)=>  {
       ra.push(ra.shift())
@@ -210,7 +229,7 @@ class Flare {
       if (ra.length > 0) {
 // We can shift out a tag....
         obj.tag  = ra.shift()
-        // log(`tag: ${obj.tag}`)
+        log(`Shifted Tag: ${obj.tag}`, 'tomato')
 // Determine whether or not the array item is a tag or new array....
         if (Is.array(obj.tag)) {
           // log('tag is array', ['green', 'bold']);dir(obj.tag)
@@ -225,13 +244,15 @@ class Flare {
         }
 // Else, we have a new component and must rebuild...
       } else {
-        // log('Rebuilding', ['green', 'bold'])
-        obj.array = _buildArray(xCaller, callerName)
+        log('Rebuilding', ['green', 'bold'])
+        obj.array = _buildArray(xCaller, callerName, props)
         return tagShifter(obj.array)
       }
+      log('(window.statelessComponents.indexOf(obj.tag)', 'yellow')
+      log((window.statelessComponents.indexOf(obj.tag)))
 // Check the statelessComponents registry for a redundancy...
       if (window.statelessComponents.indexOf(obj.tag) !== -1) {
-        // log('Registry', ['orange', 'bold']);log(obj.tag)
+        log('Registry', ['orange', 'bold']);log(obj.tag)
         return tagShifter(obj.array)
       }
 // If we reach this point, we are ready to return tag...
@@ -242,7 +263,7 @@ class Flare {
 // If there are no component names in the array, lets's get some..
     if (array.length == 0) {
 // Build array with x.caller source code, and twist it....
-      array = _buildArray(xCaller, callerName)
+      array = _buildArray(xCaller, callerName, props)
       // log('building', ['red', 'bold']);dir(array);log(array.length)
     }
 
@@ -258,10 +279,7 @@ the list and move on... Return both the altered array and the shifted out tag...
 
 
 // A helper method for accessing the Flare class and defining it's components...
-  static interfaceValenceX(xCrName, xCr, elTag, tagTempLit, props1={}, props2={}) {
-// extract var name..
-    let tagName = Flare._acquireComponentTagName(xCr, xCrName, Flare._tagQueue)
-      // log(`Tag name is: ${tagName}`, ['orange', 'bold'])
+  static interValenceX(xCrName, xCr, elTag, tagTempLit, props1={}, props2={}) {
 // Add props from flare to props object...
       props = {
         ...props2,
@@ -271,7 +289,7 @@ the list and move on... Return both the altered array and the shifted out tag...
 // Determine whether or not the component will utilize shadow dom by default...
       if (!Reflect.has(props, 'shadow')) {
 // If 'shadow' is not set in props, and if 'shadow' is 'on' by default...
-        if (Flare.config.shadowByDefault) {
+        if (Flare.options.shadowByDefault) {
 // Set the 'shadow' prop to true...
           props.shadow = true
         } else {
@@ -280,7 +298,13 @@ the list and move on... Return both the altered array and the shifted out tag...
         }
       }
 
-      CSS._superProps[props2.identity] = [tagName, props]
+// extract var name..
+      let tagName = Flare._acquireComponentTagName(xCr, xCrName, Flare._tagQueue, props)
+      // log(`Tag name is: ${tagName}`, ['orange', 'bold'])
+// Push the tagName into a global array ...
+      window.flareComponents.push(tagName)
+
+      CSS._superProps[props2.flareId] = [tagName, props]
 // If a flare component does not use shadow dom...
       if (!props.shadow) {
 // it will not need to append anything to it's shadow root later on...
@@ -463,12 +487,11 @@ the list and move on... Return both the altered array and the shifted out tag...
   static _getTemplateLiteral(...tempLit) {
     let tmpl,
 // Store ref functions with tempLit in an array
-    array = [...tempLit]
-
-    // log('array', ['orange', 'bold'])
-    //  dir(array)
-
-    console.log(array)
+    array = [...tempLit],
+    props = Flare._propObj
+// Set a unique id on the component's props...
+    props.flareId = `${Flare._createFlareId(array)}`
+    // console.log(array)
 //
     if (Flare._extend) {
 /* An object holding the styles of the extended component, and also,
@@ -492,7 +515,7 @@ the css can be completed...*/
     return {
       flare: true,
       taggedTempLit: tmpl,
-      props: Flare._propObj,
+      props: props,
       el: (tmpl.extended)? Flare._superTag : Flare._elementTag
     }
   }
@@ -519,14 +542,14 @@ the css can be completed...*/
       let props = _.combineObjects(superComponent.props, attrs)
 // Set the Flare component indicator...
       props.Flare = true
-// Set a unique id on the component's props...
-      props.identity = `flareX${superComponent.el}${Flare._incrementor}`
 // Set stateless-component flag for the component..
       props.isStatelessComponent = true
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
     }
-    Flare._superId      = superComponent.props.identity
+// Set a unique id on the component's props...
+    Flare._elementTag   = `X${superComponent.el}`
+    Flare._superId      = superComponent.props.flareId
     Flare._superTag     = superComponent.el
     Flare._superTempLit = superComponent.taggedTempLit.array
     Flare._extend       = true
@@ -542,8 +565,7 @@ the css can be completed...*/
       let props = arg[0]
 // Set the Flare component indicator...
       props.Flare = true
-// Set a unique id on the component's props...
-      props.identity = `flareDiv${Flare._incrementor}`
+
 // Set stateless-component flag for the component..
       props.isStatelessComponent = true
 // Pass the prop object, and element tag name  on to the global members..
@@ -557,7 +579,7 @@ the css can be completed...*/
 //
       _privateProps.Flare = true
       _privateProps.isStatelessComponent = true
-      _privateProps.identity = `flareDiv${Flare._incrementor}`
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
       return {
         flare: true,
         taggedTempLit: {
@@ -570,17 +592,19 @@ the css can be completed...*/
     }
   }
 
+/**********************************************************
+***********************************************************
+************* Flare Component Elements ********************
+***********************************************************
+**********************************************************/
+
 // Input Static API Method
   static input(...arg) {
-    log('Looka these', ['red', 'bold'])
-       dir(arg[0])
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
 // Set the Flare component indicator...
       props.Flare = true
-// Set a unique id on the component's props...
-      props.identity = `flareInput${Flare._incrementor}`
 // Set stateless-component flag for the component..
       props.isStatelessComponent = true
 // Pass the prop object, and element tag name  on to the global members..
@@ -594,7 +618,7 @@ the css can be completed...*/
 // Add some properties to the private props object....
       _privateProps.Flare = true
       _privateProps.isStatelessComponent = true
-      _privateProps.identity = `flareInput${Flare._incrementor}`
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
 // Add private props to return object and... return..
       return {
         flare: true,
@@ -617,8 +641,6 @@ the css can be completed...*/
 
 // Set the Flare component indicator...
       props.Flare = true
-// Set a unique id on the component's props...
-      props.identity = `flareButton${Flare._incrementor}`
 // Set stateless-component flag for the component..
       props.isStatelessComponent = true
 // Pass the prop object, and element tag name  on to the global members..
@@ -632,7 +654,7 @@ the css can be completed...*/
 // Add some properties to the private props object....
       _privateProps.Flare = true
       _privateProps.isStatelessComponent = true
-      _privateProps.identity = `flareButton${Flare._incrementor}`
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
 // Add private props to return object and... return..
       return {
         flare: true,
@@ -653,8 +675,6 @@ the css can be completed...*/
       let props = arg[0]
 // Set the Flare component indicator...
       props.Flare = true
-// Set a unique id on the component's props...
-      props.identity = `flareP${Flare._incrementor}`
 // Set stateless-component flag for the component..
       props.isStatelessComponent = true
 // Pass the prop object, and element tag name  on to the global members..
@@ -668,7 +688,7 @@ the css can be completed...*/
 // Add some properties to the private props object....
       _privateProps.Flare = true
       _privateProps.isStatelessComponent = true
-      _privateProps.identity = `flareP${Flare._incrementor}`
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
 // Add private props to return object and... return..
       return {
         flare: true,
@@ -689,8 +709,6 @@ the css can be completed...*/
       let props = arg[0]
 // Set the Flare component indicator...
       props.Flare = true
-// Set a unique id on the component's props...
-      props.identity = `flareH1${Flare._incrementor}`
 // Set stateless-component flag for the component..
       props.isStatelessComponent = true
 // Pass the prop object, and element tag name  on to the global members..
@@ -704,7 +722,7 @@ the css can be completed...*/
 // Add some properties to the private props object....
       _privateProps.Flare = true
       _privateProps.isStatelessComponent = true
-      _privateProps.identity = `flareH1${Flare._incrementor}`
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
 // Add private props to return object and... return..
       return {
         flare: true,
@@ -718,6 +736,143 @@ the css can be completed...*/
     }
   }
 
+// H2 API Method
+  static h2(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'h2'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'h2'
+      }
+    }
+  }
+
+// H3 API Method
+  static h3(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'h3'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'h3'
+      }
+    }
+  }
+
+// H4 API Method
+  static h4(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'h4'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'h4'
+      }
+    }
+  }
+
+
+// H5 API Method
+  static h5(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'h5'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'h5'
+      }
+    }
+  }
+
 // H6 API Function
   static h6(...arg) {
 // If the argument is not an array, it's probably our props object...
@@ -725,8 +880,6 @@ the css can be completed...*/
       let props = arg[0]
 // Set the Flare component indicator...
       props.Flare = true
-// Set a unique id on the component's props...
-      props.identity = `flareH6${Flare._incrementor}`
 // Set stateless-component flag for the component..
       props.isStatelessComponent = true
 // Pass the prop object, and element tag name  on to the global members..
@@ -740,7 +893,7 @@ the css can be completed...*/
 // Add some properties to the private props object....
       _privateProps.Flare = true
       _privateProps.isStatelessComponent = true
-      _privateProps.identity = `flareH6${Flare._incrementor}`
+    _privateProps.flareId = `${Flare._createFlareId(array)}`
 // Add private props to return object and... return..
       return {
         flare: true,
@@ -753,7 +906,354 @@ the css can be completed...*/
       }
     }
   }
+
+// HEADER API Method
+  static header(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'header'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'header'
+      }
+    }
+  }
+
+// AREA API Method
+  static area(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'area'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'area'
+      }
+    }
+  }
+
+// ASIDE API Method
+  static aside(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'aside'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'aside'
+      }
+    }
+  }
+
+
+// COL API Method
+  static col(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'col'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'col'
+      }
+    }
+  }
+
+// COLGROUP API Method
+  static colgroup(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'colgroup'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'colgroup'
+      }
+    }
+  }
+
+// SPAN API Method
+  static span(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'span'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'span'
+      }
+    }
+  }
+
+// SECTION API Method
+  static section(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'section'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+      _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'section'
+      }
+    }
+  }
+
+
+// TABLE API Function
+  static table(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'table'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+    _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'table'
+      }
+    }
+  }
+
+
+
+  // TEXTAREA API Function
+  static textarea(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'textarea'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+    _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'textarea'
+      }
+    }
+  }
+
+
+
+// FOOTER API Function
+  static footer(...arg) {
+// If the argument is not an array, it's probably our props object...
+    if (!Is.array(arg[0])) {
+      let props = arg[0]
+// Set the Flare component indicator...
+      props.Flare = true
+// Set stateless-component flag for the component..
+      props.isStatelessComponent = true
+// Pass the prop object, and element tag name  on to the global members..
+      Flare._propObj = props
+      Flare._elementTag = 'footer'
+// Define component..
+      return Flare._getTemplateLiteral
+    } else {
+      let array = [...arg],
+      _privateProps = {}
+// Add some properties to the private props object....
+      _privateProps.Flare = true
+      _privateProps.isStatelessComponent = true
+    _privateProps.flareId = `${Flare._createFlareId(array)}`
+// Add private props to return object and... return..
+      return {
+        flare: true,
+        taggedTempLit: {
+          extended: false,
+          array: array
+        },
+        props: _privateProps,
+        el: 'footer'
+      }
+    }
+  }
 }
+
 export { Flare }
 
 

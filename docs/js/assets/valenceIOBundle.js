@@ -265,6 +265,10 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
   var _Valence__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+  /* harmony import */
+
+
+  var _assets_valenceLogo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(70);
 
   function _typeof(obj) {
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -349,6 +353,16 @@ function (module, __webpack_exports__, __webpack_require__) {
     return _setPrototypeOf(o, p);
   }
 
+  function _templateObject11() {
+    var data = _taggedTemplateLiteral(["\n  width: 100%;\n  padding: 10px;\n  margin: auto;\n"]);
+
+    _templateObject11 = function _templateObject11() {
+      return data;
+    };
+
+    return data;
+  }
+
   function _templateObject10() {
     var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: -500px;\n  height: 300px;\n  width: 300px;\n  display: inline-block;\n  animation: ", " 2s linear infinite;\n  padding: 5px;\n\n  h1 {\n    position: absolute;\n    font-size: 44px;\n    color: white;\n    text-align: center;\n    font-family: sf mono;\n    top: 45%;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    margin: 0 auto;\n  }\n"]);
 
@@ -370,7 +384,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject8() {
-    var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  opacity: ", ";\n  color: white;\n  border: 2px solid ", "\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 100px;\n  background-color: ", ";\n  opacity: ", ";\n  color: white;\n  border: 2px solid ", "\n"]);
 
     _templateObject8 = function _templateObject8() {
       return data;
@@ -380,7 +394,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject7() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: sf mono;\n  font-size: 38px;\n  width: 200px;\n  height: 38px;\n  margin: 0 auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background-color: orange;\n  border: none;\n  border-radius: 5px;\n  color: blue;\n\n  @media (max-height: 400px) {\n      background: blue;\n  }\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: sf mono;\n  font-size: 38px;\n  width: 200px;\n  height: 38px;\n  margin: 0 auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background-color: orange;\n  border: none;\n  border-radius: 5px;\n  color: yellow;\n\n  @media (max-height: 400px) {\n      background: blue;\n  }\n"]);
 
     _templateObject7 = function _templateObject7() {
       return data;
@@ -410,7 +424,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject4() {
-    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: 50%;\n  top: 25%;\n  height: ", ";\n  width: 200px;\n  background: ", "\n  z-index: 99;\n\n\n"]);
+    var data = _taggedTemplateLiteral(["\n  position: absolute;\n  left: 50%;\n  top: 25%;\n  height: ", ";\n  width: 200px;\n  background: ", "\n  z-index: 99;\n"]);
 
     _templateObject4 = function _templateObject4() {
       return data;
@@ -430,7 +444,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject2() {
-    var data = _taggedTemplateLiteral(["\nposition: absolute;\nheight: 100%;\nwidth: 100%;\npadding: 0;\n\n"]);
+    var data = _taggedTemplateLiteral(["\nposition: absolute;\nheight: 100%;\nwidth: 100%;\npadding: 0;\n"]);
 
     _templateObject2 = function _templateObject2() {
       return data;
@@ -471,10 +485,9 @@ function (module, __webpack_exports__, __webpack_require__) {
   **/
 
 
-  var __ = window.global;
-
-  _Valence__WEBPACK_IMPORTED_MODULE_0__["Valence"].config({
-    shadowByDefault: false
+  _Valence__WEBPACK_IMPORTED_MODULE_0__["Valence"].assume({
+    shadowByDefault: false,
+    underscoreGlobal: true
   });
 
   var blue = '#0057ff';
@@ -512,12 +525,16 @@ function (module, __webpack_exports__, __webpack_require__) {
     var shadow = _ref3.shadow;
     return shadow ? '100px' : '700px';
   }, green);
-  var MyInput = input({
-    placeholder: 'onsearch',
-    type: 'text',
-    className: 'myput',
-    shadow: true
-  })(_templateObject7()); //
+
+  var MyInput = function MyInput() {
+    return input({
+      placeholder: 'onsearch',
+      type: 'text',
+      className: 'myput',
+      shadow: true
+    })(_templateObject7());
+  }; //
+
 
   var Thing2 = extend(Thing, {
     id: 'thing2',
@@ -531,6 +548,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   });
   var rotate = keyframes(_templateObject9());
   var Spinner = div(_templateObject10(), rotate);
+  var Logo = div(_templateObject11());
 
   var MyName = function MyName() {
     return x("div", null, x(Box, null, x(MyDiv, null, x(Thing, {
@@ -560,7 +578,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         return x(Fluid, null, x(MyName, {
           className: "myname",
           shadow: false
-        }));
+        }), x(Logo, null, x("p", null, "Delilah!")));
       }
     }]);
 
@@ -729,14 +747,13 @@ function (module, __webpack_exports__, __webpack_require__) {
   // Get errors...
   // Get Props...
   // Get styles...
-  // Initializing an array for flare component tag names...
+  // Initializing an array for Flare component tag names...
 
 
-  window.flareComponents = []; // Initializing an array for all stateless instantiated component tag names...
+  window.flareComponents = [];
+  window.valenceComponents = []; // Initializing an array for all stateless instantiated component tag names...
 
-  window.statelessComponents = []; // initialize component element hash on window object...
-
-  window.elementHash = -1; // initialize global flags...
+  window.statelessComponents = []; // initialize global flags...
 
   window.webComponentsLoaded = false;
   window.rootNodeDefined = false; // Provide access to PropTypes...
@@ -748,18 +765,9 @@ function (module, __webpack_exports__, __webpack_require__) {
   window.el = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["el"];
   window.dom = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["dom"];
   window.dir = console.dir;
-  window.log = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["log"]; //Globalize flare functions for convenience...
+  window.log = _js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["log"]; // Globalize Flare library...
 
-  window.global = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].global;
-  window.extend = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].extend;
-  window.keyframes = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].keyframes; // Globalize style elements for convenience...
-
-  window.div = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].div;
-  window.input = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].input;
-  window.button = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].button;
-  window.p = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].p;
-  window.h1 = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].h1;
-  window.h6 = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].h6; // The framework's API class...
+  window.flare = _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"]; // The framework's API class...
 
   var Valence =
   /*#__PURE__*/
@@ -769,7 +777,7 @@ function (module, __webpack_exports__, __webpack_require__) {
     }
 
     _createClass(Valence, null, [{
-      key: "realize",
+      key: "_setAssumptions",
 
       /*
        * Class Properties....
@@ -781,12 +789,59 @@ function (module, __webpack_exports__, __webpack_require__) {
       // The true DOM representation of the rootNode...
       // The root Valence component...
       // The form virtual DOM instance...
-      // Add config method from the flare class...
+      // The config options object.. with default assumptions...
 
       /*
        * Class Methods...
        */
-      // Method for converting virtual dom to real dom...
+      // A private static method for setting library user assumptions...
+      value: function _setAssumptions(assumptions) {
+        // If we have the global functions option set to true.....
+        if (assumptions.globalFunctions) {
+          // Globalize Flare functions for convenience...
+          window.global = flare.global;
+          window.extend = flare.extend;
+          window.keyframes = flare.keyframes; // Globalize style elements for convenience...
+
+          window.div = flare.div;
+          window.aside = flare.aside;
+          window.area = flare.area;
+          window.button = flare.button;
+          window.col = flare.col;
+          window.colgroup = flare.colgroup;
+          window.header = flare.header;
+          window.footer = flare.footer;
+          window.input = flare.input;
+          window.h1 = flare.h1;
+          window.h2 = flare.h2;
+          window.h3 = flare.h3;
+          window.h4 = flare.h4;
+          window.h5 = flare.h5;
+          window.h6 = flare.h6;
+          window.p = flare.p;
+          window.section = flare.section;
+          window.span = flare.span;
+          window.table = flare.table;
+          window.textarea = flare.textarea;
+        } // If underscore abbreviation for global insertion option is set to true....
+
+
+        if (assumptions.underscoreGlobal) {
+          // Abbreviate flare.global...
+          window.__ = flare.global;
+        }
+
+        return assumptions;
+      } // A public helper method for setting Flare assumptions, config options...
+
+    }, {
+      key: "assume",
+      value: function assume(userAssumptions) {
+        return Valence._setAssumptions(_js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].assume(_js_src_Utilities_helpers__WEBPACK_IMPORTED_MODULE_2__["combineObjects"](Valence._assumptions, userAssumptions)));
+      } // Method for converting virtual dom to real dom...
+
+    }, {
+      key: "realize",
       value: function realize(node, root) {
         var _this = this; // Set component root and root component properties...
 
@@ -818,18 +873,10 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         if (!this.rootComponentMounted) {
           if (webComponentsLoaded) {
-            console.log('Check1');
             mount();
           } else {
-            console.log('check1st');
             document.addEventListener('webComponentsLoaded', function () {
-              console.log('Check0');
-
-              try {
-                mount();
-              } catch (err) {
-                console.error("MountingError: ".concat(err.message));
-              }
+              mount();
             });
           }
         } else {
@@ -878,7 +925,8 @@ function (module, __webpack_exports__, __webpack_require__) {
 
   _defineProperty(Valence, "form", null);
 
-  _defineProperty(Valence, "config", _js_src_Flare_Flare__WEBPACK_IMPORTED_MODULE_9__["Flare"].config);
+  _defineProperty(Valence, "_assumptions", {} //config: options
+  );
   /***/
 
 },
@@ -1851,6 +1899,22 @@ function (module, __webpack_exports__, __webpack_require__) {
       key: "interpolated",
       value: function interpolated(tagTempLit) {
         return tagTempLit.length > 1;
+      }
+      /* A function for determining whether or not a component is a
+      valence component ... */
+
+    }, {
+      key: "valenceComponent",
+      value: function valenceComponent(tag) {
+        return window.valenceComponents.indexOf(tag) !== -1;
+      }
+      /* A function for determining whether or not a component is
+      a flare component... */
+
+    }, {
+      key: "flareComponent",
+      value: function flareComponent(tag) {
+        return window.flareComponents.indexOf(tag) !== -1;
       }
     }]);
 
@@ -6408,11 +6472,17 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         if (type.flare) {
-          // Get a variable... load with x's caller function's code
+          log('TYPE', ['tomato', 'bold']);
+          dir({
+            type: type
+          }); // Get a variable... load with x's caller function's code
+
           var xCaller = x.caller.toString(),
               xCallerName = x.caller.name; // Use the above to define Flare Component.. and also 'type' for the node...
 
-          type = _Flare_Flare__WEBPACK_IMPORTED_MODULE_5__["Flare"].interfaceValenceX(xCallerName, xCaller, type.el, type.taggedTempLit, props, type.props);
+          type = _Flare_Flare__WEBPACK_IMPORTED_MODULE_5__["Flare"].interValenceX(xCallerName, xCaller, type.el, type.taggedTempLit, props, type.props);
+        } else {
+          window.valenceComponents.push(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["convertFuncNameToTagName"](type));
         } // Return a new Node...
 
 
@@ -6733,13 +6803,18 @@ function (module, __webpack_exports__, __webpack_require__) {
         var makeDOMElement, setProps, addEventListeners, appendChildren, elem; // Create a new DOM element...
 
         makeDOMElement = function makeDOMElement(tagName) {
-          //       if (window.flareComponents.indexOf(tagName) != -1) {
-          // // Flip the required switches...
-          //         window.useNativeShim = false
-          //         window.HTMLElement   = window._HTMLElement
-          //       }
-          // Create a new element given the tag name, and
+          if (window.flareComponents.indexOf(tagName) != -1) {
+            // Flip the required switches...
+            window.useNativeShim = false;
+            window.HTMLElement = window._HTMLElement;
+          }
+
+          log('TAGNAME', ['lightblue', 'bold']);
+          log(tagName);
+          dir(props);
+          dir(children); // Create a new element given the tag name, and
           // store for sending through the pipe......
+
           elem = document.createElement(tagName); // If we just created a Flare Component element...
 
           if (window.flareComponents.indexOf(tagName) != -1) {
@@ -6748,12 +6823,15 @@ function (module, __webpack_exports__, __webpack_require__) {
               element: elem
             });
           }
+
+          log('new Element', ['orange', 'bold']);
+          log(tagName);
           /* If `Reflect` programmatic library constructed component, reset native-shim flag,
           and also reset window.HTMLElement to the nativeShim.js patched version...
           */
 
-
           if (props.isStatelessComponent) {
+            log('stateless');
             window.useNativeShim = true;
             window.HTMLElement = window.HTMLElement_; // Push tagname to global collection..
 
@@ -7154,7 +7232,7 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "_isPrivateProp",
       value: function _isPrivateProp(name) {
-        return _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].eventListener(name) || name === 'forceUpdate' || name === 'isStatefulComponent' || name === 'isStatelessComponent' || name === 'ref' || name === 'noChild' || name === 'rootNode' || name === 'Flare' || name === 'flare' || name === 'label' || name === 'content' || name === 'identity';
+        return _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].eventListener(name) || name === 'forceUpdate' || name === 'isStatefulComponent' || name === 'isStatelessComponent' || name === 'ref' || name === 'noChild' || name === 'rootNode' || name === 'Flare' || name === 'flare' || name === 'label' || name === 'content';
       } // Method for updating props...
 
     }, {
@@ -8061,79 +8139,87 @@ function (module, __webpack_exports__, __webpack_require__) {
   /* harmony import */
 
 
-  var _Elements_Area__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(47);
+  var _Utilities_murmurHash__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(44);
   /* harmony import */
 
 
-  var _Elements_Aside__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(48);
+  var _Utilities_alphaStringFromHash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(43);
   /* harmony import */
 
 
-  var _Elements_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(49);
+  var _Elements_Area__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(47);
   /* harmony import */
 
 
-  var _Elements_Col__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(50);
+  var _Elements_Aside__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(48);
   /* harmony import */
 
 
-  var _Elements_Colgroup__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(51);
+  var _Elements_Button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(49);
   /* harmony import */
 
 
-  var _Elements_Footer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(52);
+  var _Elements_Col__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(50);
   /* harmony import */
 
 
-  var _Elements_H1__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(53);
+  var _Elements_Colgroup__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(51);
   /* harmony import */
 
 
-  var _Elements_H2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(54);
+  var _Elements_Footer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(52);
   /* harmony import */
 
 
-  var _Elements_H3__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(55);
+  var _Elements_H1__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(53);
   /* harmony import */
 
 
-  var _Elements_H4__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(56);
+  var _Elements_H2__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(54);
   /* harmony import */
 
 
-  var _Elements_H5__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(57);
+  var _Elements_H3__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(55);
   /* harmony import */
 
 
-  var _Elements_H6__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(58);
+  var _Elements_H4__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(56);
   /* harmony import */
 
 
-  var _Elements_Header__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(59);
+  var _Elements_H5__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(57);
   /* harmony import */
 
 
-  var _Elements_Input__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(60);
+  var _Elements_H6__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(58);
   /* harmony import */
 
 
-  var _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(61);
+  var _Elements_Header__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(59);
   /* harmony import */
 
 
-  var _Elements_Section__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(62);
+  var _Elements_Input__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(60);
   /* harmony import */
 
 
-  var _Elements_Span__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(63);
+  var _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(61);
   /* harmony import */
 
 
-  var _Elements_Table__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(64);
+  var _Elements_Section__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(62);
   /* harmony import */
 
 
-  var _Elements_Textarea__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(65);
+  var _Elements_Span__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(63);
+  /* harmony import */
+
+
+  var _Elements_Table__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(64);
+  /* harmony import */
+
+
+  var _Elements_Textarea__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(65);
 
   function _objectSpread(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -8212,7 +8298,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   //TODO:[X] Ability to Inject global styles.. 5
   //TODO:[X] Keyframe Animations.. 7
   //TODO:[X] Variables, functions (tagged template literals).. 3
-  //TODO:[ ] Media Queries.. 6
+  //TODO:[X] Media Queries.. 6
   //TODO:[ ] Incorporate SVG.. 8
 
   /*
@@ -8242,6 +8328,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   // Get Events....
   // import CSS class...
   // Get the tagName array builder function....
+  // Get unique identity creating functions...
   // Get the tagName array builder function....
   // import _acquireComponentTagName from './Utilities/_acquireComponentTagName'
 
@@ -8261,19 +8348,32 @@ function (module, __webpack_exports__, __webpack_require__) {
     }
 
     _createClass(Flare, null, [{
-      key: "config",
-      value: function config(userAssumptions) {
-        Flare.assumptions = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["combineObjects"](Flare.assumptions, userAssumptions);
-        return Flare.assumptions;
+      key: "assume",
+      // A public helper method for setting Flare assumptions, config options...
+      value: function assume(userAssumptions) {
+        Flare._assumptions = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["combineObjects"](Flare._assumptions, userAssumptions);
+        return Flare._assumptions;
+      } // Static member to hold element tag name to be created...
+
+    }, {
+      key: "_createFlareId",
+      // An internal static method for first, creating a 10 digit hash from a string of
+      // css, then a 7 digit alphabetical string from the hash....
+      value: function _createFlareId(array) {
+        // Create string from template array...
+        var string = array[0].join('').replace(/\s|\n/g, ''); // Create and return unique id...
+
+        return Object(_Utilities_alphaStringFromHash__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_Utilities_murmurHash__WEBPACK_IMPORTED_MODULE_8__["default"])(string));
       } // Internal method closure for grabbing the variable name from a flare component
       // declaration, for tagname representation in custom element creation...
 
     }, {
       key: "_acquireComponentTagName",
-      value: function _acquireComponentTagName(xCaller, callerName, array) {
-        var _tagShifter, tagTwister, tagArray, tag; // log("I've been passed in", ['pink', 'bold']);log(array)
-        // A very simple function for moving the first item of an array to the end.
+      value: function _acquireComponentTagName(xCaller, callerName, array, props) {
+        var _tagShifter, tagTwister, tagArray, tag;
 
+        log("I've been passed in", ['pink', 'bold']);
+        log(array); // A very simple function for moving the first item of an array to the end.
 
         tagTwister = function tagTwister(ra) {
           ra.push(ra.shift());
@@ -8288,8 +8388,8 @@ function (module, __webpack_exports__, __webpack_require__) {
 
           if (ra.length > 0) {
             // We can shift out a tag....
-            obj.tag = ra.shift(); // log(`tag: ${obj.tag}`)
-            // Determine whether or not the array item is a tag or new array....
+            obj.tag = ra.shift();
+            log("Shifted Tag: ".concat(obj.tag), 'tomato'); // Determine whether or not the array item is a tag or new array....
 
             if (_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(obj.tag)) {
               // log('tag is array', ['green', 'bold']);dir(obj.tag)
@@ -8304,14 +8404,17 @@ function (module, __webpack_exports__, __webpack_require__) {
             } // Else, we have a new component and must rebuild...
 
           } else {
-            // log('Rebuilding', ['green', 'bold'])
-            obj.array = Object(_Utilities_arrayBuilder__WEBPACK_IMPORTED_MODULE_7__["default"])(xCaller, callerName);
+            log('Rebuilding', ['green', 'bold']);
+            obj.array = Object(_Utilities_arrayBuilder__WEBPACK_IMPORTED_MODULE_7__["default"])(xCaller, callerName, props);
             return _tagShifter(obj.array);
-          } // Check the statelessComponents registry for a redundancy...
+          }
 
+          log('(window.statelessComponents.indexOf(obj.tag)', 'yellow');
+          log(window.statelessComponents.indexOf(obj.tag)); // Check the statelessComponents registry for a redundancy...
 
           if (window.statelessComponents.indexOf(obj.tag) !== -1) {
-            // log('Registry', ['orange', 'bold']);log(obj.tag)
+            log('Registry', ['orange', 'bold']);
+            log(obj.tag);
             return _tagShifter(obj.array);
           } // If we reach this point, we are ready to return tag...
           // log('return obj', ['yellow', 'bold']);dir(obj)
@@ -8323,7 +8426,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         if (array.length == 0) {
           // Build array with x.caller source code, and twist it....
-          array = Object(_Utilities_arrayBuilder__WEBPACK_IMPORTED_MODULE_7__["default"])(xCaller, callerName); // log('building', ['red', 'bold']);dir(array);log(array.length)
+          array = Object(_Utilities_arrayBuilder__WEBPACK_IMPORTED_MODULE_7__["default"])(xCaller, callerName, props); // log('building', ['red', 'bold']);dir(array);log(array.length)
         }
         /* Call tagShifter function to shift out the bottom-most tagname in the list...
         If it has already been instantiated, then it is not a flare component- Pop from
@@ -8339,30 +8442,32 @@ function (module, __webpack_exports__, __webpack_require__) {
       } // A helper method for accessing the Flare class and defining it's components...
 
     }, {
-      key: "interfaceValenceX",
-      value: function interfaceValenceX(xCrName, xCr, elTag, tagTempLit) {
+      key: "interValenceX",
+      value: function interValenceX(xCrName, xCr, elTag, tagTempLit) {
         var props1 = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
-        var props2 = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {}; // extract var name..
-
-        var tagName = Flare._acquireComponentTagName(xCr, xCrName, Flare._tagQueue); // log(`Tag name is: ${tagName}`, ['orange', 'bold'])
-        // Add props from flare to props object...
-
+        var props2 = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {}; // Add props from flare to props object...
 
         props = _objectSpread({}, props2, props1); // log('Flare.propsobj');dir(props1); dir(props2); dir(props)
         // Determine whether or not the component will utilize shadow dom by default...
 
         if (!Reflect.has(props, 'shadow')) {
           // If 'shadow' is not set in props, and if 'shadow' is 'on' by default...
-          if (Flare.config.shadowByDefault) {
+          if (Flare.options.shadowByDefault) {
             // Set the 'shadow' prop to true...
             props.shadow = true;
           } else {
             // Otherwise, set it to false..
             props.shadow = false;
           }
-        }
+        } // extract var name..
 
-        _CSS__WEBPACK_IMPORTED_MODULE_6__["CSS"]._superProps[props2.identity] = [tagName, props]; // If a flare component does not use shadow dom...
+
+        var tagName = Flare._acquireComponentTagName(xCr, xCrName, Flare._tagQueue, props); // log(`Tag name is: ${tagName}`, ['orange', 'bold'])
+        // Push the tagName into a global array ...
+
+
+        window.flareComponents.push(tagName);
+        _CSS__WEBPACK_IMPORTED_MODULE_6__["CSS"]._superProps[props2.flareId] = [tagName, props]; // If a flare component does not use shadow dom...
 
         if (!props.shadow) {
           // it will not need to append anything to it's shadow root later on...
@@ -8406,27 +8511,27 @@ function (module, __webpack_exports__, __webpack_require__) {
           switch (el) {
             case 'area':
               // Grab the extensible area element constructor..
-              elemCtor = _Elements_Area__WEBPACK_IMPORTED_MODULE_8__["Area"].createComponent(props, template);
+              elemCtor = _Elements_Area__WEBPACK_IMPORTED_MODULE_10__["Area"].createComponent(props, template);
               break;
 
             case 'aside':
               // Grab the extensible aside element constructor..
-              elemCtor = _Elements_Aside__WEBPACK_IMPORTED_MODULE_9__["Aside"].createComponent(props, template);
+              elemCtor = _Elements_Aside__WEBPACK_IMPORTED_MODULE_11__["Aside"].createComponent(props, template);
               break;
 
             case 'button':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_Button__WEBPACK_IMPORTED_MODULE_10__["Button"].createComponent(props, template);
+              elemCtor = _Elements_Button__WEBPACK_IMPORTED_MODULE_12__["Button"].createComponent(props, template);
               break;
 
             case 'col':
               // Grab the extensible col element constructor..
-              elemCtor = _Elements_Col__WEBPACK_IMPORTED_MODULE_11__["Col"].createComponent(props, template);
+              elemCtor = _Elements_Col__WEBPACK_IMPORTED_MODULE_13__["Col"].createComponent(props, template);
               break;
 
             case 'colgroup':
               // Grab the extensible colgroup element constructor..
-              elemCtor = _Elements_Colgroup__WEBPACK_IMPORTED_MODULE_12__["Colgroup"].createComponent(props, template);
+              elemCtor = _Elements_Colgroup__WEBPACK_IMPORTED_MODULE_14__["Colgroup"].createComponent(props, template);
               break;
 
             case 'div':
@@ -8436,72 +8541,72 @@ function (module, __webpack_exports__, __webpack_require__) {
 
             case 'footer':
               // Grab the extensible footer element constructor..
-              elemCtor = _Elements_Footer__WEBPACK_IMPORTED_MODULE_13__["Footer"].createComponent(props, template);
+              elemCtor = _Elements_Footer__WEBPACK_IMPORTED_MODULE_15__["Footer"].createComponent(props, template);
               break;
 
             case 'h1':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H1__WEBPACK_IMPORTED_MODULE_14__["H1"].createComponent(props, template);
+              elemCtor = _Elements_H1__WEBPACK_IMPORTED_MODULE_16__["H1"].createComponent(props, template);
               break;
 
             case 'h2':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H2__WEBPACK_IMPORTED_MODULE_15__["H2"].createComponent(props, template);
+              elemCtor = _Elements_H2__WEBPACK_IMPORTED_MODULE_17__["H2"].createComponent(props, template);
               break;
 
             case 'h3':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H3__WEBPACK_IMPORTED_MODULE_16__["H3"].createComponent(props, template);
+              elemCtor = _Elements_H3__WEBPACK_IMPORTED_MODULE_18__["H3"].createComponent(props, template);
               break;
 
             case 'h4':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H4__WEBPACK_IMPORTED_MODULE_17__["H4"].createComponent(props, template);
+              elemCtor = _Elements_H4__WEBPACK_IMPORTED_MODULE_19__["H4"].createComponent(props, template);
               break;
 
             case 'h5':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H5__WEBPACK_IMPORTED_MODULE_18__["H5"].createComponent(props, template);
+              elemCtor = _Elements_H5__WEBPACK_IMPORTED_MODULE_20__["H5"].createComponent(props, template);
               break;
 
             case 'h6':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_H6__WEBPACK_IMPORTED_MODULE_19__["H6"].createComponent(props, template);
+              elemCtor = _Elements_H6__WEBPACK_IMPORTED_MODULE_21__["H6"].createComponent(props, template);
               break;
 
             case 'header':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_Header__WEBPACK_IMPORTED_MODULE_20__["Header"].createComponent(props, template);
+              elemCtor = _Elements_Header__WEBPACK_IMPORTED_MODULE_22__["Header"].createComponent(props, template);
               break;
 
             case 'input':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_Input__WEBPACK_IMPORTED_MODULE_21__["Input"].createComponent(props, template);
+              elemCtor = _Elements_Input__WEBPACK_IMPORTED_MODULE_23__["Input"].createComponent(props, template);
               break;
 
             case 'p':
               // Grab the extensible input element constructor..
-              elemCtor = _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_22__["Paragraph"].createComponent(props, template);
+              elemCtor = _Elements_Paragraph__WEBPACK_IMPORTED_MODULE_24__["Paragraph"].createComponent(props, template);
               break;
 
             case 'section':
               // Grab the extensible section element constructor..
-              elemCtor = _Elements_Section__WEBPACK_IMPORTED_MODULE_23__["Section"].createComponent(props, template);
+              elemCtor = _Elements_Section__WEBPACK_IMPORTED_MODULE_25__["Section"].createComponent(props, template);
               break;
 
             case 'span':
               // Grab the extensible span element constructor..
-              elemCtor = _Elements_Span__WEBPACK_IMPORTED_MODULE_24__["Span"].createComponent(props, template);
+              elemCtor = _Elements_Span__WEBPACK_IMPORTED_MODULE_26__["Span"].createComponent(props, template);
               break;
 
             case 'table':
               // Grab the extensible table element constructor..
-              elemCtor = _Elements_Table__WEBPACK_IMPORTED_MODULE_25__["Table"].createComponent(props, template);
+              elemCtor = _Elements_Table__WEBPACK_IMPORTED_MODULE_27__["Table"].createComponent(props, template);
               break;
 
             case 'textarea':
               // Grab the extensible textarea element constructor..
-              elemCtor = _Elements_Textarea__WEBPACK_IMPORTED_MODULE_26__["Textarea"].createComponent(props, template);
+              elemCtor = _Elements_Textarea__WEBPACK_IMPORTED_MODULE_28__["Textarea"].createComponent(props, template);
               break;
 
             case 'default':
@@ -8578,10 +8683,11 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         var tmpl,
             // Store ref functions with tempLit in an array
-        array = [].concat(tempLit); // log('array', ['orange', 'bold'])
-        //  dir(array)
+        array = [].concat(tempLit),
+            props = Flare._propObj; // Set a unique id on the component's props...
 
-        console.log(array); //
+        props.flareId = "".concat(Flare._createFlareId(array)); // console.log(array)
+        //
 
         if (Flare._extend) {
           /* An object holding the styles of the extended component, and also,
@@ -8606,7 +8712,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         return {
           flare: true,
           taggedTempLit: tmpl,
-          props: Flare._propObj,
+          props: props,
           el: tmpl.extended ? Flare._superTag : Flare._elementTag
         };
       } // Component extend Static API Method
@@ -8635,16 +8741,16 @@ function (module, __webpack_exports__, __webpack_require__) {
           var _props = _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["combineObjects"](superComponent.props, attrs); // Set the Flare component indicator...
 
 
-          _props.Flare = true; // Set a unique id on the component's props...
-
-          _props.identity = "flareX".concat(superComponent.el).concat(Flare._incrementor); // Set stateless-component flag for the component..
+          _props.Flare = true; // Set stateless-component flag for the component..
 
           _props.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
           Flare._propObj = _props;
-        }
+        } // Set a unique id on the component's props...
 
-        Flare._superId = superComponent.props.identity;
+
+        Flare._elementTag = "X".concat(superComponent.el);
+        Flare._superId = superComponent.props.flareId;
         Flare._superTag = superComponent.el;
         Flare._superTempLit = superComponent.taggedTempLit.array;
         Flare._extend = true; // Get css..
@@ -8663,9 +8769,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
           var _props2 = arg[0]; // Set the Flare component indicator...
 
-          _props2.Flare = true; // Set a unique id on the component's props...
-
-          _props2.identity = "flareDiv".concat(Flare._incrementor); // Set stateless-component flag for the component..
+          _props2.Flare = true; // Set stateless-component flag for the component..
 
           _props2.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
@@ -8679,7 +8783,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
           _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "flareDiv".concat(Flare._incrementor);
+          _privateProps.flareId = "".concat(Flare._createFlareId(array));
           return {
             flare: true,
             taggedTempLit: {
@@ -8690,25 +8794,26 @@ function (module, __webpack_exports__, __webpack_require__) {
             el: 'div'
           };
         }
-      } // Input Static API Method
+      }
+      /**********************************************************
+      ***********************************************************
+      ************* Flare Component Elements ********************
+      ***********************************************************
+      **********************************************************/
+      // Input Static API Method
 
     }, {
       key: "input",
       value: function input() {
-        log('Looka these', ['red', 'bold']);
-
         for (var _len5 = arguments.length, arg = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
           arg[_key5] = arguments[_key5];
-        }
+        } // If the argument is not an array, it's probably our props object...
 
-        dir(arg[0]); // If the argument is not an array, it's probably our props object...
 
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
           var _props3 = arg[0]; // Set the Flare component indicator...
 
-          _props3.Flare = true; // Set a unique id on the component's props...
-
-          _props3.identity = "flareInput".concat(Flare._incrementor); // Set stateless-component flag for the component..
+          _props3.Flare = true; // Set stateless-component flag for the component..
 
           _props3.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
@@ -8722,7 +8827,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
           _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "flareInput".concat(Flare._incrementor); // Add private props to return object and... return..
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
 
           return {
             flare: true,
@@ -8748,9 +8853,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
           var _props4 = arg[0]; // Set the Flare component indicator...
 
-          _props4.Flare = true; // Set a unique id on the component's props...
-
-          _props4.identity = "flareButton".concat(Flare._incrementor); // Set stateless-component flag for the component..
+          _props4.Flare = true; // Set stateless-component flag for the component..
 
           _props4.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
@@ -8764,7 +8867,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
           _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "flareButton".concat(Flare._incrementor); // Add private props to return object and... return..
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
 
           return {
             flare: true,
@@ -8789,9 +8892,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
           var _props5 = arg[0]; // Set the Flare component indicator...
 
-          _props5.Flare = true; // Set a unique id on the component's props...
-
-          _props5.identity = "flareP".concat(Flare._incrementor); // Set stateless-component flag for the component..
+          _props5.Flare = true; // Set stateless-component flag for the component..
 
           _props5.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
@@ -8805,7 +8906,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
           _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "flareP".concat(Flare._incrementor); // Add private props to return object and... return..
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
 
           return {
             flare: true,
@@ -8830,9 +8931,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
           var _props6 = arg[0]; // Set the Flare component indicator...
 
-          _props6.Flare = true; // Set a unique id on the component's props...
-
-          _props6.identity = "flareH1".concat(Flare._incrementor); // Set stateless-component flag for the component..
+          _props6.Flare = true; // Set stateless-component flag for the component..
 
           _props6.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
@@ -8846,7 +8945,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
           _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "flareH1".concat(Flare._incrementor); // Add private props to return object and... return..
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
 
           return {
             flare: true,
@@ -8858,11 +8957,11 @@ function (module, __webpack_exports__, __webpack_require__) {
             el: 'h1'
           };
         }
-      } // H6 API Function
+      } // H2 API Method
 
     }, {
-      key: "h6",
-      value: function h6() {
+      key: "h2",
+      value: function h2() {
         for (var _len9 = arguments.length, arg = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
           arg[_key9] = arguments[_key9];
         } // If the argument is not an array, it's probably our props object...
@@ -8871,13 +8970,167 @@ function (module, __webpack_exports__, __webpack_require__) {
         if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
           var _props7 = arg[0]; // Set the Flare component indicator...
 
-          _props7.Flare = true; // Set a unique id on the component's props...
-
-          _props7.identity = "flareH6".concat(Flare._incrementor); // Set stateless-component flag for the component..
+          _props7.Flare = true; // Set stateless-component flag for the component..
 
           _props7.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
 
           Flare._propObj = _props7;
+          Flare._elementTag = 'h2'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'h2'
+          };
+        }
+      } // H3 API Method
+
+    }, {
+      key: "h3",
+      value: function h3() {
+        for (var _len10 = arguments.length, arg = new Array(_len10), _key10 = 0; _key10 < _len10; _key10++) {
+          arg[_key10] = arguments[_key10];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props8 = arg[0]; // Set the Flare component indicator...
+
+          _props8.Flare = true; // Set stateless-component flag for the component..
+
+          _props8.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props8;
+          Flare._elementTag = 'h3'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'h3'
+          };
+        }
+      } // H4 API Method
+
+    }, {
+      key: "h4",
+      value: function h4() {
+        for (var _len11 = arguments.length, arg = new Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
+          arg[_key11] = arguments[_key11];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props9 = arg[0]; // Set the Flare component indicator...
+
+          _props9.Flare = true; // Set stateless-component flag for the component..
+
+          _props9.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props9;
+          Flare._elementTag = 'h4'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'h4'
+          };
+        }
+      } // H5 API Method
+
+    }, {
+      key: "h5",
+      value: function h5() {
+        for (var _len12 = arguments.length, arg = new Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
+          arg[_key12] = arguments[_key12];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props10 = arg[0]; // Set the Flare component indicator...
+
+          _props10.Flare = true; // Set stateless-component flag for the component..
+
+          _props10.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props10;
+          Flare._elementTag = 'h5'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'h5'
+          };
+        }
+      } // H6 API Function
+
+    }, {
+      key: "h6",
+      value: function h6() {
+        for (var _len13 = arguments.length, arg = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
+          arg[_key13] = arguments[_key13];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props11 = arg[0]; // Set the Flare component indicator...
+
+          _props11.Flare = true; // Set stateless-component flag for the component..
+
+          _props11.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props11;
           Flare._elementTag = 'h6'; // Define component..
 
           return Flare._getTemplateLiteral;
@@ -8887,7 +9140,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
           _privateProps.Flare = true;
           _privateProps.isStatelessComponent = true;
-          _privateProps.identity = "flareH6".concat(Flare._incrementor); // Add private props to return object and... return..
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
 
           return {
             flare: true,
@@ -8899,21 +9152,405 @@ function (module, __webpack_exports__, __webpack_require__) {
             el: 'h6'
           };
         }
+      } // HEADER API Method
+
+    }, {
+      key: "header",
+      value: function header() {
+        for (var _len14 = arguments.length, arg = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
+          arg[_key14] = arguments[_key14];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props12 = arg[0]; // Set the Flare component indicator...
+
+          _props12.Flare = true; // Set stateless-component flag for the component..
+
+          _props12.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props12;
+          Flare._elementTag = 'header'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'header'
+          };
+        }
+      } // AREA API Method
+
+    }, {
+      key: "area",
+      value: function area() {
+        for (var _len15 = arguments.length, arg = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+          arg[_key15] = arguments[_key15];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props13 = arg[0]; // Set the Flare component indicator...
+
+          _props13.Flare = true; // Set stateless-component flag for the component..
+
+          _props13.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props13;
+          Flare._elementTag = 'area'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'area'
+          };
+        }
+      } // ASIDE API Method
+
+    }, {
+      key: "aside",
+      value: function aside() {
+        for (var _len16 = arguments.length, arg = new Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
+          arg[_key16] = arguments[_key16];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props14 = arg[0]; // Set the Flare component indicator...
+
+          _props14.Flare = true; // Set stateless-component flag for the component..
+
+          _props14.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props14;
+          Flare._elementTag = 'aside'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'aside'
+          };
+        }
+      } // COL API Method
+
+    }, {
+      key: "col",
+      value: function col() {
+        for (var _len17 = arguments.length, arg = new Array(_len17), _key17 = 0; _key17 < _len17; _key17++) {
+          arg[_key17] = arguments[_key17];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props15 = arg[0]; // Set the Flare component indicator...
+
+          _props15.Flare = true; // Set stateless-component flag for the component..
+
+          _props15.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props15;
+          Flare._elementTag = 'col'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'col'
+          };
+        }
+      } // COLGROUP API Method
+
+    }, {
+      key: "colgroup",
+      value: function colgroup() {
+        for (var _len18 = arguments.length, arg = new Array(_len18), _key18 = 0; _key18 < _len18; _key18++) {
+          arg[_key18] = arguments[_key18];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props16 = arg[0]; // Set the Flare component indicator...
+
+          _props16.Flare = true; // Set stateless-component flag for the component..
+
+          _props16.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props16;
+          Flare._elementTag = 'colgroup'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'colgroup'
+          };
+        }
+      } // SPAN API Method
+
+    }, {
+      key: "span",
+      value: function span() {
+        for (var _len19 = arguments.length, arg = new Array(_len19), _key19 = 0; _key19 < _len19; _key19++) {
+          arg[_key19] = arguments[_key19];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props17 = arg[0]; // Set the Flare component indicator...
+
+          _props17.Flare = true; // Set stateless-component flag for the component..
+
+          _props17.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props17;
+          Flare._elementTag = 'span'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'span'
+          };
+        }
+      } // SECTION API Method
+
+    }, {
+      key: "section",
+      value: function section() {
+        for (var _len20 = arguments.length, arg = new Array(_len20), _key20 = 0; _key20 < _len20; _key20++) {
+          arg[_key20] = arguments[_key20];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props18 = arg[0]; // Set the Flare component indicator...
+
+          _props18.Flare = true; // Set stateless-component flag for the component..
+
+          _props18.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props18;
+          Flare._elementTag = 'section'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'section'
+          };
+        }
+      } // TABLE API Function
+
+    }, {
+      key: "table",
+      value: function table() {
+        for (var _len21 = arguments.length, arg = new Array(_len21), _key21 = 0; _key21 < _len21; _key21++) {
+          arg[_key21] = arguments[_key21];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props19 = arg[0]; // Set the Flare component indicator...
+
+          _props19.Flare = true; // Set stateless-component flag for the component..
+
+          _props19.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props19;
+          Flare._elementTag = 'table'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'table'
+          };
+        }
+      } // TEXTAREA API Function
+
+    }, {
+      key: "textarea",
+      value: function textarea() {
+        for (var _len22 = arguments.length, arg = new Array(_len22), _key22 = 0; _key22 < _len22; _key22++) {
+          arg[_key22] = arguments[_key22];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props20 = arg[0]; // Set the Flare component indicator...
+
+          _props20.Flare = true; // Set stateless-component flag for the component..
+
+          _props20.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props20;
+          Flare._elementTag = 'textarea'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'textarea'
+          };
+        }
+      } // FOOTER API Function
+
+    }, {
+      key: "footer",
+      value: function footer() {
+        for (var _len23 = arguments.length, arg = new Array(_len23), _key23 = 0; _key23 < _len23; _key23++) {
+          arg[_key23] = arguments[_key23];
+        } // If the argument is not an array, it's probably our props object...
+
+
+        if (!_Utilities_Is__WEBPACK_IMPORTED_MODULE_1__["Is"].array(arg[0])) {
+          var _props21 = arg[0]; // Set the Flare component indicator...
+
+          _props21.Flare = true; // Set stateless-component flag for the component..
+
+          _props21.isStatelessComponent = true; // Pass the prop object, and element tag name  on to the global members..
+
+          Flare._propObj = _props21;
+          Flare._elementTag = 'footer'; // Define component..
+
+          return Flare._getTemplateLiteral;
+        } else {
+          var array = [].concat(arg),
+              _privateProps = {}; // Add some properties to the private props object....
+
+          _privateProps.Flare = true;
+          _privateProps.isStatelessComponent = true;
+          _privateProps.flareId = "".concat(Flare._createFlareId(array)); // Add private props to return object and... return..
+
+          return {
+            flare: true,
+            taggedTempLit: {
+              extended: false,
+              array: array
+            },
+            props: _privateProps,
+            el: 'footer'
+          };
+        }
+      }
+    }, {
+      key: "options",
+      // The config options object.. with default assumptions...
+      get: function get() {
+        return Flare._assumptions;
       }
     }, {
       key: "_tagQueue",
-      // Static member to hold element tag name to be created...
-      // Static member to hold element tag name to be created...
-      // Static member to hold a unique ID for an extended component's parent...
-      // Static member to hold a unique ID for a component...
-      // Static member object to hold props that will be passed on to the component element...
-      // A reference to an extended element's parent style literal...
-      // A reference to an extended element's parent props object...
-      // A boolean flag used to determine whether or not a component is a extension
-      // of another, or not....
-      // static _flareNames = []
-      // Static member to hold arrays awaiting to shift out their tags (inner parent components)....
-      // Static member to hold the main component name array ...
       // Getter for the component tagName queue...
       get: function get() {
         // If we have an array in the queue, return it, otherwise return the main array....
@@ -8967,12 +9604,18 @@ function (module, __webpack_exports__, __webpack_require__) {
         Flare._numeral = "".concat(Flare._huns_).concat(Flare._tens_).concat(Flare._ones_); // Return..
 
         return Flare._numeral;
-      } // The config options object.. with default assumptions...
-
+      }
     }]);
 
     return Flare;
   }();
+
+  _defineProperty(Flare, "_assumptions", {
+    shadowByDefault: true,
+    kebabCase: true,
+    globalFunctions: true,
+    underscoreGlobal: false
+  });
 
   _defineProperty(Flare, "_elementTag", '');
 
@@ -9000,13 +9643,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
   _defineProperty(Flare, "_huns_", 0);
 
-  _defineProperty(Flare, "_numeral", -1);
-
-  _defineProperty(Flare, "assumptions", {
-    shadowByDefault: true,
-    kebabCase: true // A public helper method for setting Flare assumptions, config options...
-
-  }); // // Internal method closure for grabbing the variable name from a flare component
+  _defineProperty(Flare, "_numeral", -1); // // Internal method closure for grabbing the variable name from a flare component
   // // declaration, for tagname representation in custom element creation...
   //   static _acquireComponentTagName(xCaller, callerName, array) {
   //     let buildArray,
@@ -9332,7 +9969,13 @@ function (module, __webpack_exports__, __webpack_require__) {
         parent code block and with the untouched child block, and process with Stylis...
         */
         stylis__WEBPACK_IMPORTED_MODULE_6___default()(selector, // Execute interpolations, with props, process with Stylis ....*/
-        Object(_Utilities_interpolationStation__WEBPACK_IMPORTED_MODULE_3__["default"])(ttlObj.array, props)); // Return css....
+        Object(_Utilities_interpolationStation__WEBPACK_IMPORTED_MODULE_3__["default"])(ttlObj.array, props));
+
+        if (ttlObj.extended) {
+          log('X Styles', 'tomato');
+          log(css, 'tomato');
+        } // Return css....
+
 
         return css;
       }
@@ -9356,14 +9999,20 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "insertGlobal",
       value: function insertGlobal(obj) {
-        log('obj', ['yellow', 'bold']);
-        log(obj);
-        dir(obj);
-
         var css = CSS._createCSS(obj, ' '); // Separate and insert rules...
 
 
         CSS._insertRules(_Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__["separateStyleRules"](css));
+      } // An internal static method for first, creating a 10 digit hash from a string of
+      // css, then a 7 digit alphabetical string from the hash....
+
+    }, {
+      key: "_createKeyframesName",
+      value: function _createKeyframesName(array) {
+        // Create string from template array...
+        var string = array[0].join('').replace(/\s|\n/g, ''); // Create and return unique id...
+
+        return Object(_Utilities_alphaStringFromHash__WEBPACK_IMPORTED_MODULE_4__["default"])(Object(_Utilities_murmurHash__WEBPACK_IMPORTED_MODULE_5__["default"])(string));
       }
       /* an instance constructor for the keyframes class.... Returns the instance and
       inserts the rules into the stylesheet...*/
@@ -9373,11 +10022,11 @@ function (module, __webpack_exports__, __webpack_require__) {
       value: function keyframes(obj) {
         // Create a css string from the objects array... and remove whitespace...
         var css,
-            str = obj.array.join('').replace(/\s|\n/g, ''),
             // Create hash from string, and then a name from the hash....
-        name = Object(_Utilities_alphaStringFromHash__WEBPACK_IMPORTED_MODULE_4__["default"])(Object(_Utilities_murmurHash__WEBPACK_IMPORTED_MODULE_5__["default"])(str)),
+        name = CSS._createKeyframesName(obj.array),
             // Create some usable css ...
         object = {};
+
         object.selector = "@keyframes ".concat(name);
         object.code = obj.array.join(''); // Use the computed keyframes property to generate our animation code...
 
@@ -9403,7 +10052,8 @@ function (module, __webpack_exports__, __webpack_require__) {
         //  dir(tagTempLit)
         // Declare vars...
         var sheet,
-            styleTag = eTag === 'div' ? cTag : "".concat(cTag, " ").concat(eTag),
+            selector = "[flareId=".concat(props.flareId, "]"),
+            styleTag = eTag === 'div' ? selector : "".concat(selector, " ").concat(eTag),
             css; // If we are not appending style to a shadow root...
 
         if (appendStyle) {
@@ -9636,8 +10286,6 @@ function (module, __webpack_exports__, __webpack_require__) {
 
             case interpolations[i] instanceof _Keyframes__WEBPACK_IMPORTED_MODULE_2__["Keyframes"]:
               val = interpolations[i].name;
-              log('VAL', ['orange', 'bold']);
-              log(val);
               break;
 
             /* Otherwise, I don't know what the hell we're dealing with..... Better off
@@ -9651,10 +10299,8 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         } else {
           val = '';
-        }
+        } // Add interpolation values to array strings, join them...
 
-        log('val', ['red', 'bold']);
-        log(val); // Add interpolation values to array strings, join them...
 
         return string.concat('', val);
       }).join('')
@@ -9677,8 +10323,6 @@ function (module, __webpack_exports__, __webpack_require__) {
       }); // Reassemble the css literals...
 
       var s = stringWeaver(arrays.true[0], arrays.false, props);
-      log('S', ['orange', 'bold']);
-      log(s);
       return s; // Otherwise, rejoin the css fragments and return...
     } else {
       return ttlArray.join('');
@@ -9716,9 +10360,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   // The number of letters (cap and lower case) in the alphabet..
 
 
-  var alphaRange = 52; // This number determines the length of the returned string. '52' = 6, '26' = 7 chars...
-
-  var divisor = 26;
+  var alphaRange = 52;
   /* Once the modulo function gets x within a 2 digit range, we can get into ascii
   alphabet range by adding either 39 or 97, depending on whether or not the value
   is > than 25.*/
@@ -9728,8 +10370,11 @@ function (module, __webpack_exports__, __webpack_require__) {
   };
 
   function alphaStringFromHash(hash) {
+    var chars = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 7;
     var name = '',
-        x = hash;
+        x = hash,
+        // This number determines the length of the returned string. '52' = 6, '26' = 7 chars...
+    divisor = chars = 6 ? 52 : undefined;
 
     do {
       // Diminish the hash by dividing by 26...
@@ -12006,6 +12651,10 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
   var _Utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+  /* harmony import */
+
+
+  var _Utilities_Is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
   /*
   ** arrayBuilder.js
   **
@@ -12020,7 +12669,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   // window.log = _.log
 
   /* A very functionally-minded version of this algorithm, this function takes source
-  code from a function, and produces a usable array of component tagnames...*/
+  code from a function, and produces a usable array of component tagnames, nesting included...*/
 
 
   function manifestArray(source, fnName) {
@@ -12045,6 +12694,7 @@ function (module, __webpack_exports__, __webpack_require__) {
     logOut = function logOut(string) {
       log('PIPER-LOG', ['tomato', 'bold']);
       log(string);
+      dir(props);
       return string;
     }; // This function executes a list of RegExp string replacements...
 
@@ -12055,6 +12705,8 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
     toTrim = function toTrim(string) {
+      log('fnName', 'orange');
+      log(fnName);
       return fnName !== 'render' ? string.substring(1, string.length - 1) : string;
     }; // Replaces names from name array into string placeholders...
 
@@ -12096,6 +12748,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
     nameTwister = function nameTwister(ra) {
+      log('Twisting Array', ['lightblue', 'bold']);
       ra.push(ra.shift());
       return ra;
     }; // Brings a string array to life...
@@ -12109,6 +12762,7 @@ function (module, __webpack_exports__, __webpack_require__) {
     toTwist = function toTwist(array) {
       if (fnName !== 'render') {
         return nameTwister(array);
+      } else {// array.unshift(array.pop())
       }
 
       return array;
@@ -12819,11 +13473,23 @@ function (module, __webpack_exports__, __webpack_require__) {
 
             if (self) {
               log('self', ['yellow', 'bold']);
-              self.appendChild(button);
+              self.appendChild(button); // Add a few default styles for the outer root element....
+
+              self.style.width = '100%';
+              self.style.paddingLeft = '10px';
+              self.style.paddingRight = '10px';
+              self.style.marginLeft = 'auto';
+              self.style.marginRight = 'auto';
             } else if (this) {
               log('this', ['yellow', 'bold']);
               dir(this);
-              this.appendChild(button);
+              this.appendChild(button); // Add a few default styles for the outer root element....
+
+              this.style.width = '100%';
+              this.style.paddingLeft = '10px';
+              this.style.paddingRight = '10px';
+              this.style.marginLeft = 'auto';
+              this.style.marginRight = 'auto';
             } else {
               throw Error('ConnectedCallbackError: A problem has occured while appending component children.');
             }
@@ -16598,6 +17264,35 @@ function (module, __webpack_exports__, __webpack_require__) {
 
     return UpdateError;
   }();
+  /***/
+
+},
+/* 70 */
+
+/***/
+function (module, __webpack_exports__, __webpack_require__) {
+  ;
+
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export (binding) */
+
+
+  __webpack_require__.d(__webpack_exports__, "default", function () {
+    return valenceLogo;
+  });
+  /*
+  ** valenceLogo.js
+  **
+  ** valenceLogo.js is svg markup of the valence.js logo.....
+  **
+  ** Eric James Foster, Fostware LLC, MIT License.
+  ***/
+
+
+  function valenceLogo() {
+    return;
+    "<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 700 700\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" style=\"fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;\">\n    <g>\n      <ellipse cx=\"350\" cy=\"350\" rx=\"68.5\" ry=\"71.5\" style=\"fill:#f6bbf3;stroke-width:4.5px;stroke:#f6bc00;\"/>\n      <g>\n        <ellipse cx=\"350\" cy=\"350\" rx=\"107\" ry=\"309.5\" style=\"fill:none;stroke-width:9px;stroke:#5670a5;\"/>\n        <circle cx=\"288.256\" cy=\"97.5\" r=\"23.5\" style=\"fill:#5670a5;stroke-width:4.5px;stroke:#5670a5;\"/>\n      </g>\n      <g>\n        <path d=\"M617.748,505.245c-29.622,51.089 -173.645,23.003 -321.419,-62.679c-147.775,-85.682 -243.699,-196.723 -214.077,-247.811c29.622,-51.089 173.645,-23.003 321.419,62.679c147.775,85.682 243.699,196.723 214.077,247.811Z\" style=\"fill:none;stroke-width:9px;stroke:#699dfb;\"/>\n        <circle cx=\"599.449\" cy=\"422.5\" r=\"23.5\" style=\"fill:#699d00;stroke-width:4.5px;stroke:#699dfb;\"/>\n      </g>\n      <g>\n        <path d=\"M618.99,196.917c29.21,51.325 -67.606,161.589 -216.066,246.078c-148.46,84.489 -292.705,111.414 -321.914,60.088c-29.21,-51.325 67.606,-161.589 216.066,-246.078c148.46,-84.489 292.705,-111.414 321.914,-60.088Z\" style=\"fill:none;stroke-width:9px;stroke:#c02d0c;\"/>\n        <circle cx=\"168.5\" cy=\"529.114\" r=\"23.5\" style=\"fill:#c02d0c;stroke-width:4.5px;stroke:#c02d0c;\"/>\n      </g>\n    </g>\n  </svg>";
+  }
   /***/
 
 }]);

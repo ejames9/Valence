@@ -103,4 +103,16 @@ export class Is {
   static interpolated(tagTempLit) {
     return tagTempLit.length > 1
   }
+
+/* A function for determining whether or not a component is a
+valence component ... */ 
+  static valenceComponent(tag) {
+    return window.valenceComponents.indexOf(tag) !== -1
+  }
+
+/* A function for determining whether or not a component is
+a flare component... */
+  static flareComponent(tag) {
+    return window.flareComponents.indexOf(tag) !== -1
+  }
 }

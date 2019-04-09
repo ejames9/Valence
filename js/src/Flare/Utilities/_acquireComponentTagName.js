@@ -15,8 +15,7 @@ export default function _acquireComponentTagName(xCaller, callerName, array) {
   tagTwister,
   tagArray,
   tag
-  log('thisConstructor', ['orange', 'bold'])
-   log(this)
+  // log('thisConstructor', ['orange', 'bold']);log(this)
   // log("I've been passed in", ['pink', 'bold']);log(array)
 // A very simple function for moving the first item of an array to the end.
   tagTwister =(ra)=>  {

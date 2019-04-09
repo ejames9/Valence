@@ -18,7 +18,6 @@ import { Keyframes } from '../Keyframes'
 let stringWeaver,
 interpolationFilter
 
-
 /* A helper function for processing tagged template literal interpolation functions,
 and inserting their values back into the template.... The function takes an array
 of strings and an array of interpolation, and props as arguments, and returns the completed
@@ -46,8 +45,6 @@ the last index.....
 // If we find a keyframes instance, we need it's name....
         case interpolations[i] instanceof Keyframes:
           val = interpolations[i].name
-          log('VAL', ['orange', 'bold'])
-           log(val)
           break
 /* Otherwise, I don't know what the hell we're dealing with..... Better off
 throwing an error!*/
@@ -61,8 +58,6 @@ we'll just give the value an empty string....*/
     } else {
       val = ''
     }
-    log('val', ['red', 'bold'])
-     log(val)
 // Add interpolation values to array strings, join them...
     return string.concat(
       '',
@@ -83,8 +78,7 @@ export default interpolationFilter =(ttlArray, props)=> {
       })
 // Reassemble the css literals...
       let s = stringWeaver(arrays.true[0], arrays.false, props)
-      log('S', ['orange', 'bold'])
-       log(s)
+
       return s
 // Otherwise, rejoin the css fragments and return...
   } else {

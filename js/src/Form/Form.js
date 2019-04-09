@@ -163,17 +163,23 @@ class Form {
   static x(type, props, ...children) {
 // If type = false, the node is a flare component, and needs to be defined.
     if (type.flare) {
+      log('TYPE', ['tomato', 'bold'])
+       dir({type})
 // Get a variable... load with x's caller function's code
       let xCaller = x.caller.toString(),
       xCallerName = x.caller.name
 // Use the above to define Flare Component.. and also 'type' for the node...
-      type = Flare.interfaceValenceX(
+      type = Flare.interValenceX(
         xCallerName,
         xCaller,
         type.el,
         type.taggedTempLit,
         props,
         type.props
+      )
+    } else {
+      window.valenceComponents.push(
+        _.convertFuncNameToTagName(type)
       )
     }
 // Return a new Node...

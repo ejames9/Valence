@@ -69,13 +69,12 @@ import { PropTypes } from './js/src/Props/PropTypes'
 import { Flare } from './js/src/Flare/Flare'
 
 
-// Initializing an array for flare component tag names...
+// Initializing an array for Flare component tag names...
 window.flareComponents = []
+window.valenceComponents = []
 // Initializing an array for all stateless instantiated component tag names...
 window.statelessComponents = []
 
-// initialize component element hash on window object...
-window.elementHash = -1
 // initialize global flags...
 window.webComponentsLoaded = false
 window.rootNodeDefined = false
@@ -90,17 +89,9 @@ window.dom                 = _.dom
 window.dir                 = console.dir
 window.log                 = _.log
 
-//Globalize flare functions for convenience...
-window.global              = Flare.global
-window.extend              = Flare.extend
-window.keyframes           = Flare.keyframes
-// Globalize style elements for convenience...
-window.div                 = Flare.div
-window.input               = Flare.input
-window.button              = Flare.button
-window.p                   = Flare.p
-window.h1                  = Flare.h1
-window.h6                  = Flare.h6
+// Globalize Flare library...
+window.flare = Flare
+
 
 
 // The framework's API class...
@@ -130,12 +121,64 @@ class Valence {
 // The form virtual DOM instance...
   static form = null
 
-// Add config method from the flare class...
-  static config = Flare.config
+// The config options object.. with default assumptions...
+  static _assumptions = {
+    //config: options
+  }
 
 /*
  * Class Methods...
  */
+
+// A private static method for setting library user assumptions...
+  static _setAssumptions(assumptions) {
+// If we have the global functions option set to true.....
+    if (assumptions.globalFunctions) {
+// Globalize Flare functions for convenience...
+      window.global              = flare.global
+      window.extend              = flare.extend
+      window.keyframes           = flare.keyframes
+// Globalize style elements for convenience...
+      window.div                 = flare.div
+      window.aside               = flare.aside
+      window.area                = flare.area
+      window.button              = flare.button
+      window.col                 = flare.col
+      window.colgroup            = flare.colgroup
+      window.header              = flare.header
+      window.footer              = flare.footer
+      window.input               = flare.input
+      window.h1                  = flare.h1
+      window.h2                  = flare.h2
+      window.h3                  = flare.h3
+      window.h4                  = flare.h4
+      window.h5                  = flare.h5
+      window.h6                  = flare.h6
+      window.p                   = flare.p
+      window.section             = flare.section
+      window.span                = flare.span
+      window.table               = flare.table
+      window.textarea            = flare.textarea
+    }
+// If underscore abbreviation for global insertion option is set to true....
+    if (assumptions.underscoreGlobal) {
+// Abbreviate flare.global...
+      window.__                  = flare.global
+    }
+    return assumptions
+  }
+
+// A public helper method for setting Flare assumptions, config options...
+  static assume(userAssumptions) {
+    return Valence._setAssumptions(
+      Flare.assume(
+        _.combineObjects(
+          Valence._assumptions,
+          userAssumptions
+        )
+      )
+    )
+  }
 
 // Method for converting virtual dom to real dom...
   static realize(node, root) {
@@ -168,18 +211,10 @@ class Valence {
 // update the component...
     if (!this.rootComponentMounted) {
       if (webComponentsLoaded) {
-        console.log('Check1')
         mount()
       } else {
-        console.log('check1st')
         document.addEventListener('webComponentsLoaded', ()=> {
-          console.log('Check0')
-          try {
-            mount()
-          }
-          catch (err) {
-            console.error(`MountingError: ${err.message}`)
-          }
+          mount()
         })
       }
     } else {

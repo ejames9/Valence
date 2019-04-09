@@ -9,12 +9,14 @@
 **/
 
 import { Valence } from '../../../Valence'
+import valenceLogo from '../../assets/valenceLogo'
 
-const __ = window.global
 
-Valence.config({
-  shadowByDefault: false
+Valence.assume({
+  shadowByDefault: false,
+  underscoreGlobal: true
 })
+
 
 const blue = '#0057ff'
 const yellow = '#ffc700'
@@ -39,9 +41,7 @@ position: absolute;
 height: 100%;
 width: 100%;
 padding: 0;
-
 `
-
 
 const Box = div({
   id: 'box',
@@ -80,8 +80,6 @@ const MyDiv = div`
   width: 200px;
   background: ${tomato}
   z-index: 99;
-
-
 `
 
 // attribute for inner button text.....
@@ -114,7 +112,7 @@ const MyDiv2 = div`
 
 
 
-const MyInput = input({
+const MyInput =()=> input({
   placeholder: 'onsearch',
   type: 'text',
   className: 'myput',
@@ -133,7 +131,7 @@ const MyInput = input({
   background-color: orange;
   border: none;
   border-radius: 5px;
-  color: blue;
+  color: yellow;
 
   @media (max-height: 400px) {
       background: blue;
@@ -149,6 +147,8 @@ const Thing2 = extend(Thing, {
   id: 'thing2',
   label: 'press me!'
 })`
+  position: relative;
+  top: 100px;
   background-color: ${tomato};
   opacity: ${({attrib})=> attrib};
   color: white;
@@ -164,6 +164,8 @@ const rotate = keyframes`
     transform: rotate(360deg);
   }
 `;
+
+
 
 const Spinner = div`
   position: absolute;
@@ -188,13 +190,17 @@ const Spinner = div`
   }
 `
 
+const Logo = div`
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+`
 
 
 
 const MyName =()=>
   <div>
     <Box>
-
       <MyDiv >
         <Thing myAtty='75px' shadow={false}/>
         <Spinner>
@@ -202,14 +208,12 @@ const MyName =()=>
         </Spinner>
         <p>I'm inside a custom element!</p>
       </MyDiv>
-
       <p>What is happening</p>
       <h1 className='name'>My Name Is:</h1>
       <MyDiv2>
         <MyInput/>
         <Thing2 attrib={9}/>
       </MyDiv2>
-
     </Box>
   </div>
 
@@ -220,7 +224,11 @@ class App extends Valence.Component {
     return (
       <Fluid>
         <MyName className='myname' shadow={false}/>
+        <Logo>
+          <p>Delilah!</p>
+        </Logo>
       </Fluid>
+
     )
   }
 }

@@ -17,9 +17,9 @@ import { Keyframes } from './Keyframes'
 // Grab tagged template literal interpolation code...
 import _interpolationStation from './Utilities/_interpolationStation'
 // Grab hash to string converter...
-import alphaStringFromHash from './Utilities/_alphaStringFromHash'
+import _alphaStringFromHash from './Utilities/_alphaStringFromHash'
 // Get murmurhash...
-import murmurHash from './Utilities/_murmurHash'
+import _murmurHash from './Utilities/_murmurHash'
 // Get stylis...
 import stylis from 'stylis'
 
@@ -140,6 +140,10 @@ parent code block and with the untouched child block, and process with Stylis...
           )
         )
       )
+      if (ttlObj.extended) {
+        log('X Styles', 'tomato')
+        log(css, 'tomato')
+      }
   // Return css....
       return css
     }
@@ -162,12 +166,20 @@ one by one.*/
 
 // A Public method for inserting global styles into the stylesheet...
   static insertGlobal(obj) {
-    log('obj', ['yellow', 'bold'])
-     log(obj)
-     dir(obj)
     let css = CSS._createCSS(obj, ' ')
 // Separate and insert rules...
     CSS._insertRules(_.separateStyleRules(css))
+  }
+
+
+// An internal static method for first, creating a 10 digit hash from a string of
+// css, then a 7 digit alphabetical string from the hash....
+  static _createKeyframesName(array) {
+// Create string from template array...
+    let string = array[0].join('')
+                       .replace(/\s|\n/g, '')
+// Create and return unique id...
+    return _alphaStringFromHash(_murmurHash(string))
   }
 
 
@@ -176,10 +188,8 @@ inserts the rules into the stylesheet...*/
   static keyframes(obj) {
 // Create a css string from the objects array... and remove whitespace...
     let css,
-    str = obj.array.join('')
-                       .replace(/\s|\n/g, ''),
 // Create hash from string, and then a name from the hash....
-    name = alphaStringFromHash(murmurHash(str)),
+    name = CSS._createKeyframesName((obj.array)),
 
 // Create some usable css ...
     object = {}
@@ -206,7 +216,8 @@ otherwise, it is appended to the shadow root...down the line....*/
     //  dir(tagTempLit)
 // Declare vars...
     let sheet,
-    styleTag = (eTag === 'div')? cTag : `${cTag} ${eTag}`,
+    selector = `[flareId=${props.flareId}]`,
+    styleTag = (eTag === 'div')? selector : `${selector} ${eTag}`,
     css
 // If we are not appending style to a shadow root...
     if (appendStyle) {

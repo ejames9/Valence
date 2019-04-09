@@ -126,6 +126,7 @@ class Button {
 // Create a node from the template function, and append to shadowRoot....
         Button._appendStyleNode(shadowRoot, template)
       }
+
 // Return constructor...
       return self
     }
@@ -147,10 +148,22 @@ class Button {
         if (self) {
           log('self', ['yellow', 'bold'])
           self.appendChild(button)
+// Add a few default styles for the outer root element....
+          self.style.width = '100%'
+          self.style.paddingLeft = '10px'
+          self.style.paddingRight = '10px'
+          self.style.marginLeft = 'auto'
+          self.style.marginRight = 'auto'
         } else if (this) {
           log('this', ['yellow', 'bold'])
           dir(this)
           this.appendChild(button)
+// Add a few default styles for the outer root element....
+          this.style.width = '100%'
+          this.style.paddingLeft = '10px'
+          this.style.paddingRight = '10px'
+          this.style.marginLeft = 'auto'
+          this.style.marginRight = 'auto'
         } else {
           throw Error('ConnectedCallbackError: A problem has occured while appending component children.')
         }

@@ -11,11 +11,12 @@
 ***/
 
 import * as _ from '../../Utilities/helpers'
+import { Is } from '../../Utilities/Is'
 
 // window.log = _.log
 
 /* A very functionally-minded version of this algorithm, this function takes source
-code from a function, and produces a usable array of component tagnames...*/
+code from a function, and produces a usable array of component tagnames, nesting included...*/
 export default function manifestArray(source, fnName) {
   let nameRE = /\([A-Z a-z 0-9]+/g,
   placeholderRE = /\[--\]|--/,
@@ -40,6 +41,7 @@ export default function manifestArray(source, fnName) {
   logOut =(string)=> {
     log('PIPER-LOG', ['tomato', 'bold'])
     log(string)
+    dir(props)
     return string
   }
 // This function executes a list of RegExp string replacements...
@@ -52,6 +54,8 @@ export default function manifestArray(source, fnName) {
   }
 // Determines whether or not the string should be trimmed of it's first and last chars...
   toTrim =(string)=> {
+    log('fnName', 'orange')
+    log(fnName)
     return (fnName !== 'render')?
       string.substring(1, string.length-1)
     :
@@ -89,6 +93,7 @@ export default function manifestArray(source, fnName) {
   }
 // Moves the first item of an array to the end...
   nameTwister =(ra)=> {
+    log('Twisting Array', ['lightblue', 'bold'])
     ra.push(ra.shift())
     return ra
   }
@@ -102,6 +107,8 @@ export default function manifestArray(source, fnName) {
   toTwist =(array)=> {
     if  (fnName !== 'render') {
       return nameTwister(array)
+    } else {
+      // array.unshift(array.pop())
     }
     return array
   }
