@@ -49,20 +49,15 @@ class Input {
     eListeners  = [],
     customProps = [],
     shadowBool,
-    shadow,
+    shadow = props.shadow,
     input,
     self,
     obj
 
-// Return boolean value for shadow...
-    shadowBool =(arr)=>
-      arr.reduce((shadow, keyVal, index)=>
-        (keyVal.indexOf('shadow') == -1)?
-          shadow
-        :
-          index
-        ,false
-      )
+/* Doing some finaglery with the native-shim and HTMLElement object.  This will
+be necessary until web components are fully supported in all browsers... */
+    window.useNativeShim = false
+    window.HTMLElement   = window._HTMLElement
 
 // Get attribute names and Listeners...
     if (props) {
@@ -72,12 +67,6 @@ class Input {
 // Store attribute and Listener pairs...
       customProps = obj.props
       eListeners  = obj.eventListeners
-
-// Determine if shadow option is set or not...
-      shadow = (shadowBool(customProps) !== false)?
-        customProps[shadowBool(customProps)][1]
-      :
-        true
     }
 
 // Create an HTMLInputElement...
@@ -134,8 +123,32 @@ class Input {
 
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
-      HTMLInputComponent.prototype.connectedCallback =()=> {
-        self.appendChild(input)
+      HTMLInputComponent.prototype.connectedCallback = function() {
+        log('Im Here', ['red', 'bold'])
+        dir(self)
+        if (self) {
+          log('self', ['yellow', 'bold'])
+          self.appendChild(input)
+// Add a few default styles for the outer root element....
+          self.style.width = '100%'
+          self.style.paddingLeft = '10px'
+          self.style.paddingRight = '10px'
+          self.style.marginLeft = 'auto'
+          self.style.marginRight = 'auto'
+        } else if (this) {
+          log('this', ['yellow', 'bold'])
+          dir(this)
+          dir(input)
+          this.appendChild(input)
+// Add a few default styles for the outer root element....
+          this.style.width = '100%'
+          this.style.paddingLeft = '10px'
+          this.style.paddingRight = '10px'
+          this.style.marginLeft = 'auto'
+          this.style.marginRight = 'auto'
+        } else {
+          throw Error('ConnectedCallbackError: A problem has occured while appending component children.')
+        }
       }
     }
 

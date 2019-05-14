@@ -9,8 +9,9 @@ Eric James Foster, MIT License.
 */
 
 // Pull in utilities...
-import * as _ from '../Utilities/helpers'
-import { Is as is } from '../Utilities/Is'
+import { log, dom } from '../Utilities/helpers'
+// Get type validation...
+import { isString } from '../Utilities/Is'
 // Grab Node...
 import { Node } from './Node'
 // Get Props class...
@@ -21,8 +22,8 @@ import { Events } from '../Events'
 import { Flare } from '../Flare/Flare'
 
 // Globalize common utilities...
-const log     = _.log
-const dom     = _.dom
+// const log     = _.log
+// const dom     = _.dom
 const dir     = console.dir
 
 
@@ -125,7 +126,7 @@ class Form {
         thisNode
       )
 // None of the above apply, and the node is not a textNode...
-} else if (!is.string(newNode)) {
+} else if (!isString(newNode)) {
 // If newNode is  component, fire componentWillReceiveProps event with new props,
 // then update props...
       if (this._isStatefulComponent(thisNode)) {
@@ -161,27 +162,6 @@ class Form {
 
 // A helper method representing the API of the virtual DOM...
   static x(type, props, ...children) {
-// If type = false, the node is a flare component, and needs to be defined.
-    if (type.flare) {
-      log('TYPE', ['tomato', 'bold'])
-       dir({type})
-// Get a variable... load with x's caller function's code
-      let xCaller = x.caller.toString(),
-      xCallerName = x.caller.name
-// Use the above to define Flare Component.. and also 'type' for the node...
-      type = Flare.interValenceX(
-        xCallerName,
-        xCaller,
-        type.el,
-        type.taggedTempLit,
-        props,
-        type.props
-      )
-    } else {
-      window.valenceComponents.push(
-        _.convertFuncNameToTagName(type)
-      )
-    }
 // Return a new Node...
     return new Node({
       type,

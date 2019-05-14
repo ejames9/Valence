@@ -14,10 +14,7 @@ Eric James Foster, MIT License.
 /*
 Todo's
 -------*/
-//TODO: Figure out what's going on with the shadow parameter in Component.CreateComponent(),
-// also, look into shadowBool()...
 //TODO: Set up observedAttributeCallbacks, if not already done.....
-
 //DONE?: Finish lifecycle event firings...
 /*
 [X] - componentWillMount
@@ -53,11 +50,13 @@ import './js/src/support/polyfillLoader'
 import './js/src/support/shimLoader'
 
 //Get utilities...
-import * as _ from './js/src/Utilities/helpers'
+import { combineObjects } from './js/src/Utilities/helpers'
+import _el from './js/src/Utilities/DOM/el'
+import { _log, _dir } from './js/src/Utilities/Loggers'
 // Get Virtual DOM...
 import { Form } from './js/src/Form/Form'
 // Get Component..
-import { Component as _Component } from './js/src/Component'
+import _Component from './js/src/Component'
 // Get events...
 import { Events } from './js/src/Events'
 // Get errors...
@@ -69,25 +68,29 @@ import { PropTypes } from './js/src/Props/PropTypes'
 import { Flare } from './js/src/Flare/Flare'
 
 
+
+// Create empty object for the library's globals.....
+window.valenceGlobals = {}
 // Initializing an array for Flare component tag names...
-window.flareComponents = []
-window.valenceComponents = []
+window.valenceGlobals.flareComponents = {}
+window.valenceGlobals.webComponents = {}
+window.valenceGlobals.valenceComponents = []
+window.valenceGlobals.registeredComponents = []
 // Initializing an array for all stateless instantiated component tag names...
-window.statelessComponents = []
+window.valenceGlobals.statelessComponents = []
 
 // initialize global flags...
-window.webComponentsLoaded = false
-window.rootNodeDefined = false
-
+window.valenceGlobals.webComponentsLoaded = false
+window.valenceGlobals.rootNodeDefined = false
+window.valenceGlobals.webComponents.flexBasisDefined = false
 // Provide access to PropTypes...
 window.PropTypes           = PropTypes
 // Provide `jsx to vDOM`, x(), function...
 window.x                   = Form.x
 // Globalize common utility functions...
-window.el                  = _.el
-window.dom                 = _.dom
-window.dir                 = console.dir
-window.log                 = _.log
+window.el                  = _el
+window.dir                 = _dir
+window.log                 = _log
 
 // Globalize Flare library...
 window.flare = Flare
@@ -123,7 +126,7 @@ class Valence {
 
 // The config options object.. with default assumptions...
   static _assumptions = {
-    //config: options
+    cornDogCase: false
   }
 
 /*
@@ -165,6 +168,10 @@ class Valence {
 // Abbreviate flare.global...
       window.__                  = flare.global
     }
+// Syntax highlighting....
+    if (assumptions.syntaxHighlighting) {
+      window.styled = flare
+    }
     return assumptions
   }
 
@@ -172,7 +179,7 @@ class Valence {
   static assume(userAssumptions) {
     return Valence._setAssumptions(
       Flare.assume(
-        _.combineObjects(
+        combineObjects(
           Valence._assumptions,
           userAssumptions
         )
@@ -210,7 +217,7 @@ class Valence {
 // If no component is mounted, mount component. Otherwise
 // update the component...
     if (!this.rootComponentMounted) {
-      if (webComponentsLoaded) {
+      if (valenceGlobals.webComponentsLoaded) {
         mount()
       } else {
         document.addEventListener('webComponentsLoaded', ()=> {

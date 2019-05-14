@@ -1,1 +1,60 @@
 
+.container {
+  display: flex;
+  background: blue;
+  padding: 15px 0;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 0 15px;
+  background: red;
+}
+
+.col {
+  border: 1px solid black;
+  background: green;
+  font-size: 22px;
+  font-family: hermit;
+
+}
+
+.one {
+  flex-basis: calc((6 / 12) * 100%);
+  margin-right: 10px;
+}
+.two {
+  margin-right: 10px;
+  flex: 1
+}
+.three {
+  flex-basis: 25%;
+}
+
+/*
+@media {min-width: 576px} {
+  .contain {
+    max-width: 540px;
+  }
+}
+
+@media screen and {min-width: 768px} {
+  container- {
+    max-width: 720px;
+  }
+}
+
+@media screen and {min-width: 992px} {
+  container- {
+    max-width: 960px;
+  }
+}
+
+@media screen and {min-width: 1200px} {
+  container- {
+    max-width: 1120px;
+  }
+} */

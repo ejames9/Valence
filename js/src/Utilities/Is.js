@@ -10,7 +10,7 @@ Eric James Foster, MIT License.
 import { DATA } from './data'
 
 
-export class Is {
+class Is {
   // Determines whether or not a prop is an event listener...
   static eventListener(name) {
      return /on[A-Z]\w*/g.test(name)
@@ -56,6 +56,11 @@ export class Is {
 // Simple convenience function for determining if a value is
 // a function or not...
     static function(val) {
+      return typeof val === 'function'
+    }
+
+// A copy of the above function with a different name... I have my reasons....
+    static func(val) {
       return typeof val === 'function'
     }
 
@@ -105,7 +110,7 @@ export class Is {
   }
 
 /* A function for determining whether or not a component is a
-valence component ... */ 
+valence component ... */
   static valenceComponent(tag) {
     return window.valenceComponents.indexOf(tag) !== -1
   }
@@ -115,4 +120,78 @@ a flare component... */
   static flareComponent(tag) {
     return window.flareComponents.indexOf(tag) !== -1
   }
+
+/* A function for determining whether or not a component is
+a flare component... */
+  static flare(node) {
+// Regular expression for determination...
+    let flareFuncRE = /_templateObject/g,
+    funcSourceCode
+
+// Do your thing.....
+    if (typeof node === 'undefined') {
+      return false
+// If we have a node.type....
+    } else if (node !== undefined && node.type !== undefined) {
+       funcSourceCode = node.type.toString()
+// Test the regexp....
+      if (flareFuncRE.test(funcSourceCode)) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+// If we already have a node.tag, go ahead and return true....
+      if (node.tag) {
+        return true
+      }
+      return false
+    }
+  }
+}
+
+
+const isEventListener = Is.eventListener
+const isNewPropName = Is.newPropName
+const isUndefined = Is.undefined
+const isObject = Is.object
+const isNumber = Is.number
+const isString = Is.string
+const isFunction = Is.function
+const isNewFunction = Is.newFunction
+const isFunc = Is.func
+const isSymbol = Is.symbol
+const isBoolean = Is.boolean
+const isClass = Is.class
+const isComponent = Is.component
+const isArray = Is.array
+const isKin = Is.kin
+const isRequiredProp = Is.requiredProp
+const isInterpolated = Is.interpolated
+const isValence = Is.valenceComponent
+const isFlareComponent = Is.flareComponent
+const isFlare = Is.flare
+
+export {
+  Is,
+  isEventListener,
+  isNewPropName,
+  isNewFunction,
+  isUndefined,
+  isObject,
+  isNumber,
+  isString,
+  isFunction,
+  isFunc,
+  isSymbol,
+  isBoolean,
+  isClass,
+  isComponent,
+  isArray,
+  isKin,
+  isRequiredProp,
+  isInterpolated,
+  isValence,
+  isFlareComponent,
+  isFlare
 }

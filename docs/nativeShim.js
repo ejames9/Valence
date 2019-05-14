@@ -143,6 +143,7 @@
       const elementProto = elementClass.prototype;
       StandInElement = class extends NativeHTMLElement {
         constructor() {
+
           // Call the native HTMLElement constructor, this gives us the
           // under-construction instance as `this`:
           super();

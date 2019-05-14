@@ -22,7 +22,7 @@ interpolationFilter
 and inserting their values back into the template.... The function takes an array
 of strings and an array of interpolation, and props as arguments, and returns the completed
 css string....*/
-stringWeaver =(strings, interpolations, props)=>
+stringWeaver =(strings, interpolations, props={})=>
 // We need to execute them with the props object, and add the value into the template...
   strings.map((string, i)=> {
     let val
@@ -46,11 +46,14 @@ the last index.....
         case interpolations[i] instanceof Keyframes:
           val = interpolations[i].name
           break
+        case typeof interpolations[i] === 'number':
+          val = interpolations[i]
+          break
 /* Otherwise, I don't know what the hell we're dealing with..... Better off
 throwing an error!*/
         default:
           throw TypeError(
-            `Expecting a 'Keyframe', 'string' or a 'function' here. A value of type: ${typeof interpolations[i]}, was given.`
+            `Expecting a 'Keyframe', 'string', 'number' or 'function' here. A value of type: ${typeof interpolations[i]}, was given.`
           )
       }
 /* The last index will end up here. Since there will never be an interpolation here,
@@ -69,7 +72,7 @@ we'll just give the value an empty string....*/
 This function serves to activate prop function interpolations in css styling...
 The function simply takes a tagged template literal as an argument, and spits out
 completed styles, ready for appending to a style tag...   */
-export default interpolationFilter =(ttlArray, props)=> {
+export default interpolationFilter =(ttlArray, props={})=> {
 // First let's check if we have interpolations to deal with...
   if (Is.interpolated(ttlArray)) {
 // Declare var for splitting strings and functions into respective arrays...

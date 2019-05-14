@@ -49,20 +49,15 @@ class Button {
     eListeners  = [],
     customProps = [],
     shadowBool,
-    shadow,
+    shadow = props.shadow,
     button,
     self,
     obj
 
-// Return boolean value for shadow...
-    shadowBool =(arr)=>
-      arr.reduce((shadow, keyVal, index)=>
-        (keyVal.indexOf('shadow') == -1)?
-          shadow
-        :
-          index
-        ,false
-      )
+/* Doing some finaglery with the native-shim and HTMLElement object.  This will
+be necessary until web components are fully supported in all browsers... */
+    window.useNativeShim = false
+    window.HTMLElement   = window._HTMLElement
 
 // Get attribute names and Listeners...
     if (props) {
@@ -72,12 +67,6 @@ class Button {
 // Store attribute and Listener pairs...
       customProps = obj.props
       eListeners  = obj.eventListeners
-
-// Determine if shadow option is set or not...
-      shadow = (shadowBool(customProps) !== false)?
-        customProps[shadowBool(customProps)][1]
-      :
-        true
     }
 
 // Create an HTMLButtonElement...
@@ -143,7 +132,7 @@ class Button {
 // Add connectedCallback method appending children if shadow is false...
     if (!shadow) {
       HTMLButtonComponent.prototype.connectedCallback = function() {
-        log('Im Here', ['red', 'bold'])
+        log('ConnectedCallback', ['red', 'bold'])
         dir(self)
         if (self) {
           log('self', ['yellow', 'bold'])

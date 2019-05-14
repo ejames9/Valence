@@ -12,6 +12,8 @@ const webpack = require('webpack')
 const gulpWebpack = require('gulp-webpack')
 const watch = require('gulp-watch')
 const lucyGoosy = require('gulp-no-strict')
+const sourcemaps = require('gulp-sourcemaps')
+const uglify = require('gulp-uglify')
 // const elemsJS = require('./node_modules/gulp-elementsJS-interpreter')
 
 
@@ -27,15 +29,14 @@ const webpackConfig = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-
           options: {
-            presets: ['@babel/preset-env'],
+            compact: false,
+            presets: ['@babel/env'],
             plugins: [
               "@babel/plugin-transform-destructuring",
               "@babel/plugin-proposal-object-rest-spread",
               "@babel/plugin-proposal-class-properties",
-              ["@babel/plugin-transform-react-jsx", {"pragma": "x"}],
-              "transform-remove-strict-mode-tags"
+              ["@babel/plugin-transform-react-jsx", {"pragma": "x"}]
             ]
           }
         }
@@ -43,7 +44,7 @@ const webpackConfig = {
     ]
   },
   output: {
-    filename: 'valenceIOBundle.jsx'
+    filename: 'valenceIOBundle.js'
   }
 }
 
@@ -58,6 +59,7 @@ gulp.task('es6to5Bundle', ()=> {
        .pipe(compiler)
        .pipe(babel())
        .pipe(lucyGoosy())
+       // .pipe(uglify())
        .pipe(gulp.dest(jsDst))
   })
 
@@ -68,7 +70,7 @@ gulp.task(
   )
 )
 
-gulp.watch(['./js/src/*.jsx', './js/src/*.js'],
+gulp.watch(['./js/src/*.jsx', '../js/src/**/*'],
   gulp.series(
     'default'
   ))

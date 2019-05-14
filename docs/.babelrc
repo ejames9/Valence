@@ -1,14 +1,10 @@
 {
-  "presets": [["@babel/preset-env",
-    {
-      "loose": true
-    }
-  ]],
+  "compact": false,
+  "presets": ["@babel/env"],
   "plugins": [
     "@babel/plugin-transform-destructuring",
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-proposal-class-properties",
-    ["@babel/plugin-transform-react-jsx", {"pragma": "x"}],
-    "transform-remove-strict-mode-tags"
+    ["@babel/plugin-transform-react-jsx", {"pragma": "x"}]
   ]
 }

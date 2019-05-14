@@ -30,20 +30,14 @@
 //TODO:[X] Finish work on all element component classes...
 //TODO:[ ] Move from static class structure to singleton structure...
 //TODO:[ ]
-//TODO:[ ]
-//TODO:[ ]
-//TODO:[ ]
-//TODO:[ ]
 
 /*
 ** TODO-RELATED spin-off projects to do....
 ********************************************/
 //TODO:[ ] Replicator library...
 //TODO:[ ] DeeplicateObject library...
-//TODO:[ ]
-//TODO:[ ]
-//TODO:[ ]
-//TODO:[ ]
+//TODO:[ ] stylisDirectChild middleware plugin
+
 
 
 // Grab utilities...
@@ -51,7 +45,7 @@ import * as _ from '../Utilities/helpers'
 // Get value validation...
 import { Is } from '../Utilities/Is'
 // Get Component Class...
-import { Component } from '../Component'
+import Component from '../Component'
 // Get Node and Props classes...
 import { Node } from '../Form/Node'
 import { Props } from '../Props/Props'
@@ -59,13 +53,10 @@ import { Props } from '../Props/Props'
 import { Events } from '../Events'
 // import CSS class...
 import { CSS } from './CSS'
-// Get the tagName array builder function....
-import _buildArray from './Utilities/_arrayBuilder'
 // Get unique identity creating functions...
 import _murmurHash from './Utilities/_murmurHash'
 import _alphaStringFromHash from './Utilities/_alphaStringFromHash'
-// Get the tagName array builder function....
-// import _acquireComponentTagName from './Utilities/_acquireComponentTagName'
+
 
 /* Flare Styling related libraries......*/
 // import our extensible element constructors...
@@ -108,8 +99,13 @@ class Flare {
   }
 // A public helper method for setting Flare assumptions, config options...
   static assume(userAssumptions) {
-    Flare._assumptions = _.combineObjects(Flare._assumptions, userAssumptions)
-    return Flare._assumptions
+    this._assumptions = CSS.assume(
+      _.combineObjects(
+        this._assumptions,
+        userAssumptions
+      )
+    )
+    return this._assumptions
   }
 
 // Static member to hold element tag name to be created...
@@ -204,92 +200,23 @@ class Flare {
     return _alphaStringFromHash(_murmurHash(string))
   }
 
-
-// Internal method closure for grabbing the variable name from a flare component
-// declaration, for tagname representation in custom element creation...
-  static _acquireComponentTagName(xCaller, callerName, array, props) {
-    let tagShifter,
-    tagTwister,
-    tagArray,
-    tag
-
-    log("I've been passed in", ['pink', 'bold']);log(array)
-// A very simple function for moving the first item of an array to the end.
-    tagTwister =(ra)=>  {
-      ra.push(ra.shift())
-      return ra
+// A publick method for processing a tagged template literal with stylis...
+  static css(...tempLit) {
+    if (tempLit[0][0].indexOf('{') < 5) {
+      return CSS.processStyles(tempLit, ':host')
     }
-
-// A function for shifting a tag from the beginning of the component names array....
-    tagShifter =(ra)=> {
-      let array = [],
-      object,
-      obj = {}
-// If we don't have an empty array....
-      if (ra.length > 0) {
-// We can shift out a tag....
-        obj.tag  = ra.shift()
-        log(`Shifted Tag: ${obj.tag}`, 'tomato')
-// Determine whether or not the array item is a tag or new array....
-        if (Is.array(obj.tag)) {
-          // log('tag is array', ['green', 'bold']);dir(obj.tag)
-// Put the original array back, so we can move on to the new one...
-          Flare._tagQueue = ra
-// Shift the first tagname to the end....
-          array = tagTwister(obj.tag)
-// Shift out the first tagname....
-          return tagShifter(array)
-        } else {
-          obj.array = ra
-        }
-// Else, we have a new component and must rebuild...
-      } else {
-        log('Rebuilding', ['green', 'bold'])
-        obj.array = _buildArray(xCaller, callerName, props)
-        return tagShifter(obj.array)
-      }
-      log('(window.statelessComponents.indexOf(obj.tag)', 'yellow')
-      log((window.statelessComponents.indexOf(obj.tag)))
-// Check the statelessComponents registry for a redundancy...
-      if (window.statelessComponents.indexOf(obj.tag) !== -1) {
-        log('Registry', ['orange', 'bold']);log(obj.tag)
-        return tagShifter(obj.array)
-      }
-// If we reach this point, we are ready to return tag...
-      // log('return obj', ['yellow', 'bold']);dir(obj)
-      return obj
-    }
-
-// If there are no component names in the array, lets's get some..
-    if (array.length == 0) {
-// Build array with x.caller source code, and twist it....
-      array = _buildArray(xCaller, callerName, props)
-      // log('building', ['red', 'bold']);dir(array);log(array.length)
-    }
-
-/* Call tagShifter function to shift out the bottom-most tagname in the list...
-If it has already been instantiated, then it is not a flare component- Pop from
-the list and move on... Return both the altered array and the shifted out tag...*/
-    let obj = tagShifter(array)
-    // log('tag', ['orange', 'bold']);dir(obj.tag);
-    Flare._tagQueue = obj.array
-// Return tag..
-    return obj.tag.toLowerCase()
+    return CSS.processStyles(tempLit, '')
   }
 
 
+
 // A helper method for accessing the Flare class and defining it's components...
-  static interValenceX(xCrName, xCr, elTag, tagTempLit, props1={}, props2={}) {
-// Add props from flare to props object...
-      props = {
-        ...props2,
-        ...props1
-      }
-        // log('Flare.propsobj');dir(props1); dir(props2); dir(props)
+  static createComponent(comTag, elTag, tagTempLit, props={}) {
+// log(`Tag name is: ${comTag}`, ['orange', 'white']);dir(props)
 // Determine whether or not the component will utilize shadow dom by default...
       if (!Reflect.has(props, 'shadow')) {
 // If 'shadow' is not set in props, and if 'shadow' is 'on' by default...
-        if (Flare.options.shadowByDefault) {
+        if (this.options.shadowByDefault) {
 // Set the 'shadow' prop to true...
           props.shadow = true
         } else {
@@ -298,33 +225,24 @@ the list and move on... Return both the altered array and the shifted out tag...
         }
       }
 
-// extract var name..
-      let tagName = Flare._acquireComponentTagName(xCr, xCrName, Flare._tagQueue, props)
-      // log(`Tag name is: ${tagName}`, ['orange', 'bold'])
-// Push the tagName into a global array ...
-      window.flareComponents.push(tagName)
-
-      CSS._superProps[props2.flareId] = [tagName, props]
+      CSS._superProps[props.flareId] = [comTag, props]
 // If a flare component does not use shadow dom...
       if (!props.shadow) {
 // it will not need to append anything to it's shadow root later on...
         props.noChild = true
 // Define component and add Styles..
-        Flare._defineComponent(tagName, props, elTag)
-        CSS.addStyles(true, tagName, elTag, props, tagTempLit)
+        this._define(comTag, props, elTag)
+        CSS.addStyles(true, comTag, elTag, props, tagTempLit)
       } else {
 // Define component and add Styles..
-        Flare._defineComponent(
-          tagName,
+        this._define(
+          comTag,
           props,
           elTag,
-          CSS.addStyles(false, tagName, elTag, props, tagTempLit)
+          CSS.addStyles(false, comTag, elTag, props, tagTempLit)
         )
       }
-//
-    return tagName
     }
-
 
 // DEPRECATED: NOT CURRENTLY IN USE
   static _resetFlags() {
@@ -336,8 +254,8 @@ the list and move on... Return both the altered array and the shifted out tag...
   }
 
 // Static method used for defining Flare components...
-  static _defineComponent(name, props={}, el, template=false) {
-    // log('Looka Here', ['red', 'bold']);log(`name is: ${name}`);log(`el is: ${el}`);dir(props)
+  static _define(name, props={}, el, template=false) {
+    //log('Looka Here', ['white', 'red']);log(`name is: ${name}`);log(`el is: ${el}`);dir(props)
 // Declare element constructior var..
     let elemCtor,
 // Create function will create the component element definition..
@@ -377,31 +295,31 @@ the list and move on... Return both the altered array and the shifted out tag...
           elemCtor = Footer.createComponent(props, template)
           break
         case 'h1':
-// Grab the extensible input element constructor..
+// Grab the extensible h1 element constructor..
           elemCtor = H1.createComponent(props, template)
           break
         case 'h2':
-// Grab the extensible input element constructor..
+// Grab the extensible h2 element constructor..
           elemCtor = H2.createComponent(props, template)
           break
         case 'h3':
-// Grab the extensible input element constructor..
+// Grab the extensible h3 element constructor..
           elemCtor = H3.createComponent(props, template)
           break
         case 'h4':
-// Grab the extensible input element constructor..
+// Grab the extensible h4 element constructor..
           elemCtor = H4.createComponent(props, template)
           break
         case 'h5':
-// Grab the extensible input element constructor..
+// Grab the extensible h5 element constructor..
           elemCtor = H5.createComponent(props, template)
           break
         case 'h6':
-// Grab the extensible input element constructor..
+// Grab the extensible h6 element constructor..
           elemCtor = H6.createComponent(props, template)
           break
         case 'header':
-// Grab the extensible input element constructor..
+// Grab the extensible header element constructor..
           elemCtor = Header.createComponent(props, template)
           break
         case 'input':
@@ -409,7 +327,7 @@ the list and move on... Return both the altered array and the shifted out tag...
           elemCtor = Input.createComponent(props, template)
           break
         case 'p':
-// Grab the extensible input element constructor..
+// Grab the extensible p element constructor..
           elemCtor = Paragraph.createComponent(props, template)
           break
         case 'section':
@@ -450,16 +368,8 @@ the list and move on... Return both the altered array and the shifted out tag...
 
 // Add isStatelessComponent flag to props for Component...
     props.isStatelessComponent = true
-
-    if (webComponentsLoaded) {
 // Do CreateComponent..
-      create()
-    } else {
-// Listen for supporting files to be loaded, then create and define component...
-      Events.listen('rootComponentMounted', ()=> {
-        create()
-      })
-    }
+    create()
   }
 
 
@@ -491,7 +401,6 @@ the list and move on... Return both the altered array and the shifted out tag...
     props = Flare._propObj
 // Set a unique id on the component's props...
     props.flareId = `${Flare._createFlareId(array)}`
-    // console.log(array)
 //
     if (Flare._extend) {
 /* An object holding the styles of the extended component, and also,
@@ -516,7 +425,8 @@ the css can be completed...*/
       flare: true,
       taggedTempLit: tmpl,
       props: props,
-      el: (tmpl.extended)? Flare._superTag : Flare._elementTag
+      el: (tmpl.extended)? Flare._superTag : Flare._elementTag,
+      tag: Flare._componentTag
     }
   }
 
@@ -524,8 +434,16 @@ the css can be completed...*/
 // Component extend Static API Method
 // A public method for extending user-defined flare components...
   static extend(component, attrs=false) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(
+      extend.caller.name
+    )
 // Get a copy of the component so that we don't delete any of the extended component's attrs...
-    let superComponent = _.deeplicateObject(component)
+    let superComponent = _.deeplicateObj(
+      component(
+        valenceGlobals.flareComponents[component({}).tag]
+      )
+    )
 
 // Filter component arg's props for id and classname properties, which can
 // not, obviously, be shared with other elements/components...
@@ -549,6 +467,7 @@ the css can be completed...*/
     }
 // Set a unique id on the component's props...
     Flare._elementTag   = `X${superComponent.el}`
+    Flare._componentTag = tagName
     Flare._superId      = superComponent.props.flareId
     Flare._superTag     = superComponent.el
     Flare._superTempLit = superComponent.taggedTempLit.array
@@ -560,6 +479,9 @@ the css can be completed...*/
 
 // Div Static API Method
   static div(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(div.caller.name)
+    //log('TAGNAME', ['green', 'bold']);log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -571,6 +493,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'div'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -587,7 +510,8 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'div'
+        el: 'div',
+        tag: tagName
       }
     }
   }
@@ -600,6 +524,9 @@ the css can be completed...*/
 
 // Input Static API Method
   static input(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(input.caller.name)
+    //log('TAGNAME', ['green', 'bold']);log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -610,6 +537,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'input'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -627,13 +555,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'input'
+        el: 'input',
+        tag: tagName
       }
     }
   }
 
 // Button Static API Method
   static button(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(button.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
     let args = [...arg]
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
@@ -646,6 +579,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'button'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -663,13 +597,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'button'
+        el: 'button',
+        tag: tagName
       }
     }
   }
 
 // P API Method
   static p(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(p.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -680,6 +619,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'p'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -697,13 +637,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'p'
+        el: 'p',
+        tag: tagName
       }
     }
   }
 
 // H1 API Method
   static h1(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(h1.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -714,6 +659,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'h1'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -731,13 +677,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'h1'
+        el: 'h1',
+        tag: tagName
       }
     }
   }
 
 // H2 API Method
   static h2(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(h2.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -748,6 +699,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'h2'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -765,13 +717,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'h2'
+        el: 'h2',
+        tag: tagName
       }
     }
   }
 
 // H3 API Method
   static h3(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(h3.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -782,6 +739,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'h3'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -799,13 +757,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'h3'
+        el: 'h3',
+        tag: tagName
       }
     }
   }
 
 // H4 API Method
   static h4(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(h4.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -816,6 +779,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'h4'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -833,7 +797,8 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'h4'
+        el: 'h4',
+        tag: tagName
       }
     }
   }
@@ -841,6 +806,10 @@ the css can be completed...*/
 
 // H5 API Method
   static h5(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(h5.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -851,6 +820,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'h5'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -868,13 +838,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'h5'
+        el: 'h5',
+        tag: tagName
       }
     }
   }
 
 // H6 API Function
   static h6(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(h6.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -885,6 +860,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'h6'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -902,13 +878,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'h6'
+        el: 'h6',
+        tag: tagName
       }
     }
   }
 
 // HEADER API Method
   static header(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(header.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -919,6 +900,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'header'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -936,13 +918,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'header'
+        el: 'header',
+        tag: tagName
       }
     }
   }
 
 // AREA API Method
   static area(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(area.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -953,6 +940,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'area'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -970,13 +958,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'area'
+        el: 'area',
+        tag: tagName
       }
     }
   }
 
 // ASIDE API Method
   static aside(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(aside.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -987,6 +980,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'aside'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1004,7 +998,8 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'aside'
+        el: 'aside',
+        tag: tagName
       }
     }
   }
@@ -1012,6 +1007,10 @@ the css can be completed...*/
 
 // COL API Method
   static col(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(col.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -1022,6 +1021,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'col'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1039,13 +1039,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'col'
+        el: 'col',
+        tag: tagName
       }
     }
   }
 
 // COLGROUP API Method
   static colgroup(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(colgroup.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -1056,6 +1061,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'colgroup'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1073,13 +1079,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'colgroup'
+        el: 'colgroup',
+        tag: tagName
       }
     }
   }
 
 // SPAN API Method
   static span(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(span.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -1090,6 +1101,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'span'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1107,13 +1119,18 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'span'
+        el: 'span',
+        tag: tagName
       }
     }
   }
 
 // SECTION API Method
   static section(...arg) {
+/// Get tagName...
+    let tagName = _.convertFuncNameToTagName(section.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -1124,6 +1141,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'section'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1141,7 +1159,8 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'section'
+        el: 'section',
+        tag: tagName
       }
     }
   }
@@ -1149,6 +1168,10 @@ the css can be completed...*/
 
 // TABLE API Function
   static table(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(table.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -1159,6 +1182,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'table'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1176,7 +1200,8 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'table'
+        el: 'table',
+        tag: tagName
       }
     }
   }
@@ -1185,6 +1210,10 @@ the css can be completed...*/
 
   // TEXTAREA API Function
   static textarea(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(textarea.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -1195,6 +1224,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'textarea'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1212,7 +1242,8 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'textarea'
+        el: 'textarea',
+        tag: tagName
       }
     }
   }
@@ -1221,6 +1252,10 @@ the css can be completed...*/
 
 // FOOTER API Function
   static footer(...arg) {
+// Get tagName...
+    let tagName = _.convertFuncNameToTagName(footer.caller.name)
+    // log('TAGNAME', ['green', 'bold'])
+    //  log(tagName)
 // If the argument is not an array, it's probably our props object...
     if (!Is.array(arg[0])) {
       let props = arg[0]
@@ -1231,6 +1266,7 @@ the css can be completed...*/
 // Pass the prop object, and element tag name  on to the global members..
       Flare._propObj = props
       Flare._elementTag = 'footer'
+      Flare._componentTag = tagName
 // Define component..
       return Flare._getTemplateLiteral
     } else {
@@ -1248,174 +1284,12 @@ the css can be completed...*/
           array: array
         },
         props: _privateProps,
-        el: 'footer'
+        el: 'footer',
+        tag: tagName
       }
     }
   }
 }
+const css = Flare.css
 
-export { Flare }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Internal method closure for grabbing the variable name from a flare component
-// // declaration, for tagname representation in custom element creation...
-//   static _acquireComponentTagName(xCaller, callerName, array) {
-//     let buildArray,
-//     typeShifter,
-//     type
-//
-// /***********************************************************************************
-// ** A function for shifting a type from the beginning of the component names array....
-// ************************************************************************************/
-//     typeShifter =(array)=> {
-//       let obj = {}
-// // If we don't have an empty array....
-//       if (array.length > 0) {
-// // We can shift out a type....
-//         obj.type  = array.shift()
-//         obj.array = array
-// // Else, we have a new component and must rebuild...
-//       } else {
-//         obj.array = buildArray(xCaller)
-//         obj.type  = typeShifter(obj.array).type
-//       }
-// // Check the statelessComponents registry for a redundancy...
-//       if (window.statelessComponents.indexOf(obj.type) !== -1) {
-//         return typeShifter(obj.array)
-//       }
-// // If we reach this point, we are ready to return type...
-//       return obj
-//     }
-//
-//
-// /***************************************************************************
-// ** A function for building out the flareComponentNames Array...
-// ****************************************************************************/
-//     buildArray =(source)=> {
-// // Some vars...
-//       let callerTagName,
-//       extractEntryFromSource,
-//       componentNameArray = []
-//
-// /*****************************************************************************
-// ** A recursive function for extracting regExp matches from a bit of source code.
-// ** The purpose is to programmatically extract variable names from flare component
-// ** declarations for the purpose of custom element tag names.
-// ******************************************************************************/
-//       extractEntryFromSource =(source)=> {
-// // Some vars...
-//         let sib,
-//         componentName
-//
-// // Execute regexp... and single out result..
-//         sib = _.flareComponentNamesRE().exec(source)[1],
-// // Eliminate result from source code string, so that it won't be found again,
-// // and store in temp variable...
-//         source = source.replace(
-//           sib,
-//           ''
-//         )
-//         // log(source, 'red')
-// // Remove "(" from the string, and return a new one..
-// // Convert to tagname with kebab-case...
-//         componentName =  _.convertFuncNameToTagName(
-//           sib.replace('(', '')
-//         )
-//         //log('component tagname.', ['orange', 'bold']); log(componentName, ['yellow', 'bold'])
-// // Push component name into a local array..
-//         componentNameArray.push(componentName)
-// // Push also into a global collection....
-//         window.flareComponents.push(componentName.toLowerCase())
-// // If there are still matches in the caller source code, call function again,
-// // recursively, with the altered source...
-//         if (_.flareComponentNamesRE().test(source)) {
-//           return extractEntryFromSource(source)
-//         }
-// // return..
-//         // log('componentNameArray'); log(componentNameArray)
-//         return componentNameArray
-//       }
-//
-//
-// // If there are any matches in the caller's source code, start the process of building
-// // out the array...
-//       if (_.flareComponentNamesRE().test(source)) {
-//         array = extractEntryFromSource(source)
-//         //log('The Array', ['yellow', 'bold']); dir(array)
-//       }
-//
-// // Also convert x.caller func name to tag-name to identify stateless components...
-//       callerTagName =  _.convertFuncNameToTagName(callerName)
-//       // log(callerTagName)
-// // Check global registry of stateless components for the caller's tag name. If it is
-// // present, we must rearrange the array...
-//       log('window.statelessComponents', ['red', 'bold'])
-//        log(window.statelessComponents)
-//       if (window.statelessComponents.indexOf(callerTagName) != -1) {
-//         log('rearranged', ['orange', 'bold'])
-// // Rearrange the array...
-// // Remove the first item...
-//         let item = array.shift()
-// // Push it on to the end of the array..
-//         array.push(item)
-//         log(array)
-//       }
-// // return array...
-//       return array
-//     }
-//
-// // Build an array...
-// // If there are no component names in the array, lets's get some..
-//     if (array.length == 0) {
-// // Build array with x.caller source code...
-//       array = buildArray(xCaller)
-//     }
-//
-// /* Call typeShifter function to shift out the bottom-most tagname in the list...
-// If it has already been instantiated, then it is not a flare component- Pop from
-// the list and move on... Return both the altered array and the shifted out type...*/
-//     let obj = typeShifter(array)
-//     // log('arrayLength'); log(obj.array.length, ['pink', 'bold']);dir(obj.array)
-//     // log('type', ['orange', 'bold']);dir(obj.type)
-//     Flare._flareNames = obj.array
-// // Return type..
-//     return obj.type.toLowerCase()
-//   }
-
-
-
-// var obj = {
-//    a: 'string',
-//    b: function func(str) { console.log(str) },
-//    c: 9,
-//    d: {
-//     e: 6,
-//     f: 'hello',
-//     j: {
-//       q: 5,
-//       r: 'jesus',
-//       c: {
-//         m: 4,
-//         n: 'christ'
-//       }
-//     }
-//    },
-//    e: /hello/g,
-//    g: null
-// }
-// let newObj = _.deeplicateObject(obj)
-// newObj.d.j = 'lord'
-// log('objs', 'tomato')
-// dir(obj)
-// dir(newObj)
+export { Flare, css }

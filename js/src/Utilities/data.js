@@ -52,7 +52,7 @@ export const DATA = {
     'componentDidUnmount', 'componentWillUpdate', 'componentDidUpdate',
     'componentWillReceiveProps'
   ],
-  venusComponentElements: [
+  flareComponentElements: [
     {
       UppercaseName: 'Area',
       name: 'area'

@@ -115,7 +115,9 @@ class Props {
       name === 'Flare' ||
       name === 'flare' ||
       name === 'label' ||
-      name === 'content' 
+      name === 'content' ||
+      name === 'cleanHTML' ||
+      name === 'kebabCase'
   }
 
 // Method for updating props...
@@ -193,7 +195,9 @@ class Props {
       observedAttributes: {
         get() {
           return propNames
-        }
+        },
+        enumerable: true,
+        configurable: true
       }
     })
   }
@@ -202,23 +206,30 @@ class Props {
   static registerCustom(ctor, propNames) {
     propNames
       .forEach(prop=> {
-        Object.defineProperties(ctor.prototype, {
-          [prop]: {
-            get() {
-              return this.hasAttribute(prop)
-            },
-            set(val) {
-              if (val) {
-                this.setAttribute(prop, val)
-              } else {
-                this.removeAttribute(prop)
-              }
+        if (!Boolean(ctor.prototype.observedAttributes) ||
+          !prop in ctor.prototype.observedAttributes) {
+
+          Object.defineProperties(ctor.prototype, {
+            [prop]: {
+              get() {
+                return this.getAttribute(prop)
+              },
+              set(val) {
+                if (val) {
+                  this.setAttribute(prop, val)
+                } else {
+                  this.removeAttribute(prop)
+                }
+              },
+              enumerable: true,
+              configurable: true
             }
-          }
-        })
+          })
+        }
       }, ctor)
     return ctor
   }
+
 
 // A method for removing Properties...
   static remove(elem, name, value) {

@@ -42,34 +42,29 @@ export class Element {
 
 // Create a new DOM element...
     makeDOMElement =(tagName)=> {
-      if (window.flareComponents.indexOf(tagName) != -1) {
+      if (Reflect.has(valenceGlobals.flareComponents, tagName)) {
 // Flip the required switches...
         window.useNativeShim = false
         window.HTMLElement   = window._HTMLElement
       }
-        log('TAGNAME', ['lightblue', 'bold'])
-         log(tagName)
-         dir(props)
-         dir(children)
+
 // Create a new element given the tag name, and
 // store for sending through the pipe......
       elem = document.createElement(tagName)
 
 // If we just created a Flare Component element...
-      if (window.flareComponents.indexOf(tagName) != -1) {
+      if (Reflect.has(valenceGlobals.flareComponents, tagName)) {
 // Emit an event that cues Flare to set props on the newly created element...
         Events.emit(tagName, {element: elem})
       }
-      log('new Element', ['orange', 'bold'])
-       log(tagName)
+      //log('new Element', ['orange', 'bold']);log(tagName)
 /* If `Reflect` programmatic library constructed component, reset native-shim flag,
 and also reset window.HTMLElement to the nativeShim.js patched version...
 */    if (props.isStatelessComponent) {
-        log('stateless')
         window.useNativeShim = true
         window.HTMLElement   = window.HTMLElement_
 // Push tagname to global collection..
-        window.statelessComponents.push(tagName)
+        window.valenceGlobals.statelessComponents.push(tagName)
       }
 // Send the created element through the pipe...
       return elem
@@ -123,6 +118,7 @@ event..*/
           .forEach(elem.appendChild, elem)
       }
 // Return the element...
+      dir(elem)
       return elem;
     }
 

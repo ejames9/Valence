@@ -46,20 +46,15 @@ class Paragraph {
     eListeners  = [],
     customProps = [],
     shadowBool,
-    shadow,
+    shadow = props.shadow,
     p,
     self,
     obj
 
-// Return boolean value for shadow...
-    shadowBool =(arr)=>
-      arr.reduce((shadow, keyVal, index)=>
-        (keyVal.indexOf('shadow') == -1)?
-          shadow
-        :
-          index
-        ,false
-      )
+/* Doing some finaglery with the native-shim and HTMLElement object.  This will
+be necessary until web components are fully supported in all browsers... */
+    window.useNativeShim = false
+    window.HTMLElement   = window._HTMLElement
 
 // Get attribute names and Listeners...
     if (props) {
@@ -69,12 +64,6 @@ class Paragraph {
 // Store attribute and Listener pairs...
       customProps = obj.props
       eListeners  = obj.eventListeners
-
-// Determine if shadow option is set or not...
-      shadow = (shadowBool(customProps) !== false)?
-        customProps[shadowBool(customProps)][1]
-      :
-        true
     }
 
 // Create an HTMLPElement...

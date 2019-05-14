@@ -9,12 +9,23 @@
 **/
 
 import { Valence } from '../../../Valence'
+// WebComponents .....
+import Button from '../../../js/src/WebComponents/Button/Button'
+import Input from '../../../js/src/WebComponents/Input/Input'
+import Container from '../../../js/src/WebComponents/Grid/Container'
+import Col from '../../../js/src/WebComponents/Grid/Column'
+import Row from '../../../js/src/WebComponents/Grid/Row'
+
 import valenceLogo from '../../assets/valenceLogo'
+
 
 
 Valence.assume({
   shadowByDefault: false,
-  underscoreGlobal: true
+  underscoreGlobal: true,
+  directChildNesting: true,
+  kebabCase: false,
+  syntaxHighlighting: true
 })
 
 
@@ -23,37 +34,38 @@ const yellow = '#ffc700'
 const tomato = '#ff4500'
 const green = '#17a637'
 const coolGreen = '#669a0f'
+const grey = '#323232'
 
 
 //global styles..
-__`
-body {
-  background: ${coolGreen}
-}
+styled.global`
+  body {
+    background: ${grey}
+  }
 `
 
-const Fluid = div({
+const Fluid =()=> styled.div({
   className: 'container-fluid',
-  shadow: false,
   id: 'hwhatthe'
 })`
-position: absolute;
-height: 100%;
-width: 100%;
-padding: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0;
 `
 
-const Box = div({
+const Box =()=> styled.div({
   id: 'box',
   className: 'boxy'
 })`
-  position: absolute
-  top: 50%
-  height: 200px
-  width: 100%
-  margin-top: -130px
-  padding: 30px
-  background-color: ${blue}
+  position: absolute;
+  top: 50%;
+  height: 200px;
+  width: 100%;
+  margin-top: -130px;
+  padding: 30px;
+  z-index: 9;
+  background-color: transparent;
 
   h1 {
     color: yellow;
@@ -72,24 +84,24 @@ const Box = div({
   }
 `
 
-const MyDiv = div`
+const MyDiv =({shadow})=> styled.div`
   position: absolute;
-  left: 50%;
+  left: 76%;
   top: 25%;
-  height: ${({shadow})=> shadow? '100px' : '700px'};
+  height: ${shadow? '100px' : '700px'};
   width: 200px;
-  background: ${tomato}
+  background: ${tomato};
   z-index: 99;
 `
 
 // attribute for inner button text.....
-const Thing = button({
+const Thing =({myAtty})=> styled.button({
   id: 'buttonThing',
   className: 'thang',
   type: 'submit',
   label: 'press'
 })`
-  height: ${({myAtty})=> myAtty};
+  height: ${myAtty};
   width: 75px;
   border: none;
   border-radius: 7px;
@@ -97,11 +109,12 @@ const Thing = button({
 `
 
 
-const MyDiv2 = div`
+
+const MyDiv2 =({shadow})=> styled.div`
   position: absolute;
-  left: 80%;
+  left: 82%;
   top: 25%;
-  height: ${({shadow})=> shadow? '100px' : '700px'};
+  height: ${shadow? '100px' : '700px'};
   width: 200px;
   background-color: ${green};
   z-index: 99;
@@ -111,15 +124,13 @@ const MyDiv2 = div`
 `
 
 
-
-const MyInput =()=> input({
+const MyInput =()=> styled.input({
   placeholder: 'onsearch',
   type: 'text',
-  className: 'myput',
-  shadow: true
+  className: 'myput'
 })`
   position: absolute;
-  font-family: sf mono;
+  font-family: sfmono, space mono;
   font-size: 38px;
   width: 200px;
   height: 38px;
@@ -139,23 +150,20 @@ const MyInput =()=> input({
 `
 
 
-
-
-
 //
-const Thing2 = extend(Thing, {
+const Thing2 =({attrib, shadow})=> styled.extend(Thing, {
   id: 'thing2',
   label: 'press me!'
 })`
   position: relative;
   top: 100px;
   background-color: ${tomato};
-  opacity: ${({attrib})=> attrib};
+  opacity: ${attrib};
   color: white;
-  border: 2px solid ${({shadow})=> shadow? 'black' : 'orange'}
+  border: 2px solid ${shadow? 'black' : 'orange'}
 `
 
-const rotate = keyframes`
+const rotate = styled.keyframes`
   from {
     transform: rotate(0deg);
   }
@@ -165,75 +173,109 @@ const rotate = keyframes`
   }
 `;
 
-
-
-const Spinner = div`
+const Spinner =()=> styled.div`
   position: absolute;
-  left: -500px;
+  top: 55%;
+  left: 50px;
   height: 300px;
   width: 300px;
-  display: inline-block;
-  animation: ${rotate} 2s linear infinite;
+  display: block;
   padding: 5px;
+  background: grey;
 
-  h1 {
+  div {
     position: absolute;
-    font-size: 44px;
-    color: white;
     text-align: center;
-    font-family: sf mono;
-    top: 45%;
-    right: 0;
+    vertical-align: middle;
+    top: 0;
     left: 0;
+    right: 0;
     bottom: 0;
     margin: 0 auto;
+    padding: 40% 0;
+    background: tomato;
+    font-size: 44px;
+    color: blue;
+    font-family: sf mono, space mono;
+    animation: ${rotate} 2s linear infinite;
   }
 `
 
-const Logo = div`
+const Logo =()=> styled.div({
+  cleanHTML: valenceLogo(),
+  shadow: false
+})`
   width: 100%;
   padding: 10px;
   margin: auto;
+  z-index: 999;
+
+  p {
+    color: white;
+    font-family: sf mono;
+  }
+`
+const inputStyles = `
+  --size: 80px
 `
 
 
+const MyName =({className, kebabCase})=> {
 
-const MyName =()=>
-  <div>
-    <Box>
-      <MyDiv >
-        <Thing myAtty='75px' shadow={false}/>
-        <Spinner>
-          <h1>Yesserri!</h1>
-        </Spinner>
-        <p>I'm inside a custom element!</p>
-      </MyDiv>
-      <p>What is happening</p>
-      <h1 className='name'>My Name Is:</h1>
-      <MyDiv2>
-        <MyInput/>
-        <Thing2 attrib={9}/>
-      </MyDiv2>
-    </Box>
-  </div>
+  return (
+    <div>
+      <Box>
+        <Button variant='info' size='sm'>Info</Button>
+        <Button variant='primary' size='lg' disabled>Primary</Button>
+        <Button variant='secondary' size= 'sm' disabled>Secondary</Button>
+        <Button variant='success' disabled>Success</Button>
+        <Button variant='danger' autofocus>Danger</Button>
+        <Button variant='warning' size='lg'>Warning</Button>
+        <Button variant='light' >Light</Button>
+        <Button variant='dark' size='lg' disabled>Dark</Button>
+        <Button variant='link' >Link</Button>
 
+        <Input
+          label='Your Name:'
+          labelMod='left'
+          placeholder='Name'
+          styles={inputStyles}
+        />
+      </Box>
+    </div>
+  )
+}
 
 class App extends Valence.Component {
+
+  constructor() {
+    super()
+  }
+
+  componentWillMount() {
+  }
 
   render() {
     return (
       <Fluid>
-        <MyName className='myname' shadow={false}/>
-        <Logo>
-          <p>Delilah!</p>
-        </Logo>
+        <Container class='contain'>
+          <Row bumpers='5px'>
+            <Col class='on' cols={12} md={6}>1 of 2</Col>
+            <Col class='tw' cols={6} md={4}>2 of 2</Col>
+            <Col class='thr' cols={6} md={2}>3 of 2</Col>
+          </Row>
+          <Row bumpers='5px' gutters={false}>
+            <Col>1 of 2</Col>
+            <Col>2 of 2</Col>
+            <Col>3 of 2</Col>
+          </Row>
+        </Container>
       </Fluid>
-
     )
   }
 }
 
 
 Valence.realize(
-  <App />, el('#root')
+  <App myProp='hoping' otherProp={42}/>, el('#root')
 )

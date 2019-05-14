@@ -11,25 +11,58 @@ Eric James Foster, MIT License.
 
 
 // Get utilities...
-import * as _ from './Utilities/helpers'
+import {
+  processData,
+  propsArray,
+  combineObjects,
+  separateStyleRules
+} from './Utilities/helpers'
+// Get loggers...
+import { _log, _dir } from './Utilities/Loggers'
+// Get type validation...
+import { isArray } from './Utilities/Is'
+// Get DOM querying function....
+import _el from './Utilities/DOM/el'
 // Get Node class...
 import { Node } from './Form/Node'
 // Get data...
 import { DATA } from './Utilities/data'
 // Get Events...
 import { Events } from './Events'
+// Get DOMPurify for HTML sanitization....
+import DOMPurify from 'dompurify'
+// Bring in stylis and plugins for CSS preprocessing...
+import stylis from 'stylis'
+// Get CSS parser...
+import { CSS } from './Flare/CSS'
+
+
+// Stylis configuration options...
+stylis.set({
+  global: false,
+  cascade: true,
+  keyframe: false,
+  prefix: true,
+  compress: false,
+  semicolon: false,
+});
 
 
 // Globalize common utility functions...
-const dir = console.dir
-const log = _.log
-const el  = _.el
-const dom = _.dom
-
+const dir = _dir
+const log = _log
+const el  = _el
 
 class Component extends HTMLElement{
-  constructor(props) {
-    super(props)
+// Instance vars....
+  state = null
+  props = null
+  _state = null
+  _style = null
+
+// Ctor...
+  constructor() {
+    super()
 
 // Internal state...
     this._state = {
@@ -38,13 +71,13 @@ class Component extends HTMLElement{
 // Public state...
     this.state = {}
 
-// Properties...
-    this.props = props
+// // Properties...
+    this.props = this.observedAttributes
 
 // Set lifecycle listeners...
     DATA.ComponentLifecycleEvents.forEach(ev=> {
       this.addEventListener(ev, (e)=> {
-        this[e](e.detail)
+        this[e.type](e.detail)
       })
     }, this)
 
@@ -147,10 +180,170 @@ class Component extends HTMLElement{
     return true
   }
 
+/* This method is called by connectedCallback, and can be used to do any work
+once the element is connected...*/
+//   propsCallback() {
+// // To be overridden......
+//     return
+//   }
+
+/* This method is called by attributesChangedCallback, and can be used to do any work
+once attributes change...*/
+  onChange() {
+// To be overridden......
+    return
+  }
+
 // Component render method...
   render() {
 // Must be overridden with returned markup...
-    return // ...Markup....
+    return // ...Markup Here....
+  }
+
+/*
+*** Component Authoring Methods.....
+**********************************>>>>>
+*/
+
+// An Instance method for setting attributes of custom elements...
+  registerProps(props) {
+// Convert props object to array....
+    Object.entries(props)
+    .forEach(prop=> {
+// Set the default prop value on it's instance variable...
+      this[`_${prop[0]}`] = prop[1].default
+// Define the props as HTML attributes...
+      Object.defineProperties(this, {
+        [prop[0]]: {
+          get() {
+            return this[`_${prop[0]}`]
+          },
+          set(val) {
+            if (val) {
+              this.setAttribute(prop[0], val)
+              this[`_${prop[0]}`] = val
+            } else {
+              this.removeAttribute(prop[0])
+            }
+          },
+          enumerable: true,
+          configurable: true
+        }
+      })
+    })
+  }
+
+
+// An instance method for updating element props with user defined props....
+  applyUserProps(observed) {
+    for (let prop of Object.keys(observed)) {
+      if (prop in this) {
+/* Seem to be having an issue here with the this.gutters props/attribute. It
+seems that we are unable to change the property from the default value to anything
+falsey. I was not able to figure out exactly why, but I did find a workaround,
+Below we are going directly to the backing variable, an instance var that all
+the props need in order to set a default value. The getter for the prop returns
+this value, whose name is in the format `_ + propName`. */
+        this[`_${prop}`] = observed[prop]
+      }
+    }
+  }
+
+
+// Instance method for Component authors that aids in ShadowDOM creation....
+  shadowCaster(userOptions) {
+    let options = {
+      mode: 'open',
+      slot: true
+    },
+
+// Merge options and user options, and destructure into vars...
+    {mode, slot} = combineObjects(options, userOptions),
+
+// Create the shadow root...
+    shadowRoot = this.attachShadow({mode: mode})
+// If a slot is truthy
+    if (slot) {
+// Create a slot element...
+      let slotEl = document.createElement('slot')
+// If slot is an object, and has a name... pass it on to the element...
+      if (slot.name) {
+        slotEl.name = slot.name
+      }
+
+// Append the slot to this element...
+      shadowRoot.appendChild(slotEl)
+    }
+    return shadowRoot
+  }
+
+
+// Instance method for Component authors that aids in slot element creation....
+  addSlots(root, slots=false) {
+// If an object is passed in....
+    if (slots) {
+      Object.values.forEach(val=> {
+// Get a slot...
+        let slot = document.createElement('slot')
+// Give it a name...
+        slot.name = val
+// Attach slot to root....
+        root.appendChild(slot)
+      })
+    } else {
+      root.appendChild(
+        document.createElement('slot')
+      )
+    }
+// Return the root....
+      return root
+  }
+
+
+// Instance method for Component authors that aids in adding styles to componentsn....
+  addStyles(root, styles) {
+// Create style el....
+    let style = document.createElement('style')
+// Process styles and append to style el...
+    style.innerHTML = stylis('', styles)
+// Append style el to shadow root...
+    root.appendChild(style)
+
+// Return the root...
+    return style
+  }
+
+
+/* A private method for appending a CSS rule or an array of CSS rules to the default stylesheet,
+one by one.*/
+  insertRules(ttl, style) {
+// Separate the ttl into individual rules....
+    let rules = CSS.separateStyleRules(ttl)
+// log('RULES');dir(rules)
+    if (isArray(rules)) {
+// Insert rules...
+      rules.forEach((rule)=> {
+        style.sheet.insertRule(rule)
+      })
+    } else {
+// Insert rule..
+      style.sheet.insertRule(rules)
+    }
+  }
+
+
+// Instance method for processing css with stylis...
+  processStyles(css) {
+    return stylis(':host', css)
+  }
+
+// Helper method for adding classes to the component's classList....
+  addClass(class_) {
+    return this.classList.add(class_)
+  }
+// Helper method for removing classes from the component's classList....
+  removeClass(class_) {
+    return this.classList.remove(class_)
   }
 
 /*
@@ -180,9 +373,26 @@ class Component extends HTMLElement{
 
 
 // A private method for appending the child nodes of a component...
-  _appendChildren() {
-    return this.appendChild(Node.createNode(this.render(this.props)))
+  _appendChildren(props) {
+/* Declare regexp that will help is determine whether or not the render() method
+has been overridden or not.... We also need the method's source code to inspect....*/
+    let renderRE = /...Markup Here..../g,
+    renderFuncSource = this.render.toString()
+// Set props on a class variable...
+    // this.props = props
+/* If we don't get a match with the regexp, then the method has been overridden
+with markup that needs appended ....*/
+    if (!renderRE.test(renderFuncSource)) {
+      return this.appendChild(
+        Node.createNode(
+          this.render(
+            this.props
+          )
+        )
+      )
+    }
   }
+
 
 // Used as an internal cue for updating, this method is built into the custom
 // elements v1 API...
@@ -190,6 +400,9 @@ class Component extends HTMLElement{
     console.info(
       `the attribute "${name}" changed from "${olVal}" to "${newVal}".`
     )
+// Call propsChangedCallback.....
+    onChange(name, oldVal, newVal)
+
 // Confirm an update with sCU(), then trigger a diff and patch cycle...
     if (this.shouldComponentUpdate(null, null, name, oldVal, newVal)) {
       this._update(this.render(this.props))
@@ -209,6 +422,10 @@ class Component extends HTMLElement{
     this.componentWillMount()
 // Append the component's children...
     this._appendChildren()
+// Initialize event listeners...
+    // this._initializeEvents()
+// Do any prop related work here...
+    // this.propsCallback()
 // Call didMount callback...
     this.componentDidMount()
   }
@@ -219,7 +436,7 @@ class Component extends HTMLElement{
     this.componentDidUnmount()
   }
 
-// Create a Valence componenet...
+// A static public method used internally to create a Valence component...
   static createComponent(component, props, children) {
 // Pre-declare inner functions, mainly for style considerations...
     let
@@ -229,7 +446,13 @@ class Component extends HTMLElement{
     tagName = component[2]
 
 // Create the DOM tree for the component....
-    appendChildren =(elem)=> {
+    appendChildren =(elem, shadow=false)=> {
+// If elem is a shadowRoot, give it a slot...
+      if (shadow) {
+        let slot = document.createElement('slot')
+        elem.appendChild(slot)
+      }
+// Append nodes...
       return elem.appendChild(Node.createNode(component[1](props)))
     }
 
@@ -265,7 +488,7 @@ class Component extends HTMLElement{
 * just after every custom element's call to HTMLElement from
 * document.createElement() for element instantiation.........
 */  window.useNativeShim = false
-   window.HTMLElement   = window._HTMLElement
+    window.HTMLElement   = window._HTMLElement
 
     let HTMLComponent,
         eListeners  = [],
@@ -274,8 +497,8 @@ class Component extends HTMLElement{
         obj
 // Get attribute names and Listeners...
     if (props) {
-      obj = _.processData(
-        _.propsArray(props)
+      obj = processData(
+        propsArray(props)
       )
 // Store attribute and Listener pairs...
       customProps = obj.props
@@ -285,7 +508,8 @@ class Component extends HTMLElement{
       shadow = (shadowBool(customProps) !== false)?
         customProps[shadowBool(customProps)][1]
       :
-        true
+// This is the default setting for Valence component shadow dom....
+        false
     }
 
 // Declare self here so that it may be used in this scope, below
@@ -301,7 +525,7 @@ class Component extends HTMLElement{
       if (shadow && !props.noChild) {
 // Create shadow root and pass it in to append children function...
         let shadowRoot = self.attachShadow({mode: 'open'})
-        appendChildren(shadowRoot)
+        appendChildren(shadowRoot, true)
       }
 
 // Add event listeners...
@@ -325,82 +549,62 @@ class Component extends HTMLElement{
     // console.dir(HTMLComponent)
 
 // Add connectedCallback method appending children if shadow is false...
-    if (!shadow) {
-      if (props == undefined || !props.noChild) {
-        HTMLComponent.prototype.connectedCallback =()=> {
-          appendChildren(self)
-        }
+    HTMLComponent.prototype.connectedCallback =()=> {
+      if (!shadow && !props.noChild) {
+        appendChildren(self)
+      }
+// Check for cleanHTML prop....
+      if (props.cleanHTML) {
+        //log('DOMPURIFY', 'yellow')// log(DOMPurify.sanitize('<img src=x onerror=alert(1)//>'))
+        self.insertAdjacentHTML('afterbegin', DOMPurify.sanitize(props.cleanHTML))
       }
     }
-
 
 // Return the component constructor...
     return HTMLComponent
   }
+
+// End of Class....
 }
 
 
-export { Component }
+export default Component
 
 
 
 
 
 
-// // log('shadow: ' + shadowBool(customProps))
-// // Use the new custom elements DOM API to define a new tag...
-// // Dynamically create class source code for each component...
-// reflect(`
-//   window.customElements.define(
-//     "${component[0]}",
-//
-//     class extends HTMLElement {
-//       ${customProps.map(key=>`
-//           get ${key[0]}() {
-//             return this.hasAttribute("${key[0]}")
-//           }
-//           set ${key[0]}(val) {
-//             if (val) {
-//               this.setAttribute("${key[0]}", "")
-//             } else {
-//               this.removeAttribute("${key[0]}")
-//             }
-//           }
-//        `).join('\n')
-//       }
-//
-//       constructor() {
-//         super()
-//         ${(shadow)?
-//             `let shadowRoot = this.attachShadow({mode: "open"})
-//              appendChildren(shadowRoot)`
-//           :
-//             ``
-//         }
-//         console.log('hi')
-//         ${(eListeners.length > 0)?
-//           eListeners.map(entry=>`
-//             this.addEventListener("${entry[0]}", this.${entry[1]})
-//          `).join('\n')
-//          : ``
-//         }
-//       }
-//       ${(eListeners.length > 0)?
-//         eListeners.map(entry=>`
-//           ${entry[1]}() {
-//             console.log('what about me')
-//             return (${entry[2]})()
-//           }
-//         `).join('\n')
-//        : ``
-//       }
-//       ${(!shadow)?
-//          `connectedCallback() {
-//            appendChildren(this)
-//          }`
-//        :
-//          ``
+
+
+
+
+
+
+
+
+// // An instance method for updating element props with user defined props....
+//   applyUserProps(observed) {
+//     log('###########################IN_COMPONENTDIDMOUNT##################################################', ['yellow', 'blue'])
+//     dir(this)
+//     for (let prop of Object.keys(observed)) {
+//       if (prop in this) {
+//         log(`prop: ${String(prop)}`, ['tomato', 'white'])
+//         log(`${String(prop)} = ${this[prop]}`, 'orange')
+//         log(`will be: ${observed[prop]}`)
+// /* Seem to be having an issue here with the this.gutters props/attribute. It
+// seems that we are unable to change the property from the default value to anything
+// falsey. I was not able to figure out exactly why, but I did find a workaround,
+// Below we are going directly to the backing variable, an instance var that all
+// the props need in order to set a default value. The getter for the prop returns
+// this value, whose name is in the format `_ + propName`. */
+//         this[`_${prop}`] = observed[prop]
+//         // if (String(prop) == 'gutters' && this[prop] == '15px') {
+//         //   log('hi there', 'green')
+//         //   this['_gutters'] = !true
+//         // }
+//         log(`${String(prop)}: ${this[prop]}`, 'yellow')
+//         log(`_${String(prop)}: ${this["_" + prop]}`, 'yellow')
 //       }
 //     }
-//   )
-// `)
+//   }

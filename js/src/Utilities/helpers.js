@@ -14,7 +14,7 @@ import { Is as is } from './Is'
 // Get words from lodash...
 import words from 'lodash/words'
 // Get and send some utils from elementsJS...
-export { el, dom, log, inspect } from 'elementsJS'
+export { el, dom, log } from 'elementsJS'
 
 
 
@@ -137,8 +137,8 @@ export const _shishKebab =(string)=>
   , '')
 
 // A function for converting the func name to a custom tag name...
-export const convertFuncNameToTagName =(func)=>
-  (_shishKebab(func).indexOf('-') !== -1)?
+export const convertFuncNameToTagName =(func, cornDog=true)=>
+  (_shishKebab(func).indexOf('-') !== -1 && cornDog)?
     _shishKebab(func)
   :
     `${func.toLowerCase()}-`
@@ -315,7 +315,7 @@ export const separateStyleRules =(css)=>
 
 // A simple trick to deep copy an object....
 //NOTE: This will now work on an object with methods....
-export const deeplicateObject =(obj)=> {
+export const deeplicateObj =(obj)=> {
 // Get a shallow copy of given obj. 2nd level, and beyond, objects will be copied later..
   let newObj = JSON.parse(JSON.stringify(obj))
 // Recursive deeper level object copier...

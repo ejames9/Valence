@@ -14,6 +14,8 @@ import * as _ from '../Utilities/helpers'
 import { Is } from '../Utilities/Is'
 // Get Keyframes class....
 import { Keyframes } from './Keyframes'
+// Get Node class...
+import { Node } from '../Form/Node'
 // Grab tagged template literal interpolation code...
 import _interpolationStation from './Utilities/_interpolationStation'
 // Grab hash to string converter...
@@ -22,6 +24,12 @@ import _alphaStringFromHash from './Utilities/_alphaStringFromHash'
 import _murmurHash from './Utilities/_murmurHash'
 // Get stylis...
 import stylis from 'stylis'
+// Get direct child...
+import _stylisDirectChild from './Utilities/_stylisDirectChild'
+// Get CSS parser...
+import cssTree from 'css-tree'
+
+
 
 window.log = _.log
 window.dir = console.dir
@@ -37,9 +45,25 @@ stylis.set({
 });
 
 class CSS {
+// A set of configuration options or assumptions. This object will be combined with the
+// assumptions of other classes when options are set...
+  static _assumptions = {
+    directChildNesting: false
+  }
+// A public helper method for setting Flare assumptions, config options...
+  static assume(userAssumptions) {
+    this._assumptions = Node.assume(
+      _.combineObjects(
+        this._assumptions,
+        userAssumptions
+      )
+    )
+    return this._assumptions
+  }
+
+
 // A static class property for holding an extended element's parent props....
   static _superProps = {}
-
 
 // A static class property for holding a keyframes css template...
   static _template = ``
@@ -101,6 +125,52 @@ class CSS {
     }
 
 
+/* A public static method for parsing a css literal, and splitting it into an
+array of separate rules, for inserting using the sheet.inserRule() method. Using
+the `css-tree` css parser/generator here....*/
+    static separateStyleRules(cssLiteral) {
+/* Declare an array for our separated rules, an @rule flag, and also,
+generate our ast css tree...*/
+      let rules = [],
+      atRule = false,
+// AST tree...
+      ast = cssTree.parse(cssLiteral, {
+// Log parsing errors...
+        onParseError: (e)=> {
+          log(e.formattedMessage, ['white', 'red'])
+        }
+      })
+
+// Walk the css ast tree, stopping at rule nodes to regenerate and add to an array...
+      cssTree.walk(ast, {
+        enter: (node)=> {
+// log('#####################################-CSS AST NODE-########################################', ['yellow', 'red']);// log(node.type, 'orange')
+// If the node type is of Rule or @rule, meaning @media etc., ......
+          if (node.type === 'Rule' || node.type === 'Atrule') {
+// Regenerate valid css from the rule...
+            let rule = cssTree.generate(node)
+/* If the atRule flag is still false and if the regen'd rule doesn't equal a
+possibly set atRule css string, ......*/
+            if (!!!atRule && rule !== atRule) {
+// And if the node type is `Atrule`....
+              if (node.type === 'Atrule') {
+// Set the `atRule` flag to the regen'd @Rule block, including selectors....
+                atRule = cssTree.generate(
+                  node.block.children.head.data
+                )
+              // log(cssTree.generate(node.block.children.head.data))
+              }
+// Push the regen'd rule to the rules array....
+              rules.push(rule)
+            }
+          }
+        }
+      })
+// Return the array of rules...
+      return rules
+    }
+
+
   // An internal static class method for creating usable css from a tagged template literal....
     static _createCSS(ttlObj, selector, props={}) {
       let css
@@ -140,26 +210,50 @@ parent code block and with the untouched child block, and process with Stylis...
           )
         )
       )
-      if (ttlObj.extended) {
-        log('X Styles', 'tomato')
-        log(css, 'tomato')
-      }
+      // if (ttlObj.extended) {
+      //   log('X Styles', 'tomato')
+      //   log(css, 'tomato')
+      // }
   // Return css....
       return css
     }
 
 
+// A static method for processing css with stylis...
+  static processStyles(tempLit, selector) {
+// Weave in interpolations, process with stylis....
+    return stylis(
+      selector,
+      _interpolationStation(tempLit)
+    )
+  }
+
 /* A private method for appending a CSS rule or an array of CSS rules to the default stylesheet,
 one by one.*/
   static _insertRules(rules) {
+    let css
+//
     if (Is.array(rules)) {
       rules.forEach((rule)=> {
+        if (this._assumptions.directChildNesting) {
+          css = _stylisDirectChild(rule)
+        } else {
+          css = rule
+        }
+/* Adding a right arrow ">", between parent and child selectors so that styles
+may be overridden down the DOM tree... */
+        CSS._styleSheet = css
   /* The _styleSheet setter will create a new sheet and append to a new style tag
   if necessary, then insert the given css..*/
-        CSS._styleSheet = rule
       })
     } else {
-      CSS._styleSheet = rules
+      if (this._assumptions.directChildNesting) {
+        css = _stylisDirectChild(rules)
+      } else {
+        css = rules
+      }
+// Insert rule..
+      CSS._styleSheet = css
     }
   }
 
@@ -168,7 +262,7 @@ one by one.*/
   static insertGlobal(obj) {
     let css = CSS._createCSS(obj, ' ')
 // Separate and insert rules...
-    CSS._insertRules(_.separateStyleRules(css))
+    CSS._insertRules(this.separateStyleRules(css))
   }
 
 
@@ -199,24 +293,20 @@ inserts the rules into the stylesheet...*/
     CSS._keyframesCSS = object
 // Insert the rules...
     css = CSS._keyframesCSS
-    log('css', ['red', 'bold'])
-     log(css)
+
     CSS._insertRules(css)
 // Return a keframes instance....
     return new Keyframes(name, css)
   }
 
 
-
 /* Class method dealing with adding styles to the component. If a tag
  is present in the arguments, the style is appended to the head of the doc,
 otherwise, it is appended to the shadow root...down the line....*/
   static addStyles(appendStyle, cTag, eTag, props, tagTempLit) {
-    // log('tagTempLit', ['orange', 'bold'])
-    //  dir(tagTempLit)
 // Declare vars...
     let sheet,
-    selector = `[flareId=${props.flareId}]`,
+    selector = `[flareid=${props.flareId}]`,
     styleTag = (eTag === 'div')? selector : `${selector} ${eTag}`,
     css
 // If we are not appending style to a shadow root...
@@ -225,12 +315,12 @@ otherwise, it is appended to the shadow root...down the line....*/
       css = CSS._createCSS(tagTempLit, styleTag, props)
 
 // Split rules into an array. Insert into style sheet...
-      CSS._insertRules(_.separateStyleRules(css))
+      CSS._insertRules(this.separateStyleRules(css))
     } else {
       css = (eTag === 'div')?
         CSS._createCSS(tagTempLit, ':host', props)
       :
-        CSS._createCSS(tagTempLit, `:host ${eTag}`, props)
+        CSS._createCSS(tagTempLit, `:host > ${eTag}`, props)
 // Return function that returns style related html...
       return ()=>
         <style>{css}</style>
