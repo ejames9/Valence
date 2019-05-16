@@ -26,14 +26,14 @@ import on from '../../Utilities/DOM/events'
 
 // Component styles...
 const columnStyles = css` {
+    box-sizing: border-box;
     flex: 1;
     background: #6c757d;
-    border: 1px solid #323232;
+    border: none;
     font-family: hermit;
     font-size: 22px;
     line-height: 66px;
     text-align: center;
-
   }
 `
 
@@ -79,9 +79,25 @@ const columnProps = {
     type: [Boolean, String, Number],
   default: false
   },
-  place: {
+  flex: {
+    type: Boolean,
+    default: false
+  },
+  align: {
     type: String,
-    default: 'center'
+    default: null
+  },
+  border: {
+    type: [String, Boolean],
+    default: false
+  },
+  order: {
+    type: Number,
+    default: null
+  },
+  offset: {
+    type: Number,
+    default: null
   }
 }
 
@@ -133,7 +149,7 @@ class Column extends ValenceComponent {
       case screenWidth < 576:
         if (this.xs) {
           return this.xs
-        } else if (screenWidth > this._breakpoint) {
+        } else if (this._beyondBreakpoint) {
           return this._breakCols
         } else {
           return this.cols
@@ -142,7 +158,7 @@ class Column extends ValenceComponent {
       case screenWidth < 768:
         if (this.sm) {
           return this.sm
-        } else if (screenWidth > this._breakpoint) {
+        } else if (this._beyondBreakpoint) {
           return this._breakCols
         } else {
           return this.cols
@@ -151,7 +167,7 @@ class Column extends ValenceComponent {
       case screenWidth < 992:
         if (this.md) {
           return this.md
-        } else if (screenWidth > this._breakpoint) {
+        } else if (this._beyondBreakpoint) {
           return this._breakCols
         } else {
           return this.cols
@@ -160,7 +176,7 @@ class Column extends ValenceComponent {
       case screenWidth < 1200:
         if (this.lg) {
           return this.lg
-        } else if (screenWidth > this._breakpoint) {
+        } else if (this._beyondBreakpoint) {
           return this._breakCols
         } else {
           return this.cols
@@ -169,7 +185,7 @@ class Column extends ValenceComponent {
       case screenWidth > 1200:
         if (this.xl) {
           return this.xl
-        } else if (screenWidth > this._breakpoint) {
+        } else if (this._beyondBreakpoint) {
           return this._breakCols
         } else {
           return this.cols
@@ -183,13 +199,11 @@ class Column extends ValenceComponent {
 
 // A method for determining col value to use in setting flex-basis, and setting it...
   setFlexBasis() {
+// If we have a breakpoint...
     if (this._breakpoint) {
+// Set cols...
       this._cols_ = this._set_cols(this._screenWidth)
-      // if (this._beyondBreakpoint) {
-      //   this.parentNode.style.flexWrap = 'nowrap'
-      // } else {
-      //   this.parentNode.style.flexWrap = 'wrap'
-      // }
+//
     } else {
       this._cols_ = this.cols
     }
@@ -197,10 +211,13 @@ class Column extends ValenceComponent {
     let flexBasis = (this._cols_ / 12) * 100
 // Check flag to be sure flex Basis is not already set on another col....
     this.style.flex = `0 0 ${flexBasis}%`
-    // this.style.maxWidth = `${flexBasis}%`
-    // this.style.position = 'relative'
-// If flex basis is less than 100%, Set flag...
 
+    let colsCSS = css`  {
+      position: relative;
+    }`
+
+// Insert rules into comp. sheet...
+    this.insertRules(colsCSS, this._style)
   }
 
 
@@ -235,15 +252,60 @@ class Column extends ValenceComponent {
     }
 
 // Check placement prop...
-    if (this.place) {
-      this.addClass(this.place)
+    if (this.border) {
+// border css...
+      let borderCSS = css`
+        &(.border) {
+          box-shadow: 0px 0px 0px ${this.border} inset;
+        }`
+
+      this.addClass('border')
+// Insert CSS into component style sheet...
+      this.insertRules(borderCSS, this._style)
+
     }
 
-    this.insertRules(userMarkupStyles, this._style)
+/// Check for align prop...
+    if (this.align) {
+// `align-self` styles...
+      let alignCSS = css` {
+        align-self:${
+          (this.align === 'start' || this.align === 'end')?
+            ' flex-'
+          : ' '
+        }${this.align};
+      }`
+
+// Insert rules ...
+      this.insertRules(alignCSS, this._style)
+    }
+
+// Check for order prop...
+    if (this.order) {
+      let orderCSS = css` {
+        order: ${Number(this.order)};
+      }`
+
+      this.insertRules(orderCSS, this._style)
+    }
+
+/// Check for order prop...
+    if (this.offset) {
+      let offsetCSS = css` {
+        margin-left: ${(this.offset / 12) * 100}%;
+      }`
+
+      this.insertRules(offsetCSS, this._style)
+
+      log('#####################################-OFFSET-########################################', ['', ''])
+      log(this.offset)
+      log(`${(this.offset / 12) * 100}%`)
+    }
   }
 }
 
 export default Column
+
 
 
 

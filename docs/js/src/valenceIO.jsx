@@ -259,15 +259,27 @@ class App extends Valence.Component {
     return (
       <Fluid>
         <Container class='contain'>
-          <Row bumpers='5px'>
+          <Row pads='15px' bumpers='5px' borders='1px #343a40'>
             <Col class='on' cols={12} md={6}>1 of 2</Col>
-            <Col class='tw' cols={6} md={4}>2 of 2</Col>
+            <Col class='tw' cols={6} md={4} flex>2 of 2</Col>
             <Col class='thr' cols={6} md={2}>3 of 2</Col>
           </Row>
-          <Row bumpers='5px' gutters={false}>
+          <Row pads='15px' bumpers='5px' gutters={false}>
             <Col>1 of 2</Col>
             <Col>2 of 2</Col>
             <Col>3 of 2</Col>
+          </Row>
+        </Container>
+        <Container>
+          <Row align='end'>
+            <Col offset={2} align='start' cols={3} md={5}>1 of 1</Col>
+          </Row>
+        </Container>
+        <Container class='container'>
+          <Row class='row' borders='1px #343a40'>
+            <Col order={3} class='col col-1'>1 of 2</Col>
+            <Col order={2} class='col col-2'>2 of 2</Col>
+            <Col order={1} class='col col-3'>3 of 2</Col>
           </Row>
         </Container>
       </Fluid>

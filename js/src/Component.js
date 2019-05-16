@@ -313,6 +313,23 @@ this value, whose name is in the format `_ + propName`. */
     return style
   }
 
+/* Instance method for accessing the default valence library stylesheet, or
+creating a new one if none exists...*/
+  getValenceStyleSheet() {
+// Attempt to get the default stylesheet...
+    let sheet = el('valence-stylesheet')
+
+// If it exists, ....
+    if (!!sheet) {
+// Return it...
+      return sheet
+// Otherwise...
+    } else {
+// Create a new one with the above id...
+      return CSS._createNewStyleSheet()
+    }
+  }
+
 
 /* A private method for appending a CSS rule or an array of CSS rules to the default stylesheet,
 one by one.*/
@@ -329,6 +346,13 @@ one by one.*/
 // Insert rule..
       style.sheet.insertRule(rules)
     }
+  }
+
+
+/* An instance method for deleting a CSS rule from the component style sheet at
+a specific index..... */
+  deleteRule(index, style) {
+    return style.sheet.deleteRule(index)
   }
 
 

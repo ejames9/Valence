@@ -1,8 +1,12 @@
 
+html {
+  box-sizing: border-box;
+}
+
 .container {
   display: flex;
   background: blue;
-  padding: 15px 0;
+  padding: 15px 30px;
   margin: auto;
 }
 
@@ -10,28 +14,31 @@
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  padding: 0 15px;
+  margin: 0 -15px;
   background: red;
 }
 
 .col {
-  border: 1px solid black;
+  position: relative;
+  border: none;
   background: green;
   font-size: 22px;
   font-family: hermit;
 
 }
 
-.one {
-  flex-basis: calc((6 / 12) * 100%);
-  margin-right: 10px;
+.col-1 {
+  flex: 0 1 100%;
+  max-width: 100%;
 }
-.two {
-  margin-right: 10px;
-  flex: 1
+.col-2 {
+  flex: 0 1 50%;
+  max-width: 50%;
+  /* box-shadow: -3px 0px 0px 1px red inset; */
 }
-.three {
-  flex-basis: 25%;
+.col-3 {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 /*

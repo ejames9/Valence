@@ -80,7 +80,8 @@ class CSS {
 
 
 // A property to hold the default stylesheet of the app...
-  static _sheet = null
+  // static _sheet = document.getElementById('valence-stylesheet')
+  static _sheet = false
 // A getter for _sheet...
   static get _styleSheet() {
 // return the sheet!
@@ -101,6 +102,9 @@ class CSS {
   static _createNewStyleSheet() {
 // Create style tag..
     let style = document.createElement('style')
+// Give the style sheet an id so it may be accessed by other classes...
+    style.id = 'valence-stylesheet'
+
 // Append a textNode to it. Apparently, this is a webkit hack? More research needed...
     style.appendChild(document.createTextNode(""))
 // Append style tag to the head of the current doc's dom...

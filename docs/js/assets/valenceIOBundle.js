@@ -652,7 +652,9 @@ function (module, __webpack_exports__, __webpack_require__) {
         return x(Fluid, null, x(_js_src_WebComponents_Grid_Container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           "class": "contain"
         }, x(_js_src_WebComponents_Grid_Row__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          bumpers: "5px"
+          pads: "15px",
+          bumpers: "5px",
+          borders: "1px #343a40"
         }, x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
           "class": "on",
           cols: 12,
@@ -660,15 +662,38 @@ function (module, __webpack_exports__, __webpack_require__) {
         }, "1 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
           "class": "tw",
           cols: 6,
-          md: 4
+          md: 4,
+          flex: true
         }, "2 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
           "class": "thr",
           cols: 6,
           md: 2
         }, "3 of 2")), x(_js_src_WebComponents_Grid_Row__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          pads: "15px",
           bumpers: "5px",
           gutters: false
-        }, x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "1 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "2 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "3 of 2"))));
+        }, x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "1 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "2 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "3 of 2"))), x(_js_src_WebComponents_Grid_Container__WEBPACK_IMPORTED_MODULE_3__["default"], null, x(_js_src_WebComponents_Grid_Row__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          align: "end"
+        }, x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          offset: 2,
+          align: "start",
+          cols: 3,
+          md: 5
+        }, "1 of 1"))), x(_js_src_WebComponents_Grid_Container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          "class": "container"
+        }, x(_js_src_WebComponents_Grid_Row__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          "class": "row",
+          borders: "1px #343a40"
+        }, x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          order: 3,
+          "class": "col col-1"
+        }, "1 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          order: 2,
+          "class": "col col-2"
+        }, "2 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          order: 1,
+          "class": "col col-3"
+        }, "3 of 2"))));
       }
     }]);
 
@@ -8700,6 +8725,23 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         return style;
       }
+      /* Instance method for accessing the default valence library stylesheet, or
+      creating a new one if none exists...*/
+
+    }, {
+      key: "getValenceStyleSheet",
+      value: function getValenceStyleSheet() {
+        // Attempt to get the default stylesheet...
+        var sheet = el('valence-stylesheet'); // If it exists, ....
+
+        if (!!sheet) {
+          // Return it...
+          return sheet; // Otherwise...
+        } else {
+          // Create a new one with the above id...
+          return _Flare_CSS__WEBPACK_IMPORTED_MODULE_9__["CSS"]._createNewStyleSheet();
+        }
+      }
       /* A private method for appending a CSS rule or an array of CSS rules to the default stylesheet,
       one by one.*/
 
@@ -8719,6 +8761,14 @@ function (module, __webpack_exports__, __webpack_require__) {
           // Insert rule..
           style.sheet.insertRule(rules);
         }
+      }
+      /* An instance method for deleting a CSS rule from the component style sheet at
+      a specific index..... */
+
+    }, {
+      key: "deleteRule",
+      value: function deleteRule(index, style) {
+        return style.sheet.deleteRule(index);
       } // Instance method for processing css with stylis...
 
     }, {
@@ -12584,7 +12634,9 @@ function (module, __webpack_exports__, __webpack_require__) {
       // Class method for creating, appending and returning a new style sheet...
       value: function _createNewStyleSheet() {
         // Create style tag..
-        var style = document.createElement('style'); // Append a textNode to it. Apparently, this is a webkit hack? More research needed...
+        var style = document.createElement('style'); // Give the style sheet an id so it may be accessed by other classes...
+
+        style.id = 'valence-stylesheet'; // Append a textNode to it. Apparently, this is a webkit hack? More research needed...
 
         style.appendChild(document.createTextNode("")); // Append style tag to the head of the current doc's dom...
 
@@ -12809,6 +12861,7 @@ function (module, __webpack_exports__, __webpack_require__) {
       set: function set(obj) {
         CSS._template = "".concat(obj.selector, " {\n      ").concat(obj.code, "\n    }");
       } // A property to hold the default stylesheet of the app...
+      // static _sheet = document.getElementById('valence-stylesheet')
 
     }, {
       key: "_styleSheet",
@@ -12841,7 +12894,7 @@ function (module, __webpack_exports__, __webpack_require__) {
 
   _defineProperty(CSS, "_template", "");
 
-  _defineProperty(CSS, "_sheet", null);
+  _defineProperty(CSS, "_sheet", false);
   /***/
 
 },
@@ -32716,7 +32769,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject() {
-    var data = _taggedTemplateLiteral([" {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n    background: blue;\n    padding: 15px 30px;\n    margin: auto;\n    width: 100%;\n\n    @media (max-width: 576px) {\n      max-width: 410px;\n    }\n\n    @media (min-width: 576px) {\n      max-width: 510px;\n    }\n\n    @media (min-width: 768px) {\n      max-width: 690px;\n    }\n\n    @media (min-width: 992px) {\n      max-width: 930px;\n    }\n\n    @media (min-width: 1200px) {\n      max-width: 1090px;\n    }\n\n    &(.vertical) {\n      flex-wrap: wrap;\n      justify-content: center;\n      align-items: center;\n    }\n\n    &(.fluid) {\n      width: 100%;\n    }\n\n  }\n"]);
+    var data = _taggedTemplateLiteral([" {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n    background: blue;\n    padding: 15px 30px;\n    margin: auto;\n    width: 100%;\n\n    @media (max-width: 576px) {\n      max-width: 410px;\n    }\n\n    @media (min-width: 576px) {\n      max-width: 510px;\n    }\n\n    @media (min-width: 768px) {\n      max-width: 690px;\n    }\n\n    @media (min-width: 992px) {\n      max-width: 930px;\n    }\n\n    @media (min-width: 1200px) {\n      max-width: 1090px;\n    }\n\n    &(.fluid) {\n      width: 100%;\n    }\n\n  }\n"]);
 
     _templateObject = function _templateObject() {
       return data;
@@ -32797,16 +32850,8 @@ function (module, __webpack_exports__, __webpack_require__) {
     _createClass(Container, [{
       key: "componentDidMount",
       value: function componentDidMount() {
-        Object(_Utilities_Loggers__WEBPACK_IMPORTED_MODULE_2__["_log"])('#####################################-style-########################################', ['', '']);
-        Object(_Utilities_Loggers__WEBPACK_IMPORTED_MODULE_2__["_log"])('');
-        dir(this._style);
-        dir(); /// Update element props with user defined props....
-
+        /// Update element props with user defined props....
         this.applyUserProps(this.props);
-
-        if (this.vertical) {
-          this.addClass('vertical');
-        }
       }
     }]);
 
@@ -32862,6 +32907,56 @@ function (module, __webpack_exports__, __webpack_require__) {
     }
 
     return _typeof(obj);
+  }
+
+  function _templateObject7() {
+    var data = _taggedTemplateLiteral([" {\n        margin-left: ", "%;\n      }"]);
+
+    _templateObject7 = function _templateObject7() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject6() {
+    var data = _taggedTemplateLiteral([" {\n        order: ", ";\n      }"]);
+
+    _templateObject6 = function _templateObject6() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject5() {
+    var data = _taggedTemplateLiteral([" {\n        align-self:", "", ";\n      }"]);
+
+    _templateObject5 = function _templateObject5() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject4() {
+    var data = _taggedTemplateLiteral(["\n        &(.border) {\n          box-shadow: 0px 0px 0px ", " inset;\n        }"]);
+
+    _templateObject4 = function _templateObject4() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject3() {
+    var data = _taggedTemplateLiteral(["  {\n      position: relative;\n    }"]);
+
+    _templateObject3 = function _templateObject3() {
+      return data;
+    };
+
+    return data;
   }
 
   function _classCallCheck(instance, Constructor) {
@@ -32959,7 +33054,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject() {
-    var data = _taggedTemplateLiteral([" {\n    flex: 1;\n    background: #6c757d;\n    border: 1px solid #323232;\n    font-family: hermit;\n    font-size: 22px;\n    line-height: 66px;\n    text-align: center;\n\n  }\n"]);
+    var data = _taggedTemplateLiteral([" {\n    box-sizing: border-box;\n    flex: 1;\n    background: #6c757d;\n    border: none;\n    font-family: hermit;\n    font-size: 22px;\n    line-height: 66px;\n    text-align: center;\n  }\n"]);
 
     _templateObject = function _templateObject() {
       return data;
@@ -33025,9 +33120,25 @@ function (module, __webpack_exports__, __webpack_require__) {
       type: [Boolean, String, Number],
       "default": false
     },
-    place: {
+    flex: {
+      type: Boolean,
+      "default": false
+    },
+    align: {
       type: String,
-      "default": 'center'
+      "default": null
+    },
+    border: {
+      type: [String, Boolean],
+      "default": false
+    },
+    order: {
+      type: Number,
+      "default": null
+    },
+    offset: {
+      type: Number,
+      "default": null
     }
   };
 
@@ -33082,7 +33193,7 @@ function (module, __webpack_exports__, __webpack_require__) {
           case screenWidth < 576:
             if (this.xs) {
               return this.xs;
-            } else if (screenWidth > this._breakpoint) {
+            } else if (this._beyondBreakpoint) {
               return this._breakCols;
             } else {
               return this.cols;
@@ -33093,7 +33204,7 @@ function (module, __webpack_exports__, __webpack_require__) {
           case screenWidth < 768:
             if (this.sm) {
               return this.sm;
-            } else if (screenWidth > this._breakpoint) {
+            } else if (this._beyondBreakpoint) {
               return this._breakCols;
             } else {
               return this.cols;
@@ -33104,7 +33215,7 @@ function (module, __webpack_exports__, __webpack_require__) {
           case screenWidth < 992:
             if (this.md) {
               return this.md;
-            } else if (screenWidth > this._breakpoint) {
+            } else if (this._beyondBreakpoint) {
               return this._breakCols;
             } else {
               return this.cols;
@@ -33115,7 +33226,7 @@ function (module, __webpack_exports__, __webpack_require__) {
           case screenWidth < 1200:
             if (this.lg) {
               return this.lg;
-            } else if (screenWidth > this._breakpoint) {
+            } else if (this._beyondBreakpoint) {
               return this._breakCols;
             } else {
               return this.cols;
@@ -33126,7 +33237,7 @@ function (module, __webpack_exports__, __webpack_require__) {
           case screenWidth > 1200:
             if (this.xl) {
               return this.xl;
-            } else if (screenWidth > this._breakpoint) {
+            } else if (this._beyondBreakpoint) {
               return this._breakCols;
             } else {
               return this.cols;
@@ -33142,12 +33253,10 @@ function (module, __webpack_exports__, __webpack_require__) {
     }, {
       key: "setFlexBasis",
       value: function setFlexBasis() {
+        // If we have a breakpoint...
         if (this._breakpoint) {
-          this._cols_ = this._set_cols(this._screenWidth); // if (this._beyondBreakpoint) {
-          //   this.parentNode.style.flexWrap = 'nowrap'
-          // } else {
-          //   this.parentNode.style.flexWrap = 'wrap'
-          // }
+          // Set cols...
+          this._cols_ = this._set_cols(this._screenWidth); //
         } else {
           this._cols_ = this.cols;
         } // Define basis...
@@ -33155,9 +33264,10 @@ function (module, __webpack_exports__, __webpack_require__) {
 
         var flexBasis = this._cols_ / 12 * 100; // Check flag to be sure flex Basis is not already set on another col....
 
-        this.style.flex = "0 0 ".concat(flexBasis, "%"); // this.style.maxWidth = `${flexBasis}%`
-        // this.style.position = 'relative'
-        // If flex basis is less than 100%, Set flag...
+        this.style.flex = "0 0 ".concat(flexBasis, "%");
+        var colsCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject3()); // Insert rules into comp. sheet...
+
+        this.insertRules(colsCSS, this._style);
       }
     }, {
       key: "componentDidMount",
@@ -33186,11 +33296,36 @@ function (module, __webpack_exports__, __webpack_require__) {
         } // Check placement prop...
 
 
-        if (this.place) {
-          this.addClass(this.place);
-        }
+        if (this.border) {
+          // border css...
+          var borderCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject4(), this.border);
+          this.addClass('border'); // Insert CSS into component style sheet...
 
-        this.insertRules(userMarkupStyles, this._style);
+          this.insertRules(borderCSS, this._style);
+        } /// Check for align prop...
+
+
+        if (this.align) {
+          // `align-self` styles...
+          var alignCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject5(), this.align === 'start' || this.align === 'end' ? ' flex-' : ' ', this.align); // Insert rules ...
+
+          this.insertRules(alignCSS, this._style);
+        } // Check for order prop...
+
+
+        if (this.order) {
+          var orderCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject6(), Number(this.order));
+          this.insertRules(orderCSS, this._style);
+        } /// Check for order prop...
+
+
+        if (this.offset) {
+          var offsetCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject7(), this.offset / 12 * 100);
+          this.insertRules(offsetCSS, this._style);
+          Object(_Utilities_Loggers__WEBPACK_IMPORTED_MODULE_2__["_log"])('#####################################-OFFSET-########################################', ['', '']);
+          Object(_Utilities_Loggers__WEBPACK_IMPORTED_MODULE_2__["_log"])(this.offset);
+          Object(_Utilities_Loggers__WEBPACK_IMPORTED_MODULE_2__["_log"])("".concat(this.offset / 12 * 100, "%"));
+        }
       }
     }, {
       key: "_beyondBreakpoint",
@@ -33318,8 +33453,48 @@ function (module, __webpack_exports__, __webpack_require__) {
     return _typeof(obj);
   }
 
+  function _templateObject6() {
+    var data = _taggedTemplateLiteral([" {\n        justify-content: ", ";\n      }"]);
+
+    _templateObject6 = function _templateObject6() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject5() {
+    var data = _taggedTemplateLiteral([" {\n        align-items:", "", ";\n      }"]);
+
+    _templateObject5 = function _templateObject5() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject4() {
+    var data = _taggedTemplateLiteral(["\n        ::slotted(col-),\n        ::slotted(column-) {\n          background: green;\n          box-shadow: 0px 0px 0px ", " inset;\n        }"]);
+
+    _templateObject4 = function _templateObject4() {
+      return data;
+    };
+
+    return data;
+  }
+
+  function _templateObject3() {
+    var data = _taggedTemplateLiteral(["\n        ::slotted(col-),\n        ::slotted(column-) {\n          padding: 0px ", ";\n        }"]);
+
+    _templateObject3 = function _templateObject3() {
+      return data;
+    };
+
+    return data;
+  }
+
   function _templateObject2() {
-    var data = _taggedTemplateLiteral(["\n        ::slotted(col-),\n        ::slotted(column-) {\n          background: green;\n          margin-right: ", ";\n        }\n\n        ::slotted(:last-child) {\n          background: yellow;\n          margin: 0px;\n          flex: 1;\n        }\n\n        @media (min-width: 768px) {\n          ::slotted(col-),\n          ::slotted(column-) {\n            background: orange;\n            margin-right: ", ";\n          }\n        }"]);
+    var data = _taggedTemplateLiteral(["\n        ::slotted(col-),\n        ::slotted(column-) {\n          background: green;\n          margin-right: ", ";\n        }\n\n        ::slotted(:last-child) {\n          background: tomato;\n          margin-right: 0px;\n        }\n\n        ::slotted(:last-child:not([cols])) {\n          background: yellow;\n          flex: 1 !important;\n        }\n\n        ::slotted([flex]) {\n          background: yellow;\n          flex: 1 !important;\n        }"]);
 
     _templateObject2 = function _templateObject2() {
       return data;
@@ -33413,7 +33588,7 @@ function (module, __webpack_exports__, __webpack_require__) {
   }
 
   function _templateObject() {
-    var data = _taggedTemplateLiteral([" {\n  display: flex;\n  flex: 1;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-width: 100%;\n  margin: 0 -15px;\n  background: red;\n\n  &(.align-top),\n  &(.align-start) {\n    align-content: flex-start;\n  }\n\n  &(.align-mid),\n  &(.align-middle),\n  &(.align-center) {\n    align-content: center;\n  }\n\n  &(.align-bottom),\n  &(.align-end) {\n    align-content: flex-end;\n  }\n\n  &(.justify-start),\n  &(.justify-beginning) {\n    justify-content: flex-start;\n  }\n\n  &(.justify-mid),\n  &(.justify-middle),\n  &(.justify-center) {\n    justify-content: center;\n  }\n\n  &(.justify-end),\n  &(.justify-beginning) {\n    justify-content: flex-start;\n  }\n\n  &(.justify-between),\n  &(.justify-space-between) {\n    justify-content: space-between;\n  }\n\n  &(.justify-around),\n  &(.justify-space-around) {\n    justify-content: space-around;\n  }\n\n  &(.justify-evenly),\n  &(.justify-space-evenly) {\n    justify-content: space-evenly;\n  }\n\n\n}\n"]);
+    var data = _taggedTemplateLiteral([" {\n  box-sizing: border-box;\n  display: flex;\n  flex: 1;\n  flex-wrap: wrap;\n  min-width: 100%;\n  margin: 0px -15px;\n  background: red;\n  min-height: 120px;\n\n  &(.align-top),\n  &(.align-start) {\n    align-content: flex-start;\n  }\n\n  &(.align-mid),\n  &(.align-middle),\n  &(.align-center) {\n    align-content: center;\n  }\n\n  &(.align-bottom),\n  &(.align-end) {\n    align-content: flex-end;\n  }\n\n  &(.justify-start),\n  &(.justify-beginning) {\n    justify-content: flex-start;\n  }\n\n  &(.justify-mid),\n  &(.justify-middle),\n  &(.justify-center) {\n    justify-content: center;\n  }\n\n  &(.justify-end),\n  &(.justify-beginning) {\n    justify-content: flex-start;\n  }\n\n  &(.justify-between),\n  &(.justify-space-between) {\n    justify-content: space-between;\n  }\n\n  &(.justify-around),\n  &(.justify-space-around) {\n    justify-content: space-around;\n  }\n\n  &(.justify-evenly),\n  &(.justify-space-evenly) {\n    justify-content: space-evenly;\n  }\n}\n"]);
 
     _templateObject = function _templateObject() {
       return data;
@@ -33460,13 +33635,21 @@ function (module, __webpack_exports__, __webpack_require__) {
       type: [Boolean, String],
       "default": null
     },
+    pads: {
+      type: [Boolean, String],
+      "default": false
+    },
+    borders: {
+      type: [String, Boolean],
+      "default": false
+    },
     align: {
       type: String,
-      "default": 'center'
+      "default": null
     },
     justify: {
       type: String,
-      "default": 'space-evenly' // Component class....
+      "default": null // Component class....
 
     }
   };
@@ -33518,19 +33701,62 @@ function (module, __webpack_exports__, __webpack_require__) {
 
 
         if (this.bumpers) {
-          var style = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2(), this.bumpers, this.bumpers); //
-          // if (this.gutters) {
-          //   let style = css`
-          //     ::slotted(col-),
-          //     ::slotted(column-) {
-          //       background: green;
-          //       margin-right: ${this.bumpers};
-          //     }
-          // }
-          // Insert the CSS literal into the component style sheet...
+          var style = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2(), this.bumpers); // Insert the CSS literal into the component style sheet...
 
           this.insertRules(style, this._style);
-        }
+        } // If `pads` props is present, adjust padding as necessary...
+
+
+        if (this.pads) {
+          var padsCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject3(), this.pads); // Insert CSS into component style sheet...
+
+          this.insertRules(padsCSS, this._style);
+        } // Check borders prop....
+
+
+        if (this.borders) {
+          borderCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject4(), this.borders); // Insert the CSS literal into the component style sheet...
+
+          this.insertRules(borderCSS, this._style);
+        } // Check for align prop...
+
+
+        if (this.align) {
+          var alignCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject5(), this.align !== 'center' ? ' flex-' : ' ', this.align);
+          this.insertRules(alignCSS, this._style);
+        } // Check for align prop...
+
+
+        if (this.justify) {
+          var spaceRE = /around|between|evenly/,
+              flexRE = /start|end/,
+              justify;
+
+          switch (true) {
+            case spaceRE.test(this.justify):
+              justify = "space-".concat(this.justify);
+              break;
+
+            case flexRE.test(this.justify):
+              justify = "flex-".concat(this.justify);
+              break;
+
+            default:
+              justify = this.justify;
+          }
+
+          var justifyCSS = Object(_Flare_Flare__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject6(), justify);
+          this.insertRules(justifyCSS, this._style);
+        } //
+        // if (this.gutters) {
+        //   let style = css`
+        //     ::slotted(col-),
+        //     ::slotted(column-) {
+        //       background: green;
+        //       margin-right: ${this.bumpers};
+        //     }
+        // }
+
       }
     }]);
 

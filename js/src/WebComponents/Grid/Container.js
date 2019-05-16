@@ -50,12 +50,6 @@ const containerStyles = css` {
       max-width: 1090px;
     }
 
-    &(.vertical) {
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
     &(.fluid) {
       width: 100%;
     }
@@ -95,16 +89,8 @@ class Container extends ValenceComponent {
 
 // Complete post mounting Component work here...
   componentDidMount() {
-    log('#####################################-style-########################################', ['', ''])
-    log('')
-    dir(this._style)
-    dir()
 /// Update element props with user defined props....
     this.applyUserProps(this.props)
-
-    if (this.vertical) {
-      this.addClass('vertical')
-    }
   }
 }
 
