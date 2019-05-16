@@ -272,7 +272,7 @@ class App extends Valence.Component {
         </Container>
         <Container>
           <Row align='end'>
-            <Col offset={2} align='start' cols={3} md={5}>1 of 1</Col>
+            <Col offset={7} align='start' cols={3} md={5}>1 of 1</Col>
           </Row>
         </Container>
         <Container class='container'>

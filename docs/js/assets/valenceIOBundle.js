@@ -675,7 +675,7 @@ function (module, __webpack_exports__, __webpack_require__) {
         }, x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "1 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "2 of 2"), x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], null, "3 of 2"))), x(_js_src_WebComponents_Grid_Container__WEBPACK_IMPORTED_MODULE_3__["default"], null, x(_js_src_WebComponents_Grid_Row__WEBPACK_IMPORTED_MODULE_5__["default"], {
           align: "end"
         }, x(_js_src_WebComponents_Grid_Column__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          offset: 2,
+          offset: 7,
           align: "start",
           cols: 3,
           md: 5
